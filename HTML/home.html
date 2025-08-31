@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Javier Aventuras</title>
+    <!-- LLAMADO A TAILWIND -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-sans bg-gray-50">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 w-full bg-white shadow z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- LOGO + TEXTO -->
+            <div class="flex items-center gap-3">
+                <!-- Imagen del logo -->
+                <img src="../IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
+            
+                <!-- Texto del logo -->
+                <div class="leading-tight">
+                    <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
+                    <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
+                </div>
+            </div>
+            <nav>
+                <ul class="hidden md:flex gap-6 text-gray-700 font-medium">
+                    <li><a href="nosotros.html" class="hover:text-[#af350f]">Nosotros</a></li>
+                    <li><a href="tours.html" class="hover:text-[#af350f]">Tours</a></li>
+                    <li><a href="https://www.airbnb.com.ar/rooms/1353875028897794866?search_mode=regular_search&adults=1&check_in=2025-09-08&check_out=2025-09-13&children=0&infants=0&pets=0&source_impression_id=p3_1756633803_P3eBmMBnCJXHQDgZ&previous_page_section_name=1000&federated_search_id=b912ce24-91a1-4b9f-9d6c-50e15539cf34" class="hover:text-[#af350f]">Hospedaje</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="ml-6 bg-[#af350f] text-white px-4 py-2 rounded-lg hover:bg-[#922f08] transition">
+                Reservar
+            </a>
+
+        </div>
+    </header>
+
+    <!-- SECCIÓN 1 -->
+    <section class="h-screen flex items-center justify-center text-center text-white relative bg-cover bg-center"
+        style="background-image: url('../IMG/contenedor.png');">
+        <div class="bg-black/50 absolute inset-0"></div>
+        <div class="relative z-10 px-6">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">SAL A TU PRÓXIMA <br> AVENTURA DE
+                SENDERISMO</h1>
+            <p class="text-lg md:text-xl mb-11">Explora la naturaleza, vive experiencias únicas y conecta con tu lado
+                aventurero.</p>
+            <a href="tours.html"
+                class="px-6 py-3 border-2 border-white text-white  hover:bg-white hover:text-gray-900 transition">Reserva
+                tu excursión</a>
+        </div>
+    </section>
+
+<!-- SECCIÓN ACTIVIDADES -->
+<section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-extrabold mb-12">Nuestras Actividades</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- Actividad 1 -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+            <a href="actividad1.html">
+                <img src="../IMG/cuatro.JPG" alt="Trekking" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Senderos del Guardaparque</h3>
+                    <p class="text-gray-600 text-sm">
+                        Descubrí la esencia del campo en una caminata guiada por un guardaparque local.
+                    </p>
+                </div>
+        </a>
+        </div>
+
+            <!-- Actividad 2 -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                <a href="actividad2.html">
+                <img src="../IMG/kayak.png" alt="Actividades Acuáticas" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Aventura Extrema: Kayaks & Barrancas</h3>
+                    <p class="text-gray-600 text-sm">
+                        Un desafío total: remar, caminar y vivir la naturaleza en su estado puro.
+                    </p>
+                </div>
+        </a>
+        </div>
+
+            <!-- Actividad 3 -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+            <a href="actividad3.html">
+                <img src="../IMG/rusa.png" alt="Gastronomía Rusa" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Raíces Rusas en San Javier</h3>
+                    <p class="text-gray-600 text-sm">
+                        Un viaje cultural y gastronómico que combina historia, música y naturaleza.
+                    </p>
+                </div>
+        </a>
+        </div>
+
+            <!-- Actividad 4 -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                <a href="actividad4.html">
+                <img src="../IMG/luna.png" alt="Hospedaje Rural" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Noche de Luna y Estrellas</h3>
+                    <p class="text-gray-600 text-sm">
+                    Una experiencia de astroturismo única, acampando bajo el cielo más puro.
+                    </p>
+                </div>
+            </div>
+            </a>
+        </div>
+ 
+
+    <!-- Botón -->
+    <div class="mt-12">
+        <a href="tours.html"
+            class="inline-block bg-green-600 text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-green-700 transition">
+            Ver más actividades
+        </a>
+    </div>
+    </div>
+</div>
+</section>
+
+
+
+    <!-- REDES SOCIALES -->
+    <div class="fixed right-4 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-50">
+        <a href="#"><img src="../IMG/logoinstagram.png" alt="Instagram" class="w-8 h-8"></a>
+        <a href="#"><img src="..//IMG/logofacebook.png" alt="Facebook" class="w-8 h-8"></a>
+    </div>
+
+    <!-- BOTÓN DE CHAT -->
+     <div class="fixed bottom-6 right-6 px-6 py-3">
+    <a href="https://wa.link/4awoop"> <img src="../IMG/wsp.png" alr="wsp" class="w-20 h-20"></a>
+    </div>
+
+</body>
+
+</html>
