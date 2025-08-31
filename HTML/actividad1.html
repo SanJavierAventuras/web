@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senderos del Guardaparque - San Javier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #carousel img {
+            transition: opacity 0.5s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+
+        #carousel {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            /* 16:9 ratio */
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            padding: 0.5rem 0.8rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .left-btn {
+            left: 1rem;
+        }
+
+        .right-btn {
+            right: 1rem;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gradient-to-b from-gray-100 via-gray-50 to-gray-100 text-gray-800">
+
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="../IMG/logo.png" alt="Logo San Javier" class="w-14 h-14 object-contain">
+                <div class="leading-tight">
+                    <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
+                    <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
+                </div>
+            </div>
+            <nav>
+                <ul class="hidden md:flex gap-8 font-medium text-gray-700">
+                    <li><a href="home.html" class="hover:text-[#af350f] transition">Inicio</a></li>
+                    <li><a href="tours.html" class="hover:text-[#af350f] transition">Tours</a></li>
+                    <li><a href="nosotros.html" class="hover:text-[#af350f] transition">Nosotros</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative h-[650px] bg-cover bg-center flex items-center justify-center"
+        style="background-image: url('../IMG/cuatro3.JPG');">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-black/20"></div>
+        <div class="relative z-10 text-center px-6">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg">Senderos del
+                Guardaparque</h1>
+            <p class="mt-4 text-lg md:text-2xl text-white drop-shadow-sm">Vive la esencia del campo en una caminata
+                guiada.</p>
+        </div>
+    </section>
+
+    <!-- DESCRIPCIÓN + CARRUSEL + VIDEO -->
+    <section class="container mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16">
+        <!-- TEXTO -->
+        <div class="flex flex-col gap-12">
+            <div class="bg-white rounded-3xl shadow-lg p-8">
+                <h2 class="text-3xl font-bold mb-4">Descripción</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Una experiencia de media jornada ideal para toda la familia: naturaleza, historia y cultura en un
+                    recorrido accesible que conecta con la vida del campo.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-lg p-8">
+                <h2 class="text-3xl font-bold mb-4">Detalles de la actividad</h2>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-center gap-2">📍 <span>Campo familiar – San Javier</span></li>
+                    <li class="flex items-center gap-2">🥾 <span>5 km aprox.</span></li>
+                    <li class="flex items-center gap-2">⏱ <span>3 horas</span></li>
+                    <li class="flex items-center gap-2">🔥 <span>Nivel: Bajo</span></li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-lg p-8">
+                <h2 class="text-3xl font-bold mb-4">Itinerario</h2>
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>08:30 – Bienvenida y charla introductoria.</li>
+                    <li>09:00 – Caminata por senderos con interpretación de flora y fauna.</li>
+                    <li>10:30 – Descanso en punto panorámico.</li>
+                    <li>11:30 – Cierre y regreso.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CARRUSEL + VIDEO -->
+        <div class="flex flex-col gap-10">
+            <!-- Carrusel -->
+            <div id="carousel" class="relative w-full">
+                <img src="../IMG/cuatro4.JPG" alt="Imagen 1">
+                <img src="../IMG/cuatro.JPG" alt="Imagen 2" class="opacity-0">
+                <img src="../IMG/cuatro5.JPG" alt="Imagen 3" class="opacity-0">
+                <button class="carousel-button left-btn" id="prev">◀</button>
+                <button class="carousel-button right-btn" id="next">▶</button>
+            </div>
+
+            <!-- Video -->
+            <div class="bg-white rounded-3xl shadow-lg p-6">
+                <h2 class="text-3xl font-bold mb-4 text-center">Mirá la experiencia en video</h2>
+                <video src="../IMG/trekkingvideo.mp4" controls class="w-full rounded-2xl shadow-lg"></video>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTÓN RESERVA -->
+    <section class="container mx-auto px-6 pb-20 text-center">
+        <a href="https://wa.link/zizjpk"
+            class="inline-block bg-green-600 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-green-700 transition-transform transform hover:scale-105">
+            Reservar ahora
+        </a>
+    </section>
+
+    <!-- SCRIPT CARRUSEL -->
+    <script>
+        const carouselImages = document.querySelectorAll('#carousel img');
+        const nextBtn = document.getElementById('next');
+        const prevBtn = document.getElementById('prev');
+        let current = 0;
+
+        function showImage(index) {
+            carouselImages.forEach((img, i) => {
+                img.style.opacity = i === index ? '1' : '0';
+            });
+        }
+
+        nextBtn.addEventListener('click', () => {
+            current = (current + 1) % carouselImages.length;
+            showImage(current);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            current = (current - 1 + carouselImages.length) % carouselImages.length;
+            showImage(current);
+        });
+
+        // Autoplay cada 5s
+        setInterval(() => {
+            current = (current + 1) % carouselImages.length;
+            showImage(current);
+        }, 5000);
+    </script>
+
+</body>
+
+</html>
