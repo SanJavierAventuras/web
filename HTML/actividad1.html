@@ -59,26 +59,36 @@
     <!-- NAVBAR -->
     <header class="fixed top-0 w-full bg-white shadow z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- LOGO + TEXTO -->
+            <!-- LOGO -->
             <div class="flex items-center gap-3">
-                <!-- Imagen del logo -->
-                <img src="../IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
-    
-                <!-- Texto del logo -->
-                <div class="leading-tight">
-                    <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
-                    <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
-                </div>
+                <a href="../index.html">
+                    <img src="../IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
+                    <div class="leading-tight">
+                        <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
+                        <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
+                </a>
             </div>
+        </div>
     
-            <!-- MENÚ (siempre visible en todas las pantallas) -->
-            <nav>
-                <ul class="flex gap-6 text-gray-700 font-medium">
-                    <li><a href="nosotros.html" class="hover:text-[#af350f]">Nosotros</a></li>
-                    <li><a href="tours.html" class="hover:text-[#af350f]">Tours</a></li>
-                    <li><a href="../index.html" class="hover:text-[#af350f]">Inicio</a></li>
-                </ul>
-            </nav>
+        <!-- Botón hamburguesa solo en mobile -->
+        <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none">
+            ☰
+        </button>
+    
+        <!-- Links -->
+        <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white  md:static md:block md:w-auto">
+            <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
+                <li><a href="nosotros.html" class="hover:text-[#af350f]">Nosotros</a></li>
+                <li><a href="tours.html" class="hover:text-[#af350f]">Tours</a></li>
+                <li><a href="../index.html" class="hover:text-[#af350f]">Inicio</a></li>
+            </ul>
+        </nav>
+    
+        <!-- Botón reservar -->
+        <a href="https://wa.link/2yu17o"
+            class="hidden md:inline-block ml-6 bg-[#af350f] text-white px-4 py-2 rounded-lg hover:bg-[#922f08] transition">
+            Reservar
+        </a>
         </div>
     </header>
 
