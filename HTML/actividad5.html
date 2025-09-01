@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutas de los Arenales y Cueva del Indio - San Javier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../IMG/logo.png">
+</head>
+
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 w-full bg-white shadow z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="../IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
+                <div class="leading-tight">
+                    <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
+                    <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
+                </div>
+            </a>
+
+            <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none">☰</button>
+
+            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white md:static md:block md:w-auto z-40">
+                <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
+                    <li><a href="../index.html" class="hover:text-[#af350f]">Inicio</a></li>
+                    <li><a href="tours.html" class="hover:text-[#af350f]">Tours</a></li>
+                    <li><a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
+                            class="hover:text-[#af350f]">Hospedaje</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- HERO DE LA ACTIVIDAD -->
+    <section class="h-[60vh] md:h-[80vh] bg-cover bg-center relative flex items-center justify-center"
+        style="background-image: url('../IMG/campo.JPG');">
+        <div class="bg-black/50 absolute inset-0"></div>
+        <div class="relative z-10 text-center px-6">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Rutas de los Arenales y Cueva del Indio</h1>
+            <p class="text-white text-base md:text-lg max-w-2xl mx-auto">
+                Descubrí la magia de internarse en médanos de arena, conectando con la madre tierra, su flora, fauna y
+                secretos ancestrales.
+            </p>
+        </div>
+    </section>
+
+    <!-- DESCRIPCIÓN Y DETALLES -->
+    <section class="container mx-auto px-6 py-12">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">Detalles de la actividad</h2>
+        <p class="text-gray-700 mb-4">
+            Una experiencia inolvidable que combina caminatas por médanos, senderos históricos y actividades culturales.
+        </p>
+        <ul class="text-gray-700 mb-6 space-y-2">
+            <li>📍 San Javier - Ofir</li>
+            <li>🥾 2 km</li>
+            <li>🕢 3 horas</li>
+            <li>🔥 Nivel: Medio</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mb-4">Itinerario</h3>
+
+        <div class="bg-white rounded-2xl shadow-md p-6 mb-8">
+            <h4 class="font-bold mb-2">Día 1</h4>
+            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                <li>09:00 – Bienvenida y traslado al predio rural natural</li>
+                <li>09:30 – Caminata en médanos</li>
+                <li>10:30 – Caminata por sendero “Cueva del Indio”</li>
+                <li>12:00 – Regreso</li>
+                <li>15:00 – Recorrida histórico-cultural</li>
+                <li>16:00 – Paseo de compras</li>
+                <li>20:00 – Cena de confraternidad con comidas típicas</li>
+            </ul>
+
+            <h4 class="font-bold mt-4 mb-2">Día 2</h4>
+            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                <li>08:30 – Desayuno</li>
+                <li>09:00 – Paseo en lancha o kayak</li>
+                <li>13:00 – Almuerzo y despedida</li>
+            </ul>
+        </div>
+
+    <!-- VIDEO -->
+    <section class="py-12 text-center">
+        <h2 class="text-3xl font-bold mb-6">Vive la experiencia en video</h2>
+        <div class="relative" style="padding-top: 56.25%;"> <!-- 16:9 ratio -->
+            <iframe class="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
+                src="https://www.youtube.com/embed/g3m2dYKa82g?si=KCi1fg80yqxNPZtu&autoplay=1&mute=1"
+                title="Rutas de los Arenales y Cueva del Indio" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+
+        <p class="text-gray-800 font-bold text-lg mt-6">💲 Precio: $XXXX</p>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-12 text-center">
+        <a href="../index.html#reserva"
+            class="inline-block bg-green-600 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-green-700 transition-transform transform hover:scale-105">
+            Reservá tu experiencia
+        </a>
+    </section>
+
+</body>
+
+</html>

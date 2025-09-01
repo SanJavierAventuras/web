@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noche de Luna y Estrellas - San Javier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../IMG/logo.png">
+</head>
+
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 w-full bg-white shadow z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="../IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
+                <div class="leading-tight">
+                    <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
+                    <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
+                </div>
+            </a>
+
+            <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none">☰</button>
+
+            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white md:static md:block md:w-auto z-40">
+                <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
+                    <li><a href="../index.html" class="hover:text-[#af350f]">Inicio</a></li>
+                    <li><a href="tours.html" class="hover:text-[#af350f]">Tours</a></li>
+                    <li><a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
+                            class="hover:text-[#af350f]">Hospedaje</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- HERO DE LA ACTIVIDAD -->
+    <section class="h-[60vh] md:h-[80vh] bg-cover bg-center relative flex items-center justify-center"
+        style="background-image: url('../IMG/luna.png');">
+        <div class="bg-black/50 absolute inset-0"></div>
+        <div class="relative z-10 text-center px-6">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Noche de Luna y Estrellas</h1>
+            <p class="text-white text-base md:text-lg max-w-2xl mx-auto">Viví una aventura diferente: descubre, conoce y
+                explora la naturaleza bajo el cielo estrellado.</p>
+        </div>
+    </section>
+
+    <!-- DESCRIPCIÓN -->
+    <section class="container mx-auto px-6 py-12">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">Detalles de la actividad</h2>
+        <p class="text-gray-700 mb-6">Una experiencia nocturna única en San Javier: disfrutá de caminatas, fogones y la
+            observación de estrellas en un entorno natural inigualable.</p>
+
+        <h3 class="text-xl font-semibold mb-4">Itinerario</h3>
+
+        <div class="bg-white rounded-2xl shadow-md p-6 mb-8">
+            <h4 class="font-bold mb-2">Día 1</h4>
+            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                <li>17:00 – Llegada al campo</li>
+                <li>17:30 – Armado de carpas</li>
+                <li>18:00 – Caminata por senderos</li>
+                <li>20:00 – Fogata y cena</li>
+                <li>21:00 – Observación de estrellas y luna llena</li>
+            </ul>
+        </div>
+
+        <p class="text-gray-800 font-bold text-lg">💲 Precio: $XXXX</p>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-12 text-center">
+        <a href="../index.html#reserva"
+            class="inline-block bg-green-600 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-green-700 transition-transform transform hover:scale-105">
+            Reservá tu experiencia
+        </a>
+    </section>
+
+</body>
+
+</html>
