@@ -5,59 +5,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>San Javier Aventuras</title>
-    <!-- LLAMADO A TAILWIND -->
+    <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <style>
+        /* Ajustes de Swiper */
+        .swiper-pagination {
+            position: relative !important;
+            /* no superpuesta */
+            margin-top: 20px;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: black !important;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Más afuera de las tarjetas */
+        .swiper-button-next {
+            right: -40px;
+        }
+
+        .swiper-button-prev {
+            left: -40px;
+        }
+
+        /* Asegurar tamaño grande en mobile */
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body class="font-sans bg-gray-50">
 
-<!-- NAVBAR -->
-<header class="fixed top-0 w-full bg-white shadow z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <!-- LOGO -->
-        <div class="flex items-center gap-3">
-            <a href="index.html">
-            <img src="IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
-            <div class="leading-tight">
-                <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
-                <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
+    <!-- NAVBAR -->
+    <header class="fixed top-0 w-full bg-white shadow z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- LOGO -->
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
+                <div class="leading-tight">
+                    <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
+                    <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
+                </div>
             </a>
-            </div>
+
+            <!-- Botón hamburguesa en mobile -->
+            <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none">☰</button>
+
+            <!-- Links -->
+            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white md:static md:block md:w-auto">
+                <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
+                    <li><a href="HTML/nosotros.html" class="hover:text-[#af350f]">Nosotros</a></li>
+                    <li><a href="HTML/tours.html" class="hover:text-[#af350f]">Tours</a></li>
+                    <li><a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
+                            class="hover:text-[#af350f]">Hospedaje</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botón reservar -->
+            <a href="https://wa.link/2yu17o"
+                class="hidden md:inline-block ml-6 bg-[#af350f] text-white px-4 py-2 rounded-lg hover:bg-[#922f08] transition">
+                Reservar
+            </a>
         </div>
+    </header>
 
-        <!-- Botón hamburguesa solo en mobile -->
-        <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none">
-            ☰
-        </button>
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 
-        <!-- Links -->
-        <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white  md:static md:block md:w-auto">
-            <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
-                <li><a href="HTML/nosotros.html" class="hover:text-[#af350f]">Nosotros</a></li>
-                <li><a href="HTML/tours.html" class="hover:text-[#af350f]">Tours</a></li>
-                <li><a href="https://www.airbnb.com.ar/rooms/1353875028897794866?search_mode=regular_search&adults=1&check_in=2025-09-08&check_out=2025-09-13&children=0&infants=0&pets=0&source_impression_id=p3_1756633803_P3eBmMBnCJXHQDgZ&previous_page_section_name=1000&federated_search_id=b912ce24-91a1-4b9f-9d6c-50e15539cf34" class="hover:text-[#af350f]">Hospedaje</a></li>
-            </ul>
-        </nav>
-
-        <!-- Botón reservar -->
-        <a href="https://wa.link/2yu17o"
-            class="hidden md:inline-block ml-6 bg-[#af350f] text-white px-4 py-2 rounded-lg hover:bg-[#922f08] transition">
-            Reservar
-        </a>
-    </div>
-</header>
-
-<script>
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('menu');
-    btn.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-    });
-</script>
-
-
-
-    <!-- SECCIÓN 1 -->
+    <!-- HERO -->
     <section class="h-screen flex items-center justify-center text-center text-white relative bg-cover bg-center"
         style="background-image: url('IMG/contenedor.png');">
         <div class="bg-black/50 absolute inset-0"></div>
@@ -67,95 +98,167 @@
             <p class="text-lg md:text-xl mb-11">Explora la naturaleza, vive experiencias únicas y conecta con tu lado
                 aventurero.</p>
             <a href="HTML/tours.html"
-                class="px-6 py-3 border-2 border-white text-white  hover:bg-white hover:text-gray-900 transition">Reserva
-                tu excursión</a>
+                class="px-6 py-3 border-2 border-white text-white hover:bg-white hover:text-gray-900 transition">
+                Reserva tu excursión
+            </a>
         </div>
     </section>
 
-<!-- SECCIÓN ACTIVIDADES -->
-<section class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl font-extrabold mb-12">Nuestras Actividades</h2>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <!-- Actividad 1 -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-            <a href="HTML/actividad1.html">
-                <img src="IMG/cuatro.JPG" alt="Trekking" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Senderos del Guardaparque</h3>
-                    <p class="text-gray-600 text-sm">
-                        Descubrí la esencia del campo en una caminata guiada por un guardaparque local.
-                    </p>
-                </div>
-        </a>
-        </div>
-
-            <!-- Actividad 2 -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-                <a href="HTML/actividad2.html">
-                <img src="IMG/kayak.png" alt="Actividades Acuáticas" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Aventura Extrema: Kayaks & Barrancas</h3>
-                    <p class="text-gray-600 text-sm">
-                        Un desafío total: remar, caminar y vivir la naturaleza en su estado puro.
-                    </p>
-                </div>
-        </a>
-        </div>
-
-            <!-- Actividad 3 -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-            <a href="HTML/actividad3.html">
-                <img src="IMG/rusa.png" alt="Gastronomía Rusa" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Raíces Rusas en San Javier</h3>
-                    <p class="text-gray-600 text-sm">
-                        Un viaje cultural y gastronómico que combina historia, música y naturaleza.
-                    </p>
-                </div>
-        </a>
-        </div>
-
-            <!-- Actividad 4 -->
-            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-                <a href="HTML/actividad4.html">
-                <img src="IMG/luna.png" alt="Hospedaje Rural" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Noche de Luna y Estrellas</h3>
-                    <p class="text-gray-600 text-sm">
-                    Una experiencia de astroturismo única, acampando bajo el cielo más puro.
-                    </p>
-                </div>
-            </div>
-            </a>
-        </div>
- 
-
-    <!-- Botón -->
-    <div class="mt-12">
-        <a href="HTML/tours.html"
-            class="inline-block bg-green-600 text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-green-700 transition">
-            Ver más actividades
-        </a>
+<!-- VIDEO + BIENVENIDA -->
+<section class="py-16 bg-gray-200 text-center px-6" >
+    <h2 class="text-3xl font-bold mb-4">Bienvenidos a San Javier Aventuras</h2>
+    <p class="max-w-xl mx-auto mb-11 text-black md:text-xl">
+        Somos un emprendimiento de turismo aventura en las áreas protegidas de San Javier, Departamento de Río
+        Negro, al oeste de Uruguay. Queremos brindarte experiencias al máximo, conectando con la naturaleza y la
+        aventura.
+    </p>
+    <div class="max-w-3xl mx-auto  overflow-hidden shadow-lg">
+        <video autoplay muted loop playsinline controls class="w-full h-auto">
+            <source src="" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
     </div>
-    </div>
-</div>
 </section>
 
+    <!-- ACTIVIDADES EN SWIPER -->
+    <section class="py-16 bg-white" >
+        <h2 class="text-3xl font-bold text-center mb-8">Sumate a la próxima salida!</h2>
 
+        <div class="relative max-w-md md:max-w-4xl mx-auto">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
 
-    <!-- REDES SOCIALES -->
-    <div class="fixed right-4 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-50">
-        <a href="#"><img src="IMG/logoinstagram.png" alt="Instagram" class="w-8 h-8"></a>
-        <a href="#"><img src="IMG/logofacebook.png" alt="Facebook" class="w-8 h-8"></a>
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+                            <a href="HTML/actividad1.html">
+                                <img src="IMG/cuatro.JPG" alt="Trekking" class="w-full h-64 object-cover">
+                                <div class="p-6 text-center">
+                                    <h3 class="text-xl font-bold mb-2">Senderos del Guardaparque</h3>
+                                    <p class="text-gray-600 text-sm">Caminata guiada por un guardaparque local.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+                            <a href="HTML/actividad2.html">
+                                <img src="IMG/kayak.png" alt="Kayak" class="w-full h-64 object-cover">
+                                <div class="p-6 text-center">
+                                    <h3 class="text-xl font-bold mb-2">Aventura Extrema: Kayaks & Barrancas</h3>
+                                    <p class="text-gray-600 text-sm">Remar, caminar y vivir la naturaleza en su estado
+                                        puro.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+                            <a href="HTML/actividad3.html">
+                                <img src="IMG/rusa.png" alt="Raíces Rusas" class="w-full h-64 object-cover">
+                                <div class="p-6 text-center">
+                                    <h3 class="text-xl font-bold mb-2">Raíces Rusas en San Javier</h3>
+                                    <p class="text-gray-600 text-sm">Historia, música y gastronomía local.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+                            <a href="HTML/actividad4.html">
+                                <img src="IMG/luna.png" alt="Astroturismo" class="w-full h-64 object-cover">
+                                <div class="p-6 text-center">
+                                    <h3 class="text-xl font-bold mb-2">Noche de Luna y Estrellas</h3>
+                                    <p class="text-gray-600 text-sm">Acampando bajo el cielo más puro.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Flechas afuera -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <!-- Paginación debajo -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- Botón Ver más -->
+        <div class="text-center mt-10">
+            <a href="HTML/tours.html"
+                class="inline-block bg-green-600 text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-green-700 transition">
+                Ver más actividades
+            </a>
+        </div>
+    </section>
+<!-- SECCIONES QUÉ OFRECEMOS -->
+<section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-6 grid gap-12 md:grid-cols-2 lg:grid-cols-4 text-center">
+
+        <div>
+            <img src="IMG/icon1.png" alt="Senderismo" class="mx-auto mb-4 w-20 h-20">
+            <h3 class="text-xl font-bold mb-2">Senderismo / Trekking</h3>
+            <p class="text-gray-700 text-sm">Explora los paisajes impresionantes de San Javier con nuestras rutas de
+                senderismo y trekking.</p>
+        </div>
+
+        <div>
+            <img src="IMG/icon2.png" alt="Travesías Extremas" class="mx-auto mb-4 w-20 h-20">
+            <h3 class="text-xl font-bold mb-2">Travesías Extremas</h3>
+            <p class="text-gray-700 text-sm">Desafíos únicos para los aventureros que buscan emociones al máximo.</p>
+        </div>
+
+        <div>
+            <img src="IMG/icon3.png" alt="Cabalgatas" class="mx-auto mb-4 w-20 h-20">
+            <h3 class="text-xl font-bold mb-2">Cabalgatas</h3>
+            <p class="text-gray-700 text-sm">Descubre la región a caballo disfrutando de la naturaleza intacta.</p>
+        </div>
+
+        <div>
+            <img src="IMG/icon4.png" alt="Música y Fogón" class="mx-auto mb-4 w-20 h-20">
+            <h3 class="text-xl font-bold mb-2">Música & Fogón</h3>
+            <p class="text-gray-700 text-sm">Disfruta de la cultura local con música, gastronomía y fogón bajo las
+                estrellas.</p>
+        </div>
+
     </div>
+</section>
 
-    <!-- BOTÓN DE CHAT -->
-     <div class="fixed bottom-6 right-6 px-6 py-3">
-    <a href="https://wa.link/4awoop"> <img src="IMG/wsp.png" alr="wsp" class="w-20 h-20"></a>
-    </div>
+    <!-- FOOTER -->
+    <footer class="py-12 bg-white text-center text-gray-700 mt-12">
+        <p class="mb-2">📞 +598 98 272 677 | ✉ silvimen2020@gmail.com</p>
+        <p>© 2025 San Javier Aventuras. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- SWIPER CONFIG -->
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+            }
+        });
+    </script>
 
 </body>
 
