@@ -15,7 +15,6 @@
 
         .hero {
             position: relative;
-            height: 70vh;
             background-image: url('../IMG/fondo.JPG');
             background-size: cover;
             background-position: center;
@@ -63,43 +62,43 @@
     <header class="fixed top-0 w-full bg-white shadow z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <!-- LOGO -->
-            <div class="flex items-center gap-3">
-                <a href="../index.html">
-                    <img src="../IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
-                    <div class="leading-tight">
-                        <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
-                        <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
-                </a>
-            </div>
-        </div>
-    
-        <!-- Botón hamburguesa solo en mobile -->
-        <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none">
-            ☰
-        </button>
-    
-        <!-- Links -->
-        <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white  md:static md:block md:w-auto">
-            <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
-                <li><a href="../index.html" class="hover:text-[#af350f]">Inicio</a></li>
-                <li><a href="tours.html" class="hover:text-[#af350f]">Tours</a></li>
-                <li><a href="https://www.airbnb.com.ar/rooms/1353875028897794866?search_mode=regular_search&adults=1&check_in=2025-09-08&check_out=2025-09-13&children=0&infants=0&pets=0&source_impression_id=p3_1756633803_P3eBmMBnCJXHQDgZ&previous_page_section_name=1000&federated_search_id=b912ce24-91a1-4b9f-9d6c-50e15539cf34" class="hover:text-[#af350f]">Hospedaje</a></li>
-            </ul>
-        </nav>
-    
-        <!-- Botón reservar -->
-        <a href="https://wa.link/2yu17o"
-            class="hidden md:inline-block ml-6 bg-[#af350f] text-white px-4 py-2 rounded-lg hover:bg-[#922f08] transition">
-            Reservar
-        </a>
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="../IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
+                <div class="leading-tight">
+                    <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
+                    <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
+                </div>
+            </a>
+
+            <!-- Botón hamburguesa solo en mobile -->
+            <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none">
+                ☰
+            </button>
+
+            <!-- Links -->
+            <nav id="menu"
+                class="hidden absolute top-full left-0 w-full bg-white shadow-md md:static md:block md:w-auto z-40">
+                <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
+                    <li><a href="../index.html" class="hover:text-[#af350f]">Inicio</a></li>
+                    <li><a href="tours.html" class="hover:text-[#af350f]">Tours</a></li>
+                    <li><a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
+                            class="hover:text-[#af350f]">Hospedaje</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botón reservar -->
+            <a href="https://wa.link/2yu17o"
+                class="hidden md:inline-block ml-6 bg-[#af350f] text-white px-4 py-2 rounded-lg hover:bg-[#922f08] transition">
+                Reservar
+            </a>
         </div>
     </header>
 
     <!-- HERO -->
-    <section class="hero flex items-center justify-center" style="height: 90vh; padding-top: 6rem;">
-        <div class="hero-content px-8 md:px-16">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-20">Conocé nuestra historia</h1>
-            <p class="text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
+    <section class="hero flex items-center justify-center h-[70vh] md:h-[90vh] pt-24">
+        <div class="hero-content px-6 sm:px-8 md:px-16">
+            <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-6 md:mb-20">Conocé nuestra historia</h1>
+            <p class="text-base sm:text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
                 San Javier es un rincón único de Uruguay, donde la cultura rusa se encuentra con la naturaleza más pura.
                 Aquí, entre campos, reservas naturales y tradiciones centenarias, nace nuestra historia familiar.
                 <br><br>
@@ -108,39 +107,43 @@
                 protegidos de San Javier.
                 <br><br>
                 Juntos, creamos experiencias que combinan historia, aventura y contacto con la naturaleza, para que cada
-                visitante
-                descubra la magia de este lugar desde una perspectiva única y familiar.
+                visitante descubra la magia de este lugar desde una perspectiva única y familiar.
             </p>
         </div>
     </section>
 
-
     <!-- HISTORIA FAMILIAR -->
     <section class="container mx-auto px-6 py-16">
         <h2 class="text-4xl font-bold text-center mb-12">Nosotros</h2>
-        <div class="grid md:grid-cols-3 gap-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
             <!-- Papá -->
             <div class="bg-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition">
                 <img src="../IMG/fabrcio.JPEG" alt="Papá" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
                 <h3 class="text-2xl font-semibold mb-2">Fabricio Mendieta</h3>
-                <p class="text-gray-700">Conoce cada sendero, cada rincón de las áreas protegidas de San Javier y transforma cada actividad en una experiencia
-                educativa y divertida. Su pasión por la naturaleza inspira a todos nuestros visitantes a conectar con el entorno y
-                cuidarlo.</p>
+                <p class="text-gray-700">Conoce cada sendero, cada rincón de las áreas protegidas de San Javier y
+                    transforma cada actividad en una experiencia
+                    educativa y divertida. Su pasión por la naturaleza inspira a todos nuestros visitantes a conectar
+                    con el entorno y
+                    cuidarlo.</p>
             </div>
             <!-- Mamá -->
             <div class="bg-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition">
                 <img src="../IMG/mariela.jpeg" alt="Mamá" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
                 <h3 class="text-2xl font-semibold mb-2">Mariela Logvinenko</h3>
-                <p class="text-gray-700">Trae consigo la riqueza de la cultura rusa a través de la gastronomía y la tradición. Cada comida, cada detalle en la
-                hospitalidad, refleja su amor por recibir y compartir la historia y cultura de su tierra, haciendo que cada visita sea
-                cálida e inolvidable.</p>
+                <p class="text-gray-700">Trae consigo la riqueza de la cultura rusa a través de la gastronomía y la
+                    tradición. Cada comida, cada detalle en la
+                    hospitalidad, refleja su amor por recibir y compartir la historia y cultura de su tierra, haciendo
+                    que cada visita sea
+                    cálida e inolvidable.</p>
             </div>
             <!-- Vos -->
             <div class="bg-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition">
                 <img src="../IMG/silvana.JPEG" alt="Yo" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
                 <h3 class="text-2xl font-semibold mb-2">Silvana Mendieta Logvinenko</h3>
-                <p class="text-gray-700">Se encarga de que todo funcione sin problemas: gestiona consultas, administra el hospedaje y coordina los detalles de
-                cada visita, para que los visitantes solo se preocupen por disfrutar y vivir la experiencia plenamente.</p>
+                <p class="text-gray-700">Se encarga de que todo funcione sin problemas: gestiona consultas, administra
+                    el hospedaje y coordina los detalles de
+                    cada visita, para que los visitantes solo se preocupen por disfrutar y vivir la experiencia
+                    plenamente.</p>
             </div>
         </div>
     </section>
@@ -148,22 +151,25 @@
     <!-- TESTIMONIOS -->
     <section class="bg-gray-100 py-16">
         <h2 class="text-4xl font-bold text-center mb-12">Lo que dicen nuestros visitantes</h2>
-        <div class="swiper swiper-testimonial container mx-auto px-6">
+        <div class="swiper swiper-testimonial container mx-auto px-6 sm:px-8">
             <div class="swiper-wrapper">
                 <div class="swiper-slide testimonial-card">
                     <img src="../IMG/iconcora.png" alt="Visitante 1">
-                    <p>"La amabilidad de Mariela y Fabricio es excepcional. Nos ofrecieron riquisima comida rusa, conversaciones interesantísimas y muchas ideas de planes turísticos. Tienen un hermoso parque, vale la pena volver!"
-                    </p>
+                    <p>"La amabilidad de Mariela y Fabricio es excepcional. Nos ofrecieron riquisima comida rusa,
+                        conversaciones interesantísimas y muchas ideas de planes turísticos. Tienen un hermoso parque,
+                        vale la pena volver!"</p>
                     <p class="font-semibold mt-2">– Adriana </p>
                 </div>
                 <div class="swiper-slide testimonial-card">
                     <img src="../IMG/iconcora.png" alt="Visitante 2">
-                    <p>"Excelente anfitriona, calidez humana en todo momento. Muy recomendable el lugar, familiar, confiable, respetuoso. Todo bellísimo."</p>
+                    <p>"Excelente anfitriona, calidez humana en todo momento. Muy recomendable el lugar, familiar,
+                        confiable, respetuoso. Todo bellísimo."</p>
                     <p class="font-semibold mt-2">– Jéssica</p>
                 </div>
                 <div class="swiper-slide testimonial-card">
                     <img src="../IMG/iconcora.png" alt="Visitante 3">
-                    <p>"Excelente atención, muy cordiales, volveremos para probar las comidas típicas y hacer las actividades que propone la zona."</p>
+                    <p>"Excelente atención, muy cordiales, volveremos para probar las comidas típicas y hacer las
+                        actividades que propone la zona."</p>
                     <p class="font-semibold mt-2">– Alejandro</p>
                 </div>
             </div>
@@ -173,13 +179,13 @@
     </section>
 
     <!-- HOSPEDAJE -->
-    <section class="container mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
+    <section class="container mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
         <img src="../IMG/sanjavier.jpg" alt="Hospedaje" class="rounded-3xl shadow-lg w-full h-96 object-cover">
         <div>
             <h2 class="text-4xl font-bold mb-6">Nuestro hospedaje</h2>
             <p class="text-gray-700 mb-6">Disfrutá de la tranquilidad de San Javier en nuestras casas y habitaciones
                 familiares. Todo pensado para que tu estadía sea inolvidable.</p>
-            <a href="https://www.airbnb.com.ar/rooms/1353875028897794866?search_mode=regular_search&adults=1&check_in=2025-09-08&check_out=2025-09-13&children=0&infants=0&pets=0&source_impression_id=p3_1756633803_P3eBmMBnCJXHQDgZ&previous_page_section_name=1000&federated_search_id=b912ce24-91a1-4b9f-9d6c-50e15539cf34" target="_blank"
+            <a href="https://www.airbnb.com.ar/rooms/1353875028897794866" target="_blank"
                 class="inline-block bg-[#af350f] text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-[#922f08] transition">Ver
                 disponibilidad</a>
         </div>
@@ -193,8 +199,10 @@
         </a>
     </section>
 
+    <!-- SCRIPTS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
+        // Swiper
         const swiperTestimonial = new Swiper('.swiper-testimonial', {
             loop: true,
             navigation: {
@@ -209,13 +217,17 @@
             slidesPerView: 1,
             spaceBetween: 20,
             breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                }
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
             }
+        });
+
+        // Menu hamburguesa
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
         });
     </script>
 
