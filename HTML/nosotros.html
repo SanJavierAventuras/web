@@ -76,8 +76,7 @@
             </button>
 
             <!-- Links -->
-            <nav id="menu"
-                class="hidden absolute top-full left-0 w-full bg-white md:static md:block md:w-auto z-40">
+            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white md:static md:block md:w-auto z-40">
                 <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
                     <li><a href="../index.html" class="hover:text-[#af350f]">Inicio</a></li>
                     <li><a href="tours.html" class="hover:text-[#af350f]">Tours</a></li>
@@ -95,10 +94,12 @@
     </header>
 
     <!-- HERO -->
-    <section class="hero flex items-center justify-center h-[70vh] md:h-[90vh] pt-24">
-        <div class="hero-content px-6 sm:px-8 md:px-16">
-            <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-6 md:mb-20">Conocé nuestra historia</h1>
-            <p class="text-base sm:text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
+    <section class="hero flex items-center justify-center min-h-[80vh] md:h-[90vh] pt-32 md:pt-24">
+        <div class="hero-content px-4 sm:px-8 md:px-16">
+            <h1 class="text-2xl sm:text-4xl md:text-6xl font-extrabold mb-6 md:mb-20 leading-snug">
+                Conocé nuestra historia
+            </h1>
+            <p class="text-sm sm:text-base md:text-xl max-w-3xl mx-auto leading-relaxed">
                 San Javier es un rincón único de Uruguay, donde la cultura rusa se encuentra con la naturaleza más pura.
                 Aquí, entre campos, reservas naturales y tradiciones centenarias, nace nuestra historia familiar.
                 <br><br>
@@ -121,29 +122,48 @@
                 <img src="../IMG/fabrcio.JPEG" alt="Papá" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
                 <h3 class="text-2xl font-semibold mb-2">Fabricio Mendieta</h3>
                 <p class="text-gray-700">Conoce cada sendero, cada rincón de las áreas protegidas de San Javier y
-                    transforma cada actividad en una experiencia
-                    educativa y divertida. Su pasión por la naturaleza inspira a todos nuestros visitantes a conectar
-                    con el entorno y
-                    cuidarlo.</p>
+                    transforma cada actividad en una experiencia educativa y divertida.</p>
             </div>
             <!-- Mamá -->
             <div class="bg-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition">
                 <img src="../IMG/mariela.jpeg" alt="Mamá" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
                 <h3 class="text-2xl font-semibold mb-2">Mariela Logvinenko</h3>
                 <p class="text-gray-700">Trae consigo la riqueza de la cultura rusa a través de la gastronomía y la
-                    tradición. Cada comida, cada detalle en la
-                    hospitalidad, refleja su amor por recibir y compartir la historia y cultura de su tierra, haciendo
-                    que cada visita sea
-                    cálida e inolvidable.</p>
+                    tradición, haciendo que cada visita sea cálida e inolvidable.</p>
             </div>
             <!-- Vos -->
             <div class="bg-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition">
                 <img src="../IMG/silvana.JPEG" alt="Yo" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
                 <h3 class="text-2xl font-semibold mb-2">Silvana Mendieta Logvinenko</h3>
-                <p class="text-gray-700">Se encarga de que todo funcione sin problemas: gestiona consultas, administra
-                    el hospedaje y coordina los detalles de
-                    cada visita, para que los visitantes solo se preocupen por disfrutar y vivir la experiencia
-                    plenamente.</p>
+                <p class="text-gray-700">Se encarga de que todo funcione sin problemas: gestiona consultas y coordina
+                    los detalles para que los visitantes solo disfruten.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAMILIAS AMIGAS -->
+    <section class="container mx-auto px-6 py-16">
+        <h2 class="text-4xl font-bold text-center mb-12">Familias amigas</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <!-- Daniel & Monica -->
+            <div class="bg-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition">
+                <img src="../IMG/daniel-monica.jpg" alt="Daniel y Monica"
+                    class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
+                <h3 class="text-2xl font-semibold mb-2">Daniel &amp; Monica</h3>
+                <p class="text-gray-700">
+                    Una pareja apasionada por la naturaleza y las tradiciones locales, siempre presentes en nuestras
+                    actividades y encuentros familiares.
+                </p>
+            </div>
+            <!-- Carla & Eduard -->
+            <div class="bg-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition">
+                <img src="../IMG/carla-eduard.jpg" alt="Carla y Eduard"
+                    class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
+                <h3 class="text-2xl font-semibold mb-2">Carla &amp; Eduard</h3>
+                <p class="text-gray-700">
+                    Amigos entrañables que aportan alegría y hospitalidad, compartiendo experiencias únicas del campo con quienes
+                    nos visitan.
+                </p>
             </div>
         </div>
     </section>
@@ -155,21 +175,19 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide testimonial-card">
                     <img src="../IMG/iconcora.png" alt="Visitante 1">
-                    <p>"La amabilidad de Mariela y Fabricio es excepcional. Nos ofrecieron riquisima comida rusa,
-                        conversaciones interesantísimas y muchas ideas de planes turísticos. Tienen un hermoso parque,
+                    <p>"La amabilidad de Mariela y Fabricio es excepcional. Riquísima comida rusa y un hermoso parque,
                         vale la pena volver!"</p>
                     <p class="font-semibold mt-2">– Adriana </p>
                 </div>
                 <div class="swiper-slide testimonial-card">
                     <img src="../IMG/iconcora.png" alt="Visitante 2">
-                    <p>"Excelente anfitriona, calidez humana en todo momento. Muy recomendable el lugar, familiar,
-                        confiable, respetuoso. Todo bellísimo."</p>
+                    <p>"Excelente anfitriona, calidez humana en todo momento. Muy recomendable el lugar."</p>
                     <p class="font-semibold mt-2">– Jéssica</p>
                 </div>
                 <div class="swiper-slide testimonial-card">
                     <img src="../IMG/iconcora.png" alt="Visitante 3">
-                    <p>"Excelente atención, muy cordiales, volveremos para probar las comidas típicas y hacer las
-                        actividades que propone la zona."</p>
+                    <p>"Excelente atención, muy cordiales. Volveremos para probar las comidas típicas y actividades."
+                    </p>
                     <p class="font-semibold mt-2">– Alejandro</p>
                 </div>
             </div>
@@ -180,14 +198,16 @@
 
     <!-- HOSPEDAJE -->
     <section class="container mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-        <img src="../IMG/sanjavier.jpg" alt="Hospedaje" class="rounded-3xl shadow-lg w-full h-96 object-cover">
+        <img src="../IMG/sanjavier.jpg" alt="Hospedaje"
+            class="rounded-3xl shadow-lg w-full h-64 sm:h-80 md:h-96 object-contain md:object-cover mx-auto">
         <div>
             <h2 class="text-4xl font-bold mb-6">Nuestro hospedaje</h2>
             <p class="text-gray-700 mb-6">Disfrutá de la tranquilidad de San Javier en nuestras casas y habitaciones
                 familiares. Todo pensado para que tu estadía sea inolvidable.</p>
             <a href="https://www.airbnb.com.ar/rooms/1353875028897794866" target="_blank"
-                class="inline-block bg-[#af350f] text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-[#922f08] transition">Ver
-                disponibilidad</a>
+                class="inline-block bg-[#af350f] text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-[#922f08] transition">
+                Ver disponibilidad
+            </a>
         </div>
     </section>
 
