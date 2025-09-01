@@ -44,16 +44,35 @@
         });
     </script>
 
-    <!-- HERO DE LA ACTIVIDAD -->
-    <section class="h-[60vh] md:h-[80vh] bg-cover bg-center relative flex items-center justify-center"
-        style="background-image: url('../IMG/rusa.png');">
-        <div class="bg-black/50 absolute inset-0"></div>
-        <div class="relative z-10 text-center px-6">
-            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Raíces Rusas en San Javier</h1>
-            <p class="text-white text-base md:text-lg max-w-2xl mx-auto">Descubrí la cultura, gastronomía y naturaleza
-                de San Javier en una experiencia cultural y natural única.</p>
+<!-- HERO DE LA ACTIVIDAD CON IMAGEN -->
+<section class="h-[60vh] md:h-[80vh] relative flex items-center justify-center overflow-hidden bg-cover bg-center"
+    style="background-image: url('../IMG/sanjavier.jpg');">
+
+    <!-- Overlay oscuro -->
+    <div class="bg-black/50 absolute inset-0"></div>
+
+    <!-- Contenido sobre la imagen -->
+    <div class="relative z-10 text-center px-6">
+        <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Raíces Rusas en San Javier</h1>
+        <p class="text-white text-base md:text-lg max-w-2xl mx-auto">
+            Descubrí la cultura, gastronomía y naturaleza de San Javier en una experiencia cultural y natural única.
+        </p>
+    </div>
+</section>
+
+
+<section class="py-16 bg-gray-100 text-center">
+    <h2 class="text-3xl font-bold mb-6">Vive la experiencia en video</h2>
+    <div class="max-w-4xl mx-auto">
+        <div class="relative" style="padding-top: 56.25%;"> <!-- 16:9 ratio -->
+            <iframe class="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
+                src="https://www.youtube.com/embed/3rnNYymQELY?autoplay=1&mute=1&loop=1&playlist=3rnNYymQELY"
+                title="Raíces Rusas en San Javier" frameborder="0" allow="autoplay; encrypted-media; fullscreen"
+                allowfullscreen>
+            </iframe>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- DESCRIPCIÓN -->
     <section class="container mx-auto px-6 py-12">
