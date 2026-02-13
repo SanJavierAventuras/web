@@ -6,114 +6,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rutas de los Arenales y Cueva del Indio - San Javier</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Favicon -->
+
+    <style>
+        #carousel img {
+            transition: opacity 0.5s ease-in-out;
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+
+        #carousel {
+            position: relative;
+            width: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            padding: 0.5rem 0.8rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .left-btn {
+            left: 0.5rem;
+        }
+
+        .right-btn {
+            right: 0.5rem;
+        }
+    </style>
+
     <link rel="icon" type="image/png" href="../IMG/pestana.png">
 </head>
 
 <body class="bg-gray-50 font-sans text-gray-800">
 
-    <!-- NAVBAR -->
     <header class="fixed top-0 w-full bg-white shadow z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="../index.html" class="flex items-center gap-3">
-                <img src="../IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
-                <div class="leading-tight">
+                <img src="../IMG/logo.png" class="w-12 h-12 object-contain">
+                <div>
                     <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
                     <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
                 </div>
             </a>
 
-            <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none">☰</button>
+            <button id="menu-btn" class="md:hidden text-gray-700 text-3xl">☰</button>
 
             <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white md:static md:block md:w-auto z-40">
                 <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
                     <li><a href="../index.html" class="hover:text-[#af350f]">Inicio</a></li>
                     <li><a href="tours.html" class="hover:text-[#af350f]">Tours</a></li>
-                    <li><a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
-                            class="hover:text-[#af350f]">Hospedaje</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <script>
-        const btn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
-
-    <!-- HERO DE LA ACTIVIDAD -->
+    <!-- HERO -->
     <section class="h-[60vh] md:h-[80vh] bg-cover bg-center relative flex items-center justify-center"
         style="background-image: url('../IMG/campo.JPG');">
         <div class="bg-black/50 absolute inset-0"></div>
         <div class="relative z-10 text-center px-6">
-            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Rutas de los Arenales y Cueva del Indio</h1>
-            <p class="text-white text-base md:text-lg max-w-2xl mx-auto">
-                Viví un trekking guiado de 2 días por médanos, cuevas de indios, praderas, blanqueales y arenales. Una experiencia de
-                inmersión en la naturaleza que incluye hospedaje en San Javier, cena y desayuno, combinando aventura, paisaje y
-                conocimiento del territorio.
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">
+                Rutas de los Arenales y Cueva del Indio
+            </h1>
+            <p class="text-white max-w-2xl mx-auto">
+                Trekking guiado de 2 días por médanos, cuevas y praderas.
             </p>
         </div>
     </section>
 
-    <!-- DESCRIPCIÓN Y DETALLES -->
-    <section class="container mx-auto px-6 py-12">
-        <h2 class="text-2xl md:text-3xl font-bold mb-6">Detalles de la actividad</h2>
-        <p class="text-gray-700 mb-4">
-            Una experiencia inolvidable que combina caminatas por médanos, senderos históricos y actividades culturales.
-        </p>
-        <ul class="text-gray-700 mb-6 space-y-2">
-            <li>📍 San Javier - Ofir</li>
-            <li>🥾 10 km</li>
-            <li>🕢 2 días</li>
-            <li>🔥 Nivel: Medio</li>
-        </ul>
+    <!-- CONTENIDO + CARRUSEL -->
+    <section class="container mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12">
 
-        <h3 class="text-xl font-semibold mb-4">Itinerario</h3>
+        <!-- TEXTO -->
+        <div class="flex flex-col gap-8">
 
-        <div class="bg-white rounded-2xl shadow-md p-6 mb-8">
-            <h4 class="font-bold mb-2">Día 1</h4>
-            <ul class="list-disc list-inside space-y-1 text-gray-700">
-                <li>09:00 – Bienvenida con desayuno y traslado al predio rural natural</li>
-                <li>10:30 – Comienzo del trekking guiado</li>
-                <li>13:30 – Picnic sobre las barrancas</li>
-                <li>14:15 – Regreso</li>
-                <li>20:00 – Cena de confraternidad con comidas típicas</li>
-            </ul>
+            <div class="bg-white rounded-3xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold mb-4">Detalles</h2>
+                <ul class="space-y-2 text-gray-700">
+                    <li>📍 San Javier - Ofir</li>
+                    <li>🥾 10 km</li>
+                    <li>🕢 2 días</li>
+                    <li>🔥 Nivel: Medio</li>
+                </ul>
+            </div>
 
-            <h4 class="font-bold mt-4 mb-2">Día 2</h4>
-            <ul class="list-disc list-inside space-y-1 text-gray-700">
-                <li>08:30 – Desayuno</li>
-       
-            </ul>
+            <div class="bg-white rounded-3xl shadow-lg p-8">
+                <h2 class="text-2xl font-bold mb-4">Itinerario</h2>
+
+                <h4 class="font-bold mt-2">Día 1</h4>
+                <ul class="list-disc list-inside space-y-1 text-gray-700 mb-4">
+                    <li>09:00 – Bienvenida</li>
+                    <li>10:30 – Inicio trekking</li>
+                    <li>13:30 – Picnic</li>
+                    <li>20:00 – Cena típica</li>
+                </ul>
+
+                <h4 class="font-bold">Día 2</h4>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li>09:00 – Desayuno sobre las barrancas</li>
+                    <li>10:00 – Regreso a casa</li>
+                </ul>
+            </div>
+
         </div>
 
-    <!-- VIDEO -->
-    <section class="py-12 text-center">
-        <h2 class="text-3xl font-bold mb-6">Vive la experiencia en video</h2>
-        <div class="relative" style="padding-top: 56.25%;"> <!-- 16:9 ratio -->
-            <iframe class="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/g3m2dYKa82g?si=KCi1fg80yqxNPZtu&autoplay=1&mute=1"
-                title="Rutas de los Arenales y Cueva del Indio" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
+        <!-- CARRUSEL + VIDEO -->
+        <div class="flex flex-col gap-8">
+
+            <div id="carousel" class="relative w-full h-64 md:h-96">
+                <img src="../IMG/trekking.png" alt="Imagen 1">
+                <img src="../IMG/cue.JPG" alt="Imagen 2" class="opacity-0">
+                <img src="../IMG/sendero4.JPG" alt="Imagen 3" class="opacity-0">
+                <button class="carousel-button left-btn" id="prev">◀</button>
+                <button class="carousel-button right-btn" id="next">▶</button>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-lg p-6">
+                <h2 class="text-2xl font-bold mb-4 text-center">Video</h2>
+                <iframe class="w-full h-64 rounded-xl" src="https://www.youtube.com/embed/g3m2dYKa82g"
+                    allowfullscreen></iframe>
+            </div>
+
         </div>
+
     </section>
 
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
 
-        <p class="text-gray-800 font-bold text-lg mt-6">Consultar disponibilidad y costo</p>
-    </section>
+        const carouselImages = document.querySelectorAll('#carousel img');
+        const nextBtn = document.getElementById('next');
+        const prevBtn = document.getElementById('prev');
+        let current = 0;
 
-    <!-- CTA FINAL -->
-    <section class="py-12 text-center">
-        <a href="https://wa.link/ngaba9"
-            class="inline-block bg-green-600 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-green-700 transition-transform transform hover:scale-105">
-            Reservá tu experiencia
-        </a>
-    </section>
+        function showImage(index) {
+            carouselImages.forEach((img, i) => {
+                img.style.opacity = i === index ? '1' : '0';
+            });
+        }
+
+        nextBtn.addEventListener('click', () => {
+            current = (current + 1) % carouselImages.length;
+            showImage(current);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            current = (current - 1 + carouselImages.length) % carouselImages.length;
+            showImage(current);
+        });
+
+        setInterval(() => {
+            current = (current + 1) % carouselImages.length;
+            showImage(current);
+        }, 5000);
+    </script>
 
 </body>
 
