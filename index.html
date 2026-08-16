@@ -7,12 +7,12 @@
 
     <!-- SEO -->
     <title>Actividades San Javier - Turismo en Esteros de Farrapos Uruguay</title>
-    <meta name="description"
-        content="Actividades San Javier: hospedaje, kayak en Esteros de Farrapos, turismo cultural y naturaleza en Río Negro, Uruguay.">
 
-    <!-- Palabras clave (opcional) -->
+    <meta name="description"
+        content="Actividades San Javier: hospedaje, kayak, senderismo, cabalgatas, turismo cultural y naturaleza en Río Negro, Uruguay.">
+
     <meta name="keywords"
-        content="San Javier, hospedaje San Javier, San Javier Uruguay, turismo Uruguay, Esteros de Farrapos, kayak Esteros de Farrapos, San Javier actividades, San Javier turismo, Uruguay">
+        content="San Javier, hospedaje San Javier, San Javier Uruguay, turismo Uruguay, Esteros de Farrapos, kayak Esteros de Farrapos, cabalgatas San Javier, trekking San Javier, San Javier actividades, San Javier turismo, Uruguay">
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,15 +20,18 @@
     <!-- Favicon -->
     <link rel="icon" href="IMG/pestana.png" type="image/png">
 
-    <!-- SWIPER -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <style>
-        /* Ajustes de Swiper */
+        html {
+            scroll-behavior: smooth;
+        }
+
         .swiper-pagination {
             position: relative !important;
-            /* no superpuesta */
             margin-top: 20px;
         }
 
@@ -39,7 +42,6 @@
             transform: translateY(-50%);
         }
 
-        /* Más afuera de las tarjetas */
         .swiper-button-next {
             right: -40px;
         }
@@ -48,221 +50,684 @@
             left: -40px;
         }
 
-        /* Asegurar tamaño grande en mobile */
         .swiper-button-next::after,
         .swiper-button-prev::after {
             font-size: 24px;
             font-weight: bold;
+        }
+
+        .review-stars {
+            color: #eab308;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 767px) {
+            .swiper-button-next {
+                right: 5px;
+            }
+
+            .swiper-button-prev {
+                left: 5px;
+            }
         }
     </style>
 </head>
 
 <body class="font-sans bg-gray-50">
 
+
+    <!-- ========================================== -->
     <!-- NAVBAR -->
+    <!-- ========================================== -->
+
     <header class="fixed top-0 w-full bg-white shadow z-50">
+
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
             <!-- LOGO -->
             <a href="index.html" class="flex items-center gap-3">
-                <img src="IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
+
+                <img src="IMG/logo.png" alt="Logo San Javier Experiencias" class="w-12 h-12 object-contain">
+
                 <div class="leading-tight">
-                    <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
-                    <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
+
+                    <span class="block text-2xl md:text-3xl font-bold">
+                        San Javier
+                    </span>
+
+                    <span class="block text-sm md:text-base text-[#af350f]">
+                        Cultura y Naturaleza
+                    </span>
+
                 </div>
+
             </a>
 
-            <!-- Botón hamburguesa en mobile -->
-            <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none">☰</button>
 
-            <!-- Links -->
-            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white md:static md:block md:w-auto">
-                <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
-                    <li><a href="HTML/nosotros.html" class="hover:text-[#af350f]">Nosotros</a></li>
-                    <li><a href="HTML/tours.html" class="hover:text-[#af350f]">Tours</a></li>
-                    <li><a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
-                            class="hover:text-[#af350f]">Hospedaje</a></li>
+            <!-- HAMBURGUESA -->
+            <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none" aria-label="Abrir menú">
+
+                ☰
+
+            </button>
+
+
+            <!-- MENÚ -->
+            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white shadow-md
+                md:shadow-none md:static md:block md:w-auto">
+
+                <ul class="flex flex-col md:flex-row gap-4 md:gap-6
+                    text-gray-700 font-medium p-4 md:p-0">
+
+                    <li>
+                        <a href="HTML/nosotros.html" class="hover:text-[#af350f] transition">
+
+                            Nosotros
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="HTML/tours.html" class="hover:text-[#af350f] transition">
+
+                            Tours
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
+                            class="hover:text-[#af350f] transition">
+
+                            Hospedaje
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#resenas" class="hover:text-[#af350f] transition">
+
+                            Reseñas
+
+                        </a>
+                    </li>
+
                 </ul>
+
             </nav>
 
-            <!-- Botón reservar -->
-            <a href="https://wa.link/2yu17o"
-                class="hidden md:inline-block ml-6 bg-[#af350f] text-white px-4 py-2 rounded-lg hover:bg-[#922f08] transition">
+
+            <!-- RESERVAR -->
+            <a href="https://wa.link/2yu17o" class="hidden md:inline-block ml-6 bg-[#af350f] text-white
+                px-4 py-2 rounded-lg hover:bg-[#922f08] transition">
+
                 Reservar
+
             </a>
+
         </div>
+
     </header>
 
-    <script>
-        const btn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
 
+
+    <!-- ========================================== -->
     <!-- HERO -->
-    <section class="h-screen flex items-center justify-center text-center text-white relative bg-cover bg-center"
-        style="background-image: url('IMG/contenedor.png');">
+    <!-- ========================================== -->
+
+    <section class="h-screen flex items-center justify-center text-center
+        text-white relative bg-cover bg-center" style="background-image: url('IMG/contenedor.png');">
+
         <div class="bg-black/50 absolute inset-0"></div>
+
         <div class="relative z-10 px-6">
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">VIVÍ TU PRÓXIMA <br> AVENTURA DE
-                SENDERISMO</h1>
-            <p class="text-lg md:text-xl mb-11">Explora la naturaleza, vive experiencias únicas y conecta con tu lado
-                aventurero.</p>
-            <a href="HTML/tours.html"
-                class="px-6 py-3 border-2 border-white text-white hover:bg-white hover:text-gray-900 transition">
+
+            <h1 class="text-4xl md:text-6xl font-extrabold
+                leading-tight mb-6">
+
+                VIVÍ TU PRÓXIMA <br>
+                AVENTURA DE SENDERISMO
+
+            </h1>
+
+            <p class="text-lg md:text-xl mb-11">
+
+                Explora la naturaleza, vive experiencias únicas
+                y conecta con tu lado aventurero.
+
+            </p>
+
+            <a href="HTML/tours.html" class="px-6 py-3 border-2 border-white text-white
+                hover:bg-white hover:text-gray-900 transition">
+
                 Reserva tu excursión
+
             </a>
+
         </div>
+
     </section>
 
 
 
+    <!-- ========================================== -->
+    <!-- ACTIVIDADES -->
+    <!-- ========================================== -->
 
-    <!-- ACTIVIDADES EN SWIPER -->
-    <section class="py-16 bg-white" >
-        <h2 class="text-3xl font-bold text-center mb-8">Sumate a la próxima salida!</h2>
+    <section class="py-16 bg-white">
+
+        <h2 class="text-3xl font-bold text-center mb-8">
+            ¡Sumate a la próxima salida!
+        </h2>
+
 
         <div class="relative max-w-md md:max-w-4xl mx-auto">
+
+
             <div class="swiper mySwiper">
+
                 <div class="swiper-wrapper">
 
-                    <!-- Slide 1 -->
+
+                    <!-- ACTIVIDAD 1 -->
                     <div class="swiper-slide">
+
                         <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+
                             <a href="HTML/actividad1.html">
-                                <img src="IMG/sendero1.JPG" alt="Trekking" class="w-full h-64 object-cover">
+
+                                <img src="IMG/sendero1.JPG" alt="Trekking en San Javier"
+                                    class="w-full h-64 object-cover">
+
                                 <div class="p-6 text-center">
-                                    <h3 class="text-xl font-bold mb-2">Senderismo a campo abierto</h3>
-                                    <p class="text-gray-600 text-sm">Caminata guiada por local.</p>
+
+                                    <h3 class="text-xl font-bold mb-2">
+                                        Senderismo a campo abierto
+                                    </h3>
+
+                                    <p class="text-gray-600 text-sm">
+                                        Caminata guiada por local.
+                                    </p>
+
                                 </div>
+
                             </a>
+
                         </div>
+
                     </div>
 
-                    <!-- Slide 2 -->
+
+
+                    <!-- ACTIVIDAD 2 -->
                     <div class="swiper-slide">
+
                         <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+
                             <a href="HTML/actividad2.html">
-                                <img src="IMG/kayak.png" alt="Kayak" class="w-full h-64 object-cover">
+
+                                <img src="IMG/kayak.png" alt="Kayak y barrancas" class="w-full h-64 object-cover">
+
                                 <div class="p-6 text-center">
-                                    <h3 class="text-xl font-bold mb-2">Aventura Extrema: Kayaks & Barrancas</h3>
-                                    <p class="text-gray-600 text-sm">Remar, caminar y vivir la naturaleza en su estado
-                                        puro.</p>
+
+                                    <h3 class="text-xl font-bold mb-2">
+                                        Aventura Extrema: Kayaks & Barrancas
+                                    </h3>
+
+                                    <p class="text-gray-600 text-sm">
+                                        Remar, caminar y vivir la naturaleza
+                                        en su estado puro.
+                                    </p>
+
                                 </div>
+
                             </a>
+
                         </div>
+
                     </div>
 
-                    <!-- Slide 3 -->
+
+
+                    <!-- ACTIVIDAD 3 -->
                     <div class="swiper-slide">
+
                         <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+
                             <a href="HTML/actividad3.html">
-                                <img src="IMG/rusa.png" alt="Raíces Rusas" class="w-full h-64 object-cover">
+
+                                <img src="IMG/rusa.png" alt="Raíces Rusas en San Javier"
+                                    class="w-full h-64 object-cover">
+
                                 <div class="p-6 text-center">
-                                    <h3 class="text-xl font-bold mb-2">Raíces Rusas en San Javier</h3>
-                                    <p class="text-gray-600 text-sm">Historia, música y gastronomía local.</p>
+
+                                    <h3 class="text-xl font-bold mb-2">
+                                        Raíces Rusas en San Javier
+                                    </h3>
+
+                                    <p class="text-gray-600 text-sm">
+                                        Historia, música y gastronomía local.
+                                    </p>
+
                                 </div>
+
                             </a>
+
                         </div>
+
                     </div>
 
-                    <!-- Slide 4 -->
+
+
+                    <!-- ACTIVIDAD 4 -->
                     <div class="swiper-slide">
+
                         <div class="bg-gray-50 rounded-2xl shadow-lg overflow-hidden">
+
                             <a href="HTML/actividad4.html">
-                                <img src="IMG/luna.png" alt="Astroturismo" class="w-full h-64 object-cover">
+
+                                <img src="IMG/luna.png" alt="Astroturismo en San Javier"
+                                    class="w-full h-64 object-cover">
+
                                 <div class="p-6 text-center">
-                                    <h3 class="text-xl font-bold mb-2">Noche de Luna y Estrellas</h3>
-                                    <p class="text-gray-600 text-sm">Acampando bajo el cielo más puro.</p>
+
+                                    <h3 class="text-xl font-bold mb-2">
+                                        Noche de Luna y Estrellas
+                                    </h3>
+
+                                    <p class="text-gray-600 text-sm">
+                                        Acampando bajo el cielo más puro.
+                                    </p>
+
                                 </div>
+
                             </a>
+
                         </div>
+
                     </div>
 
                 </div>
+
             </div>
 
-            <!-- Flechas afuera -->
+
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
 
-            <!-- Paginación debajo -->
             <div class="swiper-pagination"></div>
+
         </div>
 
-        <!-- Botón Ver más -->
+
+
         <div class="text-center mt-10">
-            <a href="HTML/tours.html"
-                class="inline-block bg-green-600 text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-green-700 transition">
+
+            <a href="HTML/tours.html" class="inline-block bg-green-600 text-white
+                px-8 py-3 rounded-full font-semibold shadow-md
+                hover:bg-green-700 transition">
+
                 Ver más actividades
+
             </a>
+
         </div>
+
     </section>
-<!-- SECCIONES QUÉ OFRECEMOS -->
-<section class="py-16 bg-gray-100">
-    <div class="container mx-auto px-6 grid gap-12 md:grid-cols-2 lg:grid-cols-4 text-center">
 
-        <div>
-            <img src="IMG/icon1.png" alt="Senderismo" class="mx-auto mb-4 w-20 h-20">
-            <h3 class="text-xl font-bold mb-2">Senderismo / Trekking</h3>
-            <p class="text-gray-700 text-sm">Explora los paisajes impresionantes de San Javier con nuestras rutas de
-                senderismo y trekking.</p>
+
+
+    <!-- ========================================== -->
+    <!-- QUÉ OFRECEMOS -->
+    <!-- ========================================== -->
+
+    <section class="py-16 bg-gray-100">
+
+        <div class="container mx-auto px-6 grid gap-12
+            md:grid-cols-2 lg:grid-cols-4 text-center">
+
+
+            <!-- Senderismo -->
+            <div>
+
+                <img src="IMG/icon1.png" alt="Senderismo" class="mx-auto mb-4 w-20 h-20">
+
+                <h3 class="text-xl font-bold mb-2">
+                    Senderismo / Trekking
+                </h3>
+
+                <p class="text-gray-700 text-sm">
+                    Explora los paisajes impresionantes de San Javier
+                    con nuestras rutas de senderismo y trekking.
+                </p>
+
+            </div>
+
+
+            <!-- Travesías -->
+            <div>
+
+                <img src="IMG/icon2.png" alt="Travesías Extremas" class="mx-auto mb-4 w-20 h-20">
+
+                <h3 class="text-xl font-bold mb-2">
+                    Travesías Extremas
+                </h3>
+
+                <p class="text-gray-700 text-sm">
+                    Desafíos únicos para los aventureros que buscan
+                    emociones al máximo.
+                </p>
+
+            </div>
+
+
+            <!-- Cabalgatas -->
+            <div>
+
+                <img src="IMG/icon3.png" alt="Cabalgatas" class="mx-auto mb-4 w-20 h-20">
+
+                <h3 class="text-xl font-bold mb-2">
+                    Cabalgatas
+                </h3>
+
+                <p class="text-gray-700 text-sm">
+                    Descubre la región a caballo disfrutando
+                    de la naturaleza intacta.
+                </p>
+
+            </div>
+
+
+            <!-- Música -->
+            <div>
+
+                <img src="IMG/icon4.png" alt="Música y Fogón" class="mx-auto mb-4 w-20 h-20">
+
+                <h3 class="text-xl font-bold mb-2">
+                    Música & Fogón
+                </h3>
+
+                <p class="text-gray-700 text-sm">
+                    Disfruta de la cultura local con música,
+                    gastronomía y fogón bajo las estrellas.
+                </p>
+
+            </div>
+
         </div>
 
-        <div>
-            <img src="IMG/icon2.png" alt="Travesías Extremas" class="mx-auto mb-4 w-20 h-20">
-            <h3 class="text-xl font-bold mb-2">Travesías Extremas</h3>
-            <p class="text-gray-700 text-sm">Desafíos únicos para los aventureros que buscan emociones al máximo.</p>
+    </section>
+
+
+
+    <!-- ========================================== -->
+    <!-- RESEÑAS -->
+    <!-- ========================================== -->
+
+    <section id="resenas" class="py-20 bg-white">
+
+        <div class="container mx-auto px-6">
+
+
+            <!-- TÍTULO -->
+            <div class="text-center max-w-2xl mx-auto mb-12">
+
+                <p class="text-[#af350f] font-semibold uppercase
+                    tracking-wider text-sm mb-2">
+
+                    Experiencias reales
+
+                </p>
+
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+
+                    Lo que cuentan quienes nos visitaron
+
+                </h2>
+
+                <p class="text-gray-600">
+
+                    Cada aventura deja una historia.
+                    Conocé la experiencia de quienes ya descubrieron
+                    San Javier con nosotros.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- RESEÑAS -->
+            <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+
+                <!-- RESEÑA VACÍA 1 -->
+                <div class="bg-gray-50 rounded-2xl p-7 shadow-md
+                    hover:shadow-lg transition flex flex-col">
+
+                    <div class="review-stars text-xl mb-4">
+                        ★★★★★
+                    </div>
+
+                    <p class="text-gray-700 leading-relaxed
+                        italic flex-grow">
+
+                        “Próximamente vas a encontrar aquí
+                        las experiencias de quienes nos visitaron.”
+
+                    </p>
+
+                    <div class="border-t border-gray-200 mt-6 pt-5">
+
+                        <p class="font-bold text-gray-900">
+                            San Javier Experiencias
+                        </p>
+
+                        <p class="text-sm text-gray-500">
+                            Río Negro · Uruguay
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RESEÑA VACÍA 2 -->
+                <div class="bg-gray-50 rounded-2xl p-7 shadow-md
+                    hover:shadow-lg transition flex flex-col">
+
+                    <div class="review-stars text-xl mb-4">
+                        ★★★★★
+                    </div>
+
+                    <p class="text-gray-700 leading-relaxed
+                        italic flex-grow">
+
+                        “Este espacio está reservado para
+                        las historias de nuestros viajeros.”
+
+                    </p>
+
+                    <div class="border-t border-gray-200 mt-6 pt-5">
+
+                        <p class="font-bold text-gray-900">
+                            Experiencias reales
+                        </p>
+
+                        <p class="text-sm text-gray-500">
+                            🌎 Viajeros de distintos lugares
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RESEÑA VACÍA 3 -->
+                <div class="bg-gray-50 rounded-2xl p-7 shadow-md
+                    hover:shadow-lg transition flex flex-col">
+
+                    <div class="review-stars text-xl mb-4">
+                        ★★★★★
+                    </div>
+
+                    <p class="text-gray-700 leading-relaxed
+                        italic flex-grow">
+
+                        “¿Ya nos visitaste?
+                        Nos encantaría conocer tu opinión.”
+
+                    </p>
+
+                    <div class="border-t border-gray-200 mt-6 pt-5">
+
+                        <p class="font-bold text-gray-900">
+                            Compartí tu historia
+                        </p>
+
+                        <p class="text-sm text-gray-500">
+                            San Javier · Río Negro
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BOTÓN -->
+            <div class="text-center mt-12">
+
+                <p class="text-gray-600 mb-5">
+                    ¿Ya viviste una experiencia con nosotros?
+                </p>
+
+                <a href="HTML/formulario.html" class="inline-flex items-center gap-2
+                    bg-[#af350f] text-white px-8 py-3 rounded-lg
+                    font-semibold shadow-md hover:bg-[#922f08]
+                    hover:shadow-lg transition">
+
+                    <span>★</span>
+
+                    Dejanos tu reseña
+
+                </a>
+
+                <p class="text-xs text-gray-400 mt-3">
+                    Tu opinión nos ayuda a seguir creciendo.
+                </p>
+
+            </div>
+
         </div>
 
-        <div>
-            <img src="IMG/icon3.png" alt="Cabalgatas" class="mx-auto mb-4 w-20 h-20">
-            <h3 class="text-xl font-bold mb-2">Cabalgatas</h3>
-            <p class="text-gray-700 text-sm">Descubre la región a caballo disfrutando de la naturaleza intacta.</p>
-        </div>
+    </section>
 
-        <div>
-            <img src="IMG/icon4.png" alt="Música y Fogón" class="mx-auto mb-4 w-20 h-20">
-            <h3 class="text-xl font-bold mb-2">Música & Fogón</h3>
-            <p class="text-gray-700 text-sm">Disfruta de la cultura local con música, gastronomía y fogón bajo las
-                estrellas.</p>
-        </div>
 
-    </div>
-</section>
 
+    <!-- ========================================== -->
     <!-- FOOTER -->
-    <footer class="py-12 bg-white text-center text-gray-700 mt-12">
-        <p class="mb-2">📞 +598 91 009 934 | 📷 ig: @SanJavierExperiencias</p>
-        <p>© 2025 San Javier Aventuras. Todos los derechos reservados.</p>
+    <!-- ========================================== -->
+
+    <footer class="py-12 bg-gray-100 text-center text-gray-700">
+
+        <p class="mb-2">
+            📞 +598 91 009 934 |
+            📷 @SanJavierExperiencias
+        </p>
+
+        <p>
+            © 2026 San Javier Experiencias.
+            Todos los derechos reservados.
+        </p>
+
     </footer>
 
-    <!-- SWIPER CONFIG -->
+
+
+    <!-- ========================================== -->
+    <!-- SWIPER -->
+    <!-- ========================================== -->
+
     <script>
+
         const swiper = new Swiper(".mySwiper", {
+
             slidesPerView: 1,
+
             spaceBetween: 20,
+
             loop: true,
+
             pagination: {
                 el: ".swiper-pagination",
-                clickable: true,
+                clickable: true
             },
+
             navigation: {
                 nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                prevEl: ".swiper-button-prev"
             },
+
             breakpoints: {
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 }
+
+                768: {
+                    slidesPerView: 2
+                },
+
+                1024: {
+                    slidesPerView: 3
+                }
+
             }
+
         });
+
     </script>
 
-    <!-- WhatsApp flotante -->
-    <a href="https://wa.link/ngaba9" target="_blank"
-        class="fixed bottom-6 right-6  w-14 h-14 flex items-center justify-center  transition z-50">
-        <img src="IMG/wsp.png" alt="WhatsApp" class="w-15 h-15">
+
+
+    <!-- ========================================== -->
+    <!-- MENÚ MOBILE -->
+    <!-- ========================================== -->
+
+    <script>
+
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("menu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+
+        menu.querySelectorAll("a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                if (window.innerWidth < 768) {
+                    menu.classList.add("hidden");
+                }
+
+            });
+
+        });
+
+    </script>
+
+
+
+    <!-- ========================================== -->
+    <!-- WHATSAPP -->
+    <!-- ========================================== -->
+
+    <a href="https://wa.link/ngaba9" target="_blank" class="fixed bottom-6 right-6 w-14 h-14
+        flex items-center justify-center transition z-50" aria-label="Contactar por WhatsApp">
+
+        <img src="IMG/wsp.png" alt="WhatsApp" class="w-14 h-14">
 
     </a>
 

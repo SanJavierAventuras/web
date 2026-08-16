@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Dejanos tu reseña | San Javier Experiencias
+    </title>
+
+    <meta name="description" content="Compartí tu experiencia en San Javier, Río Negro, Uruguay.">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../IMG/pestana.png" type="image/png">
+
+
+    <style>
+        .star {
+
+            font-size: 2.5rem;
+
+            color: #d1d5db;
+
+            cursor: pointer;
+
+            transition:
+                color 0.15s ease,
+                transform 0.15s ease;
+
+            user-select: none;
+
+        }
+
+        .star:hover {
+            transform: scale(1.1);
+        }
+
+        .star.active {
+            color: #eab308;
+        }
+    </style>
+
+</head>
+
+
+
+<body class="font-sans bg-gray-50 min-h-screen flex flex-col">
+
+
+
+    <!-- ========================================== -->
+    <!-- NAVBAR -->
+    <!-- ========================================== -->
+
+    <header class="bg-white shadow">
+
+
+        <div class="container mx-auto px-6 py-4
+            flex justify-between items-center">
+
+
+            <!-- LOGO -->
+
+            <a href="../index.html" class="flex items-center gap-3">
+
+
+                <img src="../IMG/logo.png" alt="Logo San Javier Experiencias" class="w-12 h-12 object-contain">
+
+
+                <div class="leading-tight">
+
+
+                    <span class="block text-2xl md:text-3xl font-bold">
+
+                        San Javier
+
+                    </span>
+
+
+                    <span class="block text-sm md:text-base text-[#af350f]">
+
+                        Cultura y Naturaleza
+
+                    </span>
+
+
+                </div>
+
+
+            </a>
+
+
+
+            <!-- VOLVER -->
+
+            <a href="../index.html#resenas" class="text-sm md:text-base
+                text-gray-600 hover:text-[#af350f] transition">
+
+                ← Volver
+
+            </a>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- ========================================== -->
+    <!-- CONTENIDO -->
+    <!-- ========================================== -->
+
+    <main class="flex-grow py-14 md:py-20 px-6">
+
+
+
+        <!-- ENCABEZADO -->
+
+        <div class="max-w-2xl mx-auto text-center mb-10">
+
+
+            <p class="text-[#af350f] uppercase tracking-wider
+                text-sm font-semibold mb-2">
+
+                Tu experiencia importa
+
+            </p>
+
+
+            <h1 class="text-3xl md:text-4xl font-bold
+                text-gray-900 mb-4">
+
+                Contanos cómo fue tu experiencia
+
+            </h1>
+
+
+            <p class="text-gray-600 leading-relaxed">
+
+                Gracias por visitar San Javier y compartir esta
+                aventura con nosotros. Tu opinión nos ayuda a
+                seguir creciendo y permite que otros viajeros
+                conozcan nuestras experiencias.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- ========================================== -->
+        <!-- FORMULARIO -->
+        <!-- ========================================== -->
+
+        <div class="max-w-2xl mx-auto bg-white
+            rounded-2xl shadow-lg p-7 md:p-10">
+
+
+            <form id="reviewForm" action="https://formsubmit.co/silvimen2020@gmail.com" method="POST">
+
+
+                <!-- ================================== -->
+                <!-- CONFIGURACIÓN DEL EMAIL -->
+                <!-- ================================== -->
+
+                <input type="hidden" name="_subject" value="⭐ Nueva reseña - San Javier Experiencias">
+
+                <input type="hidden" name="_template" value="table">
+
+
+                <!--
+                    Dejamos CAPTCHA activado.
+                    No agregamos _captcha=false.
+                -->
+
+
+                <!-- ================================== -->
+                <!-- NOMBRE -->
+                <!-- ================================== -->
+
+                <div class="mb-6">
+
+
+                    <label for="nombre" class="block font-semibold
+                        text-gray-800 mb-2">
+
+                        Tu nombre
+
+                    </label>
+
+
+                    <input type="text" id="nombre" name="Nombre" required maxlength="80" autocomplete="name"
+                        placeholder="Escribí tu nombre" class="w-full border border-gray-300
+                        rounded-lg px-4 py-3
+                        focus:outline-none
+                        focus:ring-2
+                        focus:ring-[#af350f]/30
+                        focus:border-[#af350f]">
+
+
+                </div>
+
+
+
+                <!-- ================================== -->
+                <!-- PAÍS -->
+                <!-- ================================== -->
+
+                <div class="mb-6">
+
+
+                    <label for="pais" class="block font-semibold
+                        text-gray-800 mb-2">
+
+                        ¿Desde qué país nos visitás? 🌎
+
+                    </label>
+
+
+                    <input type="text" id="pais" name="Pais" required maxlength="80" autocomplete="country-name"
+                        placeholder="Escribí tu país" class="w-full border border-gray-300
+                        rounded-lg px-4 py-3
+                        focus:outline-none
+                        focus:ring-2
+                        focus:ring-[#af350f]/30
+                        focus:border-[#af350f]">
+
+
+                </div>
+
+
+
+                <!-- ================================== -->
+                <!-- EXPERIENCIA -->
+                <!-- ================================== -->
+
+                <div class="mb-6">
+
+
+                    <label for="experiencia" class="block font-semibold
+                        text-gray-800 mb-2">
+
+                        ¿Qué experiencia realizaste?
+
+                    </label>
+
+
+                    <select id="experiencia" name="Experiencia" required class="w-full border border-gray-300
+                        rounded-lg px-4 py-3 bg-white
+                        focus:outline-none
+                        focus:ring-2
+                        focus:ring-[#af350f]/30
+                        focus:border-[#af350f]">
+
+
+                        <option value="" disabled selected>
+
+                            Seleccioná una experiencia
+
+                        </option>
+
+
+                        <option value="Cabalgata">
+                            Cabalgata
+                        </option>
+
+
+                        <option value="Senderismo / Trekking">
+                            Senderismo / Trekking
+                        </option>
+
+
+                        <option value="Kayak">
+                            Kayak
+                        </option>
+
+
+                        <option value="Paseo náutico">
+                            Paseo náutico
+                        </option>
+
+
+                        <option value="Experiencia cultural">
+                            Experiencia cultural
+                        </option>
+
+
+                        <option value="Música y Fogón">
+                            Música & Fogón
+                        </option>
+
+
+                        <option value="Hospedaje">
+                            Hospedaje
+                        </option>
+
+
+                        <option value="Paquete de experiencias">
+                            Paquete de experiencias
+                        </option>
+
+
+                        <option value="Otra experiencia">
+                            Otra experiencia
+                        </option>
+
+
+                    </select>
+
+
+                </div>
+
+
+
+                <!-- ================================== -->
+                <!-- ESTRELLAS -->
+                <!-- ================================== -->
+
+                <div class="mb-6">
+
+
+                    <label class="block font-semibold
+                        text-gray-800 mb-2">
+
+                        ¿Cómo calificarías tu experiencia?
+
+                    </label>
+
+
+                    <div id="stars" class="flex gap-1" aria-label="Calificación">
+
+
+                        <span class="star" data-value="1" title="1 estrella">
+
+                            ★
+
+                        </span>
+
+
+                        <span class="star" data-value="2" title="2 estrellas">
+
+                            ★
+
+                        </span>
+
+
+                        <span class="star" data-value="3" title="3 estrellas">
+
+                            ★
+
+                        </span>
+
+
+                        <span class="star" data-value="4" title="4 estrellas">
+
+                            ★
+
+                        </span>
+
+
+                        <span class="star" data-value="5" title="5 estrellas">
+
+                            ★
+
+                        </span>
+
+
+                    </div>
+
+
+                    <!--
+                        Este valor también llega
+                        a tu correo.
+                    -->
+
+                    <input type="hidden" id="calificacion" name="Calificacion">
+
+
+                    <p id="ratingText" class="text-sm text-gray-500 mt-1">
+
+                        Seleccioná de 1 a 5 estrellas
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- ================================== -->
+                <!-- RESEÑA -->
+                <!-- ================================== -->
+
+                <div class="mb-7">
+
+
+                    <label for="resena" class="block font-semibold
+                        text-gray-800 mb-2">
+
+                        Contanos tu experiencia
+
+                    </label>
+
+
+                    <textarea id="resena" name="Resena" required rows="6" maxlength="1000"
+                        placeholder="Contanos qué te pareció la experiencia..." class="w-full border border-gray-300
+                        rounded-lg px-4 py-3 resize-none
+                        focus:outline-none
+                        focus:ring-2
+                        focus:ring-[#af350f]/30
+                        focus:border-[#af350f]"></textarea>
+
+
+                    <div class="flex justify-between mt-1">
+
+
+                        <p class="text-xs text-gray-400">
+                            Compartí lo que más disfrutaste.
+                        </p>
+
+
+                        <p id="contador" class="text-xs text-gray-400">
+
+                            0 / 1000
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- ================================== -->
+                <!-- AUTORIZACIÓN -->
+                <!-- ================================== -->
+
+                <div class="bg-gray-50 rounded-xl
+                    p-4 mb-8">
+
+
+                    <div class="flex items-start gap-3">
+
+
+                        <input type="checkbox" id="autoriza" name="Autorizacion" value="Sí, autoriza la publicación"
+                            required class="mt-1 accent-[#af350f]">
+
+
+                        <label for="autoriza" class="text-sm text-gray-600
+                            leading-relaxed">
+
+                            Autorizo a San Javier Experiencias
+                            a publicar esta reseña en su sitio web
+                            y redes sociales utilizando mi nombre,
+                            país y comentario.
+
+                        </label>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- ================================== -->
+                <!-- BOTÓN -->
+                <!-- ================================== -->
+
+                <button type="submit" id="submitButton" class="w-full bg-[#af350f]
+                    text-white py-3.5 rounded-lg
+                    font-semibold text-lg shadow-md
+                    hover:bg-[#922f08]
+                    hover:shadow-lg transition">
+
+                    Enviar mi reseña ★
+
+                </button>
+
+
+                <p class="text-center text-xs
+                    text-gray-400 mt-4">
+
+                    Gracias por compartir tu experiencia con nosotros.
+
+                </p>
+
+
+            </form>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ========================================== -->
+    <!-- FOOTER -->
+    <!-- ========================================== -->
+
+    <footer class="py-10 bg-white
+        text-center text-gray-600">
+
+
+        <p class="mb-2">
+
+            📞 +598 91 009 934 ·
+            📷 @SanJavierExperiencias
+
+        </p>
+
+
+        <p class="text-sm">
+
+            © 2026 San Javier Experiencias
+
+        </p>
+
+
+    </footer>
+
+
+
+    <!-- ========================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================================== -->
+
+    <script>
+
+
+        /* ====================================== */
+        /* ESTRELLAS */
+        /* ====================================== */
+
+
+        const stars =
+            document.querySelectorAll(".star");
+
+
+        const ratingInput =
+            document.getElementById("calificacion");
+
+
+        const ratingText =
+            document.getElementById("ratingText");
+
+
+        const textos = {
+
+            1: "1 estrella",
+
+            2: "2 estrellas",
+
+            3: "3 estrellas",
+
+            4: "4 estrellas",
+
+            5: "5 estrellas ★"
+
+        };
+
+
+        stars.forEach(star => {
+
+
+            star.addEventListener("click", () => {
+
+
+                const value =
+                    Number(star.dataset.value);
+
+
+                ratingInput.value =
+                    value + " / 5";
+
+
+                ratingText.textContent =
+                    textos[value];
+
+
+                stars.forEach(s => {
+
+
+                    const starValue =
+                        Number(s.dataset.value);
+
+
+                    if (starValue <= value) {
+
+                        s.classList.add("active");
+
+                    } else {
+
+                        s.classList.remove("active");
+
+                    }
+
+
+                });
+
+
+            });
+
+
+        });
+
+
+
+        /* ====================================== */
+        /* CONTADOR */
+        /* ====================================== */
+
+
+        const resena =
+            document.getElementById("resena");
+
+
+        const contador =
+            document.getElementById("contador");
+
+
+        resena.addEventListener("input", () => {
+
+
+            contador.textContent =
+                resena.value.length + " / 1000";
+
+
+        });
+
+
+
+        /* ====================================== */
+        /* VALIDACIÓN ANTES DE ENVIAR */
+        /* ====================================== */
+
+
+        const formulario =
+            document.getElementById("reviewForm");
+
+
+        const submitButton =
+            document.getElementById("submitButton");
+
+
+        formulario.addEventListener(
+            "submit",
+            function (event) {
+
+
+                /* Verificamos que haya elegido estrellas */
+
+                if (!ratingInput.value) {
+
+
+                    event.preventDefault();
+
+
+                    alert(
+                        "Por favor seleccioná una calificación de 1 a 5 estrellas."
+                    );
+
+
+                    return;
+
+
+                }
+
+
+                /*
+                    Si todo está correcto,
+                    NO hacemos preventDefault().
+
+                    Esto permite que el formulario
+                    se envíe realmente a FormSubmit.
+                */
+
+
+                submitButton.disabled = true;
+
+
+                submitButton.textContent =
+                    "Enviando reseña...";
+
+
+                submitButton.classList.add(
+                    "opacity-70",
+                    "cursor-not-allowed"
+                );
+
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
