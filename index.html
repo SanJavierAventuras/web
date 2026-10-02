@@ -256,208 +256,235 @@
     </section>
 
 
-
     <!-- ================================================== -->
-    <!-- ACTIVIDADES -->
+    <!-- PRÓXIMA SALIDA -->
     <!-- ================================================== -->
-
-    <section class="py-16 bg-white">
-
-
-        <h2 class="text-3xl font-bold text-center mb-8">
-
-            ¡Sumate a la próxima salida!
-
-        </h2>
-
-
-        <div class="relative max-w-md md:max-w-4xl mx-auto">
-
-
-            <div class="swiper mySwiper">
-
-                <div class="swiper-wrapper">
-
-
-                    <!-- ACTIVIDAD 1 -->
-
-                    <div class="swiper-slide">
-
-                        <div class="bg-gray-50 rounded-2xl
-                            shadow-lg overflow-hidden">
-
-                            <a href="HTML/actividad1.html">
-
-                                <img src="IMG/sendero1.JPG" alt="Trekking en San Javier"
-                                    class="w-full h-64 object-cover">
-
-                                <div class="p-6 text-center">
-
-                                    <h3 class="text-xl font-bold mb-2">
-
-                                        Senderismo a campo abierto
-
-                                    </h3>
-
-                                    <p class="text-gray-600 text-sm">
-
-                                        Caminata guiada por local.
-
-                                    </p>
-
-                                </div>
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- ACTIVIDAD 2 -->
-
-                    <div class="swiper-slide">
-
-                        <div class="bg-gray-50 rounded-2xl
-                            shadow-lg overflow-hidden">
-
-                            <a href="HTML/actividad2.html">
-
-                                <img src="IMG/kayak.png" alt="Kayak y barrancas" class="w-full h-64 object-cover">
-
-                                <div class="p-6 text-center">
-
-                                    <h3 class="text-xl font-bold mb-2">
-
-                                        Aventura Extrema: Kayaks & Barrancas
-
-                                    </h3>
-
-                                    <p class="text-gray-600 text-sm">
-
-                                        Remar, caminar y vivir la naturaleza
-                                        en su estado puro.
-
-                                    </p>
-
-                                </div>
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- ACTIVIDAD 3 -->
-
-                    <div class="swiper-slide">
-
-                        <div class="bg-gray-50 rounded-2xl
-                            shadow-lg overflow-hidden">
-
-                            <a href="HTML/actividad3.html">
-
-                                <img src="IMG/rusa.png" alt="Raíces Rusas en San Javier"
-                                    class="w-full h-64 object-cover">
-
-                                <div class="p-6 text-center">
-
-                                    <h3 class="text-xl font-bold mb-2">
-
-                                        Raíces Rusas en San Javier
-
-                                    </h3>
-
-                                    <p class="text-gray-600 text-sm">
-
-                                        Historia, música y gastronomía local.
-
-                                    </p>
-
-                                </div>
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- ACTIVIDAD 4 -->
-
-                    <div class="swiper-slide">
-
-                        <div class="bg-gray-50 rounded-2xl
-                            shadow-lg overflow-hidden">
-
-                            <a href="HTML/actividad4.html">
-
-                                <img src="IMG/luna.png" alt="Astroturismo en San Javier"
-                                    class="w-full h-64 object-cover">
-
-                                <div class="p-6 text-center">
-
-                                    <h3 class="text-xl font-bold mb-2">
-
-                                        Noche de Luna y Estrellas
-
-                                    </h3>
-
-                                    <p class="text-gray-600 text-sm">
-
-                                        Acampando bajo el cielo más puro.
-
-                                    </p>
-
-                                </div>
-
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
+    
+    <section id="proxima-salida" class="py-14 md:py-20 bg-white">
+    
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    
+            <!-- TÍTULO -->
+            <div class="text-center mb-8 md:mb-10">
+    
+                <p class="text-[#af350f]
+                          font-bold uppercase
+                          tracking-[0.20em]
+                          text-xs md:text-sm mb-2">
+                    Próxima salida
+                </p>
+    
+                <h2 class="text-3xl md:text-4xl
+                           font-extrabold
+                           text-gray-900">
+                    ¡Sumate a la próxima!
+                </h2>
+    
             </div>
-
-
-            <!-- FLECHAS -->
-
-            <div class="swiper-button-next"></div>
-
-            <div class="swiper-button-prev"></div>
-
-
-            <!-- PAGINACIÓN -->
-
-            <div class="swiper-pagination"></div>
-
-
-        </div>
-
-
-
-        <!-- VER MÁS -->
-
-        <div class="text-center mt-10">
-
-            <a href="HTML/tours.html" class="inline-block bg-green-600 text-white
-                px-8 py-3 rounded-full font-semibold shadow-md
-                hover:bg-green-700 transition">
-
-                Ver más actividades
-
+    
+    
+            <!-- TARJETA -->
+            <a href="HTML/actividad-noviembre.html" class="group block
+                      bg-[#f8f7f3]
+                      rounded-[28px]
+                      overflow-hidden
+                      shadow-lg
+                      hover:shadow-2xl
+                      transition duration-300
+                      border border-gray-100">
+    
+    
+                <div class="grid md:grid-cols-2">
+    
+    
+                    <!-- FOTO -->
+                    <div class="relative
+                                h-[330px]
+                                sm:h-[400px]
+                                md:h-auto
+                                md:min-h-[500px]
+                                overflow-hidden">
+    
+                        <img src="IMG/NOVIEMBREMIX.png" onerror="
+                             this.onerror=null;
+                             this.src='IMG/kayak.png';
+                             " alt="Experiencia completa San Javier" class="absolute inset-0
+                                    w-full h-full
+                                    object-cover
+                                    group-hover:scale-105
+                                    transition duration-700">
+    
+    
+                        <div class="absolute inset-0
+                                    bg-gradient-to-t
+                                    from-black/80
+                                    via-black/15
+                                    to-transparent">
+                        </div>
+    
+    
+                        <!-- FECHA SOBRE FOTO -->
+                        <div class="absolute
+                                    left-5 right-5 bottom-5">
+    
+                            <span class="inline-flex
+                                         bg-white
+                                         text-gray-900
+                                         px-4 py-2
+                                         rounded-full
+                                         text-xs sm:text-sm
+                                         font-extrabold
+                                         shadow">
+    
+                                14 Y 15 DE NOVIEMBRE
+    
+                            </span>
+    
+                            <p class="text-white
+                                      text-lg
+                                      font-semibold
+                                      mt-3">
+                                2 días · 1 noche
+                            </p>
+    
+                        </div>
+    
+                    </div>
+    
+    
+    
+                    <!-- INFORMACIÓN -->
+                    <div class="p-6 sm:p-8 md:p-10
+                                flex flex-col justify-center">
+    
+    
+                        <p class="text-[#af350f]
+                                  font-bold uppercase
+                                  tracking-[0.15em]
+                                  text-xs mb-2">
+                            San Javier Experiencias
+                        </p>
+    
+    
+                        <h3 class="text-3xl sm:text-4xl
+                                   font-black
+                                   leading-tight
+                                   mb-4">
+    
+                            Experiencia Completa
+    
+                        </h3>
+    
+    
+                        <p class="text-gray-600
+                                  leading-relaxed
+                                  text-base sm:text-lg
+                                  mb-6">
+    
+                            Dos días para desconectar de la rutina,
+                            conocer gente nueva y vivir San Javier
+                            entre río, senderos, campamento,
+                            fogón y naturaleza.
+    
+                        </p>
+    
+    
+    
+                        <!-- CHIPS -->
+                        <div class="flex flex-wrap gap-2 mb-7">
+    
+                            <span class="bg-green-100 text-green-800 px-3 py-1.5 rounded-full text-xs font-bold">
+                                Kayak
+                            </span>
+    
+                            <span class="bg-green-100 text-green-800 px-3 py-1.5 rounded-full text-xs font-bold">
+                                Trekking
+                            </span>
+    
+                            <span class="bg-green-100 text-green-800 px-3 py-1.5 rounded-full text-xs font-bold">
+                                Campamento
+                            </span>
+    
+                            <span class="bg-green-100 text-green-800 px-3 py-1.5 rounded-full text-xs font-bold">
+                                Yoga
+                            </span>
+    
+                            <span class="bg-green-100 text-green-800 px-3 py-1.5 rounded-full text-xs font-bold">
+                                Fogón
+                            </span>
+    
+                        </div>
+    
+    
+    
+                        <!-- PRECIO -->
+                        <div class="border-t border-gray-200 pt-6">
+    
+                            <div class="flex
+                                        items-end
+                                        justify-between
+                                        gap-4 mb-5">
+    
+                                <div>
+    
+                                    <p class="text-xs
+                                              uppercase
+                                              tracking-wide
+                                              text-gray-500">
+                                        Por persona
+                                    </p>
+    
+                                    <p class="text-4xl
+                                              font-black
+                                              text-gray-900">
+                                        $6.000
+                                    </p>
+    
+                                    <p class="text-sm
+                                              text-gray-500 mt-1">
+                                        Seña del 50%
+                                    </p>
+    
+                                </div>
+    
+    
+                                <span class="text-xs
+                                             bg-orange-100
+                                             text-[#af350f]
+                                             font-bold
+                                             px-3 py-2
+                                             rounded-full">
+                                    CUPOS LIMITADOS
+                                </span>
+    
+                            </div>
+    
+    
+                            <div class="w-full
+                                        bg-[#af350f]
+                                        text-white
+                                        py-4
+                                        rounded-xl
+                                        text-center
+                                        font-extrabold
+                                        text-lg
+                                        group-hover:bg-[#922f08]
+                                        transition">
+    
+                                Ver experiencia →
+    
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
             </a>
-
+    
         </div>
-
-
+    
     </section>
 
 
