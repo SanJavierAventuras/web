@@ -1,38 +1,52 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width,
-                   initial-scale=1.0,
-                   viewport-fit=cover">
-
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover">
 
     <title>
         Experiencia Completa | San Javier Experiencias
     </title>
 
-
     <meta name="description"
-        content="Dos días y una noche en San Javier: kayak, trekking, campamento, yoga, fogón, gastronomía rusa y música en vivo.">
+          content="Experiencia completa de 2 días y 1 noche en San Javier, Río Negro: kayak, trekking, campamento, yoga, fogón, gastronomía rusa y música en vivo.">
 
-
+    <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-
-    <link rel="icon" href="../IMG/pestana.png" type="image/png">
-
+    <!-- FAVICON -->
+    <link rel="icon"
+          href="../IMG/pestana.png"
+          type="image/png">
 
     <style>
+
         html {
             scroll-behavior: smooth;
+            width: 100%;
+            overflow-x: hidden;
         }
 
         body {
+            width: 100%;
+            max-width: 100%;
             overflow-x: hidden;
+            margin: 0;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
         }
 
         .soft-shadow {
@@ -44,156 +58,581 @@
             letter-spacing: .18em;
         }
 
-        /* para que el botón fijo del celu
-           no tape el final de la página */
+        /* ========================= */
+        /* IMPORTANTE PARA IPHONE */
+        /* Evita zoom al tocar inputs */
+        /* ========================= */
+
+        input,
+        select,
+        textarea,
+        button {
+            font-size: 16px !important;
+        }
+
+        input,
+        select {
+            max-width: 100%;
+        }
+
+        /* evita cualquier desborde horizontal */
+        .mobile-safe {
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+        }
+
         @media (max-width: 767px) {
 
             body {
-                padding-bottom: 90px;
+                padding-bottom:
+                    calc(88px + env(safe-area-inset-bottom));
+            }
+
+            .mobile-title {
+                font-size: clamp(2.5rem, 12vw, 4rem);
+                line-height: .95;
             }
 
         }
+
     </style>
 
 </head>
 
 
 
-<body class="bg-[#f7f7f4]
-             text-gray-900
-             font-sans">
+<body class="bg-[#f7f7f4] text-gray-900 font-sans">
 
 
-    <!-- ================================================== -->
-    <!-- NAVBAR -->
-    <!-- ================================================== -->
+<!-- ================================================== -->
+<!-- NAVBAR -->
+<!-- ================================================== -->
 
-    <header class="sticky top-0
-               z-50
-               bg-white/95
-               backdrop-blur
+<header class="sticky top-0 z-50
+               bg-white/95 backdrop-blur
                border-b border-gray-100">
 
-
-        <div class="max-w-7xl mx-auto
+    <div class="w-full max-w-7xl mx-auto
                 px-4 sm:px-6
-                h-[68px]
-                flex items-center
-                justify-between">
+                h-[72px]
+                flex items-center justify-between">
+
+        <!-- LOGO -->
+
+        <a href="../index.html"
+           class="flex items-center gap-2.5 min-w-0">
+
+            <img src="../IMG/logo.png"
+                 alt="San Javier Experiencias"
+                 class="w-10 h-10 sm:w-11 sm:h-11
+                        object-contain flex-shrink-0">
+
+            <div class="leading-tight min-w-0">
+
+                <p class="font-extrabold
+                          text-lg sm:text-xl
+                          whitespace-nowrap">
+
+                    San Javier
+
+                </p>
+
+                <p class="text-[11px] sm:text-xs
+                          text-[#af350f]
+                          whitespace-nowrap">
+
+                    Cultura y Naturaleza
+
+                </p>
+
+            </div>
+
+        </a>
 
 
-            <a href="../index.html" class="flex items-center gap-2.5">
+        <a href="../index.html"
+           class="text-sm sm:text-base
+                  font-semibold
+                  text-gray-600
+                  whitespace-nowrap
+                  ml-3">
 
-                <img src="../IMG/logo.png" alt="San Javier Experiencias" class="w-10 h-10 object-contain">
+            ← Inicio
 
-                <div class="leading-tight">
+        </a>
 
-                    <p class="font-extrabold
-                          text-lg sm:text-xl">
-                        San Javier
-                    </p>
+    </div>
 
-                    <p class="text-[11px]
-                          sm:text-xs
-                          text-[#af350f]">
-                        Cultura y Naturaleza
-                    </p>
+</header>
+
+
+
+<main class="mobile-safe">
+
+
+<!-- ================================================== -->
+<!-- HERO -->
+<!-- ================================================== -->
+
+<section class="bg-white mobile-safe">
+
+    <div class="w-full max-w-7xl mx-auto
+                lg:px-6 lg:py-12">
+
+
+        <div class="grid
+                    lg:grid-cols-[0.95fr_1.05fr]
+                    lg:gap-12
+                    items-start
+                    mobile-safe">
+
+
+            <!-- ================================================== -->
+            <!-- FOTO -->
+            <!-- ================================================== -->
+
+            <div class="relative
+                        w-full
+                        h-[430px]
+                        sm:h-[540px]
+                        lg:h-[690px]
+                        lg:rounded-[32px]
+                        overflow-hidden
+                        bg-gray-200">
+
+
+                <img src="../IMG/experiencia-noviembre.jpg"
+
+                     onerror="
+                     this.onerror=null;
+                     this.src='../IMG/kayak.png';
+                     "
+
+                     alt="Experiencia completa San Javier"
+
+                     class="absolute inset-0
+                            w-full h-full
+                            object-cover
+                            object-center">
+
+
+                <!-- SOMBRA -->
+
+                <div class="absolute inset-0
+                            bg-gradient-to-t
+                            from-black/80
+                            via-black/5
+                            to-transparent">
+                </div>
+
+
+
+                <!-- TEXTO MOBILE SOBRE FOTO -->
+
+                <div class="absolute
+                            bottom-0
+                            left-0
+                            right-0
+                            px-5
+                            pb-8
+                            lg:hidden">
+
+
+                    <span class="inline-flex
+                                 bg-white
+                                 text-gray-900
+                                 font-extrabold
+                                 text-xs
+                                 px-4 py-2.5
+                                 rounded-full
+                                 mb-4
+                                 shadow-lg">
+
+                        14 Y 15 DE NOVIEMBRE
+
+                    </span>
+
+
+                    <h1 class="mobile-title
+                               text-white
+                               font-black">
+
+                        Experiencia
+                        <br>
+                        Completa
+
+                    </h1>
 
                 </div>
 
-            </a>
-
-
-            <a href="../index.html" class="text-sm
-                  font-semibold
-                  text-gray-600
-                  hover:text-[#af350f]">
-
-                ← Inicio
-
-            </a>
-
-        </div>
-
-    </header>
+            </div>
 
 
 
-    <main>
+            <!-- ================================================== -->
+            <!-- INFORMACIÓN + RESERVA -->
+            <!-- ================================================== -->
+
+            <div id="reserva"
+                 class="w-full
+                        min-w-0
+                        px-5
+                        sm:px-7
+                        lg:px-0
+                        py-8
+                        lg:py-4">
 
 
-        <!-- ================================================== -->
-        <!-- HERO -->
-        <!-- ================================================== -->
+                <!-- DESKTOP -->
 
-        <section class="bg-white">
+                <div class="hidden lg:block">
 
-            <div class="max-w-7xl mx-auto
-                md:px-6
-                md:py-12">
+                    <p class="text-[#af350f]
+                              uppercase
+                              font-bold
+                              section-label
+                              text-xs
+                              mb-3">
 
+                        14 y 15 de noviembre ·
+                        San Javier, Río Negro
 
-                <div class="grid
-                    lg:grid-cols-[0.92fr_1.08fr]
-                    lg:gap-12
-                    items-start">
-
-
-                    <!-- FOTO -->
-
-                    <div class="relative
-                        h-[390px]
-                        sm:h-[500px]
-                        lg:h-[680px]
-                        lg:rounded-[32px]
-                        overflow-hidden">
-
-                        <img src="../IMG/NOVIEMBREMIX.png" onerror="
-                     this.onerror=null;
-                     this.src='../IMG/kayak.png';
-                     " alt="Experiencia completa San Javier" class="absolute inset-0
-                            w-full h-full
-                            object-cover">
+                    </p>
 
 
-                        <div class="absolute inset-0
-                            bg-gradient-to-t
-                            from-black/75
-                            via-black/10
-                            to-transparent">
+                    <h1 class="text-5xl
+                               font-black
+                               leading-tight
+                               mb-3">
+
+                        Experiencia Completa
+
+                    </h1>
+
+                </div>
+
+
+
+                <!-- BAJADA -->
+
+                <p class="text-[18px]
+                          sm:text-xl
+                          text-gray-600
+                          leading-relaxed
+                          mb-6">
+
+                    2 días · 1 noche ·
+                    naturaleza, aventura y encuentro
+
+                </p>
+
+
+
+                <!-- ================================================== -->
+                <!-- ETIQUETAS -->
+                <!-- ================================================== -->
+
+                <div class="flex
+                            flex-wrap
+                            gap-2
+                            mb-7
+                            w-full">
+
+
+                    <span class="bg-green-100
+                                 text-green-800
+                                 px-4 py-2
+                                 rounded-full
+                                 text-sm
+                                 font-bold">
+
+                        Kayak
+
+                    </span>
+
+
+                    <span class="bg-green-100
+                                 text-green-800
+                                 px-4 py-2
+                                 rounded-full
+                                 text-sm
+                                 font-bold">
+
+                        Trekking
+
+                    </span>
+
+
+                    <span class="bg-green-100
+                                 text-green-800
+                                 px-4 py-2
+                                 rounded-full
+                                 text-sm
+                                 font-bold">
+
+                        Yoga
+
+                    </span>
+
+
+                    <span class="bg-green-100
+                                 text-green-800
+                                 px-4 py-2
+                                 rounded-full
+                                 text-sm
+                                 font-bold">
+
+                        Campamento
+
+                    </span>
+
+
+                    <span class="bg-green-100
+                                 text-green-800
+                                 px-4 py-2
+                                 rounded-full
+                                 text-sm
+                                 font-bold">
+
+                        Fogón
+
+                    </span>
+
+
+                    <span class="bg-green-100
+                                 text-green-800
+                                 px-4 py-2
+                                 rounded-full
+                                 text-sm
+                                 font-bold">
+
+                        Música
+
+                    </span>
+
+
+                </div>
+
+
+
+                <!-- ================================================== -->
+                <!-- PRECIO -->
+                <!-- ================================================== -->
+
+                <div class="border-y
+                            border-gray-200
+                            py-6
+                            mb-7
+                            w-full">
+
+
+                    <div class="grid
+                                grid-cols-[1fr_auto]
+                                items-end
+                                gap-4
+                                w-full">
+
+
+                        <div class="min-w-0">
+
+                            <p class="text-xs
+                                      text-gray-500
+                                      uppercase
+                                      tracking-wide">
+
+                                Por persona
+
+                            </p>
+
+                            <p class="text-4xl
+                                      sm:text-5xl
+                                      font-black
+                                      leading-none
+                                      mt-2">
+
+                                $6.000
+
+                            </p>
+
                         </div>
 
 
-                        <!-- TEXTO SOBRE FOTO MOBILE -->
+                        <div class="text-right
+                                    flex-shrink-0">
 
-                        <div class="absolute
-                            bottom-0 left-0 right-0
+                            <p class="text-[#af350f]
+                                      font-extrabold
+                                      text-sm sm:text-base">
+
+                                Cupos limitados
+
+                            </p>
+
+                            <p class="text-sm
+                                      text-gray-500
+                                      mt-1">
+
+                                Seña 50%
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================================================== -->
+                <!-- FORMULARIO -->
+                <!-- ================================================== -->
+
+                <div class="w-full
+                            bg-[#eef6f1]
+                            border
+                            border-[#dbe9df]
+                            rounded-[26px]
                             p-5
-                            lg:hidden">
+                            sm:p-6">
 
-                            <span class="inline-block
-                                 bg-white
-                                 text-gray-900
-                                 font-bold
-                                 text-xs
-                                 px-4 py-2
-                                 rounded-full
-                                 mb-3">
 
-                                14 Y 15 DE NOVIEMBRE
-
-                            </span>
-
-                            <h1 class="text-white
-                               text-4xl
+                    <h2 class="text-2xl
+                               sm:text-3xl
                                font-black
-                               leading-[0.95]">
+                               mb-1">
 
-                                Experiencia
-                                <br>
-                                Completa
+                        Reservá tu lugar
 
-                            </h1>
+                    </h2>
+
+
+                    <p class="text-base
+                              text-gray-600
+                              leading-relaxed
+                              mb-6">
+
+                        Completá estos datos y seguimos
+                        la reserva por WhatsApp.
+
+                    </p>
+
+
+
+                    <!-- NOMBRE -->
+
+                    <label class="block
+                                  w-full
+                                  mb-5">
+
+                        <span class="block
+                                     font-bold
+                                     text-sm
+                                     mb-2">
+
+                            Nombre
+
+                        </span>
+
+
+                        <input id="nombre"
+
+                               type="text"
+
+                               autocomplete="name"
+
+                               placeholder="Nombre y apellido"
+
+                               class="w-full
+                                      h-14
+                                      bg-white
+                                      border
+                                      border-gray-300
+                                      rounded-xl
+                                      px-4
+                                      outline-none
+                                      focus:ring-2
+                                      focus:ring-green-600">
+
+                    </label>
+
+
+
+                    <!-- CANTIDAD -->
+
+                    <div class="w-full mb-5">
+
+                        <span class="block
+                                     font-bold
+                                     text-sm
+                                     mb-2">
+
+                            ¿Cuántas personas?
+
+                        </span>
+
+
+                        <div class="flex
+                                    items-center
+                                    w-full
+                                    h-14
+                                    bg-white
+                                    border
+                                    border-gray-300
+                                    rounded-xl
+                                    overflow-hidden">
+
+
+                            <button id="menos"
+                                    type="button"
+
+                                    class="w-16
+                                           h-full
+                                           flex-shrink-0
+                                           text-2xl
+                                           font-bold
+                                           bg-gray-50">
+
+                                −
+
+                            </button>
+
+
+                            <input id="personas"
+
+                                   type="number"
+
+                                   inputmode="numeric"
+
+                                   min="1"
+
+                                   value="1"
+
+                                   class="flex-1
+                                          min-w-0
+                                          h-full
+                                          text-center
+                                          font-black
+                                          outline-none
+                                          bg-white">
+
+
+                            <button id="mas"
+                                    type="button"
+
+                                    class="w-16
+                                           h-full
+                                           flex-shrink-0
+                                           text-2xl
+                                           font-bold
+                                           bg-gray-50">
+
+                                +
+
+                            </button>
+
 
                         </div>
 
@@ -201,1288 +640,1293 @@
 
 
 
-                    <!-- INFORMACIÓN / RESERVA -->
+                    <!-- OPCIONES -->
 
-                    <div id="reserva" class="px-5
-                        sm:px-7
-                        lg:px-0
-                        py-7
-                        lg:py-3">
-
-
-                        <!-- solo desktop -->
-
-                        <div class="hidden lg:block">
-
-                            <p class="text-[#af350f]
-                              uppercase
-                              font-bold
-                              section-label
-                              text-xs mb-3">
-
-                                14 y 15 de noviembre
-                                · San Javier, Río Negro
-
-                            </p>
-
-
-                            <h1 class="text-5xl
-                               font-black
-                               leading-tight
-                               mb-3">
-
-                                Experiencia Completa
-
-                            </h1>
-
-                        </div>
-
-
-
-                        <p class="text-lg
-                          text-gray-600
-                          mb-5">
-
-                            2 días · 1 noche
-                            · naturaleza, aventura y encuentro
-
-                        </p>
-
-
-
-                        <!-- CHIPS -->
-
-                        <div class="flex flex-wrap
-                            gap-2 mb-6">
-
-                            <span class="bg-green-100
-                                 text-green-800
-                                 px-3 py-1.5
-                                 rounded-full
-                                 text-xs
-                                 font-bold">
-                                Kayak
-                            </span>
-
-                            <span class="bg-green-100
-                                 text-green-800
-                                 px-3 py-1.5
-                                 rounded-full
-                                 text-xs
-                                 font-bold">
-                                Trekking
-                            </span>
-
-                            <span class="bg-green-100
-                                 text-green-800
-                                 px-3 py-1.5
-                                 rounded-full
-                                 text-xs
-                                 font-bold">
-                                Yoga
-                            </span>
-
-                            <span class="bg-green-100
-                                 text-green-800
-                                 px-3 py-1.5
-                                 rounded-full
-                                 text-xs
-                                 font-bold">
-                                Campamento
-                            </span>
-
-                            <span class="bg-green-100
-                                 text-green-800
-                                 px-3 py-1.5
-                                 rounded-full
-                                 text-xs
-                                 font-bold">
-                                Fogón
-                            </span>
-
-                        </div>
-
-
-
-                        <!-- PRECIO -->
-
-                        <div class="border-y
-                            border-gray-200
-                            py-5
-                            mb-6">
-
-                            <div class="flex
-                                justify-between
-                                items-end
-                                gap-4">
-
-                                <div>
-
-                                    <p class="text-xs
-                                      text-gray-500
-                                      uppercase
-                                      tracking-wide">
-                                        Por persona
-                                    </p>
-
-                                    <p class="text-4xl
-                                      font-black">
-                                        $6.000
-                                    </p>
-
-                                </div>
-
-
-                                <div class="text-right">
-
-                                    <p class="text-[#af350f]
-                                      font-extrabold">
-                                        Cupos limitados
-                                    </p>
-
-                                    <p class="text-sm
-                                      text-gray-500">
-                                        Seña 50%
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- FORMULARIO -->
-
-                        <div class="bg-[#eef6f1]
-                            border
-                            border-[#dbe9df]
-                            rounded-[24px]
-                            p-5 sm:p-6">
-
-
-                            <h2 class="text-2xl
-                               font-black
-                               mb-1">
-                                Reservá tu lugar
-                            </h2>
-
-
-                            <p class="text-sm
-                              text-gray-600
-                              mb-5">
-                                Completá estos datos
-                                y seguimos la reserva por WhatsApp.
-                            </p>
-
-
-
-                            <!-- NOMBRE -->
-
-                            <label class="block mb-4">
-
-                                <span class="block
-                                     font-bold
-                                     text-sm
-                                     mb-2">
-                                    Nombre
-                                </span>
-
-                                <input id="nombre" type="text" placeholder="Nombre y apellido" class="w-full
-                                      h-12
-                                      bg-white
-                                      border border-gray-300
-                                      rounded-xl
-                                      px-4
-                                      text-base
-                                      outline-none
-                                      focus:ring-2
-                                      focus:ring-green-600">
-
-                            </label>
-
-
-
-                            <!-- PERSONAS -->
-
-                            <div class="mb-4">
-
-                                <span class="block
-                                     font-bold
-                                     text-sm
-                                     mb-2">
-                                    ¿Cuántas personas?
-                                </span>
-
-
-                                <div class="flex
-                                    bg-white
-                                    border border-gray-300
-                                    rounded-xl
-                                    overflow-hidden
-                                    h-14">
-
-
-                                    <button id="menos" type="button" class="w-16
-                                           text-2xl
-                                           font-bold
-                                           bg-gray-50
-                                           active:bg-gray-200">
-
-                                        −
-
-                                    </button>
-
-
-                                    <input id="personas" type="number" min="1" value="1" class="flex-1
-                                          min-w-0
-                                          text-center
-                                          text-xl
-                                          font-black
-                                          outline-none">
-
-
-                                    <button id="mas" type="button" class="w-16
-                                           text-2xl
-                                           font-bold
-                                           bg-gray-50
-                                           active:bg-gray-200">
-
-                                        +
-
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-
-
-                            <!-- OPCIONES -->
-
-                            <div class="grid
+                    <div class="grid
+                                grid-cols-1
                                 sm:grid-cols-2
-                                gap-4">
+                                gap-4
+                                w-full">
 
 
-                                <label class="block">
+                        <!-- DORMIR -->
 
-                                    <span class="block
+                        <label class="block
+                                      w-full
+                                      min-w-0">
+
+                            <span class="block
                                          font-bold
-                                         text-sm mb-2">
-                                        Para dormir
-                                    </span>
+                                         text-sm
+                                         mb-2">
 
-                                    <select id="dormir" class="w-full
-                                           h-12
+                                Para dormir
+
+                            </span>
+
+
+                            <select id="dormir"
+
+                                    class="w-full
+                                           max-w-full
+                                           h-14
                                            bg-white
-                                           border border-gray-300
+                                           border
+                                           border-gray-300
                                            rounded-xl
-                                           px-3">
-
-                                        <option>
-                                            A coordinar
-                                        </option>
-
-                                        <option>
-                                            Carpa propia
-                                        </option>
-
-                                        <option>
-                                            Casa contenedor
-                                        </option>
-
-                                    </select>
-
-                                </label>
+                                           px-4
+                                           outline-none">
 
 
+                                <option>
+                                    A coordinar
+                                </option>
 
-                                <label class="block">
+                                <option>
+                                    Carpa propia
+                                </option>
 
-                                    <span class="block
+                                <option>
+                                    Casa contenedor
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+
+                        <!-- ALIMENTACIÓN -->
+
+                        <label class="block
+                                      w-full
+                                      min-w-0">
+
+                            <span class="block
                                          font-bold
-                                         text-sm mb-2">
-                                        Alimentación
-                                    </span>
+                                         text-sm
+                                         mb-2">
 
-                                    <select id="comida" class="w-full
-                                           h-12
+                                Alimentación
+
+                            </span>
+
+
+                            <select id="comida"
+
+                                    class="w-full
+                                           max-w-full
+                                           h-14
                                            bg-white
-                                           border border-gray-300
+                                           border
+                                           border-gray-300
                                            rounded-xl
-                                           px-3">
-
-                                        <option>
-                                            Sin restricciones
-                                        </option>
-
-                                        <option>
-                                            Vegetariana
-                                        </option>
-
-                                        <option>
-                                            Vegana
-                                        </option>
-
-                                        <option>
-                                            Sin TACC
-                                        </option>
-
-                                    </select>
-
-                                </label>
-
-                            </div>
+                                           px-4
+                                           outline-none">
 
 
+                                <option>
+                                    Sin restricciones
+                                </option>
 
-                            <!-- TOTAL -->
+                                <option>
+                                    Vegetariana
+                                </option>
 
-                            <div class="bg-white
+                                <option>
+                                    Vegana
+                                </option>
+
+                                <option>
+                                    Sin TACC
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+                    </div>
+
+
+
+                    <!-- TOTAL -->
+
+                    <div class="w-full
+                                bg-white
                                 rounded-xl
                                 p-4
                                 mt-5
-                                border border-gray-200">
+                                border
+                                border-gray-200">
 
 
-                                <div class="flex
+                        <div class="flex
                                     justify-between
                                     items-center
-                                    mb-2">
-
-                                    <span class="text-gray-500">
-                                        Total
-                                    </span>
-
-                                    <strong id="total" class="text-xl">
-                                        $6.000
-                                    </strong>
-
-                                </div>
+                                    gap-4
+                                    mb-3">
 
 
-                                <div class="flex
+                            <span class="text-gray-500">
+
+                                Total
+
+                            </span>
+
+
+                            <strong id="total"
+                                    class="text-xl
+                                           whitespace-nowrap">
+
+                                $6.000
+
+                            </strong>
+
+
+                        </div>
+
+
+                        <div class="flex
                                     justify-between
-                                    items-center">
-
-                                    <span class="text-gray-500">
-                                        Seña 50%
-                                    </span>
-
-                                    <strong id="sena" class="text-xl
-                                           text-green-700">
-                                        $3.000
-                                    </strong>
-
-                                </div>
-
-                            </div>
+                                    items-center
+                                    gap-4">
 
 
+                            <span class="text-gray-500">
 
-                            <!-- BOTÓN -->
+                                Seña 50%
 
-                            <button id="reservarWhatsapp" type="button" class="w-full
-                                   mt-5
+                            </span>
+
+
+                            <strong id="sena"
+                                    class="text-xl
+                                           text-green-700
+                                           whitespace-nowrap">
+
+                                $3.000
+
+                            </strong>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- RESERVAR -->
+
+                    <button id="reservarWhatsapp"
+
+                            type="button"
+
+                            class="w-full
                                    h-14
+                                   mt-5
                                    bg-[#168c4b]
+                                   hover:bg-[#11753e]
+                                   active:scale-[0.98]
                                    text-white
                                    rounded-xl
                                    font-black
-                                   text-lg
-                                   shadow
-                                   active:scale-[0.98]
+                                   shadow-md
                                    transition">
 
-                                Reservar por WhatsApp
+                        Reservar por WhatsApp
 
-                            </button>
+                    </button>
 
 
-                            <p class="text-[11px]
+                    <p class="text-xs
                               leading-relaxed
                               text-gray-500
                               text-center
                               mt-3">
 
-                                Tu lugar queda confirmado
-                                una vez abonada la seña.
+                        Tu lugar queda confirmado
+                        una vez abonada la seña.
 
-                            </p>
+                    </p>
 
-
-                        </div>
-
-                    </div>
 
                 </div>
 
+
+                <p class="text-sm
+                          text-gray-500
+                          mt-4
+                          leading-relaxed">
+
+                    <strong>Medios de pago:</strong>
+                    transferencia o MercadoPago
+                    (hasta 12 cuotas, +10%).
+
+                </p>
+
+
             </div>
 
-        </section>
+        </div>
+
+    </div>
+
+</section>
 
 
 
-        <!-- ================================================== -->
-        <!-- DOS DÍAS AFUERA -->
-        <!-- ================================================== -->
+<!-- ================================================== -->
+<!-- DOS DÍAS AFUERA -->
+<!-- ================================================== -->
 
-        <section class="py-14 md:py-20">
+<section class="py-16 md:py-24 mobile-safe">
 
-            <div class="max-w-3xl mx-auto
+    <div class="w-full
+                max-w-3xl
+                mx-auto
                 px-5 sm:px-6
                 text-center">
 
 
-                <p class="text-[#af350f]
-                  font-bold uppercase
-                  section-label
-                  text-xs mb-3">
-
-                    Dos días afuera
-
-                </p>
-
-
-                <h2 class="text-3xl
-                   md:text-5xl
-                   font-black
-                   leading-tight
-                   mb-6">
-
-                    Menos pantalla.
-                    <br>
-                    Más tiempo para estar presentes.
-
-                </h2>
-
-
-                <p class="text-gray-600
-                  text-base md:text-lg
-                  leading-relaxed
-                  mb-4">
-
-                    Una experiencia para salir de la rutina,
-                    desconectarnos por un rato
-                    y volver a conectar con lo simple.
-
-                </p>
-
-
-                <p class="text-gray-600
-                  text-base md:text-lg
-                  leading-relaxed
-                  mb-5">
-
-                    Dos días de río, senderos,
-                    campamento, comida,
-                    música y naturaleza,
-                    pensados también para conocer gente nueva
-                    y compartir momentos reales.
-
-                </p>
-
-
-                <div class="inline-block
-                    bg-gray-900
-                    text-white
-                    rounded-full
-                    px-5 py-3
-                    text-sm
-                    font-bold">
-
-                    Sin señal · Sin apuro · En plena naturaleza
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ================================================== -->
-        <!-- ITINERARIO -->
-        <!-- ================================================== -->
-
-        <section class="py-14 md:py-20
-                bg-white">
-
-
-            <div class="max-w-5xl mx-auto
-                px-4 sm:px-6">
-
-
-                <div class="text-center mb-9">
-
-                    <p class="text-[#af350f]
-                      font-bold uppercase
-                      section-label
-                      text-xs mb-3">
-
-                        Itinerario
-
-                    </p>
-
-
-                    <h2 class="text-3xl
-                       md:text-4xl
-                       font-black">
-
-                        Así se viven los dos días
-
-                    </h2>
-
-                </div>
-
-
-
-                <div class="grid
-                    md:grid-cols-2
-                    gap-5">
-
-
-                    <!-- DÍA 1 -->
-
-                    <article class="bg-[#f7f7f4]
-                            rounded-[24px]
-                            p-5 sm:p-7">
-
-
-                        <div class="inline-flex
-                            bg-green-600
-                            text-white
-                            font-black
-                            rounded-full
-                            px-4 py-2
-                            mb-6">
-
-                            Día 1 · Comienza la aventura
-
-                        </div>
-
-
-                        <div class="space-y-5">
-
-
-                            <div>
-                                <p class="font-black">
-                                    07:00 – 09:30
-                                </p>
-                                <p class="text-gray-600">
-                                    Llegada + brunch de bienvenida.
-                                </p>
-                            </div>
-
-
-                            <div>
-                                <p class="font-black">
-                                    10:00 – 13:00
-                                </p>
-                                <p class="text-gray-600">
-                                    Travesía en kayak por el Río Uruguay.
-                                </p>
-                            </div>
-
-
-                            <div>
-                                <p class="font-black">
-                                    13:00 – 15:00
-                                </p>
-                                <p class="text-gray-600">
-                                    Trekking interpretativo
-                                    acompañado por un guardaparque local.
-                                </p>
-                            </div>
-
-
-                            <div>
-                                <p class="font-black">
-                                    15:30 – 17:30
-                                </p>
-                                <p class="text-gray-600">
-                                    Llegada + campamento + merienda.
-                                </p>
-                            </div>
-
-
-                            <div>
-                                <p class="font-black">
-                                    17:30 – 18:30
-                                </p>
-                                <p class="text-gray-600">
-                                    Yoga al atardecer.
-                                </p>
-                            </div>
-
-
-                            <div>
-                                <p class="font-black">
-                                    19:00
-                                </p>
-                                <p class="text-gray-600">
-                                    Encendemos el fogón.
-                                </p>
-                            </div>
-
-
-                            <div>
-                                <p class="font-black">
-                                    21:00
-                                </p>
-                                <p class="text-gray-600">
-                                    Gastronomía rusa
-                                    + música en vivo.
-                                </p>
-                            </div>
-
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- DÍA 2 -->
-
-                    <article class="bg-[#f7f7f4]
-                            rounded-[24px]
-                            p-5 sm:p-7">
-
-
-                        <div class="inline-flex
-                            bg-[#af350f]
-                            text-white
-                            font-black
-                            rounded-full
-                            px-4 py-2
-                            mb-6">
-
-                            Día 2 · El regreso
-
-                        </div>
-
-
-                        <div class="space-y-5">
-
-
-                            <div>
-                                <p class="font-black">
-                                    08:00 – 09:30
-                                </p>
-                                <p class="text-gray-600">
-                                    Desayuno buffet campestre.
-                                </p>
-                            </div>
-
-
-                            <div>
-                                <p class="font-black">
-                                    09:30 – 10:30
-                                </p>
-                                <p class="text-gray-600">
-                                    Retomamos el sendero
-                                    hacia los kayaks.
-                                </p>
-                            </div>
-
-
-                            <div>
-                                <p class="font-black">
-                                    10:30 – 12:30
-                                </p>
-                                <p class="text-gray-600">
-                                    Regresamos en kayak
-                                    hacia San Javier.
-                                </p>
-                            </div>
-
-
-                            <div>
-                                <p class="font-black">
-                                    13:00
-                                </p>
-                                <p class="text-gray-600">
-                                    Brunch de despedida.
-                                </p>
-                            </div>
-
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-
-                <p class="text-center
-                  text-xs
-                  text-gray-500
-                  mt-6">
-
-                    Los horarios pueden ajustarse
-                    según el clima,
-                    el estado del río
-                    y el ritmo del grupo.
-
-                </p>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ================================================== -->
-        <!-- EXPERIENCIAS -->
-        <!-- ================================================== -->
-
-        <section class="py-14 md:py-20">
-
-            <div class="max-w-6xl mx-auto
-                px-4 sm:px-6">
-
-
-                <div class="text-center mb-10">
-
-                    <p class="text-[#af350f]
-                      font-bold uppercase
-                      section-label
-                      text-xs mb-3">
-
-                        Todo en una experiencia
-
-                    </p>
-
-
-                    <h2 class="text-3xl
-                       md:text-4xl
-                       font-black">
-
-                        Del río al fogón
-
-                    </h2>
-
-                </div>
-
-
-
-                <div class="grid
-                    sm:grid-cols-2
-                    lg:grid-cols-3
-                    gap-4 md:gap-6">
-
-
-                    <!-- KAYAK -->
-
-                    <article class="bg-white
-                            rounded-[24px]
-                            p-6
-                            soft-shadow">
-
-                        <div class="text-4xl mb-4">
-                            🛶
-                        </div>
-
-                        <p class="text-xs
-                          text-green-700
-                          font-black
-                          uppercase
-                          tracking-wide
-                          mb-2">
-
-                            2 jornadas
-
-                        </p>
-
-                        <h3 class="text-2xl
-                           font-black mb-3">
-                            Kayak
-                        </h3>
-
-                        <p class="text-gray-600
-                          leading-relaxed">
-
-                            Aproximadamente 16 km
-                            entre ida y regreso.
-
-                            No necesitás experiencia previa
-                            y estaremos acompañados
-                            durante todo el recorrido.
-
-                        </p>
-
-                    </article>
-
-
-
-                    <!-- TREKKING -->
-
-                    <article class="bg-white
-                            rounded-[24px]
-                            p-6
-                            soft-shadow">
-
-                        <div class="text-4xl mb-4">
-                            🥾
-                        </div>
-
-                        <p class="text-xs
-                          text-green-700
-                          font-black
-                          uppercase
-                          tracking-wide
-                          mb-2">
-
-                            Dificultad baja/media
-
-                        </p>
-
-                        <h3 class="text-2xl
-                           font-black mb-3">
-                            Trekking
-                        </h3>
-
-                        <p class="text-gray-600
-                          leading-relaxed">
-
-                            Recorrido acompañado
-                            por un guardaparque local.
-
-                            El primer día descubrimos
-                            la flora, fauna
-                            y ambientes naturales
-                            del lugar.
-
-                        </p>
-
-                    </article>
-
-
-
-                    <!-- CAMPAMENTO -->
-
-                    <article class="bg-white
-                            rounded-[24px]
-                            p-6
-                            soft-shadow">
-
-                        <div class="text-4xl mb-4">
-                            ⛺
-                        </div>
-
-                        <p class="text-xs
-                          text-green-700
-                          font-black
-                          uppercase
-                          tracking-wide
-                          mb-2">
-
-                            Una noche en el campo
-
-                        </p>
-
-                        <h3 class="text-2xl
-                           font-black mb-3">
-                            Campamento
-                        </h3>
-
-                        <p class="text-gray-600
-                          leading-relaxed">
-
-                            Dormí en tu carpa
-                            o dentro de la casa contenedor.
-
-                            Nosotros trasladamos
-                            el equipo hasta el campo
-                            y de regreso.
-
-                        </p>
-
-                    </article>
-
-
-
-                    <!-- YOGA -->
-
-                    <article class="bg-white
-                            rounded-[24px]
-                            p-6
-                            soft-shadow">
-
-                        <div class="text-4xl mb-4">
-                            🧘
-                        </div>
-
-                        <p class="text-xs
-                          text-green-700
-                          font-black
-                          uppercase
-                          tracking-wide
-                          mb-2">
-
-                            Al atardecer
-
-                        </p>
-
-                        <h3 class="text-2xl
-                           font-black mb-3">
-                            Yoga
-                        </h3>
-
-                        <p class="text-gray-600
-                          leading-relaxed">
-
-                            Una pausa para bajar el ritmo,
-                            respirar
-                            y disfrutar del entorno.
-
-                            No necesitás experiencia previa.
-
-                        </p>
-
-                    </article>
-
-
-
-                    <!-- FOGÓN -->
-
-                    <article class="bg-gray-900
-                            text-white
-                            rounded-[24px]
-                            p-6
-                            soft-shadow
-                            sm:col-span-2">
-
-                        <div class="text-4xl mb-4">
-                            🔥
-                        </div>
-
-                        <p class="text-orange-300
-                          text-xs
-                          font-black
-                          uppercase
-                          tracking-wide
-                          mb-2">
-
-                            Cuando cae la noche
-
-                        </p>
-
-                        <h3 class="text-2xl
-                           md:text-3xl
-                           font-black mb-3">
-
-                            Fogón · Música · Gastronomía rusa
-
-                        </h3>
-
-                        <p class="text-gray-300
-                          leading-relaxed">
-
-                            Cena cocinada en vivo,
-                            platos como shashlik y pirozhki,
-                            música en vivo
-                            y una noche alrededor del fuego
-                            bajo las estrellas.
-
-                        </p>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ================================================== -->
-        <!-- INFO IMPORTANTE -->
-        <!-- ================================================== -->
-
-        <section class="py-14 md:py-20
-                bg-white">
-
-            <div class="max-w-5xl mx-auto
-                px-4 sm:px-6">
-
-
-                <div class="grid
-                    md:grid-cols-2
-                    gap-5">
-
-
-                    <!-- INFO -->
-
-                    <article class="bg-[#eef6f1]
-                            rounded-[24px]
-                            p-6 md:p-8">
-
-                        <h2 class="text-2xl
-                           font-black
-                           mb-5">
-
-                            Antes de venir
-
-                        </h2>
-
-
-                        <div class="space-y-5">
-
-                            <div>
-                                <p class="font-black mb-1">
-                                    🍽 Alimentación
-                                </p>
-
-                                <p class="text-gray-600">
-                                    Opciones vegetarianas,
-                                    veganas y sin TACC.
-                                    Avisanos previamente.
-                                </p>
-                            </div>
-
-
-                            <div>
-                                <p class="font-black mb-1">
-                                    💧 Bebidas
-                                </p>
-
-                                <p class="text-gray-600">
-                                    Agua incluida durante
-                                    toda la experiencia.
-
-                                    Vinos y gaseosas
-                                    disponibles para comprar.
-                                </p>
-                            </div>
-
-
-                            <div>
-                                <p class="font-black mb-1">
-                                    🎒 Equipaje
-                                </p>
-
-                                <p class="text-gray-600">
-                                    Trasladamos tu equipo
-                                    hasta el campo
-                                    y de regreso.
-
-                                    No tendrás que cargar
-                                    la carpa o bolsa de dormir
-                                    durante el trekking o kayak.
-                                </p>
-                            </div>
-
-
-                            <div>
-                                <p class="font-black mb-1">
-                                    🏕 ¿No tenés equipo?
-                                </p>
-
-                                <p class="text-gray-600">
-                                    Avisanos al reservar
-                                    y buscamos juntos
-                                    una alternativa.
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- POLÍTICAS -->
-
-                    <article class="bg-gray-900
-                            text-white
-                            rounded-[24px]
-                            p-6 md:p-8">
-
-                        <h2 class="text-2xl
-                           font-black
-                           mb-5">
-
-                            Reservas & políticas
-
-                        </h2>
-
-
-                        <div class="space-y-5">
-
-                            <div>
-
-                                <p class="font-black mb-1">
-                                    Reserva
-                                </p>
-
-                                <p class="text-gray-300">
-                                    Tu lugar queda confirmado
-                                    con una seña del 50%.
-                                </p>
-
-                            </div>
-
-
-                            <div>
-
-                                <p class="font-black mb-1">
-                                    Cancelaciones
-                                </p>
-
-                                <p class="text-gray-300">
-                                    Con más de 20 días:
-                                    devolución de la seña.
-
-                                    Dentro de los 20 días previos:
-                                    la seña no es reintegrable.
-                                </p>
-
-                            </div>
-
-
-                            <div>
-
-                                <p class="font-black mb-1">
-                                    ¿Y si el clima no acompaña?
-                                </p>
-
-                                <p class="text-gray-300">
-                                    Si no podemos realizar
-                                    la experiencia de forma segura,
-                                    reprogramamos.
-
-                                    Podés trasladar tu reserva
-                                    o solicitar el reintegro total.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ================================================== -->
-        <!-- CIERRE -->
-        <!-- ================================================== -->
-
-        <section class="py-16 md:py-24
-                bg-[#1f3a2e]
-                text-white">
-
-
-            <div class="max-w-3xl mx-auto
-                px-5
-                text-center">
-
-
-                <p class="text-green-200
+        <p class="text-[#af350f]
+                  font-bold
                   uppercase
                   section-label
-                  font-bold
                   text-xs
-                  mb-4">
+                  mb-3">
 
-                    ¿Por qué venir?
+            Dos días afuera
 
-                </p>
+        </p>
 
 
-                <h2 class="text-3xl
+        <h2 class="text-3xl
                    sm:text-4xl
                    md:text-5xl
                    font-black
                    leading-tight
                    mb-6">
 
-                    Llegás de visita
-                    y terminás sintiéndote en casa.
+            Menos pantalla.
+            <br>
 
-                </h2>
+            Más tiempo para estar presentes.
+
+        </h2>
 
 
-                <p class="text-green-50
-                  text-base md:text-lg
+        <p class="text-gray-600
+                  text-base
+                  md:text-lg
                   leading-relaxed
-                  mb-8">
+                  mb-4">
 
-                    Dos días para desconectar de la pantalla,
-                    conocer gente nueva,
-                    compartir momentos reales
-                    y volver a conectar con la naturaleza.
+            Una experiencia para salir de la rutina,
+            desconectarnos por un rato
+            y volver a conectar con lo simple.
+
+        </p>
+
+
+        <p class="text-gray-600
+                  text-base
+                  md:text-lg
+                  leading-relaxed
+                  mb-6">
+
+            Dos días para compartir río,
+            senderos, campamento,
+            comida, música y naturaleza.
+
+            Un plan para conocer gente nueva,
+            compartir momentos reales
+            y disfrutar sin apuro.
+
+        </p>
+
+
+        <div class="inline-flex
+                    max-w-full
+                    bg-gray-900
+                    text-white
+                    rounded-full
+                    px-5
+                    py-3
+                    text-sm
+                    font-bold">
+
+            Sin señal · Sin apuro · En plena naturaleza
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================== -->
+<!-- ITINERARIO -->
+<!-- ================================================== -->
+
+<section class="py-16 md:py-24 bg-white mobile-safe">
+
+
+    <div class="w-full
+                max-w-5xl
+                mx-auto
+                px-4 sm:px-6">
+
+
+        <div class="text-center mb-10">
+
+            <p class="text-[#af350f]
+                      font-bold
+                      uppercase
+                      section-label
+                      text-xs
+                      mb-3">
+
+                Itinerario
+
+            </p>
+
+
+            <h2 class="text-3xl
+                       md:text-4xl
+                       font-black">
+
+                Así se viven los dos días
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="grid
+                    grid-cols-1
+                    md:grid-cols-2
+                    gap-5">
+
+
+            <!-- ================================================== -->
+            <!-- DÍA 1 -->
+            <!-- ================================================== -->
+
+            <article class="w-full
+                            min-w-0
+                            bg-[#f7f7f4]
+                            rounded-[26px]
+                            p-5
+                            sm:p-7">
+
+
+                <div class="inline-flex
+                            max-w-full
+                            bg-green-600
+                            text-white
+                            font-black
+                            rounded-full
+                            px-4
+                            py-2
+                            mb-6">
+
+                    Día 1 · Comienza la aventura
+
+                </div>
+
+
+                <div class="space-y-5">
+
+
+                    <div>
+
+                        <p class="font-black">
+                            07:00 – 09:30
+                        </p>
+
+                        <p class="text-gray-600">
+                            Llegada + brunch de bienvenida.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="font-black">
+                            10:00 – 13:00
+                        </p>
+
+                        <p class="text-gray-600">
+                            Travesía en kayak
+                            por el Río Uruguay.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="font-black">
+                            13:00 – 15:00
+                        </p>
+
+                        <p class="text-gray-600">
+                            Trekking interpretativo
+                            acompañado por un guardaparque local.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="font-black">
+                            15:30 – 17:30
+                        </p>
+
+                        <p class="text-gray-600">
+                            Llegada +
+                            campamento +
+                            merienda.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="font-black">
+                            17:30 – 18:30
+                        </p>
+
+                        <p class="text-gray-600">
+                            Yoga al atardecer.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="font-black">
+                            19:00
+                        </p>
+
+                        <p class="text-gray-600">
+                            Encendemos el fogón.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="font-black">
+                            21:00
+                        </p>
+
+                        <p class="text-gray-600">
+
+                            Gastronomía rusa
+                            + música en vivo.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ================================================== -->
+            <!-- DÍA 2 -->
+            <!-- ================================================== -->
+
+            <article class="w-full
+                            min-w-0
+                            bg-[#f7f7f4]
+                            rounded-[26px]
+                            p-5
+                            sm:p-7">
+
+
+                <div class="inline-flex
+                            max-w-full
+                            bg-[#af350f]
+                            text-white
+                            font-black
+                            rounded-full
+                            px-4
+                            py-2
+                            mb-6">
+
+                    Día 2 · El regreso
+
+                </div>
+
+
+                <div class="space-y-5">
+
+
+                    <div>
+
+                        <p class="font-black">
+                            08:00 – 09:30
+                        </p>
+
+                        <p class="text-gray-600">
+                            Desayuno buffet campestre.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="font-black">
+                            09:30 – 10:30
+                        </p>
+
+                        <p class="text-gray-600">
+                            Retomamos el sendero
+                            hacia los kayaks.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="font-black">
+                            10:30 – 12:30
+                        </p>
+
+                        <p class="text-gray-600">
+                            Regresamos en kayak
+                            hacia San Javier.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="font-black">
+                            13:00
+                        </p>
+
+                        <p class="text-gray-600">
+                            Brunch de despedida.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+
+        <p class="text-center
+                  text-xs
+                  sm:text-sm
+                  text-gray-500
+                  mt-7
+                  px-3">
+
+            Los horarios pueden ajustarse
+            según el clima,
+            el estado del río
+            y el ritmo del grupo.
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================== -->
+<!-- ACTIVIDADES -->
+<!-- ================================================== -->
+
+<section class="py-16 md:py-24 mobile-safe">
+
+
+    <div class="w-full
+                max-w-6xl
+                mx-auto
+                px-4 sm:px-6">
+
+
+        <div class="text-center mb-10">
+
+
+            <p class="text-[#af350f]
+                      font-bold
+                      uppercase
+                      section-label
+                      text-xs
+                      mb-3">
+
+                Todo en una experiencia
+
+            </p>
+
+
+            <h2 class="text-3xl
+                       md:text-4xl
+                       font-black">
+
+                Del río al fogón
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="grid
+                    grid-cols-1
+                    sm:grid-cols-2
+                    lg:grid-cols-3
+                    gap-4
+                    md:gap-6">
+
+
+            <!-- KAYAK -->
+
+            <article class="bg-white
+                            rounded-[26px]
+                            p-6
+                            soft-shadow
+                            min-w-0">
+
+                <div class="text-4xl mb-4">
+                    🛶
+                </div>
+
+                <p class="text-xs
+                          text-green-700
+                          font-black
+                          uppercase
+                          tracking-wide
+                          mb-2">
+
+                    Dos jornadas
+
+                </p>
+
+                <h3 class="text-2xl
+                           font-black
+                           mb-3">
+
+                    Kayak
+
+                </h3>
+
+
+                <p class="text-gray-600
+                          leading-relaxed">
+
+                    Aproximadamente 16 km
+                    entre ida y regreso.
+
+                    No necesitás experiencia previa
+                    y estaremos acompañados
+                    durante todo el recorrido.
+
+                </p>
+
+            </article>
+
+
+
+            <!-- TREKKING -->
+
+            <article class="bg-white
+                            rounded-[26px]
+                            p-6
+                            soft-shadow
+                            min-w-0">
+
+                <div class="text-4xl mb-4">
+                    🥾
+                </div>
+
+                <p class="text-xs
+                          text-green-700
+                          font-black
+                          uppercase
+                          tracking-wide
+                          mb-2">
+
+                    Dificultad baja / media
+
+                </p>
+
+                <h3 class="text-2xl
+                           font-black
+                           mb-3">
+
+                    Trekking
+
+                </h3>
+
+
+                <p class="text-gray-600
+                          leading-relaxed">
+
+                    Recorrido acompañado
+                    por un guardaparque local.
+
+                    Durante el primer día
+                    conocemos la flora,
+                    fauna y ambientes naturales
+                    de la zona.
+
+                </p>
+
+            </article>
+
+
+
+            <!-- CAMPAMENTO -->
+
+            <article class="bg-white
+                            rounded-[26px]
+                            p-6
+                            soft-shadow
+                            min-w-0">
+
+                <div class="text-4xl mb-4">
+                    ⛺
+                </div>
+
+                <p class="text-xs
+                          text-green-700
+                          font-black
+                          uppercase
+                          tracking-wide
+                          mb-2">
+
+                    Una noche en el campo
 
                 </p>
 
 
-                <a href="#reserva" class="inline-flex
+                <h3 class="text-2xl
+                           font-black
+                           mb-3">
+
+                    Campamento
+
+                </h3>
+
+
+                <p class="text-gray-600
+                          leading-relaxed">
+
+                    Podés dormir en tu propia carpa
+                    o dentro de la casa contenedor.
+
+                    Nosotros trasladamos
+                    todo tu equipo
+                    hasta el campo
+                    y de regreso.
+
+                </p>
+
+            </article>
+
+
+
+            <!-- YOGA -->
+
+            <article class="bg-white
+                            rounded-[26px]
+                            p-6
+                            soft-shadow
+                            min-w-0">
+
+                <div class="text-4xl mb-4">
+                    🧘
+                </div>
+
+                <p class="text-xs
+                          text-green-700
+                          font-black
+                          uppercase
+                          tracking-wide
+                          mb-2">
+
+                    Al atardecer
+
+                </p>
+
+
+                <h3 class="text-2xl
+                           font-black
+                           mb-3">
+
+                    Yoga
+
+                </h3>
+
+
+                <p class="text-gray-600
+                          leading-relaxed">
+
+                    Una pausa para bajar el ritmo,
+                    respirar
+                    y disfrutar del entorno.
+
+                    No necesitás experiencia previa.
+
+                </p>
+
+            </article>
+
+
+
+            <!-- FOGÓN -->
+
+            <article class="bg-gray-900
+                            text-white
+                            rounded-[26px]
+                            p-6
+                            soft-shadow
+                            min-w-0
+                            sm:col-span-2">
+
+                <div class="text-4xl mb-4">
+                    🔥
+                </div>
+
+
+                <p class="text-orange-300
+                          text-xs
+                          font-black
+                          uppercase
+                          tracking-wide
+                          mb-2">
+
+                    Cuando cae la noche
+
+                </p>
+
+
+                <h3 class="text-2xl
+                           md:text-3xl
+                           font-black
+                           mb-3">
+
+                    Fogón · Música · Gastronomía rusa
+
+                </h3>
+
+
+                <p class="text-gray-300
+                          leading-relaxed">
+
+                    Cena cocinada en vivo,
+                    platos como shashlik y pirozhki,
+                    música en vivo
+                    y una noche alrededor del fuego
+                    bajo las estrellas.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================== -->
+<!-- INFORMACIÓN IMPORTANTE -->
+<!-- ================================================== -->
+
+<section class="py-16
+                md:py-24
+                bg-white
+                mobile-safe">
+
+
+    <div class="w-full
+                max-w-5xl
+                mx-auto
+                px-4 sm:px-6">
+
+
+        <div class="grid
+                    grid-cols-1
+                    md:grid-cols-2
+                    gap-5">
+
+
+            <!-- INFO -->
+
+            <article class="bg-[#eef6f1]
+                            rounded-[26px]
+                            p-6 md:p-8
+                            min-w-0">
+
+
+                <h2 class="text-2xl
+                           font-black
+                           mb-6">
+
+                    Antes de venir
+
+                </h2>
+
+
+                <div class="space-y-5">
+
+
+                    <div>
+
+                        <p class="font-black mb-1">
+                            🍽 Alimentación
+                        </p>
+
+                        <p class="text-gray-600
+                                  leading-relaxed">
+
+                            Contamos con opciones
+                            vegetarianas,
+                            veganas
+                            y sin TACC.
+
+                            Avisanos previamente.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <p class="font-black mb-1">
+                            💧 Bebidas
+                        </p>
+
+                        <p class="text-gray-600
+                                  leading-relaxed">
+
+                            El agua está incluida
+                            durante toda la experiencia.
+
+                            Habrá vinos y gaseosas
+                            disponibles para comprar.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <p class="font-black mb-1">
+                            🎒 Equipaje
+                        </p>
+
+                        <p class="text-gray-600
+                                  leading-relaxed">
+
+                            Trasladamos tu equipo
+                            hasta el campo
+                            y de regreso.
+
+                            No tendrás que cargar
+                            carpa, bolsa de dormir
+                            ni demás elementos
+                            durante el kayak
+                            o trekking.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <p class="font-black mb-1">
+                            🏕 ¿No tenés equipo?
+                        </p>
+
+                        <p class="text-gray-600
+                                  leading-relaxed">
+
+                            Avisanos al reservar
+                            y buscaremos juntos
+                            una alternativa disponible.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- POLÍTICAS -->
+
+            <article class="bg-gray-900
+                            text-white
+                            rounded-[26px]
+                            p-6 md:p-8
+                            min-w-0">
+
+
+                <h2 class="text-2xl
+                           font-black
+                           mb-6">
+
+                    Reservas & políticas
+
+                </h2>
+
+
+                <div class="space-y-5">
+
+
+                    <div>
+
+                        <p class="font-black mb-1">
+                            Reserva
+                        </p>
+
+                        <p class="text-gray-300
+                                  leading-relaxed">
+
+                            Tu lugar queda confirmado
+                            con una seña del 50%.
+
+                            El saldo restante
+                            deberá abonarse
+                            antes de la experiencia.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <p class="font-black mb-1">
+                            Cancelaciones
+                        </p>
+
+                        <p class="text-gray-300
+                                  leading-relaxed">
+
+                            Con más de 20 días
+                            de anticipación:
+                            devolución de la seña.
+
+                            Dentro de los 20 días previos:
+                            la seña no es reintegrable.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <p class="font-black mb-1">
+                            ¿Y si el clima no acompaña?
+                        </p>
+
+                        <p class="text-gray-300
+                                  leading-relaxed">
+
+                            Si las condiciones
+                            no permiten realizar
+                            la experiencia
+                            de manera segura,
+                            reprogramaremos la fecha.
+
+                            Podrás trasladar tu reserva
+                            o solicitar
+                            el reintegro total.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ================================================== -->
+<!-- CIERRE -->
+<!-- ================================================== -->
+
+<section class="py-20
+                md:py-28
+                bg-[#1f3a2e]
+                text-white
+                mobile-safe">
+
+
+    <div class="w-full
+                max-w-3xl
+                mx-auto
+                px-5
+                text-center">
+
+
+        <p class="text-green-200
+                  uppercase
+                  section-label
+                  font-bold
+                  text-xs
+                  mb-4">
+
+            ¿Por qué venir?
+
+        </p>
+
+
+        <h2 class="text-3xl
+                   sm:text-4xl
+                   md:text-5xl
+                   font-black
+                   leading-tight
+                   mb-6">
+
+            Llegás de visita
+            y terminás sintiéndote en casa.
+
+        </h2>
+
+
+        <p class="text-green-50
+                  text-base
+                  md:text-lg
+                  leading-relaxed
+                  mb-8">
+
+            Dos días para desconectar
+            de la pantalla,
+            conocer gente nueva,
+            compartir momentos reales
+            y volver a conectar
+            con la naturaleza.
+
+        </p>
+
+
+        <a href="#reserva"
+
+           class="inline-flex
                   bg-white
                   text-[#1f3a2e]
-                  px-7 py-4
+                  px-7
+                  py-4
                   rounded-xl
                   font-black">
 
-                    Quiero reservar mi lugar
+            Quiero reservar mi lugar
 
-                </a>
-
-            </div>
-
-        </section>
+        </a>
 
 
-    </main>
+    </div>
+
+</section>
+
+
+</main>
 
 
 
-    <!-- ================================================== -->
-    <!-- FOOTER -->
-    <!-- ================================================== -->
+<!-- ================================================== -->
+<!-- FOOTER -->
+<!-- ================================================== -->
 
-    <footer class="py-10
+<footer class="py-12
                bg-white
                text-center
                px-5">
 
-        <p class="font-semibold">
-            @SanJavierExperiencias
-        </p>
 
-        <p class="text-sm
+    <p class="font-semibold">
+
+        @SanJavierExperiencias
+
+    </p>
+
+
+    <p class="text-sm
               text-gray-500
               mt-2">
 
-            San Javier · Río Negro · Uruguay
+        San Javier · Río Negro · Uruguay
 
-        </p>
-
-    </footer>
+    </p>
 
 
+</footer>
 
-    <!-- ================================================== -->
-    <!-- BARRA FIJA MOBILE -->
-    <!-- ================================================== -->
 
-    <div class="md:hidden
+
+<!-- ================================================== -->
+<!-- BARRA FIJA MOBILE -->
+<!-- ================================================== -->
+
+<div class="md:hidden
             fixed
-            bottom-0 left-0 right-0
+            bottom-0
+            left-0
+            right-0
             z-[60]
+            w-full
             bg-white
             border-t
             border-gray-200
@@ -1492,201 +1936,217 @@
             pb-[calc(12px+env(safe-area-inset-bottom))]">
 
 
-        <div class="flex
+    <div class="w-full
+                max-w-full
+                flex
                 items-center
                 gap-4">
 
 
-            <div class="flex-1">
+        <div class="flex-1 min-w-0">
 
-                <p class="text-[11px]
+            <p class="text-[11px]
                       text-gray-500
                       uppercase
                       font-bold">
-                    Desde
-                </p>
 
-                <p class="text-xl
+                Desde
+
+            </p>
+
+            <p class="text-xl
                       font-black">
-                    $6.000
-                </p>
 
-            </div>
+                $6.000
+
+            </p>
+
+        </div>
 
 
-            <a href="#reserva" class="bg-[#af350f]
+
+        <a href="#reserva"
+
+           class="flex-shrink-0
+                  bg-[#af350f]
                   text-white
-                  px-7 py-3.5
+                  px-7
+                  py-3.5
                   rounded-xl
                   font-black
                   text-center">
 
-                Reservar
+            Reservar
 
-            </a>
+        </a>
 
-
-        </div>
 
     </div>
 
-
-
-    <!-- ================================================== -->
-    <!-- JAVASCRIPT -->
-    <!-- ================================================== -->
-
-    <script>
-
-        const precioPersona = 6000;
-
-        const whatsapp = "59891009934";
-
-
-        const personasInput =
-            document.getElementById("personas");
-
-        const totalEl =
-            document.getElementById("total");
-
-        const senaEl =
-            document.getElementById("sena");
+</div>
 
 
 
-        function moneda(valor) {
+<!-- ================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ================================================== -->
 
-            return "$" +
-                valor.toLocaleString("es-UY");
+<script>
 
-        }
+    const precioPersona = 6000;
 
-
-
-        function cantidad() {
-
-            let n =
-                parseInt(personasInput.value || 1);
-
-            if (n < 1) n = 1;
-
-            return n;
-
-        }
+    const whatsapp = "59891009934";
 
 
+    const personasInput =
+        document.getElementById("personas");
 
-        function actualizarPrecio() {
+    const totalEl =
+        document.getElementById("total");
 
-            const n = cantidad();
-
-            personasInput.value = n;
-
-
-            const total =
-                n * precioPersona;
-
-
-            const sena =
-                total * 0.5;
-
-
-            totalEl.textContent =
-                moneda(total);
-
-
-            senaEl.textContent =
-                moneda(sena);
-
-        }
+    const senaEl =
+        document.getElementById("sena");
 
 
 
-        document
-            .getElementById("menos")
-            .addEventListener(
-                "click",
-                () => {
+    function moneda(valor) {
 
-                    personasInput.value =
-                        Math.max(
-                            1,
-                            cantidad() - 1
-                        );
+        return "$" +
+            valor.toLocaleString("es-UY");
 
-                    actualizarPrecio();
+    }
 
-                }
+
+
+    function cantidad() {
+
+        let n =
+            parseInt(
+                personasInput.value || "1",
+                10
             );
 
+        if (!n || n < 1) {
+            n = 1;
+        }
 
+        return n;
 
-        document
-            .getElementById("mas")
-            .addEventListener(
-                "click",
-                () => {
-
-                    personasInput.value =
-                        cantidad() + 1;
-
-                    actualizarPrecio();
-
-                }
-            );
+    }
 
 
 
-        personasInput
-            .addEventListener(
-                "input",
-                actualizarPrecio
-            );
+    function actualizarPrecio() {
+
+        const n = cantidad();
+
+        personasInput.value = n;
+
+
+        const total =
+            n * precioPersona;
+
+
+        const sena =
+            total * 0.5;
+
+
+        totalEl.textContent =
+            moneda(total);
+
+
+        senaEl.textContent =
+            moneda(sena);
+
+    }
 
 
 
-        document
-            .getElementById("reservarWhatsapp")
-            .addEventListener(
-                "click",
-                () => {
+    document
+        .getElementById("menos")
+        .addEventListener(
+            "click",
+            function () {
 
+                personasInput.value =
+                    Math.max(
+                        1,
+                        cantidad() - 1
+                    );
 
-                    const n =
-                        cantidad();
+                actualizarPrecio();
 
-
-                    const total =
-                        n * precioPersona;
-
-
-                    const sena =
-                        total * 0.5;
-
-
-                    const nombre =
-                        document
-                            .getElementById("nombre")
-                            .value
-                            .trim()
-                        || "No indicado";
-
-
-                    const dormir =
-                        document
-                            .getElementById("dormir")
-                            .value;
-
-
-                    const comida =
-                        document
-                            .getElementById("comida")
-                            .value;
+            }
+        );
 
 
 
-                    const mensaje =
-                        `¡Hola! Quiero reservar la Experiencia Completa del 14 y 15 de noviembre.
+    document
+        .getElementById("mas")
+        .addEventListener(
+            "click",
+            function () {
+
+                personasInput.value =
+                    cantidad() + 1;
+
+                actualizarPrecio();
+
+            }
+        );
+
+
+
+    personasInput
+        .addEventListener(
+            "input",
+            actualizarPrecio
+        );
+
+
+
+    document
+        .getElementById("reservarWhatsapp")
+        .addEventListener(
+            "click",
+            function () {
+
+
+                const n =
+                    cantidad();
+
+
+                const total =
+                    n * precioPersona;
+
+
+                const sena =
+                    total * 0.5;
+
+
+                const nombre =
+                    document
+                        .getElementById("nombre")
+                        .value
+                        .trim()
+                    || "No indicado";
+
+
+                const dormir =
+                    document
+                        .getElementById("dormir")
+                        .value;
+
+
+                const comida =
+                    document
+                        .getElementById("comida")
+                        .value;
+
+
+
+                const mensaje =
+`¡Hola! Quiero reservar la Experiencia Completa del 14 y 15 de noviembre.
 
 Nombre: ${nombre}
 Cantidad de personas: ${n}
@@ -1699,22 +2159,23 @@ Alimentación: ${comida}
 Quisiera coordinar el pago de la reserva.`;
 
 
-                    const url =
-                        `https://wa.me/${whatsapp}?text=${encodeURIComponent(mensaje)}`;
+                const url =
+                    `https://wa.me/${whatsapp}?text=${encodeURIComponent(mensaje)}`;
 
 
-                    window.open(
-                        url,
-                        "_blank"
-                    );
+                window.open(
+                    url,
+                    "_blank"
+                );
 
-                }
-            );
+            }
+        );
 
 
-        actualizarPrecio();
 
-    </script>
+    actualizarPrecio();
+
+</script>
 
 
 </body>
