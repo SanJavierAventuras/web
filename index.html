@@ -2,983 +2,1586 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <!-- ================================================== -->
-    <!-- SEO -->
-    <!-- ================================================== -->
-
-    <title>
-        San Javier Experiencias | Ecoturismo Rural en Río Negro, Uruguay
-    </title>
+    <title>San Javier Experiencias | Cultura, naturaleza y hospitalidad</title>
 
     <meta name="description"
-          content="San Javier Experiencias: naturaleza, cultura y experiencias auténticas en San Javier, Río Negro, Uruguay. Trekking, cabalgatas, kayak, campamentos, gastronomía y más.">
+        content="Un proyecto familiar para ayudarte a descubrir San Javier, Uruguay. Actividades, hospedaje y recomendaciones para planear tu visita.">
 
-    <meta name="keywords"
-          content="San Javier Uruguay, San Javier Experiencias, ecoturismo rural Uruguay, turismo rural Río Negro, trekking San Javier, cabalgatas San Javier, kayak San Javier, campamentos San Javier, gastronomía rusa Uruguay">
+    <link rel="canonical" href="https://sanjavierexperiencias.com/">
+    <link rel="icon" href="IMG/pestana.png" type="image/png">
 
-    <link rel="canonical"
-          href="https://sanjavierexperiencias.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sanjavierexperiencias.com/">
+    <meta property="og:site_name" content="San Javier Experiencias">
+    <meta property="og:title" content="San Javier Experiencias | Vení a disfrutar San Javier">
+    <meta property="og:description"
+        content="Actividades, hospedaje y una familia local que te ayuda a planear tu visita.">
+    <meta property="og:image" content="https://sanjavierexperiencias.com/IMG/preview-home-2026.png?preview=20261002-1">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="San Javier Experiencias — Cultura y Naturaleza">
 
-   <!-- ================================================== -->
-<!-- PREVIEW WHATSAPP / FACEBOOK -->
-<!-- ================================================== -->
-
-<meta property="og:type" content="website">
-
-<meta property="og:url"
-      content="https://sanjavierexperiencias.com/index.html">
-
-<meta property="og:site_name"
-      content="San Javier Experiencias">
-
-<meta property="og:title"
-      content="San Javier Experiencias | Ecoturismo Rural">
-
-<meta property="og:description"
-      content="Naturaleza, cultura y experiencias auténticas en San Javier, Río Negro, Uruguay.">
-
-<meta property="og:image"
-      content="https://sanjavierexperiencias.com/IMG/preview-home-2026.png?preview=20261002-1">
-
-<meta property="og:image:secure_url"
-      content="https://sanjavierexperiencias.com/IMG/preview-home-2026.png?preview=20261002-1">
-
-<meta property="og:image:type"
-      content="image/png">
-
-<meta property="og:image:width"
-      content="1200">
-
-<meta property="og:image:height"
-      content="630">
-
-<meta property="og:image:alt"
-      content="San Javier Experiencias - Ecoturismo Rural">
-
-
-<!-- ================================================== -->
-<!-- TWITTER / X -->
-<!-- ================================================== -->
-
-<meta name="twitter:card"
-      content="summary_large_image">
-
-<meta name="twitter:title"
-      content="San Javier Experiencias | Ecoturismo Rural">
-
-<meta name="twitter:description"
-      content="Naturaleza, cultura y experiencias auténticas en San Javier, Río Negro, Uruguay.">
-
-<meta name="twitter:image"
-      content="https://sanjavierexperiencias.com/IMG/preview-home-2026.png">
-
-
-    <!-- ================================================== -->
-    <!-- TAILWIND -->
-    <!-- ================================================== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="San Javier Experiencias">
+    <meta name="twitter:description" content="Actividades, hospedaje y recomendaciones de una familia local.">
+    <meta name="twitter:image" content="https://sanjavierexperiencias.com/IMG/preview-home-2026.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-
-    <!-- ================================================== -->
-    <!-- FAVICON -->
-    <!-- ================================================== -->
-
-    <link rel="icon"
-          href="IMG/pestana.png"
-          type="image/png">
-
-
-    <!-- ================================================== -->
-    <!-- SWIPER -->
-    <!-- ================================================== -->
-
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
     <style>
-
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 105px;
         }
 
-        .swiper-pagination {
-            position: relative !important;
-            margin-top: 20px;
+        .inicio {
+            --ink: #344736;
+            --muted: #737b68;
+            --orange: #af350f;
+            --green: #4a6848;
+            --paper: #fffdf7;
+            --yellow: #f8df98;
+            --peach: #f7e2d3;
+            --sage: #e8efdc;
+            --line: #e9e6d8;
+
+            padding-top: 80px;
+            color: var(--ink);
+            background: var(--paper);
         }
 
-        .swiper-button-next,
-        .swiper-button-prev {
-            color: black !important;
-            top: 50%;
-            transform: translateY(-50%);
+        .inicio *,
+        .inicio *::before,
+        .inicio *::after {
+            box-sizing: border-box;
         }
 
-        .swiper-button-next {
-            right: -40px;
+        .ale-wrap {
+            width: min(1120px, calc(100% - 56px));
+            margin: 0 auto;
         }
 
-        .swiper-button-prev {
-            left: -40px;
+        .ale-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 0 15px;
+            color: var(--orange);
+            font-size: 9px;
+            font-weight: 800;
+            line-height: 1.6;
+            letter-spacing: .12em;
+            text-transform: uppercase;
         }
 
-        .swiper-button-next::after,
-        .swiper-button-prev::after {
-            font-size: 24px;
-            font-weight: bold;
+        .ale-label::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: currentColor;
         }
 
-        .review-stars {
-            color: #eab308;
-            letter-spacing: 2px;
+        .ale-title {
+            margin: 0;
+            font-size: clamp(31px, 4vw, 46px);
+            font-weight: 850;
+            line-height: 1.1;
+            letter-spacing: -.05em;
         }
 
-        @media (max-width: 767px) {
+        .ale-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 19px;
+            min-height: 51px;
+            padding: 15px 23px;
+            border: 0;
+            border-radius: 10px;
+            background: var(--orange);
+            color: #fff;
+            font: inherit;
+            font-size: 12px;
+            font-weight: 750;
+            text-decoration: none;
+            transition:
+                background .2s,
+                transform .2s,
+                box-shadow .2s;
+        }
 
-            .swiper-button-next {
-                right: 5px;
+        .ale-button:hover {
+            background: #922f08;
+            transform: translateY(-3px);
+            box-shadow: 0 9px 20px #af350f20;
+        }
+
+        .ale-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 13px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #aab99b;
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 750;
+            text-decoration: none;
+            transition: gap .2s;
+        }
+
+        .ale-link:hover {
+            gap: 20px;
+        }
+
+        .inicio a:focus-visible {
+            outline: 3px solid #9ab27c;
+            outline-offset: 5px;
+        }
+
+        /* PORTADA */
+
+        .ale-hero {
+            position: relative;
+            isolation: isolate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 580px;
+            min-height: max(580px, calc(86svh - 80px));
+            overflow: hidden;
+            background: #4b5941;
+            color: #fff;
+            text-align: center;
+        }
+
+        .ale-hero-photo {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .ale-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(180deg,
+                    rgba(25, 35, 17, .23),
+                    rgba(25, 35, 17, .46) 48%,
+                    rgba(25, 35, 17, .53));
+        }
+
+        .ale-hero-content {
+            width: min(830px, calc(100% - 40px));
+            padding: 53px 0 77px;
+            animation: ale-enter .8s ease-out both;
+        }
+
+        .ale-hero .ale-label {
+            margin-bottom: 25px;
+            color: #fff0c8;
+            font-size: 9px;
+            letter-spacing: .15em;
+        }
+
+        .ale-hero h1 {
+            margin: 0 0 25px;
+            font-size: clamp(49px, 7vw, 82px);
+            font-weight: 850;
+            line-height: 1.01;
+            letter-spacing: -.055em;
+        }
+
+        .ale-hero h1 span {
+            color: #ffe6a5;
+        }
+
+        .ale-hero-description {
+            max-width: 460px;
+            margin: 0 auto;
+            color: #fff9e9;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .ale-hero .ale-button {
+            margin-top: 29px;
+            padding-right: 28px;
+            padding-left: 28px;
+        }
+
+        .ale-location {
+            position: absolute;
+            right: 15px;
+            bottom: 23px;
+            left: 15px;
+            margin: 0;
+            color: #f0edda;
+            font-size: 9px;
+            letter-spacing: .08em;
+        }
+
+        /* PRESENTACIÓN */
+
+        .ale-welcome {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 65px;
+            padding: 65px 0;
+        }
+
+        .ale-welcome-heading {
+            position: relative;
+            padding-right: 32px;
+        }
+
+        .ale-welcome-heading .ale-title {
+            max-width: 450px;
+        }
+
+        .ale-welcome-heading .ale-title span {
+            color: var(--orange);
+        }
+
+        .ale-heart {
+            display: block;
+            width: 39px;
+            height: 39px;
+            margin-bottom: 17px;
+            color: var(--orange);
+            animation: ale-heart 6s ease-in-out infinite;
+        }
+
+        .ale-welcome-copy p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.95;
+        }
+
+        .ale-welcome-copy p+p {
+            margin-top: 13px;
+        }
+
+        .ale-welcome-copy strong {
+            color: var(--ink);
+            font-weight: 750;
+        }
+
+        .ale-welcome-copy .ale-link {
+            margin-top: 23px;
+        }
+
+        /* ACTIVIDADES */
+
+        .ale-plans {
+            padding-bottom: 63px;
+        }
+
+        .ale-plans-box {
+            position: relative;
+            isolation: isolate;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            align-items: center;
+            gap: 45px;
+            overflow: hidden;
+            padding: 42px;
+            border: 1px solid #edd58f;
+            border-radius: 22px;
+            background: #fae7ae;
+        }
+
+        .ale-plans-box::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: -135px;
+            left: -90px;
+            width: 330px;
+            height: 330px;
+            border-radius: 50%;
+            background: #fff4d345;
+        }
+
+        .ale-plans-box::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            right: -70px;
+            bottom: -120px;
+            width: 320px;
+            height: 250px;
+            border: 1px dashed #b18d3d55;
+            border-radius: 50%;
+            transform: rotate(-20deg);
+        }
+
+        .ale-plans-copy {
+            position: relative;
+        }
+
+        .ale-plans-copy .ale-title {
+            max-width: 470px;
+            margin-bottom: 19px;
+            font-size: clamp(34px, 4.4vw, 49px);
+        }
+
+        .ale-plans-copy>p:not(.ale-label) {
+            max-width: 440px;
+            margin: 0;
+            color: #746440;
+            font-size: 13px;
+            line-height: 1.95;
+        }
+
+        .ale-plan-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 21px 0 24px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .ale-plan-tags li {
+            padding: 7px 10px;
+            border: 1px solid #d9be7d;
+            border-radius: 7px;
+            background: #fff5d650;
+            color: #71603a;
+            font-size: 9px;
+            font-weight: 650;
+        }
+
+        .ale-sun {
+            position: absolute;
+            z-index: -1;
+            top: 17px;
+            right: 19px;
+            width: 89px;
+            height: 89px;
+            color: #bc8734;
+            opacity: .55;
+            animation: ale-sun 50s linear infinite;
+            pointer-events: none;
+        }
+
+        /* AGENDA DENTRO DEL BLOQUE */
+
+        .ale-agenda {
+            position: relative;
+            padding: 27px;
+            border: 1px solid #fff8df;
+            border-radius: 16px;
+            background: #fffdf3;
+            box-shadow: 0 10px 25px #8b70360b;
+        }
+
+        .ale-agenda-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 19px;
+        }
+
+        .ale-calendar {
+            display: grid;
+            flex: 0 0 43px;
+            place-items: center;
+            width: 43px;
+            height: 43px;
+            border-radius: 13px;
+            background: #ecf0df;
+            color: var(--green);
+        }
+
+        .ale-calendar svg {
+            width: 23px;
+            height: 23px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .ale-agenda h3 {
+            margin: 0;
+            font-size: 19px;
+            font-weight: 800;
+            line-height: 1.25;
+            letter-spacing: -.025em;
+        }
+
+        .ale-agenda-status {
+            display: inline-block;
+            margin-bottom: 11px;
+            padding: 5px 8px;
+            border-radius: 5px;
+            background: #f4ead7;
+            color: #8a744b;
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        .ale-agenda p {
+            margin: 0;
+            color: #7b7c69;
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .ale-agenda .ale-link {
+            margin-top: 18px;
+            font-size: 11px;
+        }
+
+        .ale-events {
+            display: grid;
+            gap: 18px;
+        }
+
+        .ale-event+.ale-event {
+            padding-top: 18px;
+            border-top: 1px solid var(--line);
+        }
+
+        .ale-event-date {
+            display: block;
+            margin-bottom: 7px;
+            color: var(--orange);
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .ale-event h4 {
+            margin: 0 0 9px;
+            font-size: 19px;
+            font-weight: 800;
+            line-height: 1.25;
+            letter-spacing: -.025em;
+        }
+
+        .ale-events[hidden],
+        .ale-empty[hidden] {
+            display: none;
+        }
+
+        /* RESEÑAS */
+
+        .ale-reviews {
+            position: relative;
+            padding: 55px 0;
+            border-top: 1px solid #ece8db;
+            border-bottom: 1px solid #ece8db;
+            background: #f6f7ef;
+        }
+
+        .ale-reviews-heading {
+            max-width: 620px;
+            margin: 0 auto 31px;
+            text-align: center;
+        }
+
+        .ale-reviews-heading .ale-title {
+            margin-bottom: 15px;
+        }
+
+        .ale-reviews-heading>p:last-child {
+            margin: 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.85;
+        }
+
+        .ale-review-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 19px;
+        }
+
+        .ale-review {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 27px;
+            border: 1px solid #e5e8d8;
+            border-radius: 16px;
+            background: #fffef8;
+            box-shadow: 0 7px 22px #777b3c07;
+            transition: transform .25s, box-shadow .25s;
+        }
+
+        .ale-review:nth-child(2) {
+            border-color: #efdfd0;
+            background: #fff8f0;
+        }
+
+        .ale-review:nth-child(3) {
+            border-color: #dde5e9;
+            background: #f7fafb;
+        }
+
+        .ale-review:nth-child(4) {
+            border-color: #e9e0c9;
+            background: #fffbef;
+        }
+
+        .ale-review:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px #777b3c10;
+        }
+
+        .ale-review-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 17px;
+        }
+
+        .ale-stars {
+            color: #bd913c;
+            font-size: 12px;
+            letter-spacing: 3px;
+        }
+
+        .ale-quote {
+            height: 28px;
+            color: #d7c79f;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 49px;
+            line-height: 1;
+        }
+
+        .ale-review blockquote {
+            flex-grow: 1;
+            margin: 0;
+        }
+
+        .ale-review blockquote p {
+            margin: 0;
+            color: #6c7464;
+            font-size: 12px;
+            line-height: 1.95;
+        }
+
+        .ale-review figcaption {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            margin-top: 22px;
+            padding-top: 17px;
+            border-top: 1px solid #dce0ce80;
+        }
+
+        .ale-review-initial {
+            display: grid;
+            flex: 0 0 38px;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #e6ecd8;
+            color: #647a4d;
+            font-size: 13px;
+            font-weight: 750;
+        }
+
+        .ale-review:nth-child(2) .ale-review-initial {
+            background: #f3decb;
+            color: #a46b46;
+        }
+
+        .ale-review:nth-child(3) .ale-review-initial {
+            background: #e1ebef;
+            color: #638294;
+        }
+
+        .ale-review:nth-child(4) .ale-review-initial {
+            background: #f1e3b9;
+            color: #9c803e;
+        }
+
+        .ale-review-person {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .ale-review-name {
+            display: block;
+            font-size: 12px;
+            font-weight: 750;
+        }
+
+        .ale-review-detail {
+            display: block;
+            margin-top: 4px;
+            color: #8a907e;
+            font-size: 9px;
+            line-height: 1.6;
+        }
+
+        .ale-review-source {
+            color: #929783;
+            font-size: 9px;
+            white-space: nowrap;
+        }
+
+        .ale-review-invite {
+            margin-top: 27px;
+            text-align: center;
+        }
+
+        .ale-review-invite p {
+            margin: 0 0 12px;
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        /* CONTACTO */
+
+        .ale-contact {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            margin: 37px 0;
+            padding: 30px;
+            border: 1px solid #edddd0;
+            border-radius: 16px;
+            background: var(--peach);
+        }
+
+        .ale-contact h2 {
+            margin: 0 0 10px;
+            font-size: 29px;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -.04em;
+        }
+
+        .ale-contact p {
+            max-width: 530px;
+            margin: 0;
+            color: #85725f;
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .ale-contact .ale-button {
+            flex-shrink: 0;
+        }
+
+        /* PIE */
+
+        .ale-footer {
+            padding: 0 0 24px;
+        }
+
+        .ale-footer-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            padding-top: 22px;
+            border-top: 1px solid var(--line);
+        }
+
+        .ale-footer-brand {
+            color: var(--ink);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .ale-footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .ale-footer-links a {
+            color: var(--muted);
+            font-size: 10px;
+            text-decoration: none;
+        }
+
+        .ale-footer-links a:hover {
+            color: var(--orange);
+        }
+
+        .ale-copyright {
+            margin: 17px 0 0;
+            padding-right: 45px;
+            color: #959a86;
+            font-size: 9px;
+            line-height: 1.8;
+        }
+
+        .ale-whatsapp {
+            position: fixed;
+            z-index: 40;
+            right: 21px;
+            bottom: 21px;
+            display: grid;
+            place-items: center;
+            width: 51px;
+            height: 51px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 5px 20px #173a2525;
+            transition: transform .2s;
+        }
+
+        .ale-whatsapp:hover {
+            transform: translateY(-3px);
+        }
+
+        .ale-whatsapp img {
+            width: 51px;
+            height: 51px;
+            object-fit: contain;
+        }
+
+        /* ANIMACIONES */
+
+        @keyframes ale-enter {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
             }
 
-            .swiper-button-prev {
-                left: 5px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
-
         }
 
+        @keyframes ale-heart {
+
+            0%,
+            100% {
+                transform: rotate(-5deg);
+            }
+
+            50% {
+                transform: rotate(6deg) translateY(-3px);
+            }
+        }
+
+        @keyframes ale-sun {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 950px) {
+            .ale-welcome {
+                gap: 35px;
+            }
+
+            .ale-plans-box {
+                gap: 27px;
+                padding: 32px;
+            }
+
+            .ale-agenda {
+                padding: 23px;
+            }
+        }
+
+        /* CELULARES */
+
+        @media (max-width: 760px) {
+            .ale-wrap {
+                width: calc(100% - 36px);
+            }
+
+            .ale-label {
+                font-size: 8px;
+                letter-spacing: .1em;
+            }
+
+            .ale-title {
+                font-size: 31px;
+            }
+
+            .ale-hero {
+                min-height: 530px;
+                min-height: max(530px, calc(82svh - 80px));
+            }
+
+            .ale-hero-content {
+                width: calc(100% - 38px);
+                padding: 45px 0 75px;
+            }
+
+            .ale-hero .ale-label {
+                margin-bottom: 23px;
+                font-size: 8px;
+                letter-spacing: .11em;
+            }
+
+            .ale-hero h1 {
+                margin-bottom: 23px;
+                font-size: clamp(46px, 12vw, 62px);
+            }
+
+            .ale-hero-description {
+                max-width: 330px;
+                font-size: 13px;
+            }
+
+            .ale-hero .ale-button {
+                margin-top: 26px;
+            }
+
+            .ale-location {
+                bottom: 22px;
+                font-size: 8px;
+            }
+
+            .ale-welcome {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 22px;
+                padding: 39px 0;
+            }
+
+            .ale-welcome-heading {
+                padding-right: 0;
+            }
+
+            .ale-heart {
+                width: 33px;
+                height: 33px;
+                margin-bottom: 14px;
+            }
+
+            .ale-welcome-copy p {
+                font-size: 12px;
+            }
+
+            .ale-welcome-copy .ale-link {
+                margin-top: 20px;
+                font-size: 11px;
+            }
+
+            .ale-plans {
+                padding-bottom: 39px;
+            }
+
+            .ale-plans-box {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 27px;
+                padding: 29px 23px 23px;
+                border-radius: 18px;
+            }
+
+            .ale-plans-copy .ale-label {
+                max-width: 230px;
+            }
+
+            .ale-plans-copy .ale-title {
+                max-width: 310px;
+                font-size: 36px;
+            }
+
+            .ale-plans-copy>p:not(.ale-label) {
+                font-size: 12px;
+            }
+
+            .ale-plan-tags {
+                gap: 7px;
+                margin: 19px 0 22px;
+            }
+
+            .ale-plan-tags li {
+                padding: 6px 8px;
+                font-size: 8px;
+            }
+
+            .ale-plans-copy .ale-button {
+                width: 100%;
+            }
+
+            .ale-sun {
+                top: 13px;
+                right: 10px;
+                width: 65px;
+                height: 65px;
+                opacity: .4;
+            }
+
+            .ale-agenda {
+                padding: 23px 20px;
+                border-radius: 13px;
+            }
+
+            .ale-agenda h3 {
+                font-size: 18px;
+            }
+
+            .ale-agenda p {
+                font-size: 11px;
+            }
+
+            .ale-reviews {
+                padding: 39px 0;
+            }
+
+            .ale-reviews-heading {
+                margin-bottom: 25px;
+            }
+
+            .ale-reviews-heading>p:last-child {
+                font-size: 11px;
+            }
+
+            .ale-review-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 14px;
+            }
+
+            .ale-review {
+                padding: 23px;
+                border-radius: 14px;
+            }
+
+            .ale-review-source {
+                font-size: 8px;
+            }
+
+            .ale-review-invite .ale-link {
+                font-size: 11px;
+            }
+
+            .ale-contact {
+                display: block;
+                margin: 28px 0;
+                padding: 26px 22px;
+                border-radius: 14px;
+            }
+
+            .ale-contact h2 {
+                font-size: 28px;
+            }
+
+            .ale-contact p {
+                font-size: 11px;
+            }
+
+            .ale-contact .ale-button {
+                width: 100%;
+                margin-top: 21px;
+            }
+
+            .ale-footer-top {
+                display: block;
+            }
+
+            .ale-footer-links {
+                gap: 16px;
+                margin-top: 15px;
+                padding-right: 40px;
+            }
+
+            .ale-whatsapp {
+                right: 15px;
+                bottom: 15px;
+                width: 49px;
+                height: 49px;
+            }
+
+            .ale-whatsapp img {
+                width: 49px;
+                height: 49px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .inicio *,
+            .inicio *::before,
+            .inicio *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
     </style>
-
 </head>
 
+<body class="font-sans bg-white">
 
-<body class="font-sans bg-gray-50">
-
-
-    <!-- ================================================== -->
-    <!-- NAVBAR -->
-    <!-- ================================================== -->
-
+    <!-- BARRA DE MENÚ -->
     <header class="fixed top-0 w-full bg-white shadow z-50">
-
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
 
-
-            <!-- LOGO -->
-
             <a href="index.html" class="flex items-center gap-3">
-
                 <img src="IMG/logo.png" alt="Logo San Javier Experiencias" class="w-12 h-12 object-contain">
 
                 <div class="leading-tight">
-
                     <span class="block text-2xl md:text-3xl font-bold">
                         San Javier
                     </span>
-
                     <span class="block text-sm md:text-base text-[#af350f]">
                         Cultura y Naturaleza
                     </span>
+                </div>
+            </a>
+
+            <button id="menu-btn" type="button" class="md:hidden text-gray-700 text-3xl focus:outline-none"
+                aria-label="Abrir o cerrar menú" aria-expanded="false" aria-controls="menu">☰</button>
+
+            <nav id="menu"
+                class="hidden absolute top-full left-0 w-full bg-white shadow-md md:shadow-none md:static md:block md:w-auto">
+                <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
+                    <li>
+                        <a href="HTML/nosotros.html" class="hover:text-[#af350f] transition">Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="HTML/tours.html" class="hover:text-[#af350f] transition">Tours</a>
+                    </li>
+                    <li>
+                        <a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
+                            class="hover:text-[#af350f] transition">Hospedaje</a>
+                    </li>
+                    <li>
+                        <a href="#resenas" class="hover:text-[#af350f] transition">Reseñas</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <a href="https://wa.link/2yu17o"
+                class="hidden md:inline-block ml-6 bg-[#af350f] text-white px-4 py-2 rounded-lg hover:bg-[#922f08] transition">Reservar</a>
+
+        </div>
+    </header>
+
+    <main class="inicio">
+
+        <!-- PORTADA ORIGINAL -->
+        <section class="ale-hero" aria-labelledby="inicio-title">
+
+            <img class="ale-hero-photo" src="IMG/contenedor.png" alt="Nuestro rincón de campo en San Javier"
+                fetchpriority="high" decoding="async">
+
+            <div class="ale-hero-content">
+
+                <p class="ale-label">
+                    San Javier Experiencias · Ecoturismo rural
+                </p>
+
+                <h1 id="inicio-title">
+                    Vení a disfrutar<br>
+                    <span>San Javier.</span>
+                </h1>
+
+                <p class="ale-hero-description">
+                    Naturaleza, cultura rusa y momentos para compartir.
+                    Una escapada para descubrir, descansar
+                    y sentirse bien recibido.
+                </p>
+
+                <a class="ale-button" href="HTML/tours.html">
+                    Encontrá tu próximo plan
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+            </div>
+
+            <p class="ale-location">
+                San Javier · Río Negro · Uruguay
+            </p>
+
+        </section>
+
+        <div class="ale-wrap">
+
+            <!-- PRESENTACIÓN DEL PROYECTO -->
+            <section class="ale-welcome" aria-labelledby="welcome-title">
+
+                <div class="ale-welcome-heading">
+
+                    <svg class="ale-heart" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                        focusable="false">
+                        <path d="M20 34
+                 C15 29 5 23 5 14
+                 C5 5 15 3 20 11
+                 C25 3 35 5 35 14
+                 C35 23 25 29 20 34Z" fill="#f6ddbf" stroke="currentColor" stroke-width="1.7"
+                            stroke-linejoin="round" />
+                    </svg>
+
+                    <p class="ale-label">Qué es San Javier Experiencias</p>
+
+                    <h2 class="ale-title" id="welcome-title">
+                        Tu visita al pueblo,<br>
+                        <span>con alguien de acá.</span>
+                    </h2>
 
                 </div>
 
-            </a>
+                <div class="ale-welcome-copy">
 
+                    <p>
+                        Somos un <strong>proyecto familiar</strong> que quiere
+                        ayudarte a disfrutar San Javier: encontrar actividades,
+                        elegir hospedaje o simplemente planear
+                        tu paseo por el pueblo.
+                    </p>
 
-            <!-- BOTÓN HAMBURGUESA -->
+                    <p>
+                        Unimos experiencias, hospedaje y hospitalidad familiar para que disfrutes San Javier de cerca. Te acompañamos a
+                        organizar tu visita con atención y calidez, trabajando junto a otras propuestas locales para que el turismo también
+                        aporte al pueblo y al cuidado de su entorno.
+                    </p>
 
-            <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none" aria-label="Abrir menú">
+                    <a class="ale-link" href="HTML/nosotros.html">
+                        Conocé más sobre nosotros
+                        <span aria-hidden="true">↗</span>
+                    </a>
 
-                ☰
+                </div>
+            </section>
 
-            </button>
+            <!-- ACTIVIDADES Y AGENDA -->
+            <section class="ale-plans" id="proximas-salidas" aria-labelledby="plans-title">
 
+                <div class="ale-plans-box">
 
-            <!-- MENÚ -->
+                    <!-- SOL DECORATIVO -->
+                    <svg class="ale-sun" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                        focusable="false">
+                        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <circle cx="40" cy="40" r="17" />
+                            <path d="M40 4V13 M40 67V76
+                   M4 40H13 M67 40H76
+                   M14 14L21 21 M59 59L66 66
+                   M14 66L21 59 M59 21L66 14
+                   M26 7L29 15 M51 65L54 73
+                   M7 26L15 29 M65 51L73 54
+                   M7 54L15 51 M65 29L73 26
+                   M26 73L29 65 M51 15L54 7" />
+                        </g>
+                        <circle cx="40" cy="40" r="12" fill="#f7ce70" />
+                    </svg>
 
-            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white shadow-md
-                md:shadow-none md:static md:block md:w-auto">
+                    <div class="ale-plans-copy">
 
-                <ul class="flex flex-col md:flex-row gap-4 md:gap-6
-                    text-gray-700 font-medium p-4 md:p-0">
+                        <p class="ale-label">Actividades para compartir</p>
 
+                        <h2 class="ale-title" id="plans-title">
+                            Descubrí qué hacer<br>
+                            en San Javier.
+                        </h2>
 
-                    <li>
+                        <p>
+                            Una caminata, un paseo a caballo, un día
+                            de granja en familia o una cena con sabores rusos.
+                            Elegí lo que más te guste y consultanos
+                            para organizarlo.
+                        </p>
 
-                        <a href="HTML/nosotros.html" class="hover:text-[#af350f] transition">
+                        <ul class="ale-plan-tags" aria-label="Tipos de experiencias">
+                            <li>Naturaleza</li>
+                            <li>Cabalgatas</li>
+                            <li>En familia</li>
+                            <li>Gastronomía rusa</li>
+                        </ul>
 
-                            Nosotros
-
+                        <a class="ale-button" href="HTML/tours.html">
+                            Ver todas las actividades
+                            <span aria-hidden="true">↗</span>
                         </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="HTML/tours.html" class="hover:text-[#af350f] transition">
-
-                            Tours
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
-                            class="hover:text-[#af350f] transition">
-
-                            Hospedaje
-
-                        </a>
-
-                    </li>
-
-
-                    <li>
-
-                        <a href="#resenas" class="hover:text-[#af350f] transition">
-
-                            Reseñas
-
-                        </a>
-
-                    </li>
-
-
-                </ul>
-
-            </nav>
-
-
-            <!-- BOTÓN RESERVAR -->
-
-            <a href="https://wa.link/2yu17o" class="hidden md:inline-block ml-6 bg-[#af350f]
-                text-white px-4 py-2 rounded-lg
-                hover:bg-[#922f08] transition">
-
-                Reservar
-
-            </a>
-
-
-        </div>
-
-    </header>
-
-
-
-    <!-- ================================================== -->
-    <!-- HERO -->
-    <!-- ================================================== -->
-
-    <section class="h-screen flex items-center justify-center
-        text-center text-white relative bg-cover bg-center" style="background-image: url('IMG/contenedor.png');">
-
-
-        <div class="bg-black/50 absolute inset-0"></div>
-
-
-        <div class="relative z-10 px-6">
-
-
-            <h1 class="text-4xl md:text-6xl
-                font-extrabold leading-tight mb-6">
-
-                VIVÍ TU PRÓXIMA <br>
-                AVENTURA DE SENDERISMO
-
-            </h1>
-
-
-            <p class="text-lg md:text-xl mb-11">
-
-                Explora la naturaleza, vive experiencias únicas
-                y conecta con tu lado aventurero.
-
-            </p>
-
-
-            <a href="HTML/tours.html" class="px-6 py-3 border-2 border-white
-                text-white hover:bg-white hover:text-gray-900 transition">
-
-                Reserva tu excursión
-
-            </a>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================================================== -->
-    <!-- QUÉ OFRECEMOS -->
-    <!-- ================================================== -->
-
-    <section class="py-16 bg-gray-100">
-
-
-        <div class="container mx-auto px-6 grid gap-12
-            md:grid-cols-2 lg:grid-cols-4 text-center">
-
-
-            <!-- SENDERISMO -->
-
-            <div>
-
-                <img src="IMG/icon1.png" alt="Senderismo" class="mx-auto mb-4 w-20 h-20">
-
-                <h3 class="text-xl font-bold mb-2">
-
-                    Senderismo / Trekking
-
-                </h3>
-
-                <p class="text-gray-700 text-sm">
-
-                    Explora los paisajes impresionantes de San Javier
-                    con nuestras rutas de senderismo y trekking.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- TRAVESÍAS -->
-
-            <div>
-
-                <img src="IMG/icon2.png" alt="Travesías Extremas" class="mx-auto mb-4 w-20 h-20">
-
-                <h3 class="text-xl font-bold mb-2">
-
-                    Travesías Extremas
-
-                </h3>
-
-                <p class="text-gray-700 text-sm">
-
-                    Desafíos únicos para los aventureros
-                    que buscan emociones al máximo.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- CABALGATAS -->
-
-            <div>
-
-                <img src="IMG/icon3.png" alt="Cabalgatas" class="mx-auto mb-4 w-20 h-20">
-
-                <h3 class="text-xl font-bold mb-2">
-
-                    Cabalgatas
-
-                </h3>
-
-                <p class="text-gray-700 text-sm">
-
-                    Descubre la región a caballo disfrutando
-                    de la naturaleza intacta.
-
-                </p>
-
-            </div>
-
-
-
-            <!-- MÚSICA -->
-
-            <div>
-
-                <img src="IMG/icon4.png" alt="Música y Fogón" class="mx-auto mb-4 w-20 h-20">
-
-                <h3 class="text-xl font-bold mb-2">
-
-                    Música & Fogón
-
-                </h3>
-
-                <p class="text-gray-700 text-sm">
-
-                    Disfruta de la cultura local con música,
-                    gastronomía y fogón bajo las estrellas.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- ================================================== -->
-    <!-- RESEÑAS -->
-    <!-- ================================================== -->
-
-    <section id="resenas" class="py-20 bg-white">
-
-
-        <div class="container mx-auto px-6">
-
-
-            <!-- ENCABEZADO -->
-
-            <div class="text-center max-w-2xl mx-auto mb-12">
-
-
-                <p class="text-[#af350f] font-semibold uppercase
-                    tracking-wider text-sm mb-2">
-
-                    Experiencias reales
-
-                </p>
-
-
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">
-
-                    Lo que cuentan quienes nos visitaron
-
-                </h2>
-
-
-                <p class="text-gray-600">
-
-                    Cada aventura deja una historia.
-                    Conocé la experiencia de quienes ya descubrieron
-                    San Javier con nosotros.
-
-                </p>
-
-
-            </div>
-
-
-
-            <!-- ================================================== -->
-            <!-- TARJETAS DE RESEÑAS -->
-            <!-- ================================================== -->
-
-            <div class="grid lg:grid-cols-3 gap-7 max-w-7xl mx-auto
-                items-stretch">
-
-
-
-                <!-- ================================================== -->
-                <!-- KRISTINA -->
-                <!-- ================================================== -->
-
-                <article class="bg-gray-50 rounded-2xl p-7
-                    shadow-md hover:shadow-xl transition
-                    flex flex-col border border-gray-100">
-
-
-                    <div class="review-stars text-xl mb-4">
-
-                        ★★★★★
 
                     </div>
 
+                    <!-- AGENDA -->
+                    <aside class="ale-agenda" aria-labelledby="agenda-title">
 
-                    <p class="text-gray-700 leading-relaxed
-                        italic flex-grow">
+                        <div class="ale-agenda-top">
 
-                        “San Javier is a special town with wonderful
-                        history and an incredible location on the Uruguay
-                        river. Silvana’s location was comfortable and had
-                        everything we needed to feel at home. Silvana was
-                        one of our favorite hosts we have ever had and went
-                        over and above to ensure our stay was fantastic.
-                        My husband and I were able to have ecotourism
-                        opportunities like kayaking and horseback riding
-                        that created memories we will treasure forever.
-                        We can’t thank Silvana and her family enough for
-                        such a wonderful stay!”
-
-                    </p>
-
-
-                    <div class="border-t border-gray-200
-                        mt-6 pt-5">
-
-
-                        <div class="flex justify-between
-                            items-start gap-3">
-
-
-                            <div>
-
-                                <p class="font-bold text-lg
-                                    text-gray-900">
-
-                                    Kristina
-
-                                </p>
-
-                                <p class="text-sm text-gray-500 mt-1">
-
-                                    Asheville, Carolina del Norte 🇺🇸
-
-                                </p>
-
-                            </div>
-
-
-                            <span class="text-xs bg-white
-                                border border-gray-200
-                                rounded-full px-3 py-1
-                                text-gray-500 whitespace-nowrap">
-
-                                Airbnb
-
+                            <span class="ale-calendar" aria-hidden="true">
+                                <svg viewBox="0 0 24 24">
+                                    <rect x="3" y="5" width="18" height="16" rx="2" />
+                                    <path d="M7 3V7M17 3V7M3 10H21" />
+                                    <path d="M8 14H8.01M12 14H12.01M16 14H16.01" />
+                                    <path d="M8 17H8.01M12 17H12.01" />
+                                </svg>
                             </span>
 
+                            <h3 id="agenda-title">
+                                Próximas salidas<br>grupales
+                            </h3>
 
                         </div>
 
+                        <div class="ale-empty" id="agenda-vacia">
 
-                        <p class="text-xs text-gray-400 mt-3">
-
-                            Kayak · Cabalgata · Hospedaje
-
-                        </p>
-
-
-                    </div>
-
-
-                </article>
-
-
-
-                <!-- ================================================== -->
-                <!-- MICHELO -->
-                <!-- ================================================== -->
-
-                <article class="bg-gray-50 rounded-2xl p-7
-                    shadow-md hover:shadow-xl transition
-                    flex flex-col border border-gray-100">
-
-
-                    <div class="review-stars text-xl mb-4">
-
-                        ★★★★★
-
-                    </div>
-
-
-                    <p class="text-gray-700 leading-relaxed
-                        italic flex-grow">
-
-                        “Tanto Silvana como su familia nos atendieron
-                        espectacular. Son excelentes personas y nos
-                        trataron como de su propia familia. Nos facilitaron
-                        absolutamente todo lo que nos faltó, incluso cosas
-                        que nos olvidamos. Destacamos su hospitalidad,
-                        generosidad y sobre todo el contarnos muchas
-                        historias de San Javier y su comodidad.
-                        Compartimos una preciosa cena con su familia.
-                        Son un encanto de personas. De todas las
-                        experiencias que hemos tenido sin dudas fue donde
-                        recibimos mayor calidez humana. Muy recomendable
-                        la estadía con ellos. Muchas gracias por todo!”
-
-                    </p>
-
-
-                    <div class="border-t border-gray-200
-                        mt-6 pt-5">
-
-
-                        <div class="flex justify-between
-                            items-start gap-3">
-
-
-                            <div>
-
-                                <p class="font-bold text-lg
-                                    text-gray-900">
-
-                                    Michelo
-
-                                </p>
-
-                                <p class="text-sm text-gray-500 mt-1">
-
-                                    Marzo de 2026
-
-                                </p>
-
-                            </div>
-
-
-                            <span class="text-xs bg-white
-                                border border-gray-200
-                                rounded-full px-3 py-1
-                                text-gray-500 whitespace-nowrap">
-
-                                Airbnb
-
+                            <span class="ale-agenda-status">
+                                Por ahora, sin fechas programadas
                             </span>
 
+                            <p>
+                                Las próximas salidas se publican acá.
+                                Mientras tanto, podés consultar por
+                                las experiencias habituales y coordinar
+                                una visita con tu familia, amigos o grupo.
+                            </p>
+
+                            <a class="ale-link"
+                                href="https://wa.me/59891009934?text=Hola%2C%20quisiera%20consultar%20por%20una%20actividad%20en%20San%20Javier."
+                                target="_blank" rel="noopener noreferrer">
+                                Consultar una fecha
+                                <span aria-hidden="true">↗</span>
+                            </a>
 
                         </div>
 
+                        <div class="ale-events" id="agenda-eventos" hidden></div>
 
-                        <p class="text-xs text-gray-400 mt-3">
+                    </aside>
 
-                            Hospedaje · Experiencia cultural
-
-                        </p>
-
-
-                    </div>
-
-
-                </article>
-
-<!-- MAGALI -->
-
-<article class="bg-gray-50 rounded-2xl p-7
-    shadow-md hover:shadow-xl transition
-    flex flex-col border border-gray-100">
-
-    <div class="review-stars text-xl mb-4">
-        ★★★★★
-    </div>
-
-    <p class="text-gray-700 leading-relaxed italic flex-grow">
-
-        “We spend a very nice "authentic" moment going through
-        the property on horseback, with interesting explanations
-        about the ecological environment and a picnic with a
-        wonderful view on the river. Thank you !”
-
-    </p>
-
-    <div class="border-t border-gray-200 mt-6 pt-5">
-
-        <div class="flex justify-between items-start gap-3">
-
-            <div>
-
-                <p class="font-bold text-lg text-gray-900">
-                    Magali Jouven
-                </p>
-
-                <p class="text-sm text-gray-500 mt-1">
-                    Francia 🇫🇷
-                </p>
-
-            </div>
-
-            <span class="text-xs bg-white
-                border border-gray-200
-                rounded-full px-3 py-1
-                text-gray-500 whitespace-nowrap">
-
-                Reseña web
-
-            </span>
+                </div>
+            </section>
 
         </div>
 
-        <p class="text-xs text-gray-400 mt-3">
-            Cabalgata
-        </p>
+        <!-- RESEÑAS -->
+        <section class="ale-reviews" id="resenas" aria-labelledby="reviews-title">
+            <div class="ale-wrap">
 
-    </div>
+                <div class="ale-reviews-heading">
+                    <p class="ale-label">Lo lindo de recibir</p>
 
-</article>
+                    <h2 class="ale-title" id="reviews-title">
+                        Hay visitas que<br>
+                        se vuelven lindos recuerdos.
+                    </h2>
 
-                <!-- ================================================== -->
-                <!-- NORMA -->
-                <!-- ================================================== -->
-
-                <article class="bg-gray-50 rounded-2xl p-7
-                    shadow-md hover:shadow-xl transition
-                    flex flex-col border border-gray-100">
-
-
-                    <div class="review-stars text-xl mb-4">
-
-                        ★★★★★
-
-                    </div>
-
-
-                    <p class="text-gray-700 leading-relaxed
-                        italic flex-grow">
-
-                        “Viajamos con amigos, a conocer San Javier y hacer
-                        ecoturismo, para celebrar el cumple de mi esposo.
-                        Lo esperaron con un regalito, y como coincidió con
-                        el cumple de la anfitriona, Mariela, nos invitaron
-                        a la fiesta familiar, con comidas típicas rusas
-                        (exquisitas por cierto), y nos sentimos como en
-                        casa, entre amigos!. La casa impecable, cómoda,
-                        y bien equipada. Nos atendieron súper bien, y nos
-                        organizaron un paseo a caballo, y senderismo, por
-                        campos litoraleños. Todo hermoso!!
-                        Muy recomendable!!”
-
+                    <p>
+                        Estas son algunas palabras de quienes
+                        compartieron su paso por San Javier con nosotros.
                     </p>
+                </div>
 
+                <div class="ale-review-grid">
 
-                    <div class="border-t border-gray-200
-                        mt-6 pt-5">
+                    <figure class="ale-review">
 
-
-                        <div class="flex justify-between
-                            items-start gap-3">
-
-
-                            <div>
-
-                                <p class="font-bold text-lg
-                                    text-gray-900">
-
-                                    Norma
-
-                                </p>
-
-                                <p class="text-sm text-gray-500 mt-1">
-
-                                    Maldonado, Uruguay 🇺🇾
-
-                                </p>
-
-                            </div>
-
-
-                            <span class="text-xs bg-white
-                                border border-gray-200
-                                rounded-full px-3 py-1
-                                text-gray-500 whitespace-nowrap">
-
-                                Airbnb
-
+                        <div class="ale-review-top">
+                            <span class="ale-stars" aria-label="5 de 5 estrellas">
+                                ★★★★★
                             </span>
-
-
+                            <span class="ale-quote" aria-hidden="true">“</span>
                         </div>
 
+                        <blockquote lang="en">
+                            <p>
+                                “Silvana was one of our favorite hosts we have
+                                ever had and went over and above to ensure our
+                                stay was fantastic. My husband and I were able
+                                to have ecotourism opportunities like kayaking
+                                and horseback riding that created memories
+                                we will treasure forever.”
+                            </p>
+                        </blockquote>
 
-                        <p class="text-xs text-gray-400 mt-3">
+                        <figcaption>
+                            <span class="ale-review-initial" aria-hidden="true">K</span>
 
-                            Cabalgata · Senderismo · Hospedaje
+                            <div class="ale-review-person">
+                                <span class="ale-review-name">Kristina</span>
+                                <span class="ale-review-detail">
+                                    Kayak · Cabalgata · Hospedaje
+                                </span>
+                            </div>
 
-                        </p>
+                            <span class="ale-review-source">Airbnb</span>
+                        </figcaption>
 
+                    </figure>
 
-                    </div>
+                    <figure class="ale-review">
 
+                        <div class="ale-review-top">
+                            <span class="ale-stars" aria-label="5 de 5 estrellas">
+                                ★★★★★
+                            </span>
+                            <span class="ale-quote" aria-hidden="true">“</span>
+                        </div>
 
-                </article>
+                        <blockquote>
+                            <p>
+                                “Tanto Silvana como su familia nos atendieron
+                                espectacular. Son excelentes personas y nos
+                                trataron como de su propia familia. Nos facilitaron
+                                absolutamente todo lo que nos faltó, incluso cosas
+                                que nos olvidamos.”
+                            </p>
+                        </blockquote>
 
+                        <figcaption>
+                            <span class="ale-review-initial" aria-hidden="true">M</span>
+
+                            <div class="ale-review-person">
+                                <span class="ale-review-name">Michelo</span>
+                                <span class="ale-review-detail">
+                                    Hospedaje · Experiencia cultural
+                                </span>
+                            </div>
+
+                            <span class="ale-review-source">Airbnb</span>
+                        </figcaption>
+
+                    </figure>
+
+                    <figure class="ale-review">
+
+                        <div class="ale-review-top">
+                            <span class="ale-stars" aria-label="5 de 5 estrellas">
+                                ★★★★★
+                            </span>
+                            <span class="ale-quote" aria-hidden="true">“</span>
+                        </div>
+
+                        <blockquote lang="en">
+                            <p>
+                                “We spend a very nice "authentic" moment going
+                                through the property on horseback, with interesting
+                                explanations about the ecological environment and
+                                a picnic with a wonderful view on the river.
+                                Thank you !”
+                            </p>
+                        </blockquote>
+
+                        <figcaption>
+                            <span class="ale-review-initial" aria-hidden="true">M</span>
+
+                            <div class="ale-review-person">
+                                <span class="ale-review-name">Magali Jouven</span>
+                                <span class="ale-review-detail">Cabalgata</span>
+                            </div>
+
+                            <span class="ale-review-source">Reseña web</span>
+                        </figcaption>
+
+                    </figure>
+
+                    <figure class="ale-review">
+
+                        <div class="ale-review-top">
+                            <span class="ale-stars" aria-label="5 de 5 estrellas">
+                                ★★★★★
+                            </span>
+                            <span class="ale-quote" aria-hidden="true">“</span>
+                        </div>
+
+                        <blockquote>
+                            <p>
+                                “La casa impecable, cómoda, y bien equipada.
+                                Nos atendieron súper bien, y nos organizaron
+                                un paseo a caballo, y senderismo, por campos
+                                litoraleños. Todo hermoso!! Muy recomendable!!”
+                            </p>
+                        </blockquote>
+
+                        <figcaption>
+                            <span class="ale-review-initial" aria-hidden="true">N</span>
+
+                            <div class="ale-review-person">
+                                <span class="ale-review-name">Norma</span>
+                                <span class="ale-review-detail">
+                                    Cabalgata · Senderismo · Hospedaje
+                                </span>
+                            </div>
+
+                            <span class="ale-review-source">Airbnb</span>
+                        </figcaption>
+
+                    </figure>
+
+                </div>
+
+                <div class="ale-review-invite">
+                    <p>¿Ya compartiste una experiencia con nosotros?</p>
+
+                    <a class="ale-link" href="HTML/formulario.html">
+                        Nos encantaría leerte
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
 
             </div>
+        </section>
 
+        <div class="ale-wrap">
 
+            <!-- CONTACTO -->
+            <section class="ale-contact" aria-labelledby="contact-title">
 
-            <!-- ================================================== -->
-            <!-- BOTÓN DEJAR RESEÑA -->
-            <!-- ================================================== -->
+                <div>
+                    <h2 id="contact-title">Contanos tu idea. Armamos el plan.</h2>
 
-            <div class="text-center mt-14">
+                    <p>
+                        Una escapada, un paseo en familia o unos días
+                        para descansar. Te ayudamos a encontrar
+                        tu manera de disfrutar San Javier.
+                    </p>
+                </div>
 
-
-                <p class="text-gray-600 mb-5">
-
-                    ¿Ya viviste una experiencia con nosotros?
-
-                </p>
-
-
-                <a href="HTML/formulario.html" class="inline-flex items-center gap-2
-                    bg-[#af350f] text-white
-                    px-8 py-3 rounded-lg
-                    font-semibold shadow-md
-                    hover:bg-[#922f08]
-                    hover:shadow-lg transition">
-
-
-                    <span>★</span>
-
-                    Dejanos tu reseña
-
-
+                <a class="ale-button"
+                    href="https://wa.me/59891009934?text=Hola%2C%20me%20gustar%C3%ADa%20organizar%20mi%20visita%20a%20San%20Javier."
+                    target="_blank" rel="noopener noreferrer">
+                    ¡Hablemos!
+                    <span aria-hidden="true">↗</span>
                 </a>
 
+            </section>
 
-                <p class="text-xs text-gray-400 mt-3">
+            <!-- PIE -->
+            <footer class="ale-footer">
 
-                    Tu opinión nos ayuda a seguir creciendo.
+                <div class="ale-footer-top">
+                    <span class="ale-footer-brand">
+                        San Javier Experiencias
+                    </span>
 
+                    <div class="ale-footer-links">
+                        <a href="https://wa.me/59891009934" target="_blank" rel="noopener noreferrer">+598 91 009
+                            934</a>
+
+                        <a href="https://www.instagram.com/sanjavierexperiencias/" target="_blank"
+                            rel="noopener noreferrer">@SanJavierExperiencias</a>
+                    </div>
+                </div>
+
+                <p class="ale-copyright">
+                    © <span id="inicio-year">2026</span>
+                    San Javier Experiencias · San Javier, Río Negro, Uruguay.
                 </p>
 
-
-            </div>
-
+            </footer>
 
         </div>
 
+        <!-- WHATSAPP FLOTANTE -->
+        <a class="ale-whatsapp" href="https://wa.me/59891009934" target="_blank" rel="noopener noreferrer"
+            aria-label="Contactar a San Javier Experiencias por WhatsApp">
+            <img src="IMG/wsp.png" alt="" width="51" height="51">
+        </a>
 
-    </section>
-
-
-
-    <!-- ================================================== -->
-    <!-- FOOTER -->
-    <!-- ================================================== -->
-
-    <footer class="py-12 bg-gray-100
-        text-center text-gray-700">
-
-
-        <p class="mb-2">
-
-            📞 +598 91 009 934 |
-            📷 @SanJavierExperiencias
-
-        </p>
-
-
-        <p>
-
-            © 2026 San Javier Experiencias.
-            Todos los derechos reservados.
-
-        </p>
-
-
-    </footer>
-
-
-
-    <!-- ================================================== -->
-    <!-- SWIPER -->
-    <!-- ================================================== -->
+    </main>
 
     <script>
+        (() => {
+            "use strict";
 
-        const swiper = new Swiper(".mySwiper", {
+            // MENÚ MOBILE
+            const menuButton = document.getElementById("menu-btn");
+            const menu = document.getElementById("menu");
 
-            slidesPerView: 1,
-
-            spaceBetween: 20,
-
-            loop: true,
-
-            pagination: {
-
-                el: ".swiper-pagination",
-
-                clickable: true
-
-            },
-
-            navigation: {
-
-                nextEl: ".swiper-button-next",
-
-                prevEl: ".swiper-button-prev"
-
-            },
-
-            breakpoints: {
-
-                768: {
-
-                    slidesPerView: 2
-
-                },
-
-                1024: {
-
-                    slidesPerView: 3
-
-                }
-
+            function closeMenu() {
+                menu.classList.add("hidden");
+                menuButton.setAttribute("aria-expanded", "false");
             }
 
-        });
+            menuButton.addEventListener("click", () => {
+                const isOpen =
+                    menuButton.getAttribute("aria-expanded") === "true";
 
-    </script>
-
-
-
-    <!-- ================================================== -->
-    <!-- MENÚ MOBILE -->
-    <!-- ================================================== -->
-
-    <script>
-
-        const btn =
-            document.getElementById("menu-btn");
-
-        const menu =
-            document.getElementById("menu");
-
-
-        btn.addEventListener("click", () => {
-
-            menu.classList.toggle("hidden");
-
-        });
-
-
-        menu.querySelectorAll("a").forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                if (window.innerWidth < 768) {
-
-                    menu.classList.add("hidden");
-
-                }
-
+                menu.classList.toggle("hidden", isOpen);
+                menuButton.setAttribute("aria-expanded", String(!isOpen));
             });
 
-        });
+            menu.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    if (window.innerWidth < 768) closeMenu();
+                });
+            });
 
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") closeMenu();
+            });
+
+            // AÑO DEL PIE
+            document.getElementById("inicio-year").textContent =
+                new Date().getFullYear();
+
+            /*
+             * SALIDAS GRUPALES
+             *
+             * Dejá el arreglo vacío cuando no haya fechas.
+             *
+             * Para publicar una salida, agregá dentro
+             * de los corchetes un objeto así:
+             *
+             * {
+             *   titulo: "Nombre de la salida",
+             *   fecha: "Fecha y horario",
+             *   descripcion: "Una descripción breve.",
+             *   enlace: "HTML/pagina-de-la-salida.html"
+             * }
+             *
+             * Podés agregar varios objetos separados por comas.
+             */
+
+            const salidasProgramadas = [];
+
+            const empty = document.getElementById("agenda-vacia");
+            const events = document.getElementById("agenda-eventos");
+
+            if (salidasProgramadas.length > 0) {
+                const fragment = document.createDocumentFragment();
+
+                salidasProgramadas.forEach((salida) => {
+                    const article = document.createElement("article");
+                    article.className = "ale-event";
+
+                    const date = document.createElement("span");
+                    date.className = "ale-event-date";
+                    date.textContent = salida.fecha;
+
+                    const title = document.createElement("h4");
+                    title.textContent = salida.titulo;
+
+                    const description = document.createElement("p");
+                    description.textContent = salida.descripcion;
+
+                    const link = document.createElement("a");
+                    link.className = "ale-link";
+                    link.href = salida.enlace;
+                    link.textContent = "Conocé la propuesta";
+
+                    const arrow = document.createElement("span");
+                    arrow.setAttribute("aria-hidden", "true");
+                    arrow.textContent = "↗";
+
+                    link.append(arrow);
+                    article.append(date, title, description, link);
+                    fragment.append(article);
+                });
+
+                events.append(fragment);
+                events.hidden = false;
+                empty.hidden = true;
+            }
+        })();
     </script>
-
-
-
-    <!-- ================================================== -->
-    <!-- WHATSAPP -->
-    <!-- ================================================== -->
-
-    <a href="https://wa.link/ngaba9" target="_blank" class="fixed bottom-6 right-6
-        w-14 h-14 flex items-center
-        justify-center transition z-50" aria-label="Contactar por WhatsApp">
-
-
-        <img src="IMG/wsp.png" alt="WhatsApp" class="w-14 h-14">
-
-
-    </a>
-
 
 </body>
 
