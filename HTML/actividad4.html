@@ -3,96 +3,1309 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noche de Luna y Estrellas - San Javier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Día de granja en familia | San Javier Experiencias</title>
+    <meta name="description"
+        content="Un día de campo en San Javier para disfrutar en familia: animales de granja, cabalgatas cortitas, caminatas y pesca. $2.000 para familias de hasta 5 personas.">
+
+    <link rel="icon" href="../IMG/pestana.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../IMG/logo.png">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px;
+        }
+
+        .gr-page {
+            --ink: #253d2c;
+            --muted: #697265;
+            --orange: #af350f;
+            --green: #426b40;
+            --cream: #faf7ee;
+            --yellow: #f5dc8c;
+            --line: #e5e8dd;
+
+            width: min(1180px, calc(100% - 48px));
+            margin: 0 auto;
+            padding: 115px 0 55px;
+            color: var(--ink);
+        }
+
+        .gr-page *,
+        .gr-page *::before,
+        .gr-page *::after {
+            box-sizing: border-box;
+        }
+
+        .gr-back {
+            display: inline-flex;
+            margin-bottom: 20px;
+            color: var(--muted);
+            font-size: 11px;
+            text-decoration: none;
+            transition: color .2s, transform .2s;
+        }
+
+        .gr-back:hover {
+            color: var(--orange);
+            transform: translateX(-3px);
+        }
+
+        /* PORTADA */
+
+        .gr-hero {
+            position: relative;
+            isolation: isolate;
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            align-items: center;
+            gap: 30px;
+            overflow: hidden;
+            padding: 48px;
+            border-radius: 24px;
+            background: var(--cream);
+        }
+
+        .gr-hero::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: -110px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: #f5ecd5;
+            opacity: .6;
+        }
+
+        .gr-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 0 19px;
+            color: var(--orange);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .gr-eyebrow::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        .gr-hero h1 {
+            margin: 0 0 22px;
+            font-size: clamp(39px, 4.8vw, 59px);
+            font-weight: 900;
+            line-height: 1.04;
+            letter-spacing: -.055em;
+        }
+
+        .gr-hero h1 span {
+            position: relative;
+            display: inline-block;
+            color: var(--orange);
+        }
+
+        .gr-hero h1 span::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: -6px;
+            left: 0;
+            height: 8px;
+            border-top: 3px solid #e7b654;
+            border-radius: 50%;
+            transform: rotate(-2deg);
+        }
+
+        .gr-hero-description {
+            max-width: 430px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .gr-hero-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 17px;
+            margin-top: 26px;
+        }
+
+        .gr-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            min-height: 49px;
+            padding: 14px 21px;
+            border: 0;
+            border-radius: 10px;
+            background: var(--orange);
+            color: #fff;
+            font: inherit;
+            font-size: 12px;
+            font-weight: 750;
+            text-decoration: none;
+            cursor: pointer;
+            transition:
+                background .2s,
+                transform .2s,
+                box-shadow .2s;
+        }
+
+        .gr-button:hover {
+            background: #922f08;
+            transform: translateY(-3px);
+            box-shadow: 0 9px 20px #af350f20;
+        }
+
+        .gr-button:focus-visible,
+        .gr-back:focus-visible {
+            outline: 3px solid #a9bd92;
+            outline-offset: 4px;
+        }
+
+        .gr-hero-note {
+            max-width: 145px;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.6;
+        }
+
+        /* FOTO Y DETALLES ANIMADOS */
+
+        .gr-visual {
+            position: relative;
+            min-width: 0;
+            padding: 19px 12px 26px;
+        }
+
+        .gr-photo-frame {
+            height: 385px;
+            overflow: hidden;
+            border: 7px solid #fff;
+            border-radius: 44% 44% 22px 22px;
+            box-shadow: 0 18px 40px #35472b12;
+            transform: rotate(2deg);
+        }
+
+        .gr-photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            animation: gr-photo-enter 1.4s ease-out both;
+        }
+
+        .gr-sticker {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 12px 16px;
+            border: 3px solid #fff;
+            border-radius: 13px;
+            box-shadow: 0 7px 20px #35472b12;
+            font-size: 11px;
+            font-weight: 800;
+            animation: gr-float 5s ease-in-out infinite;
+        }
+
+        .gr-sticker span {
+            font-size: 23px;
+            line-height: 1;
+        }
+
+        .gr-sticker-one {
+            top: 12px;
+            left: -8px;
+            background: var(--yellow);
+            --tilt: -7deg;
+        }
+
+        .gr-sticker-two {
+            right: -9px;
+            bottom: 22px;
+            background: #e0ebd5;
+            --tilt: 5deg;
+            animation-delay: -2.5s;
+        }
+
+        .gr-sun {
+            position: absolute;
+            top: -5px;
+            right: 10px;
+            color: #d9a439;
+            font-size: 57px;
+            line-height: 1;
+            animation: gr-sun-turn 28s linear infinite;
+        }
+
+        /* PRECIO */
+
+        .gr-price-strip {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            margin: 20px 0 58px;
+            padding: 25px 30px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: #fff;
+        }
+
+        .gr-price-label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .gr-price-value {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .gr-price-value strong {
+            font-size: 37px;
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -.05em;
+        }
+
+        .gr-price-value span {
+            font-size: 12px;
+            font-weight: 650;
+        }
+
+        .gr-price-description {
+            max-width: 315px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* ACTIVIDADES */
+
+        .gr-section-heading {
+            max-width: 620px;
+            margin: 0 auto 28px;
+            text-align: center;
+        }
+
+        .gr-section-heading .gr-eyebrow {
+            margin-bottom: 12px;
+            font-size: 9px;
+        }
+
+        .gr-section-heading h2 {
+            margin: 0 0 13px;
+            font-size: clamp(28px, 3.2vw, 38px);
+            font-weight: 850;
+            line-height: 1.12;
+            letter-spacing: -.045em;
+        }
+
+        .gr-section-heading>p:last-child {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.85;
+        }
+
+        .gr-activities {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .gr-card {
+            position: relative;
+            overflow: hidden;
+            padding: 25px 21px;
+            border: 1px solid transparent;
+            border-radius: 17px;
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+        }
+
+        .gr-card:hover {
+            transform: translateY(-6px) rotate(-1deg);
+            box-shadow: 0 14px 25px #35472b0d;
+        }
+
+        .gr-card:nth-child(1) {
+            background: #f7edcf;
+        }
+
+        .gr-card:nth-child(2) {
+            background: #eaf0df;
+        }
+
+        .gr-card:nth-child(3) {
+            background: #e6eff0;
+        }
+
+        .gr-card:nth-child(4) {
+            background: #f5e8df;
+        }
+
+        .gr-card-icon {
+            display: inline-grid;
+            place-items: center;
+            width: 55px;
+            height: 55px;
+            margin-bottom: 20px;
+            border-radius: 18px;
+            background: #ffffff80;
+            font-size: 29px;
+            transition: transform .3s ease;
+        }
+
+        .gr-card:hover .gr-card-icon {
+            transform: rotate(-10deg) scale(1.08);
+        }
+
+        .gr-card h3 {
+            margin: 0 0 10px;
+            font-size: 17px;
+            font-weight: 800;
+            line-height: 1.25;
+            letter-spacing: -.025em;
+        }
+
+        .gr-card p {
+            margin: 0;
+            color: #626b5c;
+            font-size: 12px;
+            line-height: 1.85;
+        }
+
+        /* MENSAJE FAMILIAR */
+
+        .gr-family-note {
+            max-width: 690px;
+            margin: 32px auto 55px;
+            text-align: center;
+        }
+
+        .gr-family-note p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .gr-family-note strong {
+            color: var(--green);
+        }
+
+        /* CONSULTA */
+
+        .gr-plan {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+            padding: 40px;
+            border: 1px solid #e5e8dc;
+            border-radius: 20px;
+            background: var(--cream);
+            scroll-margin-top: 110px;
+        }
+
+        .gr-plan-copy .gr-eyebrow {
+            margin-bottom: 13px;
+            font-size: 9px;
+        }
+
+        .gr-plan-copy h2 {
+            max-width: 390px;
+            margin: 0 0 17px;
+            font-size: 37px;
+            font-weight: 850;
+            line-height: 1.1;
+            letter-spacing: -.045em;
+        }
+
+        .gr-plan-copy>p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .gr-days {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 21px 0 13px;
+        }
+
+        .gr-days span {
+            padding: 8px 12px;
+            border-radius: 7px;
+            background: #e8eddf;
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 750;
+        }
+
+        .gr-plan-copy .gr-small {
+            font-size: 11px;
+        }
+
+        .gr-form {
+            padding: 26px;
+            border: 1px solid #e5e8dd;
+            border-radius: 14px;
+            background: #fff;
+            box-shadow: 0 10px 30px #35472b06;
+        }
+
+        .gr-form h3 {
+            margin: 0 0 8px;
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -.035em;
+        }
+
+        .gr-form-intro {
+            margin: 0 0 21px;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .gr-field {
+            margin-bottom: 18px;
+        }
+
+        .gr-field label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 11px;
+            font-weight: 750;
+        }
+
+        .gr-field input,
+        .gr-field select {
+            width: 100%;
+            min-width: 0;
+            min-height: 47px;
+            padding: 11px 12px;
+            border: 1px solid #dce2d5;
+            border-radius: 8px;
+            background: #fff;
+            color: var(--ink);
+            font: inherit;
+            font-size: 13px;
+        }
+
+        .gr-field input:focus-visible,
+        .gr-field select:focus-visible {
+            outline: 2px solid #b6c7a3;
+            outline-offset: 2px;
+        }
+
+        .gr-form .gr-button {
+            width: 100%;
+        }
+
+        .gr-help {
+            margin: 7px 0 0;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        .gr-disclaimer {
+            margin: 12px 0 0;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .gr-error {
+            margin: 0 0 15px;
+            padding: 10px 12px;
+            border-radius: 7px;
+            background: #fff0e8;
+            color: #9b3316;
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        .gr-help[hidden],
+        .gr-error[hidden] {
+            display: none;
+        }
+
+        /* QUÉ TRAER */
+
+        .gr-pack {
+            margin-top: 42px;
+            padding: 28px 0 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .gr-pack h2 {
+            margin: 0 0 19px;
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: -.035em;
+        }
+
+        .gr-pack-list {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .gr-pack-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .gr-pack-list li::before {
+            content: "✓";
+            color: var(--green);
+            font-weight: 800;
+        }
+
+        /* ANIMACIONES SUAVES */
+
+        @keyframes gr-float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(var(--tilt));
+            }
+
+            50% {
+                transform: translateY(-9px) rotate(var(--tilt));
+            }
+        }
+
+        @keyframes gr-sun-turn {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes gr-photo-enter {
+            from {
+                transform: scale(1.07);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        /* TABLETS */
+
+        @media (max-width: 950px) {
+            .gr-hero {
+                gap: 20px;
+                padding: 35px;
+            }
+
+            .gr-hero h1 {
+                font-size: 43px;
+            }
+
+            .gr-photo-frame {
+                height: 350px;
+            }
+
+            .gr-activities {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .gr-plan {
+                gap: 30px;
+                padding: 30px;
+            }
+
+            .gr-plan-copy h2 {
+                font-size: 32px;
+            }
+
+            .gr-pack-list {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* CELULARES */
+
+        @media (max-width: 760px) {
+            .gr-page {
+                width: calc(100% - 32px);
+                padding: 108px 0 35px;
+            }
+
+            .gr-back {
+                margin-bottom: 16px;
+                font-size: 10px;
+            }
+
+            .gr-hero {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 23px;
+                padding: 29px 23px 23px;
+                border-radius: 18px;
+            }
+
+            .gr-eyebrow {
+                margin-bottom: 17px;
+                font-size: 8px;
+                letter-spacing: .1em;
+            }
+
+            .gr-hero h1 {
+                margin-bottom: 23px;
+                font-size: clamp(37px, 10vw, 49px);
+            }
+
+            .gr-hero-description {
+                font-size: 12px;
+            }
+
+            .gr-hero-actions {
+                gap: 13px;
+                margin-top: 22px;
+            }
+
+            .gr-button {
+                min-height: 48px;
+                padding: 13px 17px;
+                font-size: 11px;
+            }
+
+            .gr-hero-note {
+                max-width: 125px;
+                font-size: 9px;
+            }
+
+            .gr-visual {
+                width: 100%;
+                max-width: 430px;
+                margin: 0 auto;
+                padding: 15px 9px 20px;
+            }
+
+            .gr-photo-frame {
+                height: 275px;
+                border-width: 5px;
+            }
+
+            .gr-sticker {
+                gap: 7px;
+                padding: 10px 12px;
+                font-size: 10px;
+            }
+
+            .gr-sticker span {
+                font-size: 20px;
+            }
+
+            .gr-sticker-one {
+                top: 7px;
+                left: -5px;
+            }
+
+            .gr-sticker-two {
+                right: -5px;
+                bottom: 14px;
+            }
+
+            .gr-sun {
+                top: -4px;
+                right: 8px;
+                font-size: 45px;
+            }
+
+            .gr-price-strip {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 13px;
+                margin: 15px 0 42px;
+                padding: 23px;
+                border-radius: 13px;
+            }
+
+            .gr-price-value strong {
+                font-size: 35px;
+            }
+
+            .gr-price-value span {
+                font-size: 11px;
+            }
+
+            .gr-price-description {
+                font-size: 11px;
+            }
+
+            .gr-section-heading {
+                margin-bottom: 23px;
+            }
+
+            .gr-section-heading h2 {
+                font-size: 30px;
+            }
+
+            .gr-section-heading>p:last-child {
+                font-size: 12px;
+            }
+
+            .gr-activities {
+                gap: 12px;
+            }
+
+            .gr-card {
+                padding: 20px 16px;
+                border-radius: 14px;
+            }
+
+            .gr-card-icon {
+                width: 47px;
+                height: 47px;
+                margin-bottom: 16px;
+                border-radius: 15px;
+                font-size: 25px;
+            }
+
+            .gr-card h3 {
+                font-size: 16px;
+            }
+
+            .gr-card p {
+                font-size: 11px;
+                line-height: 1.8;
+            }
+
+            .gr-family-note {
+                margin: 25px auto 38px;
+                padding: 0 5px;
+            }
+
+            .gr-family-note p {
+                font-size: 12px;
+            }
+
+            .gr-plan {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 25px;
+                padding: 25px 20px;
+                border-radius: 17px;
+            }
+
+            .gr-plan-copy h2 {
+                font-size: 32px;
+            }
+
+            .gr-plan-copy>p {
+                font-size: 12px;
+            }
+
+            .gr-form {
+                padding: 23px 18px;
+            }
+
+            .gr-field input,
+            .gr-field select {
+                min-height: 49px;
+                font-size: 16px;
+            }
+
+            .gr-form .gr-button {
+                min-height: 50px;
+                font-size: 12px;
+            }
+
+            .gr-pack {
+                margin-top: 32px;
+                padding-top: 24px;
+            }
+
+            .gr-pack h2 {
+                font-size: 23px;
+            }
+
+            .gr-pack-list {
+                gap: 14px 18px;
+            }
+
+            .gr-pack-list li {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .gr-hero {
+                padding: 26px 19px 20px;
+            }
+
+            .gr-hero h1 {
+                font-size: 35px;
+            }
+
+            .gr-hero-note {
+                max-width: none;
+            }
+
+            .gr-photo-frame {
+                height: 240px;
+            }
+
+            .gr-activities,
+            .gr-pack-list {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .gr-page *,
+            .gr-page *::before,
+            .gr-page *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-gray-50 font-sans text-gray-800">
+<body class="font-sans bg-white">
 
-    <!-- NAVBAR -->
+    <!-- BARRA DE MENÚ COMPARTIDA -->
     <header class="fixed top-0 w-full bg-white shadow z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
             <a href="../index.html" class="flex items-center gap-3">
                 <img src="../IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
                 <div class="leading-tight">
-                    <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
-                    <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
+                    <span class="block text-2xl md:text-3xl font-bold">
+                        San Javier
+                    </span>
+                    <span class="block text-sm md:text-base text-[#af350f]">
+                        Cultura y Naturaleza
+                    </span>
                 </div>
             </a>
 
-            <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none">☰</button>
+            <button id="menu-btn" type="button" class="md:hidden text-gray-700 text-3xl focus:outline-none"
+                aria-label="Abrir o cerrar menú" aria-expanded="false" aria-controls="menu">☰</button>
 
-            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white md:static md:block md:w-auto z-40">
+            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white md:static md:block md:w-auto">
                 <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
-                    <li><a href="../index.html" class="hover:text-[#af350f]">Inicio</a></li>
-                    <li><a href="tours.html" class="hover:text-[#af350f]">Tours</a></li>
-                    <li><a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
-                            class="hover:text-[#af350f]">Hospedaje</a></li>
+                    <li>
+                        <a href="nosotros.html" class="hover:text-[#af350f]">
+                            Nosotros
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html" class="hover:text-[#af350f]">
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
+                            class="hover:text-[#af350f]">Hospedaje</a>
+                    </li>
                 </ul>
             </nav>
+
+            <a href="https://wa.link/2yu17o"
+                class="hidden md:inline-block ml-6 bg-[#af350f] text-white px-4 py-2 rounded-lg hover:bg-[#922f08] transition">Reservar</a>
+
         </div>
     </header>
 
-    <script>
-        const btn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
+    <main class="gr-page">
 
-    <!-- HERO DE LA ACTIVIDAD -->
-    <section class="h-[60vh] md:h-[80vh] bg-cover bg-center relative flex items-center justify-center"
-        style="background-image: url('../IMG/luna.png');">
-        <div class="bg-black/50 absolute inset-0"></div>
-        <div class="relative z-10 text-center px-6">
-            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Noche de Luna y Estrellas</h1>
-            <p class="text-white text-base md:text-lg max-w-2xl mx-auto">Viví una aventura diferente: descubre, conoce y
-                explora la naturaleza bajo el cielo estrellado.</p>
-        </div>
-    </section>
-
-    <!-- DESCRIPCIÓN -->
-    <section class="container mx-auto px-6 py-12">
-        <h2 class="text-2xl md:text-3xl font-bold mb-6">Detalles de la actividad</h2>
-        <p class="text-gray-700 mb-6">Una experiencia nocturna única en San Javier: disfrutá de caminatas, fogones y la
-            observación de estrellas en un entorno natural inigualable.</p>
-
-        <h3 class="text-xl font-semibold mb-4">Itinerario</h3>
-
-    <div class="bg-white rounded-2xl shadow-md p-6 mb-6">
-        <h4 class="font-bold mb-2">Día 1</h4>
-        <ul class="list-disc list-inside space-y-1 text-gray-700">
-            <li>17:00 – Llegada al campo</li>
-            <li>17:30 – Armado de carpas</li>
-            <li>18:00 – Caminata por senderos</li>
-            <li>20:00 – Fogata y cena</li>
-            <li>21:00 – Observación de estrellas y luna llena</li>
-        </ul>
-    </div>
-    
-    <div class="bg-white rounded-2xl shadow-md p-6 mb-8">
-        <h4 class="font-bold mb-2">Día 2</h4>
-        <ul class="list-disc list-inside space-y-1 text-gray-700">
-            <li>09:00 – Desayuno sobre las barrancas</li>
-            <li>10:00 – Regreso a casa</li>
-        </ul>
-    </div>
-
-
-        <p class="text-gray-800 font-bold text-lg"> Consultar disponibilidad y costo </p>
-    </section>
-
-    <!-- CTA FINAL -->
-    <section class="py-12 text-center">
-        <a href="https://wa.link/ngaba9"
-            class="inline-block bg-green-600 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-green-700 transition-transform transform hover:scale-105">
-            Reservá tu experiencia
+        <a class="gr-back" href="tours.html">
+            ← Todas las experiencias
         </a>
-    </section>
+
+        <!-- PORTADA -->
+        <section class="gr-hero" aria-labelledby="gr-title">
+
+            <div>
+                <p class="gr-eyebrow">Día de granja · San Javier</p>
+
+                <h1 id="gr-title">
+                    Pequeñas aventuras.<br>
+                    <span>Grandes recuerdos.</span>
+                </h1>
+
+                <p class="gr-hero-description">
+                    Un caballo que conocer, animales por descubrir y mucho
+                    campo para explorar. Una salida pensada para familias
+                    con niños, donde la curiosidad marca el camino y lo
+                    mejor del día es compartirlo.
+                </p>
+
+                <div class="gr-hero-actions">
+                    <a class="gr-button" href="#organizar">
+                        ¡Vamos en familia! ↗
+                    </a>
+
+                    <span class="gr-hero-note">
+                        Aire libre, animales y tiempo juntos.
+                    </span>
+                </div>
+            </div>
+
+            <div class="gr-visual">
+
+                <div class="gr-photo-frame">
+                    <img src="../IMG/granja" alt="Caballos y paisaje rural en San Javier" fetchpriority="high"
+                        decoding="async">
+                </div>
+
+                <span class="gr-sun" aria-hidden="true">☀</span>
+
+                <div class="gr-sticker gr-sticker-one">
+                    <span aria-hidden="true">🐴</span>
+                    ¡Hola, campo!
+                </div>
+
+                <div class="gr-sticker gr-sticker-two">
+                    <span aria-hidden="true">🌿</span>
+                    Un día para descubrir
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PRECIO FAMILIAR -->
+        <section class="gr-price-strip" aria-label="Precio de la experiencia">
+
+            <div>
+                <span class="gr-price-label">La experiencia para tu familia</span>
+
+                <div class="gr-price-value">
+                    <strong>$2.000</strong>
+                    <span>en total · hasta 4 personas</span>
+                </div>
+            </div>
+
+            <p class="gr-price-description">
+                Incluye las actividades de la propuesta para compartir
+                un día de campo en familia.
+            </p>
+
+        </section>
+
+        <!-- ACTIVIDADES -->
+        <section aria-labelledby="gr-activities-title">
+
+            <div class="gr-section-heading">
+                <p class="gr-eyebrow">Mucho más que un paseo</p>
+
+                <h2 id="gr-activities-title">
+                    ¿Qué vamos a descubrir?
+                </h2>
+
+                <p>
+                    Una propuesta para acercarse a los animales,
+                    explorar la naturaleza y disfrutar juntos.
+                </p>
+            </div>
+
+            <div class="gr-activities">
+
+                <article class="gr-card">
+                    <span class="gr-card-icon" aria-hidden="true">🐴</span>
+
+                    <h3>Un primer encuentro a caballo</h3>
+
+                    <p>
+                        Cabalgatas cortitas para familiarizarse con los
+                        caballos y vivir esa primera aventura con
+                        acompañamiento.
+                    </p>
+                </article>
+
+                <article class="gr-card">
+                    <span class="gr-card-icon" aria-hidden="true">🐓</span>
+
+                    <h3>Los habitantes de la granja</h3>
+
+                    <p>
+                        Conocer a los animales, observar sus costumbres
+                        y descubrir un poquito más de la vida en el campo.
+                    </p>
+                </article>
+
+                <article class="gr-card">
+                    <span class="gr-card-icon" aria-hidden="true">🎣</span>
+
+                    <h3>Un ratito de pesca</h3>
+
+                    <p>
+                        Compartir la espera, mirar el agua y disfrutar
+                        de esos momentos sencillos que también se
+                        vuelven aventura.
+                    </p>
+                </article>
+
+                <article class="gr-card">
+                    <span class="gr-card-icon" aria-hidden="true">🌿</span>
+
+                    <h3>Exploradores por un día</h3>
+
+                    <p>
+                        Caminatas para mirar de cerca, hacer preguntas
+                        y descubrir todo eso que aparece cuando
+                        salimos al aire libre.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <div class="gr-family-note">
+            <p>
+                <strong>Ellos descubren. Ustedes también disfrutan.</strong>
+                Una oportunidad para salir de la rutina, acompañar sus
+                primeras experiencias y llevarse nuevas historias
+                para contar en casa.
+            </p>
+        </div>
+
+        <!-- CONSULTA SIMPLE -->
+        <section class="gr-plan" id="organizar" aria-labelledby="gr-plan-title">
+
+            <div class="gr-plan-copy">
+                <p class="gr-eyebrow">El próximo plan en familia</p>
+
+                <h2 id="gr-plan-title">
+                    Cambiemos un día de rutina por un día de campo.
+                </h2>
+
+                <p>
+                    Elegí una fecha tentativa y escribinos. Coordinamos
+                    la salida y te ayudamos con las dudas para que
+                    vengan a disfrutar.
+                </p>
+
+                <div class="gr-days" aria-label="Días habituales">
+                    <span>Sábados</span>
+                    <span>Domingos</span>
+                </div>
+
+                <p class="gr-small">
+                    Sujeto a disponibilidad. Para días de semana,
+                    consultanos. El horario y el punto de encuentro
+                    los coordinamos por WhatsApp.
+                </p>
+            </div>
+
+            <form class="gr-form" id="gr-form" action="https://wa.me/59891009934" method="get" target="_blank"
+                rel="noopener">
+                <input type="hidden" name="text" id="gr-message">
+
+                <h3>¿Cuándo les gustaría venir?</h3>
+
+                <p class="gr-form-intro">
+                    $2.000 para tu familia de hasta 5 personas.
+                    Consultá disponibilidad y organizamos la visita.
+                </p>
+
+                <div class="gr-field">
+                    <label for="gr-date">Fecha tentativa · opcional</label>
+
+                    <input type="date" id="gr-date">
+
+                    <p class="gr-help" id="gr-date-note" hidden>
+                        Los días de semana se coordinan según disponibilidad.
+                    </p>
+                </div>
+
+                <div class="gr-field">
+                    <label for="gr-time">¿Qué momento prefieren?</label>
+
+                    <select id="gr-time">
+                        <option value="">A coordinar</option>
+                        <option value="Mañana">Por la mañana</option>
+                        <option value="Tarde">Por la tarde</option>
+                    </select>
+                </div>
+
+                <p class="gr-error" id="gr-error" role="alert" hidden></p>
+
+                <button class="gr-button" type="submit">
+                    Consultar disponibilidad ↗
+                </button>
+
+                <p class="gr-disclaimer">
+                    Seguimos la charla por WhatsApp.<br>
+                    La visita se confirma al coordinar con nosotros.
+                </p>
+
+                <noscript>
+                    <p class="gr-help">
+                        <a href="https://wa.me/59891009934">
+                            Consultanos directamente por WhatsApp.
+                        </a>
+                    </p>
+                </noscript>
+
+            </form>
+        </section>
+
+        <!-- RECOMENDACIONES -->
+        <section class="gr-pack" aria-labelledby="gr-pack-title">
+
+            <h2 id="gr-pack-title">Una mochila y ganas de explorar</h2>
+
+            <ul class="gr-pack-list">
+                <li>Ropa cómoda y pantalón largo.</li>
+                <li>Calzado cerrado para caminar por el campo.</li>
+                <li>Gorra y protección solar.</li>
+                <li>Botella de agua recargable y fruta para los peques</li>
+            </ul>
+
+        </section>
+
+    </main>
+
+    <script>
+        (() => {
+            "use strict";
+
+            // Menú compartido
+            const menuButton = document.getElementById("menu-btn");
+            const menu = document.getElementById("menu");
+
+            menuButton.addEventListener("click", () => {
+                const isOpen =
+                    menuButton.getAttribute("aria-expanded") === "true";
+
+                menu.classList.toggle("hidden", isOpen);
+                menuButton.setAttribute("aria-expanded", String(!isOpen));
+            });
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    menu.classList.add("hidden");
+                    menuButton.setAttribute("aria-expanded", "false");
+                }
+            });
+
+            // Consulta de disponibilidad
+            const form = document.getElementById("gr-form");
+            const date = document.getElementById("gr-date");
+            const time = document.getElementById("gr-time");
+            const dateNote = document.getElementById("gr-date-note");
+            const error = document.getElementById("gr-error");
+            const message = document.getElementById("gr-message");
+
+            function todayInUruguay() {
+                const parts = new Intl.DateTimeFormat("en-CA", {
+                    timeZone: "America/Montevideo",
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit"
+                }).formatToParts(new Date());
+
+                const values = {};
+
+                parts.forEach((part) => {
+                    if (part.type !== "literal") {
+                        values[part.type] = part.value;
+                    }
+                });
+
+                return `${values.year}-${values.month}-${values.day}`;
+            }
+
+            date.min = todayInUruguay();
+
+            date.addEventListener("change", () => {
+                error.hidden = true;
+
+                if (!date.value) {
+                    dateNote.hidden = true;
+                    return;
+                }
+
+                const day = new Date(`${date.value}T12:00:00Z`).getUTCDay();
+                dateNote.hidden = day === 0 || day === 6;
+            });
+
+            form.addEventListener("submit", (event) => {
+                const today = todayInUruguay();
+                date.min = today;
+
+                if (date.value && date.value < today) {
+                    event.preventDefault();
+
+                    error.textContent =
+                        "Elegí una fecha futura o dejala vacía para coordinar.";
+
+                    error.hidden = false;
+                    date.focus();
+                    return;
+                }
+
+                const formattedDate = date.value
+                    ? new Date(`${date.value}T12:00:00Z`).toLocaleDateString(
+                        "es-UY",
+                        {
+                            timeZone: "UTC",
+                            weekday: "long",
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric"
+                        }
+                    )
+                    : "A coordinar";
+
+                message.value = [
+                    "¡Hola, San Javier Experiencias!",
+                    "Nos interesa el día de granja en familia.",
+                    "",
+                    "Propuesta: $2.000 en total para una familia de hasta 5 personas.",
+                    `Fecha tentativa: ${formattedDate}`,
+                    `Turno preferido: ${time.value || "A coordinar"}`,
+                    "",
+                    "¿Tienen disponibilidad? Nos gustaría coordinar la visita."
+                ].join("\n");
+            });
+        })();
+    </script>
 
 </body>
 
