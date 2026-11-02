@@ -3,251 +3,1485 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros - San Javier Aventuras</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Somos familia. Somos San Javier. | San Javier Experiencias</title>
+    <meta name="description"
+        content="Conocé a Fabricio, Mariela y Silvana: una familia que te recibe en San Javier y te acompaña con actividades, hospedaje y recomendaciones locales.">
+
+    <link rel="icon" href="../IMG/pestana.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(to bottom, #f0f4f8, #ffffff);
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px;
         }
 
-        .hero {
+        .nos {
+            --ink: #22362d;
+            --muted: #727b75;
+            --orange: #af350f;
+            --green: #294b3b;
+            --line: #e1e7e2;
+            --soft: #f1f5f1;
+
+            padding-top: 80px;
+            color: var(--ink);
+            background: #fff;
+        }
+
+        .nos *,
+        .nos *::before,
+        .nos *::after {
+            box-sizing: border-box;
+        }
+
+        .nos-wrap {
+            width: min(1160px, calc(100% - 64px));
+            margin: 0 auto;
+        }
+
+        .nos-label {
+            display: block;
+            margin: 0 0 19px;
+            color: var(--orange);
+            font-size: 10px;
+            font-weight: 800;
+            line-height: 1.6;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .nos-title {
+            margin: 0;
+            font-size: clamp(32px, 4.4vw, 53px);
+            font-weight: 850;
+            line-height: 1.08;
+            letter-spacing: -.055em;
+        }
+
+        .nos-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 17px;
+            padding-bottom: 7px;
+            border-bottom: 1px solid #a8b8ac;
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 750;
+            text-decoration: none;
+            transition: gap .2s;
+        }
+
+        .nos-link:hover {
+            gap: 24px;
+        }
+
+        .nos-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 23px;
+            min-height: 51px;
+            padding: 15px 23px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            background: var(--orange);
+            color: #fff;
+            font: inherit;
+            font-size: 12px;
+            font-weight: 750;
+            text-decoration: none;
+            transition:
+                background .2s,
+                transform .2s;
+        }
+
+        .nos-button:hover {
+            background: #922f08;
+            transform: translateY(-2px);
+        }
+
+        .nos a:focus-visible {
+            outline: 3px solid #b8cba5;
+            outline-offset: 5px;
+        }
+
+        /* PORTADA FOTOGRÁFICA */
+
+        .nos-hero {
             position: relative;
-            background-image: url('../IMG/fondo.JPG');
-            background-size: cover;
-            background-position: center;
+            isolation: isolate;
+            display: flex;
+            align-items: center;
+            min-height: 630px;
+            overflow: hidden;
+            background: #344b3d;
+            color: #fff;
         }
 
-        .hero::before {
-            content: '';
+        .nos-hero-image {
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            color: white;
-        }
-
-        .swiper-testimonial {
-            padding: 2rem 0;
-        }
-
-        .testimonial-card {
-            background: white;
-            border-radius: 1rem;
-            padding: 1.5rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .testimonial-card img {
-            width: 60px;
-            height: 60px;
+            z-index: -3;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 9999px;
-            margin: 0 auto 1rem auto;
+            object-position: center;
+            animation: nos-photo-enter 1.8s ease-out both;
+        }
+
+        .nos-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            background: linear-gradient(90deg,
+                    rgba(13, 33, 23, .82),
+                    rgba(13, 33, 23, .49) 55%,
+                    rgba(13, 33, 23, .13));
+        }
+
+        .nos-hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(transparent 65%,
+                    rgba(13, 33, 23, .4));
+        }
+
+        .nos-hero-content {
+            padding: 69px 0 100px;
+            animation: nos-enter .8s ease-out both;
+        }
+
+        .nos-hero .nos-label {
+            margin-bottom: 25px;
+            color: #e7e8d6;
+            font-size: 9px;
+        }
+
+        .nos-hero h1 {
+            max-width: 850px;
+            margin: 0 0 27px;
+            font-size: clamp(55px, 7.8vw, 94px);
+            font-weight: 850;
+            line-height: .99;
+            letter-spacing: -.065em;
+        }
+
+        .nos-hero h1 span {
+            color: #e0e7c8;
+        }
+
+        .nos-hero-description {
+            max-width: 460px;
+            margin: 0;
+            color: #edf0e8;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .nos-hero-bottom {
+            position: absolute;
+            right: 0;
+            bottom: 25px;
+            left: 0;
+        }
+
+        .nos-hero-bottom-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding-top: 19px;
+            border-top: 1px solid #ffffff38;
+        }
+
+        .nos-location {
+            color: #e4e9dc;
+            font-size: 9px;
+            letter-spacing: .08em;
+        }
+
+        .nos-discover {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nos-discover span {
+            display: grid;
+            place-items: center;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ffffff60;
+            border-radius: 50%;
+            transition: transform .2s;
+        }
+
+        .nos-discover:hover span {
+            transform: translateY(3px);
+        }
+
+        /* INTRODUCCIÓN */
+
+        .nos-intro {
+            display: grid;
+            grid-template-columns: .7fr 1.3fr;
+            gap: 70px;
+            padding: 72px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nos-intro .nos-label {
+            margin-top: 7px;
+        }
+
+        .nos-intro-lead {
+            margin: 0 0 20px;
+            font-size: clamp(22px, 2.6vw, 31px);
+            font-weight: 650;
+            line-height: 1.45;
+            letter-spacing: -.035em;
+        }
+
+        .nos-intro-lead strong {
+            color: var(--orange);
+            font-weight: inherit;
+        }
+
+        .nos-body {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.95;
+        }
+
+        /* FAMILIA */
+
+        .nos-family {
+            padding: 72px 0;
+        }
+
+        .nos-section-head {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 35px;
+            margin-bottom: 36px;
+        }
+
+        .nos-section-head .nos-title {
+            max-width: 650px;
+        }
+
+        .nos-side-note {
+            max-width: 220px;
+            margin: 0 0 3px;
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.9;
+        }
+
+        .nos-team {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 27px;
+        }
+
+        .nos-person {
+            min-width: 0;
+        }
+
+        .nos-person-photo {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4 / 4.6;
+            background: #e4e9df;
+        }
+
+        .nos-person-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+            transition: transform .7s ease;
+        }
+
+        .nos-person:hover .nos-person-photo img {
+            transform: scale(1.035);
+        }
+
+        .nos-person-tag {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 10px 15px;
+            background: #fff;
+            color: var(--green);
+            font-size: 9px;
+            font-weight: 750;
+            letter-spacing: .04em;
+        }
+
+        .nos-person-body {
+            padding-top: 22px;
+        }
+
+        .nos-person h3 {
+            margin: 0 0 4px;
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -.04em;
+        }
+
+        .nos-surname {
+            display: block;
+            margin-bottom: 13px;
+            color: var(--orange);
+            font-size: 10px;
+            font-weight: 650;
+        }
+
+        .nos-person p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.95;
+        }
+
+        /* ACOMPAÑAMIENTO */
+
+        .nos-help {
+            padding: 70px 0;
+            background: var(--soft);
+        }
+
+        .nos-help-layout {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 75px;
+            align-items: start;
+        }
+
+        .nos-help-heading .nos-title {
+            margin-bottom: 23px;
+        }
+
+        .nos-help-heading .nos-body {
+            max-width: 350px;
+        }
+
+        .nos-help-heading .nos-link {
+            margin-top: 25px;
+        }
+
+        .nos-help-list {
+            border-top: 1px solid #cfd9d0;
+        }
+
+        .nos-help-item {
+            display: grid;
+            grid-template-columns: 30px minmax(0, 1fr);
+            gap: 17px;
+            padding: 25px 0;
+            border-bottom: 1px solid #cfd9d0;
+        }
+
+        .nos-help-number {
+            padding-top: 3px;
+            color: #80927f;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .nos-help-item h3 {
+            margin: 0 0 8px;
+            font-size: 19px;
+            font-weight: 750;
+            letter-spacing: -.03em;
+        }
+
+        .nos-help-item p {
+            max-width: 430px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        /* PROPÓSITO */
+
+        .nos-purpose {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: 76px 0;
+            background: var(--green);
+            color: #fff;
+        }
+
+        .nos-purpose::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: -135px;
+            right: -110px;
+            width: 450px;
+            height: 450px;
+            border: 1px solid #ffffff12;
+            border-radius: 50%;
+            box-shadow:
+                0 0 0 55px #ffffff05,
+                0 0 0 110px #ffffff03;
+        }
+
+        .nos-purpose .nos-label {
+            color: #d2dda8;
+        }
+
+        .nos-purpose h2 {
+            max-width: 900px;
+            margin: 0 0 38px;
+            font-size: clamp(37px, 5.8vw, 69px);
+            font-weight: 750;
+            line-height: 1.06;
+            letter-spacing: -.055em;
+        }
+
+        .nos-purpose h2 span {
+            color: #cfddad;
+        }
+
+        .nos-purpose-copy {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 900px;
+        }
+
+        .nos-purpose-copy h3 {
+            margin: 0 0 12px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 750;
+        }
+
+        .nos-purpose-copy p {
+            margin: 0;
+            color: #d5e0d2;
+            font-size: 12px;
+            line-height: 1.95;
+        }
+
+        /* HOSPEDAJE */
+
+        .nos-stay {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 65px;
+            align-items: center;
+            padding: 74px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nos-stay-photo {
+            overflow: hidden;
+            background: #edf0e8;
+        }
+
+        .nos-stay-photo img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            transition: transform .7s;
+        }
+
+        .nos-stay-photo:hover img {
+            transform: scale(1.03);
+        }
+
+        .nos-stay .nos-title {
+            margin-bottom: 21px;
+            font-size: clamp(30px, 3.5vw, 43px);
+        }
+
+        .nos-stay .nos-link {
+            margin-top: 25px;
+        }
+
+        /* TESTIMONIOS */
+
+        .nos-reviews {
+            padding: 65px 0;
+        }
+
+        .nos-reviews-head {
+            margin-bottom: 30px;
+        }
+
+        .nos-reviews-head h2 {
+            margin: 0;
+            font-size: 29px;
+            font-weight: 800;
+            letter-spacing: -.04em;
+        }
+
+        .nos-reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        .nos-review {
+            margin: 0;
+            padding-left: 20px;
+            border-left: 2px solid #d9e2d2;
+        }
+
+        .nos-review p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.95;
+        }
+
+        .nos-review cite {
+            display: block;
+            margin-top: 15px;
+            color: var(--ink);
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 750;
+        }
+
+        /* CONTACTO */
+
+        .nos-contact {
+            padding: 59px 0;
+            border-top: 1px solid var(--line);
+            background: #fcfcf8;
+        }
+
+        .nos-contact-layout {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .nos-contact h2 {
+            max-width: 600px;
+            margin: 0 0 14px;
+            font-size: clamp(31px, 4vw, 47px);
+            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -.05em;
+        }
+
+        .nos-contact p {
+            max-width: 540px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.95;
+        }
+
+        .nos-contact .nos-button {
+            flex-shrink: 0;
+        }
+
+        .nos-signature {
+            padding: 22px 0 27px;
+            color: #7c867b;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        /* MOVIMIENTO */
+
+        @keyframes nos-photo-enter {
+            from {
+                transform: scale(1.045);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes nos-enter {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* TABLETS */
+
+        @media (max-width: 950px) {
+
+            .nos-intro,
+            .nos-help-layout,
+            .nos-stay {
+                gap: 40px;
+            }
+
+            .nos-team {
+                gap: 20px;
+            }
+
+            .nos-person h3 {
+                font-size: 23px;
+            }
+
+            .nos-stay-photo img {
+                height: 310px;
+            }
+        }
+
+        /* CELULARES */
+
+        @media (max-width: 760px) {
+            .nos {
+                padding-top: 80px;
+            }
+
+            .nos-wrap {
+                width: calc(100% - 40px);
+            }
+
+            .nos-label {
+                margin-bottom: 16px;
+                font-size: 8px;
+                letter-spacing: .11em;
+            }
+
+            .nos-hero {
+                align-items: center;
+                min-height: 565px;
+            }
+
+            .nos-hero-image {
+                object-position: 60% center;
+            }
+
+            .nos-hero::before {
+                background: linear-gradient(90deg,
+                        rgba(13, 33, 23, .81),
+                        rgba(13, 33, 23, .47));
+            }
+
+            .nos-hero-content {
+                padding: 57px 0 105px;
+            }
+
+            .nos-hero .nos-label {
+                max-width: 250px;
+                margin-bottom: 24px;
+                font-size: 8px;
+            }
+
+            .nos-hero h1 {
+                margin-bottom: 24px;
+                font-size: clamp(49px, 12.8vw, 72px);
+                line-height: 1.01;
+            }
+
+            .nos-hero-description {
+                max-width: 350px;
+                font-size: 12px;
+            }
+
+            .nos-hero-bottom {
+                bottom: 23px;
+            }
+
+            .nos-location {
+                max-width: 150px;
+                font-size: 8px;
+                line-height: 1.7;
+            }
+
+            .nos-discover {
+                gap: 10px;
+                font-size: 9px;
+            }
+
+            .nos-intro {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 12px;
+                padding: 42px 0;
+            }
+
+            .nos-intro-lead {
+                margin-bottom: 17px;
+                font-size: 24px;
+            }
+
+            .nos-body {
+                font-size: 12px;
+            }
+
+            .nos-family {
+                padding: 43px 0;
+            }
+
+            .nos-section-head {
+                display: block;
+                margin-bottom: 29px;
+            }
+
+            .nos-title {
+                font-size: 33px;
+            }
+
+            .nos-side-note {
+                max-width: 310px;
+                margin-top: 17px;
+                font-size: 11px;
+            }
+
+            .nos-team {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 33px;
+            }
+
+            .nos-person {
+                display: grid;
+                grid-template-columns: 120px minmax(0, 1fr);
+                gap: 20px;
+                align-items: start;
+            }
+
+            .nos-person-photo {
+                aspect-ratio: 3 / 4;
+            }
+
+            .nos-person-tag {
+                right: 0;
+                padding: 7px 5px;
+                font-size: 7px;
+                line-height: 1.5;
+                letter-spacing: 0;
+                text-align: center;
+            }
+
+            .nos-person-body {
+                padding-top: 4px;
+            }
+
+            .nos-person h3 {
+                font-size: 24px;
+            }
+
+            .nos-surname {
+                margin-bottom: 10px;
+                font-size: 9px;
+                line-height: 1.6;
+            }
+
+            .nos-person p {
+                font-size: 11px;
+                line-height: 1.9;
+            }
+
+            .nos-help {
+                padding: 43px 0;
+            }
+
+            .nos-help-layout {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 30px;
+            }
+
+            .nos-help-heading .nos-title {
+                max-width: 370px;
+                margin-bottom: 18px;
+            }
+
+            .nos-help-heading .nos-body {
+                max-width: none;
+            }
+
+            .nos-help-heading .nos-link {
+                margin-top: 20px;
+            }
+
+            .nos-help-item {
+                grid-template-columns: 24px minmax(0, 1fr);
+                gap: 13px;
+                padding: 22px 0;
+            }
+
+            .nos-help-item h3 {
+                font-size: 18px;
+            }
+
+            .nos-help-item p {
+                font-size: 11px;
+            }
+
+            .nos-purpose {
+                padding: 46px 0;
+            }
+
+            .nos-purpose h2 {
+                margin-bottom: 29px;
+                font-size: clamp(36px, 9.5vw, 48px);
+            }
+
+            .nos-purpose-copy {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 25px;
+            }
+
+            .nos-purpose-copy p {
+                font-size: 11px;
+            }
+
+            .nos-stay {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 29px;
+                padding: 43px 0;
+            }
+
+            .nos-stay-photo img {
+                height: 255px;
+            }
+
+            .nos-stay .nos-title {
+                font-size: 32px;
+            }
+
+            .nos-reviews {
+                padding: 43px 0;
+            }
+
+            .nos-reviews-head h2 {
+                font-size: 27px;
+            }
+
+            .nos-reviews-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 25px;
+            }
+
+            .nos-review {
+                padding-left: 16px;
+            }
+
+            .nos-review p {
+                font-size: 11px;
+            }
+
+            .nos-contact {
+                padding: 39px 0;
+            }
+
+            .nos-contact-layout {
+                display: block;
+            }
+
+            .nos-contact h2 {
+                font-size: 33px;
+            }
+
+            .nos-contact p {
+                font-size: 11px;
+            }
+
+            .nos-contact .nos-button {
+                margin-top: 24px;
+            }
+
+            .nos-signature {
+                padding: 21px 15px 24px;
+                font-size: 9px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .nos-person {
+                grid-template-columns: 100px minmax(0, 1fr);
+                gap: 15px;
+            }
+
+            .nos-person h3 {
+                font-size: 22px;
+            }
+
+            .nos-person p {
+                font-size: 10px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .nos *,
+            .nos *::before,
+            .nos *::after {
+                animation: none !important;
+                transition: none !important;
+            }
         }
     </style>
 </head>
 
-<body class="text-gray-800">
+<body class="font-sans bg-white text-gray-800">
 
-    <!-- NAVBAR -->
+    <!-- BARRA DE MENÚ -->
     <header class="fixed top-0 w-full bg-white shadow z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- LOGO -->
+
             <a href="../index.html" class="flex items-center gap-3">
                 <img src="../IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
+
                 <div class="leading-tight">
-                    <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
-                    <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
+                    <span class="block text-2xl md:text-3xl font-bold">
+                        San Javier
+                    </span>
+                    <span class="block text-sm md:text-base text-[#af350f]">
+                        Cultura y Naturaleza
+                    </span>
                 </div>
             </a>
 
-            <!-- Botón hamburguesa solo en mobile -->
-            <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none">
-                ☰
-            </button>
+            <button id="menu-btn" type="button" class="md:hidden text-gray-700 text-3xl focus:outline-none"
+                aria-label="Abrir o cerrar menú" aria-expanded="false" aria-controls="menu">☰</button>
 
-            <!-- Links -->
             <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white md:static md:block md:w-auto z-40">
                 <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
-                    <li><a href="../index.html" class="hover:text-[#af350f]">Inicio</a></li>
-                    <li><a href="tours.html" class="hover:text-[#af350f]">Tours</a></li>
-                    <li><a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
-                            class="hover:text-[#af350f]">Hospedaje</a></li>
+                    <li>
+                        <a href="../index.html" class="hover:text-[#af350f]">
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tours.html" class="hover:text-[#af350f]">
+                            Tours
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
+                            class="hover:text-[#af350f]">Hospedaje</a>
+                    </li>
                 </ul>
             </nav>
 
-            <!-- Botón reservar -->
             <a href="https://wa.link/2yu17o"
-                class="hidden md:inline-block ml-6 bg-[#af350f] text-white px-4 py-2 rounded-lg hover:bg-[#922f08] transition">
-                Reservar
-            </a>
+                class="hidden md:inline-block ml-6 bg-[#af350f] text-white px-4 py-2 rounded-lg hover:bg-[#922f08] transition">Reservar</a>
+
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero flex items-center justify-center min-h-[80vh] md:h-[90vh] pt-32 md:pt-24">
-        <div class="hero-content px-4 sm:px-8 md:px-16">
-            <h1 class="text-2xl sm:text-4xl md:text-6xl font-extrabold mb-6 md:mb-20 leading-snug">
-                Conocé nuestra historia
-            </h1>
-            <p class="text-sm sm:text-base md:text-xl max-w-3xl mx-auto leading-relaxed">
-                San Javier es un rincón único de Uruguay donde la cultura rusa se encuentra con la naturaleza en estado puro. Entre
-                campos, áreas naturales y tradiciones centenarias, nace un proyecto que une identidad, territorio y pasión.
-                <br><br>
-                Con raíces rusas y una profunda conexión con la vida rural, nuestra propuesta integra cultura, música y gastronomía
-                tradicional con el conocimiento experto del entorno natural y sus ecosistemas.
-                <br><br>
-                Creamos experiencias guiadas que combinan historia, aventura y naturaleza, invitando a cada visitante a descubrir la
-                esencia de San Javier desde una mirada auténtica y cercana.
-               </p>
-        </div>
-    </section>
+    <main class="nos">
 
-    <!-- HISTORIA FAMILIAR -->
-    <section class="container mx-auto px-6 py-16">
-        <h2 class="text-4xl font-bold text-center mb-12">Nosotros</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
-            <!-- Papá -->
-            <div class="bg-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition">
-                <img src="../IMG/fabrcio.JPEG" alt="Papá" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-                <h3 class="text-2xl font-semibold mb-2">Fabricio Mendieta</h3>
-                <p class="text-gray-700">Conoce cada sendero y cada rincón natural del lugar, creando experiencias que
-                combinan aprendizaje, disfrute y conexión con el entorno.</p>
-            </div>
-            <!-- Mamá -->
-            <div class="bg-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition">
-                <img src="../IMG/mariela.jpeg" alt="Mamá" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-                <h3 class="text-2xl font-semibold mb-2">Mariela Logvinenko</h3>
-                <p class="text-gray-700">Trae consigo la riqueza de la cultura rusa a través de la gastronomía y la
-                    tradición, haciendo que cada visita sea cálida e inolvidable.</p>
-            </div>
-            <!-- Vos -->
-            <div class="bg-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition">
-                <img src="../IMG/silvana.JPEG" alt="Yo" class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-                <h3 class="text-2xl font-semibold mb-2">Silvana Mendieta Logvinenko</h3>
-                <p class="text-gray-700">Se encarga de que todo funcione sin problemas: gestiona consultas y coordina
-                    los detalles para que los visitantes solo disfruten.</p>
-            </div>
-        </div>
-    </section>
+        <!-- PORTADA -->
+        <section class="nos-hero" aria-labelledby="nos-title">
 
-    <!-- FAMILIAS AMIGAS -->
-    <section class="container mx-auto px-6 py-16">
-        <h2 class="text-4xl font-bold text-center mb-12">Familias amigas</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            <!-- Daniel & Monica -->
-            <div class="bg-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition">
-                <img src="../IMG/daniel-monica.jpg" alt="Daniel y Monica"
-                    class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-                <h3 class="text-2xl font-semibold mb-2">Daniel &amp; Monica</h3>
-                <p class="text-gray-700">
-                    Una pareja apasionada por la naturaleza y las tradiciones locales, siempre presentes en nuestras
-                    actividades y encuentros familiares.
+            <img class="nos-hero-image" src="../IMG/fondo.JPG" alt="El paisaje de San Javier" fetchpriority="high"
+                decoding="async">
+
+            <div class="nos-wrap nos-hero-content">
+
+                <p class="nos-label">
+                    San Javier Experiencias · Cultura y naturaleza
                 </p>
-            </div>
-            <!-- Carla & Eduard -->
-            <div class="bg-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition">
-                <img src="../IMG/carla.jpeg" alt="Carla y Eduard"
-                    class="w-32 h-32 mx-auto rounded-full object-cover mb-4">
-                <h3 class="text-2xl font-semibold mb-2">Carla &amp; Eduard</h3>
-                <p class="text-gray-700">
-                    Amigos entrañables que aportan alegría y hospitalidad, compartiendo experiencias únicas del campo con quienes
-                    nos visitan.
-                </p>
-            </div>
-        </div>
-    </section>
 
-    <!-- TESTIMONIOS -->
-    <section class="bg-gray-100 py-16">
-        <h2 class="text-4xl font-bold text-center mb-12">Lo que dicen nuestros visitantes</h2>
-        <div class="swiper swiper-testimonial container mx-auto px-6 sm:px-8">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide testimonial-card">
-                    <img src="../IMG/iconcora.png" alt="Visitante 1">
-                    <p>"La amabilidad de Mariela y Fabricio es excepcional. Riquísima comida rusa y un hermoso parque,
-                        vale la pena volver!"</p>
-                    <p class="font-semibold mt-2">– Adriana </p>
+                <h1 id="nos-title">
+                    Somos familia.<br>
+                    <span>Somos San Javier.</span>
+                </h1>
+
+                <p class="nos-hero-description">
+                    Fabricio, Mariela y Silvana.
+                    Tres personas, un proyecto familiar y las ganas
+                    de que descubras nuestro pueblo con la cercanía
+                    de quienes lo llaman casa.
+                </p>
+
+            </div>
+
+            <div class="nos-hero-bottom">
+                <div class="nos-wrap nos-hero-bottom-inner">
+
+                    <span class="nos-location">
+                        San Javier, Río Negro · Uruguay
+                    </span>
+
+                    <a class="nos-discover" href="#nuestra-familia">
+                        Conocenos
+                        <span aria-hidden="true">↓</span>
+                    </a>
+
                 </div>
-                <div class="swiper-slide testimonial-card">
-                    <img src="../IMG/iconcora.png" alt="Visitante 2">
-                    <p>"Excelente anfitriona, calidez humana en todo momento. Muy recomendable el lugar."</p>
-                    <p class="font-semibold mt-2">– Jéssica</p>
+            </div>
+        </section>
+
+        <div class="nos-wrap">
+
+            <!-- INTRODUCCIÓN -->
+            <section class="nos-intro" aria-labelledby="nos-intro-title">
+
+                <div>
+                    <h2 class="nos-label" id="nos-intro-title">
+                        Nuestra forma de recibir
+                    </h2>
                 </div>
-                <div class="swiper-slide testimonial-card">
-                    <img src="../IMG/iconcora.png" alt="Visitante 3">
-                    <p>"Excelente atención, muy cordiales. Volveremos para probar las comidas típicas y actividades."
+
+                <div>
+                    <p class="nos-intro-lead">
+                        Queremos que llegues a San Javier y sientas
+                        que <strong>tenés a quién preguntarle.</strong>
                     </p>
-                    <p class="font-semibold mt-2">– Alejandro</p>
+
+                    <p class="nos-body">
+                        Alguien que te ayude a elegir una actividad,
+                        encontrar dónde quedarte, descubrir un paseo
+                        gratuito o recomendarte dónde comer.
+                        Así entendemos la hospitalidad: acompañarte
+                        para que disfrutes el pueblo y todo lo
+                        que su gente tiene para compartir.
+                    </p>
                 </div>
+
+            </section>
+
+            <!-- FAMILIA -->
+            <section class="nos-family" id="nuestra-familia" aria-labelledby="nos-family-title">
+
+                <div class="nos-section-head">
+
+                    <div>
+                        <p class="nos-label">Detrás de cada bienvenida</p>
+
+                        <h2 class="nos-title" id="nos-family-title">
+                            Tres personas.<br>
+                            Una misma forma de recibir.
+                        </h2>
+                    </div>
+
+                    <p class="nos-side-note">
+                        El campo, nuestras raíces y el cuidado
+                        de los detalles se encuentran en este
+                        proyecto que hacemos en familia.
+                    </p>
+
+                </div>
+
+                <div class="nos-team">
+
+                    <article class="nos-person">
+
+                        <div class="nos-person-photo">
+                            <img src="../IMG/fabrcio.JPEG" alt="Fabricio Mendieta" loading="lazy" decoding="async">
+
+                            <span class="nos-person-tag">
+                                Campo y naturaleza
+                            </span>
+                        </div>
+
+                        <div class="nos-person-body">
+                            <h3>Fabricio</h3>
+                            <span class="nos-surname">Mendieta</span>
+
+                            <p>
+                                Guardaparque y hombre de campo.
+                                Comparte su conocimiento de los senderos,
+                                la flora y la fauna, y esas historias
+                                que ayudan a mirar el paisaje
+                                con otros ojos.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <article class="nos-person">
+
+                        <div class="nos-person-photo">
+                            <img src="../IMG/mariela.jpeg" alt="Mariela Logvinenko" loading="lazy" decoding="async">
+
+                            <span class="nos-person-tag">
+                                Gastronomía y hospitalidad
+                            </span>
+                        </div>
+
+                        <div class="nos-person-body">
+                            <h3>Mariela</h3>
+                            <span class="nos-surname">Logvinenko</span>
+
+                            <p>
+                                Acerca nuestras raíces rusas a través
+                                de la cocina y las tradiciones.
+                                Le pone sabor a los encuentros
+                                y calidez a cada bienvenida.
+                            </p>
+                        </div>
+
+                    </article>
+
+                    <article class="nos-person">
+
+                        <div class="nos-person-photo">
+                            <img src="../IMG/silvana.JPEG" alt="Silvana Mendieta Logvinenko" loading="lazy"
+                                decoding="async">
+
+                            <span class="nos-person-tag">
+                                Organización y comunicación
+                            </span>
+                        </div>
+
+                        <div class="nos-person-body">
+                            <h3>Silvana</h3>
+                            <span class="nos-surname">Mendieta Logvinenko</span>
+
+                            <p>
+                                Acompaña las consultas y coordina
+                                los detalles de tu visita.
+                                Te ayuda a encontrar propuestas,
+                                resolver dudas y organizar
+                                tu estadía en San Javier.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
+            </section>
+
+        </div>
+
+        <!-- ACOMPAÑAMIENTO -->
+        <section class="nos-help" aria-labelledby="nos-help-title">
+            <div class="nos-wrap nos-help-layout">
+
+                <div class="nos-help-heading">
+
+                    <p class="nos-label">Tu visita, más fácil</p>
+
+                    <h2 class="nos-title" id="nos-help-title">
+                        Vos traé las ganas.<br>
+                        El plan lo pensamos juntos.
+                    </h2>
+
+                    <p class="nos-body">
+                        Queremos que tengas a mano lo que necesitás
+                        para disfrutar San Javier: nuestras propuestas,
+                        recomendaciones y el contacto con otras
+                        personas que hacen especial este lugar.
+                    </p>
+
+                    <a class="nos-link"
+                        href="https://wa.me/59891009934?text=Hola%2C%20me%20gustar%C3%ADa%20organizar%20mi%20visita%20a%20San%20Javier."
+                        target="_blank" rel="noopener noreferrer">
+                        Contanos qué tenés en mente
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </div>
+
+                <div class="nos-help-list">
+
+                    <article class="nos-help-item">
+                        <span class="nos-help-number" aria-hidden="true">01</span>
+
+                        <div>
+                            <h3>Actividades para tu manera de viajar</h3>
+
+                            <p>
+                                Te orientamos entre nuestras experiencias
+                                para encontrar una propuesta que vaya
+                                con vos, tu familia o tu grupo.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="nos-help-item">
+                        <span class="nos-help-number" aria-hidden="true">02</span>
+
+                        <div>
+                            <h3>Un lugar donde quedarte</h3>
+
+                            <p>
+                                Nuestro hospedaje te permite hacer
+                                de San Javier tu base para descansar
+                                y descubrir el pueblo con tiempo.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="nos-help-item">
+                        <span class="nos-help-number" aria-hidden="true">03</span>
+
+                        <div>
+                            <h3>Esas recomendaciones de alguien de acá</h3>
+
+                            <p>
+                                Lugares para comer, rincones para visitar
+                                y actividades que podés hacer gratis.
+                                Te ayudamos a encontrar esos planes
+                                que completan el viaje.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="nos-help-item">
+                        <span class="nos-help-number" aria-hidden="true">04</span>
+
+                        <div>
+                            <h3>Más guías y nuevas formas de conocer</h3>
+
+                            <p>
+                                Te ponemos en contacto con otros guías
+                                locales que realizan increíbles actividades
+                                en la zona y tienen mucho para compartir.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+        </section>
+
+        <!-- PROPÓSITO -->
+        <section class="nos-purpose" aria-labelledby="nos-purpose-title">
+            <div class="nos-wrap">
+
+                <p class="nos-label">El pueblo también es parte del proyecto</p>
+
+                <h2 id="nos-purpose-title">
+                    Crecer tiene más sentido<br>
+                    <span>si crecemos juntos.</span>
+                </h2>
+
+                <div class="nos-purpose-copy">
+
+                    <div>
+                        <h3>Con la gente de San Javier</h3>
+
+                        <p>
+                            Trabajamos para conectar a los distintos
+                            guías y propuestas locales, compartir
+                            oportunidades y crear actividades que
+                            enriquezcan a todo el pueblo.
+                            Queremos que cada visita también sea
+                            una oportunidad para nuestra comunidad.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3>Con respeto por lo que nos rodea</h3>
+
+                        <p>
+                            La naturaleza y nuestras tradiciones
+                            son parte de lo que somos.
+                            Promovemos visitas respetuosas del entorno,
+                            su flora, su fauna y su gente.
+                            Cuidar este lugar es parte de compartirlo.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <div class="nos-wrap">
+
+            <!-- HOSPEDAJE -->
+            <section class="nos-stay" aria-labelledby="nos-stay-title">
+
+                <div class="nos-stay-photo">
+                    <img src="../IMG/sanjavier.jpg" alt="Nuestro hospedaje en San Javier" loading="lazy"
+                        decoding="async">
+                </div>
+
+                <div>
+                    <p class="nos-label">Quedarte también es parte del viaje</p>
+
+                    <h2 class="nos-title" id="nos-stay-title">
+                        Descansá acá.<br>
+                        Descubrí un poco más.
+                    </h2>
+
+                    <p class="nos-body">
+                        Nuestro hospedaje es otra forma de recibirte.
+                        Un lugar para volver después de recorrer,
+                        descansar y seguir disfrutando.
+                        Y nosotros, cerca para ayudarte con
+                        las dudas y los próximos planes.
+                    </p>
+
+                    <a class="nos-link" href="https://www.airbnb.com.ar/rooms/1353875028897794866" target="_blank"
+                        rel="noopener noreferrer">
+                        Conocé nuestro hospedaje
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+
+            </section>
+
+            <!-- TESTIMONIOS -->
+            <section class="nos-reviews" aria-labelledby="nos-reviews-title">
+
+                <div class="nos-reviews-head">
+                    <p class="nos-label">Palabras que nos acompañan</p>
+                    <h2 id="nos-reviews-title">Después de la visita.</h2>
+                </div>
+
+                <div class="nos-reviews-grid">
+
+                    <blockquote class="nos-review">
+                        <p>
+                            “La amabilidad de Mariela y Fabricio es excepcional.
+                            Riquísima comida rusa y un hermoso parque,
+                            vale la pena volver!”
+                        </p>
+                        <cite>Adriana</cite>
+                    </blockquote>
+
+                    <blockquote class="nos-review">
+                        <p>
+                            “Excelente anfitriona, calidez humana en todo momento.
+                            Muy recomendable el lugar.”
+                        </p>
+                        <cite>Jéssica</cite>
+                    </blockquote>
+
+                    <blockquote class="nos-review">
+                        <p>
+                            “Excelente atención, muy cordiales.
+                            Volveremos para probar las comidas típicas y actividades.”
+                        </p>
+                        <cite>Alejandro</cite>
+                    </blockquote>
+
+                </div>
+            </section>
+
         </div>
-    </section>
 
-    <!-- HOSPEDAJE -->
-    <section class="container mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-        <img src="../IMG/sanjavier.jpg" alt="Hospedaje"
-            class="rounded-3xl shadow-lg w-full h-64 sm:h-80 md:h-96 object-contain md:object-cover mx-auto">
-        <div>
-            <h2 class="text-4xl font-bold mb-6">Nuestro hospedaje</h2>
-            <p class="text-gray-700 mb-6">Disfrutá de la tranquilidad de San Javier en nuestras casas y habitaciones
-                familiares. Todo pensado para que tu estadía sea inolvidable.</p>
-            <a href="https://www.airbnb.com.ar/rooms/1353875028897794866" target="_blank"
-                class="inline-block bg-[#af350f] text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-[#922f08] transition">
-                Ver disponibilidad
-            </a>
+        <!-- CONTACTO -->
+        <section class="nos-contact" aria-labelledby="nos-contact-title">
+            <div class="nos-wrap nos-contact-layout">
+
+                <div>
+                    <p class="nos-label">Empezamos con una charla</p>
+
+                    <h2 id="nos-contact-title">
+                        ¿Venís a San Javier?
+                    </h2>
+
+                    <p>
+                        Contanos cuándo pensás venir y qué te gusta hacer.
+                        Te ayudamos con las actividades, el hospedaje
+                        y las recomendaciones para tu visita.
+                    </p>
+                </div>
+
+                <a class="nos-button"
+                    href="https://wa.me/59891009934?text=Hola%2C%20me%20gustar%C3%ADa%20organizar%20mi%20visita%20a%20San%20Javier."
+                    target="_blank" rel="noopener noreferrer">
+                    Hablemos de tu viaje
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+            </div>
+        </section>
+
+        <div class="nos-signature">
+            Te esperamos. Fabricio, Mariela y Silvana · San Javier Experiencias
         </div>
-    </section>
 
-    <!-- CTA FINAL -->
-    <section class="py-16 text-center">
-        <a href="tours.html"
-            class="inline-block bg-green-600 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-green-700 transition-transform transform hover:scale-105">
-            Reservá tu experiencia con nosotros
-        </a>
-    </section>
+    </main>
 
-    <!-- SCRIPTS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        // Swiper
-        const swiperTestimonial = new Swiper('.swiper-testimonial', {
-            loop: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-            speed: 800,
-            slidesPerView: 1,
-            spaceBetween: 20,
-            breakpoints: {
-                640: { slidesPerView: 1 },
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 }
-            }
-        });
+        (() => {
+            "use strict";
 
-        // Menu hamburguesa
-        const menuBtn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
-        menuBtn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+            // Menú compartido
+            const menuButton = document.getElementById("menu-btn");
+            const menu = document.getElementById("menu");
+
+            menuButton.addEventListener("click", () => {
+                const isOpen =
+                    menuButton.getAttribute("aria-expanded") === "true";
+
+                menu.classList.toggle("hidden", isOpen);
+                menuButton.setAttribute("aria-expanded", String(!isOpen));
+            });
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    menu.classList.add("hidden");
+                    menuButton.setAttribute("aria-expanded", "false");
+                }
+            });
+
+            // Aparición suave de los bloques al entrar en pantalla.
+            // El contenido permanece visible si no hay soporte.
+            const reduceMotion = window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            );
+
+            if (
+                !reduceMotion.matches &&
+                "IntersectionObserver" in window &&
+                typeof Element.prototype.animate === "function"
+            ) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) return;
+
+                        observer.unobserve(entry.target);
+
+                        if (reduceMotion.matches) return;
+
+                        entry.target.animate(
+                            [
+                                {
+                                    opacity: 0.25,
+                                    transform: "translateY(16px)"
+                                },
+                                {
+                                    opacity: 1,
+                                    transform: "translateY(0)"
+                                }
+                            ],
+                            {
+                                duration: 650,
+                                easing: "cubic-bezier(.2,.7,.2,1)"
+                            }
+                        );
+                    });
+                }, {
+                    threshold: 0.12
+                });
+
+                document.querySelectorAll(
+                    ".nos-person, .nos-help-item, .nos-stay, .nos-review"
+                ).forEach((element) => {
+                    observer.observe(element);
+                });
+            }
+        })();
     </script>
 
 </body>
