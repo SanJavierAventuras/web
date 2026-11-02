@@ -4,150 +4,586 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividades San Javier</title>
+
+    <title>Actividades | San Javier Experiencias</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Favicon -->
-    <link rel="icon" type="logo" href="../IMG/pestana.png">
+    <link rel="icon" type="image/png" href="../IMG/pestana.png">
+
+    <style>
+        /* Estos estilos afectan únicamente a la sección de experiencias. */
+
+        .experiencias {
+            width: min(1180px, calc(100% - 48px));
+            margin: 0 auto;
+            padding: 145px 0 70px;
+        }
+
+        .experiencias-intro {
+            margin-bottom: 32px;
+        }
+
+        .experiencias-etiqueta {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 12px;
+            color: #af350f;
+            font-size: 11px;
+            font-weight: 750;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .experiencias-etiqueta::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #af350f;
+        }
+
+        .experiencias-titulo {
+            margin: 0;
+            color: #171b17;
+            font-size: clamp(32px, 4.4vw, 54px);
+            font-weight: 900;
+            line-height: 1.06;
+            letter-spacing: -.045em;
+            text-transform: uppercase;
+        }
+
+        .experiencias-grid {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .experiencia {
+            --entrada: 0ms;
+
+            position: relative;
+            isolation: isolate;
+            grid-column: span 2;
+            display: block;
+            height: 210px;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #dce3d8;
+            color: white;
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
+
+            animation: experiencia-entrada .7s ease var(--entrada) both;
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .experiencia:nth-child(2) {
+            --entrada: 70ms;
+        }
+
+        .experiencia:nth-child(3) {
+            --entrada: 140ms;
+        }
+
+        .experiencia:nth-child(4) {
+            --entrada: 210ms;
+            grid-column: span 3;
+        }
+
+        .experiencia:nth-child(5) {
+            --entrada: 280ms;
+            grid-column: span 3;
+        }
+
+        .experiencia img {
+            position: absolute;
+            inset: 0;
+            z-index: -3;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            transition:
+                transform .8s cubic-bezier(.2, .7, .2, 1),
+                filter .5s ease;
+        }
+
+        .experiencia::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+
+            background: linear-gradient(180deg,
+                    rgba(8, 24, 17, .02) 15%,
+                    rgba(8, 24, 17, .18) 45%,
+                    rgba(8, 24, 17, .78) 100%);
+        }
+
+        .experiencia::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            border: 1px solid transparent;
+            border-radius: inherit;
+            pointer-events: none;
+
+            transition: border-color .3s ease;
+        }
+
+        .experiencia-contenido {
+            position: absolute;
+            left: 23px;
+            right: 23px;
+            bottom: 23px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .experiencia-nombre {
+            margin: 0;
+            color: white;
+            font-size: 25px;
+            font-weight: 850;
+            line-height: 1.05;
+            letter-spacing: -.025em;
+            text-transform: uppercase;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, .15);
+
+            transition: transform .3s ease;
+        }
+
+        .experiencia-ver {
+            display: block;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            margin-top: 0;
+            color: #ffffffdf;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+
+            transition:
+                opacity .3s ease,
+                max-height .3s ease,
+                margin-top .3s ease;
+        }
+
+        .experiencia-flecha {
+            flex-shrink: 0;
+            width: 25px;
+            height: 25px;
+            margin-bottom: 2px;
+
+            transition:
+                transform .3s ease,
+                color .3s ease;
+        }
+
+        .experiencia-flecha svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.7;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .experiencia:focus-visible {
+            outline: 3px solid #af350f;
+            outline-offset: 5px;
+        }
+
+        /* Encuadre de las fotografías */
+
+        .experiencia-largo img {
+            object-position: center 48%;
+        }
+
+        .experiencia-corto img {
+            object-position: center 43%;
+        }
+
+        .experiencia-cabalgata img {
+            object-position: center 43%;
+        }
+
+        .experiencia-granja img {
+            object-position: center 65%;
+        }
+
+        .experiencia-cena img {
+            object-position: center 57%;
+        }
+
+        @keyframes experiencia-entrada {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animaciones para computadoras */
+
+        @media (hover: hover) and (pointer: fine) {
+            .experiencia:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 13px 28px rgba(25, 48, 33, .14);
+            }
+
+            .experiencia:hover img {
+                transform: scale(1.07);
+            }
+
+            .experiencia:hover::after {
+                border-color: rgba(255, 255, 255, .35);
+            }
+
+            .experiencia:hover .experiencia-ver {
+                opacity: 1;
+                max-height: 20px;
+                margin-top: 9px;
+            }
+
+            .experiencia:hover .experiencia-flecha {
+                transform: translateX(5px);
+                color: #ffd2ab;
+            }
+        }
+
+        /* Tablets */
+
+        @media (max-width: 950px) {
+            .experiencias-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 18px;
+            }
+
+            .experiencia,
+            .experiencia:nth-child(4),
+            .experiencia:nth-child(5) {
+                grid-column: auto;
+            }
+
+            .experiencia:nth-child(5) {
+                grid-column: 1 / -1;
+            }
+
+            .experiencia-nombre {
+                font-size: 26px;
+            }
+        }
+
+        /* Celulares */
+
+        @media (max-width: 600px) {
+            .experiencias {
+                width: calc(100% - 36px);
+                padding: 120px 0 40px;
+            }
+
+            .experiencias-intro {
+                margin-bottom: 25px;
+            }
+
+            .experiencias-etiqueta {
+                font-size: 9px;
+                letter-spacing: .11em;
+                margin-bottom: 12px;
+            }
+
+            .experiencias-titulo {
+                max-width: 350px;
+                font-size: clamp(31px, 8.8vw, 39px);
+                line-height: 1.05;
+            }
+
+            .experiencias-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 15px;
+            }
+
+            .experiencia,
+            .experiencia:nth-child(4),
+            .experiencia:nth-child(5) {
+                grid-column: auto;
+                height: 190px;
+                border-radius: 11px;
+            }
+
+            .experiencia-contenido {
+                left: 21px;
+                right: 21px;
+                bottom: 21px;
+            }
+
+            .experiencia-nombre {
+                font-size: 26px;
+                line-height: 1.05;
+            }
+
+            .experiencia-ver {
+                opacity: 1;
+                max-height: 20px;
+                margin-top: 8px;
+                font-size: 9px;
+            }
+
+            .experiencia-flecha {
+                width: 25px;
+                height: 25px;
+                margin-bottom: 1px;
+            }
+
+            .experiencia:active {
+                transform: scale(.98);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .experiencia,
+            .experiencia *,
+            .experiencia::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
 
-<body class="font-sans bg-gray-50">
+<body class="font-sans bg-white">
 
-<!-- NAVBAR -->
-<header class="fixed top-0 w-full bg-white shadow z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <!-- LOGO -->
-        <div class="flex items-center gap-3">
-            <a href="../index.html">
+    <!-- BARRA DE NAVEGACIÓN ORIGINAL -->
+    <header class="fixed top-0 w-full bg-white shadow z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+            <a href="../index.html" class="flex items-center gap-3">
                 <img src="../IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
-                <div class="leading-tight">
-                    <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
-                    <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
-            </a>
-        </div>
-    </div>
 
-            <!-- Botón hamburguesa solo en mobile -->
-            <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none">
+                <div class="leading-tight">
+                    <span class="block text-2xl md:text-3xl font-bold">
+                        San Javier
+                    </span>
+
+                    <span class="block text-sm md:text-base text-[#af350f]">
+                        Cultura y Naturaleza
+                    </span>
+                </div>
+            </a>
+
+            <button id="menu-btn" type="button" class="md:hidden text-gray-700 text-3xl focus:outline-none"
+                aria-label="Abrir o cerrar menú" aria-expanded="false" aria-controls="menu">
                 ☰
             </button>
-            
-    <!-- Links -->
-    <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white  md:static md:block md:w-auto">
-        <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
-            <li><a href="nosotros.html" class="hover:text-[#af350f]">Nosotros</a></li>
-            <li><a href="../index.html" class="hover:text-[#af350f]">Inicio</a></li>
-            <li><a href="https://www.airbnb.com.ar/rooms/1353875028897794866?search_mode=regular_search&adults=1&check_in=2025-09-08&check_out=2025-09-13&children=0&infants=0&pets=0&source_impression_id=p3_1756633803_P3eBmMBnCJXHQDgZ&previous_page_section_name=1000&federated_search_id=b912ce24-91a1-4b9f-9d6c-50e15539cf34" class="hover:text-[#af350f]">Hospedaje</a></li>
-        </ul>
-    </nav>
 
-    <!-- Botón reservar -->
-    <a href="https://wa.link/2yu17o"
-        class="hidden md:inline-block ml-6 bg-[#af350f] text-white px-4 py-2 rounded-lg hover:bg-[#922f08] transition">
-        Reservar
-    </a>
-    </div>
-</header>
+            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white
+                       md:static md:block md:w-auto">
+                <ul class="flex flex-col md:flex-row gap-4 md:gap-6
+                           text-gray-700 font-medium p-4 md:p-0">
+                    <li>
+                        <a href="nosotros.html" class="hover:text-[#af350f]">
+                            Nosotros
+                        </a>
+                    </li>
 
-    <!-- SECCIÓN ACTIVIDADES -->
-    <section class="pt-32 pb-20">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-extrabold mb-12">Todas Nuestras Actividades</h2>
+                    <li>
+                        <a href="../index.html" class="hover:text-[#af350f]">
+                            Inicio
+                        </a>
+                    </li>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <li>
+                        <a href="https://www.airbnb.com.ar/rooms/1353875028897794866" class="hover:text-[#af350f]">
+                            Hospedaje
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
-                <!-- Actividad 1 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-                    <a href="actividad1.html">
-                        <img src="../IMG/sendero1.JPG" alt="Senderos del Guardaparque" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Senderismo a Campo Abierto</h3>
-                            <p class="text-gray-600 text-sm">
-                                Descubrí la esencia del campo en una caminata guiada por un guardaparque local.
-                            </p>
-                        </div>
-                    </a>
-                </div>
+            <a href="https://wa.link/2yu17o" class="hidden md:inline-block ml-6 bg-[#af350f]
+                       text-white px-4 py-2 rounded-lg
+                       hover:bg-[#922f08] transition">
+                Reservar
+            </a>
 
-                <!-- Actividad 2 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-                    <a href="actividad2.html">
-                        <img src="../IMG/kayak.png" alt="Aventura Extrema Kayaks & Barrancas"
-                            class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Aventura Extrema: Kayaks & Barrancas</h3>
-                            <p class="text-gray-600 text-sm">
-                                Un desafío total: remar, caminar y vivir la naturaleza en su estado puro.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Actividad 3 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-                    <a href="actividad3.html">
-                        <img src="../IMG/rusa.png" alt="Raíces Rusas en San Javier" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Raíces Rusas en San Javier</h3>
-                            <p class="text-gray-600 text-sm">
-                                Un viaje cultural y gastronómico que combina historia, música y naturaleza.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Actividad 4 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-                    <a href="actividad4.html">
-                        <img src="../IMG/luna.png" alt="Noche de Luna y Estrellas"
-                            class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Noche de Luna y Estrellas</h3>
-                            <p class="text-gray-600 text-sm">
-                                Una experiencia de astroturismo única, acampando bajo el cielo más puro.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Actividad 5 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-                    <a href="actividad5.html">
-                        <img src="../IMG/trekking.png" alt="Actividad 5" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Ruta de los Arenales y Cueva del Indio</h3>
-                            <p class="text-gray-600 text-sm">
-                                Dos días de aventura entre médanos, barrancas y un fogón bajo las estrellas.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Actividad 6 -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
-                    <a href="actividad6.html">
-                        <img src="../IMG/cabb.png" alt="Actividad 6" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Cabalgata por campo abierto</h3>
-                            <p class="text-gray-600 text-sm">
-                                Una experiencia de conexión con los animales al aire libre.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
         </div>
-    </section>
+    </header>
+
+    <!-- ÚNICAMENTE LA SECCIÓN DE EXPERIENCIAS -->
+    <main class="experiencias">
+
+        <div class="experiencias-intro">
+            <p class="experiencias-etiqueta">
+                Descubrí San Javier
+            </p>
+
+            <h1 class="experiencias-titulo">
+                Nuestras experiencias
+            </h1>
+        </div>
+
+        <section class="experiencias-grid" aria-label="Elegí una experiencia">
+
+            <!-- TREKKING LARGO -->
+            <a href="actividad1.html" class="experiencia experiencia-largo" aria-label="Conocer el trekking largo">
+                <img src="../IMG/sendero4.JPG" alt="Barrancas con vegetación junto al Río Uruguay" loading="eager"
+                    decoding="async">
+
+                <div class="experiencia-contenido">
+                    <div>
+                        <h2 class="experiencia-nombre">
+                            Trekking largo
+                        </h2>
+
+                        <span class="experiencia-ver">
+                            Ver experiencia
+                        </span>
+                    </div>
+
+                    <span class="experiencia-flecha" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 12h15m-6-6 6 6-6 6" />
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- TREKKING CORTO -->
+            <a href="actividad2.html" class="experiencia experiencia-corto" aria-label="Conocer el trekking corto">
+                <img src="../IMG/sendero2.JPG" alt="Senderos y paisajes abiertos del campo" loading="eager"
+                    decoding="async">
+
+                <div class="experiencia-contenido">
+                    <div>
+                        <h2 class="experiencia-nombre">
+                            Trekking corto
+                        </h2>
+
+                        <span class="experiencia-ver">
+                            Ver experiencia
+                        </span>
+                    </div>
+
+                    <span class="experiencia-flecha" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 12h15m-6-6 6 6-6 6" />
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- CABALGATA -->
+            <a href="actividad6.html" class="experiencia experiencia-cabalgata" aria-label="Conocer la cabalgata">
+                <img src="../IMG/cab.JPG" alt="Visitantes cabalgando por el campo de San Javier" loading="lazy"
+                    decoding="async">
+
+                <div class="experiencia-contenido">
+                    <div>
+                        <h2 class="experiencia-nombre">
+                            Cabalgata
+                        </h2>
+
+                        <span class="experiencia-ver">
+                            Ver experiencia
+                        </span>
+                    </div>
+
+                    <span class="experiencia-flecha" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 12h15m-6-6 6 6-6 6" />
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- DÍA DE GRANJA -->
+            <a href="actividad4.html" class="experiencia experiencia-granja" aria-label="Conocer el día de granja">
+                <img src="../IMG/cabalgata.png" alt="El entorno rural de las actividades en familia" loading="lazy"
+                    decoding="async">
+
+                <div class="experiencia-contenido">
+                    <div>
+                        <h2 class="experiencia-nombre">
+                            Día de granja
+                        </h2>
+
+                        <span class="experiencia-ver">
+                            Ver experiencia
+                        </span>
+                    </div>
+
+                    <span class="experiencia-flecha" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 12h15m-6-6 6 6-6 6" />
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- CENA TRADICIONAL RUSA -->
+            <a href="actividad3.html" class="experiencia experiencia-cena"
+                aria-label="Conocer la cena tradicional rusa">
+                <img src="../IMG/rusa.png" alt="Shashlik preparado al fuego para la cena rusa" loading="lazy"
+                    decoding="async">
+
+                <div class="experiencia-contenido">
+                    <div>
+                        <h2 class="experiencia-nombre">
+                            Cena tradicional rusa
+                        </h2>
+
+                        <span class="experiencia-ver">
+                            Ver experiencia
+                        </span>
+                    </div>
+
+                    <span class="experiencia-flecha" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 12h15m-6-6 6 6-6 6" />
+                        </svg>
+                    </span>
+                </div>
+            </a>
+
+        </section>
+    </main>
 
     <script>
-        const btn = document.getElementById("menu-btn");
+        const menuButton = document.getElementById("menu-btn");
         const menu = document.getElementById("menu");
 
-        btn.addEventListener("click", () => {
+        menuButton.addEventListener("click", () => {
+            const open = menu.classList.contains("hidden");
+
             menu.classList.toggle("hidden");
+            menuButton.setAttribute("aria-expanded", String(open));
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape") {
+                menu.classList.add("hidden");
+                menuButton.setAttribute("aria-expanded", "false");
+            }
         });
     </script>
-
 
 </body>
 
