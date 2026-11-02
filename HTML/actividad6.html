@@ -3,95 +3,1792 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cabalgata por Campo Abierto - San Javier Aventuras</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cabalgatas en San Javier | San Javier Experiencias</title>
+    <meta name="description"
+        content="Descubrí San Javier a caballo con un guardaparque y guía de campo. Sin experiencia previa, grupos de hasta 4 personas y picnic opcional sobre las barrancas del Río Uruguay.">
+
+    <link rel="icon" href="../IMG/pestana.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/png" href="../IMG/pestana.png">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px;
+        }
+
+        .campo {
+            --paper: #f5f0e5;
+            --cream: #fffaf0;
+            --ink: #332b22;
+            --muted: #7b7265;
+            --leather: #81462d;
+            --leather-dark: #65351f;
+            --forest: #344939;
+            --gold: #bc975d;
+            --line: #e2d8c8;
+            --serif: Georgia, "Times New Roman", serif;
+
+            width: min(1200px, calc(100% - 48px));
+            margin: 0 auto;
+            padding: 115px 0 45px;
+            color: var(--ink);
+        }
+
+        .campo *,
+        .campo *::before,
+        .campo *::after {
+            box-sizing: border-box;
+        }
+
+        .campo-back {
+            display: inline-flex;
+            margin-bottom: 20px;
+            color: var(--muted);
+            font-size: 11px;
+            text-decoration: none;
+            transition: color .2s, transform .2s;
+        }
+
+        .campo-back:hover {
+            color: var(--leather);
+            transform: translateX(-3px);
+        }
+
+        /* PORTADA */
+
+        .campo-hero {
+            position: relative;
+            isolation: isolate;
+            display: grid;
+            grid-template-columns: .95fr 1.05fr;
+            align-items: center;
+            gap: 35px;
+            overflow: hidden;
+            padding: 49px;
+            border: 1px solid #e5dccd;
+            border-radius: 6px;
+            background-color: var(--paper);
+            background-image:
+                radial-gradient(#6e542513 .65px, transparent .65px);
+            background-size: 5px 5px;
+        }
+
+        .campo-hero::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 24%;
+            background: #e9e1d1;
+        }
+
+        .campo-kicker {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 23px;
+            color: var(--leather);
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .17em;
+            text-transform: uppercase;
+        }
+
+        .campo-kicker::before {
+            content: "";
+            width: 25px;
+            height: 1px;
+            background: currentColor;
+        }
+
+        .campo-hero h1 {
+            margin: 0 0 22px;
+            font-family: var(--serif);
+            font-size: clamp(55px, 6vw, 78px);
+            font-weight: 700;
+            line-height: .98;
+            letter-spacing: -.065em;
+        }
+
+        .campo-hero h1 em {
+            display: block;
+            color: var(--leather);
+            font-weight: 400;
+        }
+
+        .campo-hero-description {
+            max-width: 390px;
+            margin: 0;
+            color: #776c5d;
+            font-size: 13px;
+            line-height: 1.95;
+        }
+
+        .campo-first-time {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 19px;
+            color: var(--forest);
+            font-size: 10px;
+            font-weight: 750;
+        }
+
+        .campo-first-time::before {
+            content: "✓";
+            display: grid;
+            place-items: center;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #cbd3c1;
+            border-radius: 50%;
+            font-size: 10px;
+        }
+
+        .campo-hero-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 17px;
+            margin-top: 24px;
+        }
+
+        .campo-button {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            min-height: 50px;
+            padding: 15px 23px;
+            border: 0;
+            border-radius: 5px;
+            background: var(--leather);
+            color: #fff9ef;
+            font: inherit;
+            font-size: 12px;
+            font-weight: 750;
+            text-decoration: none;
+            cursor: pointer;
+            transition:
+                background .2s,
+                transform .2s,
+                box-shadow .2s;
+        }
+
+        .campo-button::after {
+            content: "";
+            position: absolute;
+            inset: 4px;
+            border: 1px dashed #f5d9b560;
+            border-radius: 3px;
+            pointer-events: none;
+        }
+
+        .campo-button:hover {
+            background: var(--leather-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px #65351f20;
+        }
+
+        .campo-button:focus-visible,
+        .campo-back:focus-visible {
+            outline: 3px solid #b99b6a;
+            outline-offset: 4px;
+        }
+
+        .campo-hero-note {
+            max-width: 125px;
+            color: var(--muted);
+            font-size: 9px;
+            line-height: 1.8;
+        }
+
+        /* FOTO CAMPESTA */
+
+        .campo-visual {
+            position: relative;
+            min-width: 0;
+            padding: 18px 4px 25px 13px;
+        }
+
+        .campo-photo {
+            position: relative;
+            height: 440px;
+            overflow: hidden;
+            border: 8px solid #fffaf0;
+            background: #c4c1a7;
+            box-shadow:
+                0 0 0 1px #d4c6af,
+                10px 15px 0 #c9bda62b;
+            transform: rotate(2deg);
+        }
+
+        .campo-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            animation: campo-photo-enter 1.5s ease-out both;
+        }
+
+        .campo-photo::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent 55%,
+                    rgba(32, 43, 29, .68));
+        }
+
+        .campo-photo-caption {
+            position: absolute;
+            z-index: 1;
+            right: 20px;
+            bottom: 20px;
+            left: 20px;
+            color: #fff9ed;
+        }
+
+        .campo-photo-caption span {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        .campo-photo-caption strong {
+            font-family: var(--serif);
+            font-size: 24px;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .campo-horseshoe {
+            position: absolute;
+            z-index: 2;
+            top: -5px;
+            right: -10px;
+            width: 92px;
+            height: 100px;
+            filter: drop-shadow(0 6px 4px #3a26172b);
+            transform-origin: 50% 20%;
+            animation: campo-swing 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .campo-tag {
+            position: absolute;
+            z-index: 2;
+            bottom: 7px;
+            left: -6px;
+            padding: 15px 20px;
+            border: 4px solid var(--paper);
+            border-radius: 4px;
+            background: var(--forest);
+            box-shadow: 0 7px 15px #263b2317;
+            color: #fff6e4;
+            transform: rotate(-5deg);
+            animation: campo-tag-float 6s ease-in-out infinite;
+        }
+
+        .campo-tag small {
+            display: block;
+            margin-bottom: 3px;
+            color: #d3d9be;
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+        }
+
+        .campo-tag strong {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* DATOS */
+
+        .campo-facts {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            align-items: center;
+            gap: 25px;
+            margin: 20px 0 48px;
+            padding: 25px 28px;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .campo-price-label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        .campo-price strong {
+            font-family: var(--serif);
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -.05em;
+        }
+
+        .campo-price small {
+            display: block;
+            margin-top: 6px;
+            color: var(--muted);
+            font-size: 9px;
+            line-height: 1.7;
+        }
+
+        .campo-fact {
+            padding-left: 23px;
+            border-left: 1px solid var(--line);
+        }
+
+        .campo-fact strong {
+            display: block;
+            color: var(--forest);
+            font-size: 15px;
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .campo-fact span {
+            display: block;
+            margin-top: 5px;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        /* CONTENIDO */
+
+        .campo-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 350px;
+            align-items: start;
+            gap: 55px;
+        }
+
+        .campo-section {
+            margin-bottom: 31px;
+            padding-bottom: 31px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .campo-section:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+
+        .campo-section .campo-kicker {
+            margin-bottom: 13px;
+            font-size: 8px;
+        }
+
+        .campo-section h2,
+        .campo-pack h2 {
+            margin: 0 0 18px;
+            font-family: var(--serif);
+            font-size: 35px;
+            font-weight: 400;
+            line-height: 1.12;
+            letter-spacing: -.045em;
+        }
+
+        .campo-section>p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.95;
+        }
+
+        .campo-includes {
+            display: grid;
+            gap: 13px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .campo-includes li {
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .campo-includes li::before {
+            content: "✦";
+            flex: 0 0 15px;
+            color: var(--leather);
+            font-size: 13px;
+        }
+
+        .campo-guide-note {
+            position: relative;
+            margin-top: 22px;
+            padding: 21px 23px;
+            border: 1px solid #e0d8c8;
+            background: #f8f5ed;
+            color: #756c5e;
+            font-size: 12px;
+            line-height: 1.95;
+        }
+
+        .campo-guide-note::before {
+            content: "";
+            position: absolute;
+            inset: 5px;
+            border: 1px dashed #d9cbb5;
+            pointer-events: none;
+        }
+
+        .campo-guide-note strong {
+            color: var(--forest);
+        }
+
+        /* RECORRIDO */
+
+        .campo-route {
+            display: grid;
+            gap: 24px;
+        }
+
+        .campo-step {
+            display: grid;
+            grid-template-columns: 30px minmax(0, 1fr);
+            gap: 13px;
+        }
+
+        .campo-step-number {
+            padding-top: 3px;
+            color: #a58b65;
+            font-family: var(--serif);
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .campo-step h3 {
+            margin: 0 0 7px;
+            font-size: 14px;
+            font-weight: 800;
+            line-height: 1.5;
+        }
+
+        .campo-step p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.95;
+        }
+
+        .campo-step p+p {
+            margin-top: 11px;
+        }
+
+        .campo-finish {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 5px;
+            background: var(--paper);
+        }
+
+        .campo-finish-photo {
+            position: relative;
+            height: 205px;
+            overflow: hidden;
+        }
+
+        .campo-finish-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 45%;
+            transition: transform .7s ease;
+        }
+
+        .campo-finish:hover .campo-finish-photo img {
+            transform: scale(1.035);
+        }
+
+        .campo-finish-photo::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent 45%,
+                    rgba(32, 43, 29, .6));
+        }
+
+        .campo-finish-caption {
+            position: absolute;
+            z-index: 1;
+            bottom: 16px;
+            left: 20px;
+            color: #fff8e9;
+            font-family: var(--serif);
+            font-size: 24px;
+            font-style: italic;
+        }
+
+        .campo-finish-body {
+            padding: 23px;
+        }
+
+        .campo-finish-body h3 {
+            color: var(--forest);
+            font-family: var(--serif);
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: -.035em;
+        }
+
+        .campo-picnic-note {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 7px 10px;
+            border: 1px solid #d8cbb7;
+            border-radius: 3px;
+            color: #80603c;
+            font-size: 9px;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+
+        /* HORARIOS */
+
+        .campo-times {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 13px;
+            margin-top: 19px;
+        }
+
+        .campo-time {
+            padding: 17px 19px;
+            border: 1px solid var(--line);
+            border-radius: 5px;
+            background: #fcfaf5;
+        }
+
+        .campo-time span {
+            display: block;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        .campo-time strong {
+            display: block;
+            margin-top: 5px;
+            color: var(--forest);
+            font-family: var(--serif);
+            font-size: 30px;
+            font-weight: 400;
+        }
+
+        .campo-section .campo-small-note {
+            margin-top: 14px;
+            font-size: 11px;
+        }
+
+        /* CONSULTA */
+
+        .campo-quote {
+            position: sticky;
+            top: 110px;
+            min-width: 0;
+            padding: 28px;
+            border: 1px solid #d9cbb5;
+            border-radius: 6px;
+            background: #fcfaf4;
+            box-shadow: 6px 7px 0 #e9e0d34d;
+            scroll-margin-top: 110px;
+        }
+
+        .campo-quote::before {
+            content: "";
+            display: block;
+            width: 38px;
+            height: 3px;
+            margin-bottom: 18px;
+            background: var(--leather);
+        }
+
+        .campo-quote h2 {
+            margin: 0 0 12px;
+            font-family: var(--serif);
+            font-size: 34px;
+            font-weight: 400;
+            line-height: 1.08;
+            letter-spacing: -.045em;
+        }
+
+        .campo-quote-intro {
+            margin: 0 0 23px;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.85;
+        }
+
+        .campo-field {
+            margin-bottom: 19px;
+        }
+
+        .campo-field>label,
+        .campo-extras legend {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 11px;
+            font-weight: 750;
+        }
+
+        .campo-field input,
+        .campo-field select {
+            width: 100%;
+            min-width: 0;
+            min-height: 47px;
+            padding: 11px 12px;
+            border: 1px solid #ddd2c1;
+            border-radius: 5px;
+            background: #fff;
+            color: var(--ink);
+            font: inherit;
+            font-size: 13px;
+        }
+
+        .campo-field input:focus-visible,
+        .campo-field select:focus-visible,
+        .campo-extra input:focus-visible {
+            outline: 2px solid #b99b6a;
+            outline-offset: 2px;
+        }
+
+        .campo-counter {
+            display: flex;
+            min-height: 47px;
+            overflow: hidden;
+            border: 1px solid #ddd2c1;
+            border-radius: 5px;
+        }
+
+        .campo-counter button {
+            flex: 0 0 47px;
+            width: 47px;
+            border: 0;
+            background: #efe8db;
+            color: var(--leather);
+            font: inherit;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background .2s;
+        }
+
+        .campo-counter button:hover {
+            background: #e5dac7;
+        }
+
+        .campo-counter button:disabled {
+            opacity: .35;
+            cursor: default;
+        }
+
+        .campo-counter button:focus-visible {
+            outline: 2px solid var(--leather);
+            outline-offset: -3px;
+        }
+
+        .campo-counter input {
+            flex: 1;
+            border: 0;
+            border-radius: 0;
+            text-align: center;
+            appearance: textfield;
+            -moz-appearance: textfield;
+        }
+
+        .campo-counter input::-webkit-inner-spin-button,
+        .campo-counter input::-webkit-outer-spin-button {
+            margin: 0;
+            -webkit-appearance: none;
+        }
+
+        .campo-help {
+            margin: 7px 0 0;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        .campo-extras {
+            min-width: 0;
+            margin: 0 0 17px;
+            padding: 0;
+            border: 0;
+        }
+
+        .campo-extras legend {
+            padding: 0;
+        }
+
+        .campo-extra {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-height: 44px;
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.6;
+            cursor: pointer;
+        }
+
+        .campo-extra input {
+            flex: 0 0 17px;
+            width: 17px;
+            height: 17px;
+            accent-color: var(--leather);
+        }
+
+        .campo-quote .campo-button {
+            width: 100%;
+        }
+
+        .campo-disclaimer {
+            margin: 12px 0 0;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.85;
+            text-align: center;
+        }
+
+        .campo-error {
+            margin: 0 0 14px;
+            padding: 10px 12px;
+            border-radius: 5px;
+            background: #f8e6db;
+            color: #923a22;
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        .campo-help[hidden],
+        .campo-error[hidden] {
+            display: none;
+        }
+
+        /* RECOMENDACIONES */
+
+        .campo-pack {
+            position: relative;
+            margin-top: 43px;
+            padding: 30px;
+            border: 1px solid #d9dfd0;
+            border-radius: 5px;
+            background: var(--forest);
+            color: #fff7e7;
+        }
+
+        .campo-pack::before {
+            content: "";
+            position: absolute;
+            inset: 7px;
+            border: 1px dashed #e4dfc846;
+            pointer-events: none;
+        }
+
+        .campo-pack .campo-kicker {
+            margin-bottom: 13px;
+            color: #d7bd8b;
+            font-size: 8px;
+        }
+
+        .campo-pack h2 {
+            margin-bottom: 0;
+        }
+
+        .campo-pack-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px 25px;
+            margin: 24px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .campo-pack-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #dce0cf;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .campo-pack-list li::before {
+            content: "✓";
+            color: #d7bd8b;
+            font-weight: 800;
+        }
+
+        .campo-pack-optional {
+            margin: 23px 0 0;
+            padding-top: 17px;
+            border-top: 1px solid #e4dfc82b;
+            color: #dce0cf;
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        /* ANIMACIONES */
+
+        @keyframes campo-swing {
+
+            0%,
+            100% {
+                transform: rotate(12deg);
+            }
+
+            50% {
+                transform: rotate(-3deg);
+            }
+        }
+
+        @keyframes campo-tag-float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-6px) rotate(-3deg);
+            }
+        }
+
+        @keyframes campo-photo-enter {
+            from {
+                transform: scale(1.07);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        /* TABLETS */
+
+        @media (max-width: 950px) {
+            .campo-hero {
+                gap: 23px;
+                padding: 35px;
+            }
+
+            .campo-hero h1 {
+                font-size: 60px;
+            }
+
+            .campo-photo {
+                height: 405px;
+            }
+
+            .campo-layout {
+                grid-template-columns: minmax(0, 1fr) 315px;
+                gap: 30px;
+            }
+
+            .campo-quote {
+                padding: 23px;
+            }
+
+            .campo-pack-list {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* CELULARES */
+
+        @media (max-width: 760px) {
+            .campo {
+                width: calc(100% - 32px);
+                padding: 108px 0 35px;
+            }
+
+            .campo-back {
+                margin-bottom: 16px;
+                font-size: 10px;
+            }
+
+            .campo-hero {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 25px;
+                padding: 30px 23px 25px;
+            }
+
+            .campo-hero::before {
+                top: auto;
+                width: 100%;
+                height: 25%;
+            }
+
+            .campo-kicker {
+                margin-bottom: 22px;
+                font-size: 8px;
+                letter-spacing: .13em;
+            }
+
+            .campo-hero h1 {
+                margin-bottom: 22px;
+                font-size: clamp(57px, 15vw, 76px);
+            }
+
+            .campo-hero-description {
+                font-size: 12px;
+            }
+
+            .campo-first-time {
+                font-size: 10px;
+            }
+
+            .campo-hero-actions {
+                gap: 15px;
+                margin-top: 23px;
+            }
+
+            .campo-button {
+                min-height: 49px;
+                padding: 14px 19px;
+                font-size: 11px;
+            }
+
+            .campo-hero-note {
+                max-width: 115px;
+            }
+
+            .campo-visual {
+                width: 100%;
+                max-width: 430px;
+                margin: 0 auto;
+                padding: 17px 5px 28px;
+            }
+
+            .campo-photo {
+                height: 320px;
+                border-width: 6px;
+            }
+
+            .campo-photo-caption {
+                right: 15px;
+                bottom: 18px;
+                left: 15px;
+            }
+
+            .campo-photo-caption strong {
+                font-size: 23px;
+            }
+
+            .campo-horseshoe {
+                top: -4px;
+                right: -8px;
+                width: 75px;
+                height: 83px;
+            }
+
+            .campo-tag {
+                bottom: 8px;
+                left: -7px;
+                padding: 12px 16px;
+            }
+
+            .campo-tag strong {
+                font-size: 19px;
+            }
+
+            .campo-facts {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 21px 15px;
+                margin: 17px 0 35px;
+                padding: 23px 5px;
+            }
+
+            .campo-price {
+                grid-column: 1 / -1;
+                padding-bottom: 20px;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .campo-price strong {
+                font-size: 38px;
+            }
+
+            .campo-price small {
+                font-size: 10px;
+            }
+
+            .campo-fact {
+                padding-left: 13px;
+            }
+
+            .campo-fact strong {
+                font-size: 13px;
+            }
+
+            .campo-fact span {
+                font-size: 9px;
+            }
+
+            .campo-layout {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 31px;
+            }
+
+            .campo-section {
+                margin-bottom: 27px;
+                padding-bottom: 27px;
+            }
+
+            .campo-section h2,
+            .campo-pack h2 {
+                font-size: 32px;
+            }
+
+            .campo-guide-note {
+                padding: 20px;
+                font-size: 11px;
+            }
+
+            .campo-step {
+                grid-template-columns: 25px minmax(0, 1fr);
+                gap: 10px;
+            }
+
+            .campo-step-number {
+                font-size: 17px;
+            }
+
+            .campo-step h3 {
+                font-size: 13px;
+            }
+
+            .campo-finish-photo {
+                height: 180px;
+            }
+
+            .campo-finish-caption {
+                bottom: 14px;
+                left: 15px;
+                font-size: 22px;
+            }
+
+            .campo-finish-body {
+                padding: 19px 17px;
+            }
+
+            .campo-finish-body h3 {
+                font-size: 25px;
+            }
+
+            .campo-quote {
+                position: static;
+                padding: 27px 23px;
+            }
+
+            .campo-quote h2 {
+                font-size: 36px;
+            }
+
+            .campo-field input,
+            .campo-field select {
+                min-height: 49px;
+                font-size: 16px;
+            }
+
+            .campo-counter {
+                min-height: 49px;
+            }
+
+            .campo-counter button {
+                flex-basis: 49px;
+                width: 49px;
+            }
+
+            .campo-quote .campo-button {
+                min-height: 51px;
+                font-size: 12px;
+            }
+
+            .campo-pack {
+                margin-top: 32px;
+                padding: 28px 23px;
+            }
+
+            .campo-pack-list {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 14px;
+                margin-top: 22px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .campo-hero {
+                padding: 28px 19px 23px;
+            }
+
+            .campo-hero h1 {
+                font-size: 53px;
+            }
+
+            .campo-photo {
+                height: 285px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .campo *,
+            .campo *::before,
+            .campo *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-gray-50 font-sans text-gray-800">
+<body class="font-sans bg-white">
 
-    <!-- NAVBAR -->
+    <!-- BARRA DE MENÚ COMPARTIDA -->
     <header class="fixed top-0 w-full bg-white shadow z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
             <a href="../index.html" class="flex items-center gap-3">
                 <img src="../IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
                 <div class="leading-tight">
-                    <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
-                    <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
+                    <span class="block text-2xl md:text-3xl font-bold">
+                        San Javier
+                    </span>
+                    <span class="block text-sm md:text-base text-[#af350f]">
+                        Cultura y Naturaleza
+                    </span>
                 </div>
             </a>
 
-            <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none">☰</button>
+            <button id="menu-btn" type="button" class="md:hidden text-gray-700 text-3xl focus:outline-none"
+                aria-label="Abrir o cerrar menú" aria-expanded="false" aria-controls="menu">☰</button>
 
-            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white md:static md:block md:w-auto z-40">
+            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white md:static md:block md:w-auto">
                 <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
-                    <li><a href="../index.html" class="hover:text-[#af350f]">Inicio</a></li>
-                    <li><a href="tours.html" class="hover:text-[#af350f]">Tours</a></li>
-                    <li><a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
-                            class="hover:text-[#af350f]">Hospedaje</a></li>
+                    <li>
+                        <a href="nosotros.html" class="hover:text-[#af350f]">
+                            Nosotros
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html" class="hover:text-[#af350f]">
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
+                            class="hover:text-[#af350f]">Hospedaje</a>
+                    </li>
                 </ul>
             </nav>
+
+            <a href="https://wa.link/2yu17o"
+                class="hidden md:inline-block ml-6 bg-[#af350f] text-white px-4 py-2 rounded-lg hover:bg-[#922f08] transition">Reservar</a>
+
         </div>
     </header>
 
-    <script>
-        const btn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
+    <main class="campo">
 
-    <!-- HERO DE LA ACTIVIDAD -->
-    <section class="h-[60vh] md:h-[80vh] bg-cover bg-center relative flex items-center justify-center"
-        style="background-image: url('../IMG/caballo.JPG');">
-        <div class="bg-black/50 absolute inset-0"></div>
-        <div class="relative z-10 text-center px-6">
-            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Cabalgata por Campo Abierto</h1>
-            <p class="text-white text-base md:text-lg max-w-2xl mx-auto">
-                Una experiencia de conexión con los animales al aire libre y la naturaleza.
-            </p>
-        </div>
-    </section>
-
-    <!-- DESCRIPCIÓN -->
-    <section class="container mx-auto px-6 py-12">
-        <h2 class="text-2xl md:text-3xl font-bold mb-6">Detalles de la aventura</h2>
-        <p class="text-gray-700 mb-4">
-            Si tenés experiencia en andar a caballo, esta es una actividad para vos. Recorrido por campos agrestes
-            pasando
-            por humedales, arroyos y médanos, en total conexión con la naturaleza. Podés realizar actividades como arreo
-            de ganado y, si tenemos suerte, ver animales silvestres.
-        </p>
-        <ul class="text-gray-700 mb-6 space-y-2">
-            <li>📍 San Javier – Ofir</li>
-            <li>🐴 7 km</li>
-            <li>🕢 3 hs</li>
-            <li>🔥 Nivel: Medio</li>
-        </ul>
-
-        <h3 class="text-xl font-semibold mb-4">Itinerario</h3>
-
-        <div class="bg-white rounded-2xl shadow-md p-6 mb-8">
-            <ul class="list-disc list-inside space-y-1 text-gray-700">
-                <li>09:00 hs – Bienvenida y charla introductoria</li>
-                <li>09:30 hs – Cabalgata por el campo abierto</li>
-                <li>12:30 hs – Desacanso y picnic sobre las barrancas</li>
-                <li>13:15 hs – Regreso</li>
-            </ul>
-        </div>
-
-        <p class="text-gray-800 font-bold text-lg">Consultar disponibilidad y costo</p>
-    </section>
-
-    <!-- CTA FINAL -->
-    <section class="py-12 text-center">
-        <a href="https://wa.link/ngaba9"
-            class="inline-block bg-green-600 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-green-700 transition-transform transform hover:scale-105">
-            Reservá tu experiencia
+        <a class="campo-back" href="tours.html">
+            ← Todas las experiencias
         </a>
-    </section>
+
+        <!-- PORTADA -->
+        <section class="campo-hero" aria-labelledby="campo-title">
+
+            <div>
+                <p class="campo-kicker">Cabalgatas · San Javier, Uruguay</p>
+
+                <h1 id="campo-title">
+                    El campo,
+                    <em>a caballo.</em>
+                </h1>
+
+                <p class="campo-hero-description">
+                    El sonido de los cascos, el aire del campo y el río
+                    apareciendo entre las barrancas. Una cabalgata con
+                    gente que conoce esta tierra y la vive todos los días.
+                    Para quienes se animan por primera vez y para quienes
+                    nunca pierden las ganas de volver a montar.
+                </p>
+
+                <span class="campo-first-time">
+                    No necesitás experiencia previa
+                </span>
+
+                <div class="campo-hero-actions">
+                    <a class="campo-button" href="#coordinar">
+                        Me voy para el campo ↗
+                    </a>
+
+                    <span class="campo-hero-note">
+                        Un encuentro con los caballos.<br>
+                        Una pausa en la rutina.
+                    </span>
+                </div>
+            </div>
+
+            <div class="campo-visual">
+
+                <div class="campo-photo">
+                    <img src="../IMG/cab.JPG" alt="Una cabalgata por el campo de San Javier" fetchpriority="high"
+                        decoding="async">
+
+                    
+                </div>
+
+                <!-- HERRADURA DECORATIVA -->
+                <svg class="campo-horseshoe" viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false">
+                    <path d="M22 11
+               L35 15
+               C28 31 24 47 24 62
+               C24 79 34 88 50 88
+               C66 88 76 79 76 62
+               C76 47 72 31 65 15
+               L78 11
+               C87 29 93 48 93 65
+               C93 90 76 104 50 104
+               C24 104 7 90 7 65
+               C7 48 13 29 22 11Z" fill="#b49a70" stroke="#fff4da" stroke-width="3" stroke-linejoin="round" />
+
+                    <path d="M28 19
+               C20 39 16 52 16 65
+               C16 85 29 96 50 96
+               C71 96 84 85 84 65
+               C84 52 80 39 72 19" fill="none" stroke="#7d684a" stroke-width="2" stroke-linecap="round" />
+
+                    <g fill="#67553e">
+                        <rect x="20" y="29" width="4" height="8" rx="1" transform="rotate(18 22 33)" />
+                        <rect x="13" y="49" width="4" height="8" rx="1" />
+                        <rect x="16" y="71" width="4" height="8" rx="1" transform="rotate(-18 18 75)" />
+                        <rect x="31" y="88" width="4" height="8" rx="1" transform="rotate(-48 33 92)" />
+                        <rect x="76" y="29" width="4" height="8" rx="1" transform="rotate(-18 78 33)" />
+                        <rect x="83" y="49" width="4" height="8" rx="1" />
+                        <rect x="80" y="71" width="4" height="8" rx="1" transform="rotate(18 82 75)" />
+                        <rect x="65" y="88" width="4" height="8" rx="1" transform="rotate(48 67 92)" />
+                    </g>
+                </svg>
+
+                <div class="campo-tag">
+                    <small>Sin apuro</small>
+                    <strong>Al ritmo del campo.</strong>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PRECIO Y DATOS -->
+        <section class="campo-facts" aria-label="Datos de la cabalgata">
+
+            <div class="campo-price">
+                <span class="campo-price-label">La experiencia, desde</span>
+                <strong>$2.000</strong>
+                <small>por persona · cotización según tu grupo</small>
+            </div>
+
+            <div class="campo-fact">
+                <strong>Hasta 4 personas</strong>
+                <span>Grupos pequeños para compartir el recorrido</span>
+            </div>
+
+            <div class="campo-fact">
+                <strong>Guía de campo</strong>
+                <span>Conocedor del campo, experto en flora y fauna te acompaña</span>
+            </div>
+
+        </section>
+
+        <div class="campo-layout">
+
+            <div>
+
+                <!-- QUÉ INCLUYE -->
+                <section class="campo-section">
+                    <p class="campo-kicker">De cerca, como se vive acá</p>
+
+                    <h2>Caballos, campo y alguien que conoce el camino.</h2>
+
+                    <ul class="campo-includes">
+                        <li>
+                            Cabalgata guiada por un guardaparque
+                            que también es hombre de campo.
+                        </li>
+                        <li>
+                            Indicaciones iniciales y acompañamiento
+                            durante todo el recorrido.
+                        </li>
+                        <li>
+                            Paseo por los senderos del campo y las
+                            barrancas del Río Uruguay.
+                        </li>
+                        <li>
+                            Una salida adaptada a la experiencia
+                            de las personas con los caballos.
+                        </li>
+                    </ul>
+
+                    <div class="campo-guide-note">
+                        <strong>Cada persona llega con una historia distinta.</strong>
+                        Tal vez sea tu primer encuentro con un caballo.
+                        Tal vez montar sea una pasión de siempre.
+                        Nos tomamos el tiempo para conocerte y adaptar
+                        la experiencia a vos y al grupo.
+                    </div>
+                </section>
+
+                <!-- RECORRIDO -->
+                <section class="campo-section">
+                    <p class="campo-kicker">Así transcurre la salida</p>
+
+                    <h2>Dejamos que el campo nos lleve.</h2>
+
+                    <div class="campo-route">
+
+                        <article class="campo-step">
+                            <span class="campo-step-number" aria-hidden="true">01</span>
+
+                            <div>
+                                <h3>Primero, nos conocemos</h3>
+
+                                <p>
+                                    Charlamos sobre tu experiencia y te presentamos
+                                    a los caballos. El guía comparte las indicaciones
+                                    para comenzar y te acompaña desde el primer momento.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="campo-step">
+                            <span class="campo-step-number" aria-hidden="true">02</span>
+
+                            <div>
+                                <h3>Después, el camino</h3>
+
+                                <p>
+                                    Salimos a recorrer los senderos entre paisajes
+                                    rurales y naturaleza. El guardaparque comparte
+                                    su mirada del lugar mientras avanzamos
+                                    al ritmo y la experiencia del grupo.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="campo-step">
+                            <span class="campo-step-number" aria-hidden="true">03</span>
+
+                            <div class="campo-finish">
+
+                                <div class="campo-finish-photo">
+                                    <img src="../IMG/sendero4.JPG" alt="Las barrancas y el Río Uruguay en San Javier"
+                                        loading="lazy" decoding="async">
+
+                                    <span class="campo-finish-caption">
+                                        Y al final, el río.
+                                    </span>
+                                </div>
+
+                                <div class="campo-finish-body">
+                                    <h3>Una pausa en lo alto de las barrancas.</h3>
+
+                                    <p>
+                                        Terminamos en la cima de las barrancas,
+                                        con una <strong>vista panorámica del Río Uruguay</strong>.
+                                        El paisaje se abre y nos invita a quedarnos
+                                        un rato más.
+                                    </p>
+
+                                    <p>
+                                        Podés sumar un picnic y disfrutar de este lugar
+                                        con un almuerzo completo al aire libre o una
+                                        merienda al atardecer. Un cierre para bajar un
+                                        cambio, compartir y llevarte una de las mejores
+                                        postales del recorrido.
+                                    </p>
+
+                                    <span class="campo-picnic-note">
+                                        Picnic opcional · Consultá al cotizar
+                                    </span>
+                                </div>
+
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+                <!-- DÍAS Y HORARIOS -->
+                <section class="campo-section">
+                    <p class="campo-kicker">Un lugar en tu fin de semana</p>
+
+                    <h2>¿Cuándo nos encontramos?</h2>
+
+                    <p>
+                        Sábados y domingos, sujetos a disponibilidad.
+                        Para días de semana, consultanos.
+                    </p>
+
+                    <div class="campo-times">
+
+                        <div class="campo-time">
+                            <span>Salida de mañana</span>
+                            <strong>09:00</strong>
+                        </div>
+
+                        <div class="campo-time">
+                            <span>Salida de tarde</span>
+                            <strong>14:00</strong>
+                        </div>
+
+                    </div>
+
+                    <p class="campo-small-note">
+                        Para sumar un almuerzo o una merienda al atardecer,
+                        coordinamos el horario y la disponibilidad al consultar.
+                        Compartimos el punto exacto de encuentro al organizar
+                        la salida.
+                    </p>
+
+                    <p class="campo-small-note">
+                        También ofrecemos traducción español–inglés,
+                        con coordinación previa.
+                    </p>
+                </section>
+
+            </div>
+
+            <!-- CONSULTA POR WHATSAPP -->
+            <aside class="campo-quote" id="coordinar" aria-labelledby="campo-quote-title">
+                <h2 id="campo-quote-title">
+                    Hacete un lugar en el campo.
+                </h2>
+
+                <p class="campo-quote-intro">
+                    Salimos en grupos de hasta 4 personas.
+                    Contanos cuándo les gustaría venir y
+                    armamos la propuesta por WhatsApp.
+                </p>
+
+                <form id="campo-form" action="https://wa.me/59891009934" method="get" target="_blank" rel="noopener">
+                    <input type="hidden" name="text" id="campo-message">
+
+                    <div class="campo-field">
+                        <label for="campo-people">¿Cuántas personas vienen?</label>
+
+                        <div class="campo-counter">
+                            <button type="button" id="campo-minus" aria-label="Quitar una persona">−</button>
+
+                            <input type="number" id="campo-people" min="1" max="4" step="1" value="2"
+                                inputmode="numeric" required>
+
+                            <button type="button" id="campo-plus" aria-label="Agregar una persona">+</button>
+                        </div>
+
+                        <p class="campo-help">Máximo 4 personas por salida.</p>
+                    </div>
+
+                    <div class="campo-field">
+                        <label for="campo-date">Fecha tentativa · opcional</label>
+
+                        <input type="date" id="campo-date">
+
+                        <p class="campo-help" id="campo-date-note" hidden>
+                            Los días de semana se coordinan según disponibilidad.
+                        </p>
+                    </div>
+
+                    <div class="campo-field">
+                        <label for="campo-time">Horario que preferís</label>
+
+                        <select id="campo-time">
+                            <option value="">A coordinar</option>
+                            <option value="09:00">Mañana · 09:00</option>
+                            <option value="14:00">Tarde · 14:00</option>
+                        </select>
+                    </div>
+
+                    <fieldset class="campo-extras">
+                        <legend>Podés sumar</legend>
+
+                        <label class="campo-extra" for="campo-picnic">
+                            <input type="checkbox" id="campo-picnic">
+                            <span>Consultar por el picnic</span>
+                        </label>
+
+                        <label class="campo-extra" for="campo-english">
+                            <input type="checkbox" id="campo-english">
+                            <span>Traducción al inglés / English translation</span>
+                        </label>
+                    </fieldset>
+
+                    <p class="campo-error" id="campo-error" role="alert" hidden></p>
+
+                    <button class="campo-button" type="submit">
+                        Consultar mi cabalgata ↗
+                    </button>
+
+                    <p class="campo-disclaimer">
+                        Confirmamos precio y disponibilidad por WhatsApp.<br>
+                        Los opcionales se cotizan por separado.
+                    </p>
+
+                    <noscript>
+                        <p class="campo-help">
+                            <a href="https://wa.me/59891009934">
+                                Consultanos directamente por WhatsApp.
+                            </a>
+                        </p>
+                    </noscript>
+
+                </form>
+            </aside>
+
+        </div>
+
+        <!-- RECOMENDACIONES -->
+        <section class="campo-pack" aria-labelledby="campo-pack-title">
+
+            <p class="campo-kicker">Antes de salir</p>
+
+            <h2 id="campo-pack-title">
+                Vení cómodo. Lo demás, lo pone el paisaje.
+            </h2>
+
+            <ul class="campo-pack-list">
+                <li>Pantalón largo y cómodo para montar.</li>
+                <li>Calzado cerrado.</li>
+                <li>Camisa de manga larga para las zonas arboladas.</li>
+                <li>Gorra para los momentos al aire libre.</li>
+                <li>Botella de agua recargable.</li>
+            </ul>
+
+            <p class="campo-pack-optional">
+                <strong>Opcional:</strong> lentes de sol.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script>
+        (() => {
+            "use strict";
+
+            // Menú compartido
+            const menuButton = document.getElementById("menu-btn");
+            const menu = document.getElementById("menu");
+
+            menuButton.addEventListener("click", () => {
+                const isOpen =
+                    menuButton.getAttribute("aria-expanded") === "true";
+
+                menu.classList.toggle("hidden", isOpen);
+                menuButton.setAttribute("aria-expanded", String(!isOpen));
+            });
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    menu.classList.add("hidden");
+                    menuButton.setAttribute("aria-expanded", "false");
+                }
+            });
+
+            // Consulta de cabalgata
+            const form = document.getElementById("campo-form");
+            const people = document.getElementById("campo-people");
+            const date = document.getElementById("campo-date");
+            const time = document.getElementById("campo-time");
+            const minus = document.getElementById("campo-minus");
+            const plus = document.getElementById("campo-plus");
+            const picnic = document.getElementById("campo-picnic");
+            const english = document.getElementById("campo-english");
+            const dateNote = document.getElementById("campo-date-note");
+            const error = document.getElementById("campo-error");
+            const message = document.getElementById("campo-message");
+
+            function uruguayNow() {
+                const parts = new Intl.DateTimeFormat("en-CA", {
+                    timeZone: "America/Montevideo",
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hourCycle: "h23"
+                }).formatToParts(new Date());
+
+                const values = {};
+
+                parts.forEach((part) => {
+                    if (part.type !== "literal") {
+                        values[part.type] = part.value;
+                    }
+                });
+
+                return {
+                    date: `${values.year}-${values.month}-${values.day}`,
+                    time: `${values.hour}:${values.minute}`
+                };
+            }
+
+            function updatePeople() {
+                const count = Number(people.value);
+                const valid = Number.isInteger(count);
+
+                minus.disabled = !valid || count <= 1;
+                plus.disabled = !valid || count >= 4;
+                error.hidden = true;
+            }
+
+            minus.addEventListener("click", () => {
+                const count = Number(people.value) || 1;
+                people.value = Math.max(1, Math.min(4, count - 1));
+                updatePeople();
+            });
+
+            plus.addEventListener("click", () => {
+                const count = Number(people.value) || 1;
+                people.value = Math.max(1, Math.min(4, count + 1));
+                updatePeople();
+            });
+
+            people.addEventListener("input", updatePeople);
+
+            date.min = uruguayNow().date;
+
+            date.addEventListener("change", () => {
+                error.hidden = true;
+
+                if (!date.value) {
+                    dateNote.hidden = true;
+                    return;
+                }
+
+                const day = new Date(`${date.value}T12:00:00Z`).getUTCDay();
+                dateNote.hidden = day === 0 || day === 6;
+            });
+
+            time.addEventListener("change", () => {
+                error.hidden = true;
+            });
+
+            function showError(text, field) {
+                error.textContent = text;
+                error.hidden = false;
+                field.focus();
+            }
+
+            form.addEventListener("submit", (event) => {
+                const count = Number(people.value);
+
+                if (!Number.isInteger(count) || count < 1 || count > 4) {
+                    event.preventDefault();
+                    showError(
+                        "Las cabalgatas son para grupos de 1 a 4 personas.",
+                        people
+                    );
+                    return;
+                }
+
+                const now = uruguayNow();
+                date.min = now.date;
+
+                if (date.value && date.value < now.date) {
+                    event.preventDefault();
+                    showError(
+                        "Elegí una fecha futura o dejala vacía para coordinar.",
+                        date
+                    );
+                    return;
+                }
+
+                if (
+                    date.value === now.date &&
+                    time.value &&
+                    time.value <= now.time
+                ) {
+                    event.preventDefault();
+                    showError(
+                        "Ese horario ya pasó. Elegí otro horario o una nueva fecha.",
+                        time
+                    );
+                    return;
+                }
+
+                const formattedDate = date.value
+                    ? new Date(`${date.value}T12:00:00Z`).toLocaleDateString(
+                        "es-UY",
+                        {
+                            timeZone: "UTC",
+                            weekday: "long",
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric"
+                        }
+                    )
+                    : "A coordinar";
+
+                const lines = [
+                    "¡Hola, San Javier Experiencias!",
+                    "Me gustaría consultar una cotización para la cabalgata.",
+                    "",
+                    `Cantidad de personas: ${count}`,
+                    `Fecha tentativa: ${formattedDate}`,
+                    `Horario preferido: ${time.value || "A coordinar"}`
+                ];
+
+                if (picnic.checked || english.checked) {
+                    lines.push("", "También nos interesa:");
+
+                    if (picnic.checked) {
+                        lines.push("• Picnic sobre las barrancas.");
+                    }
+
+                    if (english.checked) {
+                        lines.push("• Traducción español–inglés.");
+                    }
+                }
+
+                lines.push(
+                    "",
+                    "¿Me comparten el precio para nuestro grupo y la disponibilidad?"
+                );
+
+                message.value = lines.join("\n");
+            });
+
+            updatePeople();
+        })();
+    </script>
 
 </body>
 
