@@ -3,197 +3,1702 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senderismo - San Javier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Entre senderos y barrancas | San Javier Experiencias</title>
+    <meta name="description"
+        content="Trekking largo en San Javier con guardaparque local. Recorré 10 km entre naturaleza e historias y terminá en las barrancas con vistas panorámicas del Río Uruguay.">
+
+    <link rel="icon" href="../IMG/pestana.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
-        #carousel img {
-            transition: opacity 0.5s ease-in-out;
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px;
+        }
+
+        .av-page {
+            --ink: #243c30;
+            --muted: #6d7569;
+            --green: #315b42;
+            --orange: #af350f;
+            --cream: #f7f5eb;
+            --line: #e1e5d9;
+            --topography: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none' stroke='%23315b42' stroke-opacity='.08' stroke-width='1'%3E%3Cpath d='M-40 70C40-30 140 20 166 94S300 180 360 60'/%3E%3Cpath d='M-40 90C40-10 125 40 146 109S290 205 360 85'/%3E%3Cpath d='M-40 110C30 10 110 60 126 124S280 230 360 110'/%3E%3Cpath d='M-40 130C20 35 95 80 106 139S270 255 360 135'/%3E%3Cpath d='M-40 150C10 60 80 100 86 154S260 280 360 160'/%3E%3Cpath d='M-40 250C50 150 130 190 160 250S290 350 360 240'/%3E%3Cpath d='M-40 270C45 175 115 210 140 265S280 370 360 265'/%3E%3Cpath d='M-40 290C40 200 100 230 120 280S270 390 360 290'/%3E%3C/g%3E%3C/svg%3E");
+
+            width: min(1180px, calc(100% - 48px));
+            margin: 0 auto;
+            padding: 115px 0 50px;
+            color: var(--ink);
+        }
+
+        .av-page *,
+        .av-page *::before,
+        .av-page *::after {
+            box-sizing: border-box;
+        }
+
+        .av-back {
+            display: inline-flex;
+            margin-bottom: 20px;
+            color: var(--muted);
+            font-size: 11px;
+            text-decoration: none;
+            transition: color .2s, transform .2s;
+        }
+
+        .av-back:hover {
+            color: var(--orange);
+            transform: translateX(-3px);
+        }
+
+        /* PORTADA */
+
+        .av-hero {
+            position: relative;
+            isolation: isolate;
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            align-items: center;
+            gap: 35px;
+            overflow: hidden;
+            padding: 45px 45px 49px;
+            border: 1px solid #e4e7d9;
+            border-radius: 24px;
+            background-color: var(--cream);
+            background-image: var(--topography);
+        }
+
+        .av-hero::before {
+            content: "";
             position: absolute;
-            inset: 0;
+            z-index: -1;
+            top: -140px;
+            left: -90px;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: #e8ecd9;
+            opacity: .6;
+        }
+
+        .av-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 0 19px;
+            color: var(--orange);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .av-eyebrow::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        .av-hero h1 {
+            margin: 0 0 24px;
+            font-size: clamp(40px, 4.9vw, 61px);
+            font-weight: 900;
+            line-height: 1.02;
+            letter-spacing: -.055em;
+        }
+
+        .av-hero h1 span {
+            position: relative;
+            display: inline-block;
+            color: var(--orange);
+        }
+
+        .av-hero h1 span::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: -8px;
+            left: 0;
+            height: 10px;
+            border-top: 3px solid #c5a76b;
+            border-radius: 50%;
+            transform: rotate(-2deg);
+        }
+
+        .av-hero-description {
+            max-width: 440px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .av-hero-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 17px;
+            margin-top: 27px;
+        }
+
+        .av-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            min-height: 49px;
+            padding: 14px 21px;
+            border: 0;
+            border-radius: 10px;
+            background: var(--orange);
+            color: #fff;
+            font: inherit;
+            font-size: 12px;
+            font-weight: 750;
+            text-decoration: none;
+            cursor: pointer;
+            transition:
+                background .2s,
+                transform .2s,
+                box-shadow .2s;
+        }
+
+        .av-button:hover {
+            background: #922f08;
+            transform: translateY(-3px);
+            box-shadow: 0 9px 20px #af350f20;
+        }
+
+        .av-button:focus-visible,
+        .av-back:focus-visible {
+            outline: 3px solid #9bb48a;
+            outline-offset: 4px;
+        }
+
+        .av-hero-note {
+            max-width: 145px;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        /* FOTO Y BRÚJULA */
+
+        .av-visual {
+            position: relative;
+            min-width: 0;
+            padding: 24px 10px 30px;
+        }
+
+        .av-photo-frame {
+            height: 405px;
+            overflow: hidden;
+            border: 7px solid #fffdf7;
+            border-radius: 43% 43% 20px 20px;
+            box-shadow: 0 18px 40px #273c2315;
+            transform: rotate(2deg);
+        }
+
+        .av-photo-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 1rem;
+            object-position: center;
+            animation: av-photo-enter 1.5s ease-out both;
         }
 
-        #carousel {
-            position: relative;
-            width: 100%;
-            border-radius: 1rem;
-            overflow: hidden;
-        }
-
-        .carousel-button {
+        .av-sticker {
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            border: 3px solid #fffdf7;
+            border-radius: 8px 13px 8px 13px;
+            box-shadow: 0 7px 20px #273c2315;
+            font-size: 11px;
+            font-weight: 800;
+            animation: av-float 5s ease-in-out infinite;
+        }
+
+        .av-sticker-one {
+            top: 17px;
+            left: -10px;
+            background: #e4ebd6;
+            color: var(--green);
+            --tilt: -7deg;
+        }
+
+        .av-sticker-two {
+            right: -8px;
+            bottom: 17px;
+            background: #f0d8b3;
+            color: #74502e;
+            --tilt: 5deg;
+            animation-delay: -2.5s;
+        }
+
+        .av-compass {
+            position: absolute;
+            top: -7px;
+            right: -8px;
+            width: 91px;
+            height: 91px;
+            filter: drop-shadow(0 7px 6px #273c231c);
+            transform: rotate(12deg);
+            pointer-events: none;
+        }
+
+        .av-compass-needle {
+            transform-origin: 50px 50px;
+            animation: av-needle 7s ease-in-out infinite;
+        }
+
+        /* PRECIO Y DATOS */
+
+        .av-facts {
+            display: grid;
+            grid-template-columns: 1.3fr repeat(3, 1fr);
+            align-items: center;
+            gap: 22px;
+            margin: 20px 0 48px;
+            padding: 25px 28px;
+            border: 1px solid var(--line);
+            border-radius: 15px;
+            background: #fff;
+        }
+
+        .av-price-label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        .av-price strong {
+            font-size: 33px;
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -.05em;
+        }
+
+        .av-price small {
+            display: block;
+            margin-top: 6px;
+            color: var(--muted);
+            font-size: 9px;
+            line-height: 1.7;
+        }
+
+        .av-fact {
+            padding-left: 19px;
+            border-left: 2px solid #dce4cf;
+        }
+
+        .av-fact strong {
+            display: block;
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .av-fact span {
+            display: block;
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        /* CONTENIDO */
+
+        .av-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 350px;
+            align-items: start;
+            gap: 50px;
+        }
+
+        .av-section {
+            margin-bottom: 31px;
+            padding-bottom: 31px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .av-section:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+
+        .av-section .av-eyebrow {
+            margin-bottom: 11px;
+            font-size: 9px;
+        }
+
+        .av-section h2,
+        .av-pack h2 {
+            margin: 0 0 19px;
+            font-size: 30px;
+            font-weight: 850;
+            line-height: 1.13;
+            letter-spacing: -.04em;
+        }
+
+        .av-includes {
+            display: grid;
+            gap: 13px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .av-includes li {
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.85;
+        }
+
+        .av-includes li::before {
+            content: "↗";
+            display: grid;
+            flex: 0 0 23px;
+            place-items: center;
+            width: 23px;
+            height: 23px;
+            margin-top: 1px;
+            border-radius: 7px;
+            background: #edf1e4;
+            color: var(--green);
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        /* ITINERARIO */
+
+        .av-itinerary {
+            position: relative;
+            display: grid;
+            gap: 25px;
+        }
+
+        .av-step {
+            position: relative;
+            display: grid;
+            grid-template-columns: 35px minmax(0, 1fr);
+            gap: 14px;
+        }
+
+        .av-step:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 40px;
+            bottom: -18px;
+            left: 16px;
+            border-left: 1px dashed #c5cfb9;
+        }
+
+        .av-step-number {
+            display: grid;
+            place-items: center;
+            width: 34px;
+            height: 34px;
+            border: 1px solid #dce4cf;
             border-radius: 50%;
-            padding: 0.5rem 0.8rem;
-            font-size: 1.5rem;
+            background: #f4f6ed;
+            color: var(--green);
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .av-step h3 {
+            margin: 5px 0 7px;
+            font-size: 15px;
+            font-weight: 800;
+            line-height: 1.4;
+            letter-spacing: -.02em;
+        }
+
+        .av-step p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .av-step p+p {
+            margin-top: 11px;
+        }
+
+        .av-finish {
+            overflow: hidden;
+            border: 1px solid #e1e5d8;
+            border-radius: 16px;
+            background: #f6f5eb;
+        }
+
+        .av-finish-photo {
+            position: relative;
+            height: 205px;
+            overflow: hidden;
+            background: #dce4d0;
+        }
+
+        .av-finish-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 45%;
+            transition: transform .7s ease;
+        }
+
+        .av-finish:hover .av-finish-photo img {
+            transform: scale(1.035);
+        }
+
+        .av-finish-photo::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent 45%,
+                    rgba(25, 47, 33, .5));
+        }
+
+        .av-finish-caption {
+            position: absolute;
+            z-index: 1;
+            bottom: 16px;
+            left: 20px;
+            color: #fff;
+            font-size: 9px;
+            font-weight: 750;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+        }
+
+        .av-finish-body {
+            padding: 22px;
+        }
+
+        .av-finish-body h3 {
+            margin-top: 0;
+            color: var(--green);
+            font-size: 19px;
+            line-height: 1.3;
+            letter-spacing: -.035em;
+        }
+
+        .av-picnic-note {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 7px 10px;
+            border-radius: 6px;
+            background: #e7ead8;
+            color: #506044;
+            font-size: 9px;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+
+        /* HORARIOS */
+
+        .av-section>p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .av-times {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 13px;
+            margin-top: 18px;
+        }
+
+        .av-time {
+            position: relative;
+            overflow: hidden;
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: 11px;
+            background: #fafbf5;
+        }
+
+        .av-time::after {
+            content: "↗";
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            color: #b4bea6;
+            font-size: 19px;
+        }
+
+        .av-time span {
+            display: block;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        .av-time strong {
+            display: block;
+            margin-top: 5px;
+            font-size: 27px;
+            font-weight: 850;
+            letter-spacing: -.04em;
+        }
+
+        .av-section .av-small-note {
+            margin-top: 14px;
+            font-size: 11px;
+        }
+
+        /* CONSULTA */
+
+        .av-quote {
+            position: sticky;
+            top: 110px;
+            overflow: hidden;
+            padding: 27px;
+            border: 1px solid #dfe5d5;
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: 0 12px 35px #273c2308;
+            scroll-margin-top: 110px;
+        }
+
+        .av-quote::before {
+            content: "";
+            display: block;
+            width: 36px;
+            height: 4px;
+            margin-bottom: 18px;
+            border-radius: 4px;
+            background: var(--orange);
+        }
+
+        .av-quote h2 {
+            margin: 0 0 11px;
+            font-size: 29px;
+            font-weight: 850;
+            line-height: 1.08;
+            letter-spacing: -.04em;
+        }
+
+        .av-quote-intro {
+            margin: 0 0 23px;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.85;
+        }
+
+        .av-field {
+            margin-bottom: 19px;
+        }
+
+        .av-field>label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 11px;
+            font-weight: 750;
+        }
+
+        .av-field input,
+        .av-field select {
+            width: 100%;
+            min-width: 0;
+            min-height: 47px;
+            padding: 11px 12px;
+            border: 1px solid #dce2d5;
+            border-radius: 8px;
+            background: #fff;
+            color: var(--ink);
+            font: inherit;
+            font-size: 13px;
+        }
+
+        .av-field input:focus-visible,
+        .av-field select:focus-visible,
+        .av-extra input:focus-visible {
+            outline: 2px solid #a6bb94;
+            outline-offset: 2px;
+        }
+
+        .av-counter {
+            display: flex;
+            min-height: 47px;
+            overflow: hidden;
+            border: 1px solid #dce2d5;
+            border-radius: 8px;
+        }
+
+        .av-counter button {
+            flex: 0 0 47px;
+            width: 47px;
+            border: 0;
+            background: #f5f7ee;
+            color: var(--green);
+            font: inherit;
+            font-size: 20px;
             cursor: pointer;
-            z-index: 10;
+            transition: background .2s;
         }
 
-        .carousel-button:hover {
-            background-color: rgba(255, 255, 255, 0.9);
+        .av-counter button:hover {
+            background: #e9efdd;
         }
 
-        .left-btn {
-            left: 0.5rem;
+        .av-counter button:disabled {
+            opacity: .35;
+            cursor: default;
         }
 
-        .right-btn {
-            right: 0.5rem;
+        .av-counter button:focus-visible {
+            outline: 2px solid var(--orange);
+            outline-offset: -3px;
+        }
+
+        .av-counter input {
+            flex: 1;
+            border: 0;
+            border-radius: 0;
+            text-align: center;
+            appearance: textfield;
+            -moz-appearance: textfield;
+        }
+
+        .av-counter input::-webkit-inner-spin-button,
+        .av-counter input::-webkit-outer-spin-button {
+            margin: 0;
+            -webkit-appearance: none;
+        }
+
+        .av-extra {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-height: 44px;
+            margin-bottom: 16px;
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.6;
+            cursor: pointer;
+        }
+
+        .av-extra input {
+            flex: 0 0 17px;
+            width: 17px;
+            height: 17px;
+            accent-color: var(--orange);
+        }
+
+        .av-help {
+            margin: 7px 0 0;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        .av-quote .av-button {
+            width: 100%;
+        }
+
+        .av-disclaimer {
+            margin: 12px 0 0;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.85;
+            text-align: center;
+        }
+
+        .av-error {
+            margin: 0 0 14px;
+            padding: 10px 12px;
+            border-radius: 7px;
+            background: #fff0e8;
+            color: #9b3316;
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        .av-help[hidden],
+        .av-error[hidden] {
+            display: none;
+        }
+
+        /* RECOMENDACIONES */
+
+        .av-pack {
+            position: relative;
+            overflow: hidden;
+            margin-top: 45px;
+            padding: 30px;
+            border: 1px solid #e1e5d6;
+            border-radius: 17px;
+            background-color: var(--cream);
+            background-image: var(--topography);
+        }
+
+        .av-pack .av-eyebrow {
+            margin-bottom: 11px;
+            font-size: 9px;
+        }
+
+        .av-pack h2 {
+            margin-bottom: 0;
+        }
+
+        .av-pack-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px 25px;
+            margin: 24px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .av-pack-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #5c6854;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .av-pack-list li::before {
+            content: "✓";
+            color: var(--green);
+            font-weight: 800;
+        }
+
+        .av-pack-optional {
+            margin: 23px 0 0;
+            padding-top: 17px;
+            border-top: 1px solid #dce2cf;
+            color: #5c6854;
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        /* ANIMACIONES */
+
+        @keyframes av-float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(var(--tilt));
+            }
+
+            50% {
+                transform: translateY(-8px) rotate(var(--tilt));
+            }
+        }
+
+        @keyframes av-needle {
+
+            0%,
+            100% {
+                transform: rotate(-18deg);
+            }
+
+            50% {
+                transform: rotate(18deg);
+            }
+        }
+
+        @keyframes av-photo-enter {
+            from {
+                transform: scale(1.07);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        /* TABLETS */
+
+        @media (max-width: 950px) {
+            .av-hero {
+                gap: 24px;
+                padding: 35px;
+            }
+
+            .av-hero h1 {
+                font-size: 46px;
+            }
+
+            .av-photo-frame {
+                height: 370px;
+            }
+
+            .av-layout {
+                grid-template-columns: minmax(0, 1fr) 315px;
+                gap: 30px;
+            }
+
+            .av-quote {
+                padding: 23px;
+            }
+
+            .av-facts {
+                gap: 16px;
+                padding: 24px;
+            }
+
+            .av-fact {
+                padding-left: 13px;
+            }
+
+            .av-fact strong {
+                font-size: 14px;
+            }
+
+            .av-pack-list {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* CELULARES */
+
+        @media (max-width: 760px) {
+            .av-page {
+                width: calc(100% - 32px);
+                padding: 108px 0 35px;
+            }
+
+            .av-back {
+                margin-bottom: 16px;
+                font-size: 10px;
+            }
+
+            .av-hero {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 25px;
+                padding: 29px 23px 24px;
+                border-radius: 18px;
+            }
+
+            .av-eyebrow {
+                margin-bottom: 18px;
+                font-size: 8px;
+                letter-spacing: .1em;
+            }
+
+            .av-hero h1 {
+                margin-bottom: 25px;
+                font-size: clamp(39px, 10vw, 51px);
+            }
+
+            .av-hero-description {
+                font-size: 12px;
+            }
+
+            .av-hero-actions {
+                gap: 14px;
+                margin-top: 23px;
+            }
+
+            .av-button {
+                min-height: 48px;
+                padding: 13px 17px;
+                font-size: 11px;
+            }
+
+            .av-hero-note {
+                max-width: 125px;
+                font-size: 9px;
+            }
+
+            .av-visual {
+                width: 100%;
+                max-width: 430px;
+                margin: 0 auto;
+                padding: 20px 8px 25px;
+            }
+
+            .av-photo-frame {
+                height: 285px;
+                border-width: 5px;
+            }
+
+            .av-compass {
+                top: -4px;
+                right: -5px;
+                width: 76px;
+                height: 76px;
+            }
+
+            .av-sticker {
+                padding: 10px 12px;
+                font-size: 10px;
+            }
+
+            .av-sticker-one {
+                top: 14px;
+                left: -5px;
+            }
+
+            .av-sticker-two {
+                right: -5px;
+                bottom: 13px;
+            }
+
+            .av-facts {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 22px 10px;
+                margin: 16px 0 35px;
+                padding: 23px 20px;
+            }
+
+            .av-price {
+                grid-column: 1 / -1;
+                padding-bottom: 19px;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .av-price strong {
+                font-size: 35px;
+            }
+
+            .av-price small {
+                font-size: 10px;
+            }
+
+            .av-fact {
+                padding-left: 10px;
+            }
+
+            .av-fact strong {
+                font-size: 13px;
+            }
+
+            .av-fact span {
+                font-size: 9px;
+            }
+
+            .av-layout {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 31px;
+            }
+
+            .av-section {
+                margin-bottom: 27px;
+                padding-bottom: 27px;
+            }
+
+            .av-section h2,
+            .av-pack h2 {
+                font-size: 27px;
+            }
+
+            .av-includes li {
+                font-size: 12px;
+            }
+
+            .av-step {
+                grid-template-columns: 30px minmax(0, 1fr);
+                gap: 11px;
+            }
+
+            .av-step-number {
+                width: 29px;
+                height: 29px;
+                font-size: 9px;
+            }
+
+            .av-step:not(:last-child)::after {
+                top: 35px;
+                left: 14px;
+            }
+
+            .av-step h3 {
+                font-size: 14px;
+            }
+
+            .av-finish-photo {
+                height: 180px;
+            }
+
+            .av-finish-caption {
+                bottom: 13px;
+                left: 15px;
+                font-size: 8px;
+                letter-spacing: .09em;
+            }
+
+            .av-finish-body {
+                padding: 18px 16px;
+            }
+
+            .av-finish-body h3 {
+                font-size: 19px;
+            }
+
+            .av-quote {
+                position: static;
+                padding: 26px 22px;
+            }
+
+            .av-quote h2 {
+                font-size: 31px;
+            }
+
+            .av-field input,
+            .av-field select {
+                min-height: 49px;
+                font-size: 16px;
+            }
+
+            .av-counter {
+                min-height: 49px;
+            }
+
+            .av-counter button {
+                flex-basis: 49px;
+                width: 49px;
+            }
+
+            .av-quote .av-button {
+                min-height: 51px;
+                font-size: 12px;
+            }
+
+            .av-pack {
+                margin-top: 31px;
+                padding: 25px 21px;
+            }
+
+            .av-pack-list {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 14px;
+                margin-top: 22px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .av-hero {
+                padding: 27px 19px 22px;
+            }
+
+            .av-hero h1 {
+                font-size: 36px;
+            }
+
+            .av-photo-frame {
+                height: 250px;
+            }
+
+            .av-facts {
+                padding: 21px 16px;
+            }
+
+            .av-fact strong {
+                font-size: 12px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .av-page *,
+            .av-page *::before,
+            .av-page *::after {
+                animation: none !important;
+                transition: none !important;
+            }
         }
     </style>
 </head>
 
-<body class="font-sans bg-gradient-to-b from-gray-100 via-gray-50 to-gray-100 text-gray-800">
+<body class="font-sans bg-white">
 
-    <!-- NAVBAR -->
+    <!-- BARRA DE MENÚ COMPARTIDA -->
     <header class="fixed top-0 w-full bg-white shadow z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- LOGO -->
+
             <a href="../index.html" class="flex items-center gap-3">
                 <img src="../IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
                 <div class="leading-tight">
-                    <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
-                    <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
+                    <span class="block text-2xl md:text-3xl font-bold">
+                        San Javier
+                    </span>
+                    <span class="block text-sm md:text-base text-[#af350f]">
+                        Cultura y Naturaleza
+                    </span>
                 </div>
             </a>
 
-            <!-- Botón hamburguesa solo en mobile -->
-            <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none">☰</button>
+            <button id="menu-btn" type="button" class="md:hidden text-gray-700 text-3xl focus:outline-none"
+                aria-label="Abrir o cerrar menú" aria-expanded="false" aria-controls="menu">☰</button>
 
-            <!-- Links -->
-            <nav id="menu"
-                class="hidden absolute top-full left-0 w-full bg-white  md:static md:block md:w-auto z-40">
+            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white md:static md:block md:w-auto">
                 <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
-                    <li><a href="nosotros.html" class="hover:text-[#af350f]">Nosotros</a></li>
-                    <li><a href="tours.html" class="hover:text-[#af350f]">Tours</a></li>
-                    <li><a href="../index.html" class="hover:text-[#af350f]">Inicio</a></li>
+                    <li>
+                        <a href="nosotros.html" class="hover:text-[#af350f]">
+                            Nosotros
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html" class="hover:text-[#af350f]">
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
+                            class="hover:text-[#af350f]">Hospedaje</a>
+                    </li>
                 </ul>
             </nav>
 
-            <!-- Botón reservar -->
             <a href="https://wa.link/2yu17o"
-                class="hidden md:inline-block ml-6 bg-[#af350f] text-white px-4 py-2 rounded-lg hover:bg-[#922f08] transition">
-                Reservar
-            </a>
+                class="hidden md:inline-block ml-6 bg-[#af350f] text-white px-4 py-2 rounded-lg hover:bg-[#922f08] transition">Reservar</a>
+
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="relative h-[50vh] sm:h-[60vh] md:h-[650px] bg-cover bg-center flex items-center justify-center"
-        style="background-image: url('../IMG/sendero2.png');">
-        <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-black/20"></div>
-        <div class="relative z-10 text-center px-6">
-            <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg">
-                Senderismo a Campo Abierto
-            </h1>
-            <p class="mt-4 text-base sm:text-lg md:text-2xl text-white drop-shadow-sm">
-                Vive la esencia del campo en una caminata guiada.
-            </p>
-        </div>
-    </section>
+    <main class="av-page">
 
-    <!-- DESCRIPCIÓN + CARRUSEL + VIDEO -->
-    <section class="container mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-        <!-- TEXTO -->
-        <div class="flex flex-col gap-8">
-            <div class="bg-white rounded-3xl shadow-lg p-6 sm:p-8">
-                <h2 class="text-2xl sm:text-3xl font-bold mb-4">Descripción</h2>
-                <p class="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
-                Una experiencia guiada de 3 horas, ideal para toda la familia: naturaleza, historia y cultura en un recorrido accesible
-                que conecta con la vida del campo y sus ecosistemas —arenales, barrancas, praderas y cuevas de indios—.
-                </p>
-            </div>
-
-            <div class="bg-white rounded-3xl shadow-lg p-6 sm:p-8">
-                <h2 class="text-2xl sm:text-3xl font-bold mb-4">Detalles de la actividad</h2>
-                <ul class="space-y-2 text-sm sm:text-base md:text-lg text-gray-700">
-                    <li class="flex items-center gap-2">📍 <span>Campo familiar – San Javier</span></li>
-                    <li class="flex items-center gap-2">🥾 <span>5 km aprox.</span></li>
-                    <li class="flex items-center gap-2">⏱ <span>5 horas</span></li>
-                    <li class="flex items-center gap-2">🔥 <span>Nivel: Bajo</span></li>
-                </ul>
-            </div>
-
-            <div class="bg-white rounded-3xl shadow-lg p-6 sm:p-8">
-                <h2 class="text-2xl sm:text-3xl font-bold mb-4">Itinerario</h2>
-                <ul class="list-disc list-inside space-y-1 sm:space-y-2 text-sm sm:text-base md:text-lg text-gray-700">
-                    <li>08:30 – Bienvenida y charla introductoria.</li>
-                    <li>09:00 – Caminata por senderos con interpretación de flora y fauna.</li>
-                    <li>12:30 – Descanso en punto panorámico.</li>
-                    <li>13:00 – Cierre y regreso.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- CARRUSEL + VIDEO -->
-        <div class="flex flex-col gap-8">
-            <!-- Carrusel -->
-            <div id="carousel" class="relative w-full h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden">
-                <img src="../IMG/sendero3.JPG" alt="Imagen 1">
-                <img src="../IMG/sendero1.JPG" alt="Imagen 2" class="opacity-0">
-                <img src="../IMG/sendero2.JPG" alt="Imagen 3" class="opacity-0">
-                <button class="carousel-button left-btn" id="prev">◀</button>
-                <button class="carousel-button right-btn" id="next">▶</button>
-            </div>
-
-            <!-- Video -->
-            <div class="bg-white rounded-3xl shadow-lg p-6">
-                <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-center">Mirá la experiencia en video</h2>
-                <video src="../IMG/trekkingvideo.mp4" controls class="w-full rounded-2xl shadow-lg"></video>
-            </div>
-        </div>
-    </section>
-
-    <!-- BOTÓN RESERVA -->
-    <section class="container mx-auto px-6 pb-20 text-center">
-        <a href="https://wa.link/ngaba9"
-            class="inline-block bg-green-600 text-white px-8 sm:px-12 py-3 sm:py-4 rounded-full font-bold text-lg shadow-xl hover:bg-green-700 transition-transform transform hover:scale-105">
-            Reservar ahora
+        <a class="av-back" href="tours.html">
+            ← Todas las experiencias
         </a>
-    </section>
 
-    <!-- SCRIPTS -->
+        <!-- PORTADA -->
+        <section class="av-hero" aria-labelledby="av-title">
+
+            <div>
+                <p class="av-eyebrow">Trekking largo · San Javier</p>
+
+                <h1 id="av-title">
+                    Entre senderos<br>
+                    <span>y barrancas.</span>
+                </h1>
+
+                <p class="av-hero-description">
+                    Hay paisajes que se disfrutan más cuando llegás caminando.
+                    Adentrate en el monte nativo, descubrí las historias
+                    del campo y seguí el sendero hasta lo alto de las
+                    barrancas del Río Uruguay. Una aventura con
+                    guardaparque local y un final que invita a quedarse.
+                </p>
+
+                <div class="av-hero-actions">
+                    <a class="av-button" href="#cotizar">
+                        Mi próxima aventura ↗
+                    </a>
+
+                    <span class="av-hero-note">
+                        Desconectá de la rutina.<br>
+                        Conectá con el camino.
+                    </span>
+                </div>
+            </div>
+
+            <div class="av-visual">
+
+                <div class="av-photo-frame">
+                    <img src="../IMG/sendero2.JPG" alt="Una caminata entre la vegetación y los paisajes de San Javier"
+                        fetchpriority="high" decoding="async">
+                </div>
+
+                <!-- BRÚJULA DECORATIVA -->
+                <svg class="av-compass" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                    focusable="false">
+                    <circle cx="50" cy="50" r="47" fill="#fffdf7" />
+                    <circle cx="50" cy="50" r="41" fill="#f4f1e5" stroke="#c7cdb7" />
+                    <circle cx="50" cy="50" r="30" fill="none" stroke="#d8ddca" stroke-dasharray="2 5" />
+
+                    <g fill="#315b42" font-family="Arial, sans-serif" font-size="8" font-weight="bold"
+                        text-anchor="middle">
+                        <text x="50" y="23">N</text>
+                        <text x="80" y="53">E</text>
+                        <text x="50" y="84">S</text>
+                        <text x="20" y="53">O</text>
+                    </g>
+
+                    <g class="av-compass-needle">
+                        <path d="M50 27 L59 50 L50 47 L41 50Z" fill="#af350f" />
+                        <path d="M50 73 L41 50 L50 53 L59 50Z" fill="#315b42" />
+                    </g>
+
+                    <circle cx="50" cy="50" r="5" fill="#fffdf7" />
+                    <circle cx="50" cy="50" r="2.5" fill="#a98d54" />
+                </svg>
+
+                <div class="av-sticker av-sticker-one">
+                    ↗ Con guardaparque local
+                </div>
+
+                <div class="av-sticker av-sticker-two">
+                    El río nos espera al final
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PRECIO Y DATOS -->
+        <section class="av-facts" aria-label="Datos del trekking">
+
+            <div class="av-price">
+                <span class="av-price-label">Tu próxima escapada, desde</span>
+                <strong>$1.200</strong>
+                <small>por persona · cotización según tu grupo</small>
+            </div>
+
+            <div class="av-fact">
+                <strong>10 km</strong>
+                <span>de recorrido</span>
+            </div>
+
+            <div class="av-fact">
+                <strong>4–5 horas</strong>
+                <span>de duración aproximada</span>
+            </div>
+
+            <div class="av-fact">
+                <strong>Baja / media</strong>
+                <span>dificultad</span>
+            </div>
+
+        </section>
+
+        <div class="av-layout">
+
+            <div>
+
+                <!-- QUÉ INCLUYE -->
+                <section class="av-section">
+                    <p class="av-eyebrow">Más que sumar kilómetros</p>
+
+                    <h2>El camino también tiene sus historias.</h2>
+
+                    <ul class="av-includes">
+                        <li>
+                            Trekking guiado por un guardaparque y conocedor local.
+                        </li>
+                        <li>
+                            Recorrido por los ambientes del campo y las
+                            barrancas del Río Uruguay.
+                        </li>
+                        <li>
+                            Interpretación de la naturaleza y la historia
+                            del lugar durante la caminata.
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- ITINERARIO -->
+                <section class="av-section">
+                    <p class="av-eyebrow">Paso a paso</p>
+
+                    <h2>Así se vive la aventura.</h2>
+
+                    <div class="av-itinerary">
+
+                        <article class="av-step">
+                            <span class="av-step-number" aria-hidden="true">01</span>
+
+                            <div>
+                                <h3>El punto de partida</h3>
+
+                                <p>
+                                    Nos encontramos, conocemos al guía y compartimos
+                                    las recomendaciones para la caminata.
+                                    Un momento para prepararnos y empezar
+                                    a dejar atrás la rutina.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="av-step">
+                            <span class="av-step-number" aria-hidden="true">02</span>
+
+                            <div>
+                                <h3>Un sendero, muchos paisajes</h3>
+
+                                <p>
+                                    Caminamos entre arenales, humedales, monte nativo
+                                    y blanqueales. El entorno va cambiando y el
+                                    guardaparque nos ayuda a descubrir esos detalles
+                                    que a veces pasan desapercibidos.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="av-step">
+                            <span class="av-step-number" aria-hidden="true">03</span>
+
+                            <div class="av-finish">
+
+                                <div class="av-finish-photo">
+                                    <img src="../IMG/sendero4.JPG"
+                                        alt="Vista de las barrancas y el Río Uruguay en San Javier" loading="lazy"
+                                        decoding="async">
+
+                                    <span class="av-finish-caption">
+                                        La recompensa del camino
+                                    </span>
+                                </div>
+
+                                <div class="av-finish-body">
+                                    <h3>El gran cierre: la cima de las barrancas</h3>
+
+                                    <p>
+                                        Terminamos en la cima de las barrancas, con una
+                                        <strong>vista panorámica del Río Uruguay</strong>.
+                                        El paisaje se abre y nos invita a quedarnos
+                                        un rato más.
+                                    </p>
+
+                                    <p>
+                                        Podés sumar un picnic y disfrutar de este lugar
+                                        con un almuerzo completo al aire libre o una
+                                        merienda al atardecer. Un cierre para bajar un
+                                        cambio, compartir y llevarte una de las mejores
+                                        postales del recorrido.
+                                    </p>
+
+                                    <span class="av-picnic-note">
+                                        Picnic opcional · Consultá al cotizar
+                                    </span>
+                                </div>
+
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+                <!-- DÍAS Y HORARIOS -->
+                <section class="av-section">
+                    <p class="av-eyebrow">Hacé lugar en la agenda</p>
+
+                    <h2>El próximo sendero puede ser este.</h2>
+
+                    <p>
+                        Salimos sábados y domingos, sujetos a disponibilidad.
+                        Si querés venir un día de semana, consultanos.
+                    </p>
+
+                    <div class="av-times">
+
+                        <div class="av-time">
+                            <span>Salida de mañana</span>
+                            <strong>09:00</strong>
+                        </div>
+
+                        <div class="av-time">
+                            <span>Salida de tarde</span>
+                            <strong>14:00</strong>
+                        </div>
+
+                    </div>
+
+                    <p class="av-small-note">
+                        Para sumar un almuerzo o una merienda al atardecer,
+                        coordinamos el horario y la disponibilidad al consultar.
+                        Compartimos el punto exacto de encuentro al organizar
+                        la salida.
+                    </p>
+                </section>
+
+            </div>
+
+            <!-- CONSULTA POR WHATSAPP -->
+            <aside class="av-quote" id="cotizar" aria-labelledby="av-quote-title">
+                <h2 id="av-quote-title">Tu aventura empieza acá.</h2>
+
+                <p class="av-quote-intro">
+                    Contanos cuántas personas vienen.
+                    Te pasamos una cotización para tu grupo y
+                    coordinamos los detalles por WhatsApp.
+                </p>
+
+                <form id="av-form" action="https://wa.me/59891009934" method="get" target="_blank" rel="noopener">
+                    <input type="hidden" name="text" id="av-message">
+
+                    <div class="av-field">
+                        <label for="av-people">¿Cuántas personas vienen?</label>
+
+                        <div class="av-counter">
+                            <button type="button" id="av-minus" aria-label="Quitar una persona">−</button>
+
+                            <input type="number" id="av-people" min="1" step="1" value="2" inputmode="numeric" required>
+
+                            <button type="button" id="av-plus" aria-label="Agregar una persona">+</button>
+                        </div>
+                    </div>
+
+                    <div class="av-field">
+                        <label for="av-date">Fecha tentativa · opcional</label>
+
+                        <input type="date" id="av-date">
+
+                        <p class="av-help" id="av-date-note" hidden>
+                            Los días de semana se coordinan según disponibilidad.
+                        </p>
+                    </div>
+
+                    <div class="av-field">
+                        <label for="av-time">Horario que preferís</label>
+
+                        <select id="av-time">
+                            <option value="">A coordinar</option>
+                            <option value="09:00">Mañana · 09:00</option>
+                            <option value="14:00">Tarde · 14:00</option>
+                        </select>
+                    </div>
+
+                    <label class="av-extra" for="av-picnic">
+                        <input type="checkbox" id="av-picnic">
+                        <span>Me interesa sumar un picnic sobre las barrancas</span>
+                    </label>
+
+                    <p class="av-error" id="av-error" role="alert" hidden></p>
+
+                    <button class="av-button" type="submit">
+                        Consultar cotización ↗
+                    </button>
+
+                    <p class="av-disclaimer">
+                        El precio final depende de tu grupo.<br>
+                        Confirmamos cotización y disponibilidad por WhatsApp.
+                        El picnic se cotiza por separado.
+                    </p>
+
+                    <noscript>
+                        <p class="av-help">
+                            <a href="https://wa.me/59891009934">
+                                Consultanos directamente por WhatsApp.
+                            </a>
+                        </p>
+                    </noscript>
+
+                </form>
+            </aside>
+
+        </div>
+
+        <!-- RECOMENDACIONES -->
+        <section class="av-pack" aria-labelledby="av-pack-title">
+
+            <p class="av-eyebrow">Prepará la mochila</p>
+
+            <h2 id="av-pack-title">
+                Lo esencial para disfrutar el camino.
+            </h2>
+
+            <ul class="av-pack-list">
+                <li>Pantalón largo.</li>
+                <li>
+                    Camisa de manga larga para protegerte al pasar
+                    por zonas arboladas.
+                </li>
+                <li>
+                    Calzado cerrado, apto para trekking y con buen agarre.
+                </li>
+                <li>Gorra.</li>
+                <li>Botella de agua recargable.</li>
+            </ul>
+
+            <p class="av-pack-optional">
+                <strong>Opcional:</strong> lentes de sol y bastones de trekking.
+            </p>
+
+        </section>
+
+    </main>
+
     <script>
-        // Menu hamburguesa
-        const menuBtn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
-        menuBtn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+        (() => {
+            "use strict";
 
-        // Carrusel
-        const carouselImages = document.querySelectorAll('#carousel img');
-        const nextBtn = document.getElementById('next');
-        const prevBtn = document.getElementById('prev');
-        let current = 0;
+            // Menú compartido
+            const menuButton = document.getElementById("menu-btn");
+            const menu = document.getElementById("menu");
 
-        function showImage(index) {
-            carouselImages.forEach((img, i) => {
-                img.style.opacity = i === index ? '1' : '0';
+            menuButton.addEventListener("click", () => {
+                const isOpen =
+                    menuButton.getAttribute("aria-expanded") === "true";
+
+                menu.classList.toggle("hidden", isOpen);
+                menuButton.setAttribute("aria-expanded", String(!isOpen));
             });
-        }
 
-        nextBtn.addEventListener('click', () => {
-            current = (current + 1) % carouselImages.length;
-            showImage(current);
-        });
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    menu.classList.add("hidden");
+                    menuButton.setAttribute("aria-expanded", "false");
+                }
+            });
 
-        prevBtn.addEventListener('click', () => {
-            current = (current - 1 + carouselImages.length) % carouselImages.length;
-            showImage(current);
-        });
+            // Formulario de consulta
+            const form = document.getElementById("av-form");
+            const people = document.getElementById("av-people");
+            const date = document.getElementById("av-date");
+            const time = document.getElementById("av-time");
+            const minus = document.getElementById("av-minus");
+            const plus = document.getElementById("av-plus");
+            const picnic = document.getElementById("av-picnic");
+            const dateNote = document.getElementById("av-date-note");
+            const error = document.getElementById("av-error");
+            const message = document.getElementById("av-message");
 
-        setInterval(() => {
-            current = (current + 1) % carouselImages.length;
-            showImage(current);
-        }, 5000);
+            function uruguayNow() {
+                const parts = new Intl.DateTimeFormat("en-CA", {
+                    timeZone: "America/Montevideo",
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hourCycle: "h23"
+                }).formatToParts(new Date());
+
+                const values = {};
+
+                parts.forEach((part) => {
+                    if (part.type !== "literal") {
+                        values[part.type] = part.value;
+                    }
+                });
+
+                return {
+                    date: `${values.year}-${values.month}-${values.day}`,
+                    time: `${values.hour}:${values.minute}`
+                };
+            }
+
+            function updatePeople() {
+                const count = Number(people.value);
+                minus.disabled = !(Number.isSafeInteger(count) && count > 1);
+                error.hidden = true;
+            }
+
+            minus.addEventListener("click", () => {
+                people.value = Math.max(1, (Number(people.value) || 1) - 1);
+                updatePeople();
+            });
+
+            plus.addEventListener("click", () => {
+                const next = (Number(people.value) || 1) + 1;
+
+                if (Number.isSafeInteger(next)) {
+                    people.value = next;
+                }
+
+                updatePeople();
+            });
+
+            people.addEventListener("input", updatePeople);
+
+            date.min = uruguayNow().date;
+
+            date.addEventListener("change", () => {
+                error.hidden = true;
+
+                if (!date.value) {
+                    dateNote.hidden = true;
+                    return;
+                }
+
+                const day = new Date(`${date.value}T12:00:00Z`).getUTCDay();
+                dateNote.hidden = day === 0 || day === 6;
+            });
+
+            time.addEventListener("change", () => {
+                error.hidden = true;
+            });
+
+            function showError(text, field) {
+                error.textContent = text;
+                error.hidden = false;
+                field.focus();
+            }
+
+            form.addEventListener("submit", (event) => {
+                const count = Number(people.value);
+
+                if (!Number.isSafeInteger(count) || count < 1) {
+                    event.preventDefault();
+                    showError("Indicá una cantidad válida de personas.", people);
+                    return;
+                }
+
+                const now = uruguayNow();
+                date.min = now.date;
+
+                if (date.value && date.value < now.date) {
+                    event.preventDefault();
+                    showError(
+                        "Elegí una fecha futura o dejala vacía para coordinar.",
+                        date
+                    );
+                    return;
+                }
+
+                if (
+                    date.value === now.date &&
+                    time.value &&
+                    time.value <= now.time
+                ) {
+                    event.preventDefault();
+                    showError(
+                        "Ese horario ya pasó. Elegí otro horario o una nueva fecha.",
+                        time
+                    );
+                    return;
+                }
+
+                const formattedDate = date.value
+                    ? new Date(`${date.value}T12:00:00Z`).toLocaleDateString(
+                        "es-UY",
+                        {
+                            timeZone: "UTC",
+                            weekday: "long",
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric"
+                        }
+                    )
+                    : "A coordinar";
+
+                const lines = [
+                    "¡Hola, San Javier Experiencias!",
+                    "Me gustaría consultar una cotización para el trekking largo «Entre senderos y barrancas».",
+                    "",
+                    `Cantidad de personas: ${count}`,
+                    `Fecha tentativa: ${formattedDate}`,
+                    `Horario preferido: ${time.value || "A coordinar"}`
+                ];
+
+                if (picnic.checked) {
+                    lines.push(
+                        "",
+                        "También nos interesa consultar por el picnic sobre las barrancas."
+                    );
+                }
+
+                lines.push(
+                    "",
+                    "¿Me comparten el precio para nuestro grupo y la disponibilidad?"
+                );
+
+                message.value = lines.join("\n");
+            });
+
+            updatePeople();
+        })();
     </script>
 
 </body>
