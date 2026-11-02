@@ -3,130 +3,1697 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raíces Rusas en San Javier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cena tradicional rusa | San Javier Experiencias</title>
+    <meta name="description"
+        content="Viví una cena tradicional rusa en San Javier: gastronomía en vivo, un menú en varios pasos y sabores de nuestra familia. $1.000 por persona, con reserva previa.">
+
+    <link rel="icon" href="../IMG/pestana.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../IMG/pestana.png">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px;
+        }
+
+        .ru-page {
+            --ink: #302b28;
+            --muted: #79716a;
+            --red: #a3342e;
+            --blue: #36516f;
+            --cream: #faf5eb;
+            --line: #e9e0d5;
+            --folk-border: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='18' viewBox='0 0 48 18'%3E%3Cpath d='M9 2L16 9L9 16L2 9Z' fill='%23a3342e'/%3E%3Cpath d='M9 6L12 9L9 12L6 9Z' fill='%23faf5eb'/%3E%3Cpath d='M33 3L39 9L33 15L27 9Z' fill='%2336516f'/%3E%3Cpath d='M21 7L23 9L21 11L19 9ZM45 7L47 9L45 11L43 9Z' fill='%23bd9451'/%3E%3C/svg%3E");
+
+            width: min(1180px, calc(100% - 48px));
+            margin: 0 auto;
+            padding: 115px 0 55px;
+            color: var(--ink);
+        }
+
+        .ru-page *,
+        .ru-page *::before,
+        .ru-page *::after {
+            box-sizing: border-box;
+        }
+
+        .ru-back {
+            display: inline-flex;
+            margin-bottom: 20px;
+            color: var(--muted);
+            font-size: 11px;
+            text-decoration: none;
+            transition: color .2s, transform .2s;
+        }
+
+        .ru-back:hover {
+            color: var(--red);
+            transform: translateX(-3px);
+        }
+
+        .ru-symbols {
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        /* PORTADA */
+
+        .ru-hero {
+            position: relative;
+            isolation: isolate;
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            align-items: center;
+            gap: 34px;
+            overflow: hidden;
+            padding: 48px 48px 55px;
+            border: 1px solid #e8dac7;
+            border-radius: 23px;
+            background-color: var(--cream);
+            background-image: radial-gradient(#b5906020 .7px,
+                    transparent .7px);
+            background-size: 7px 7px;
+        }
+
+        .ru-hero::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: -145px;
+            left: -85px;
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            background: #f1e5d5;
+            opacity: .65;
+        }
+
+        .ru-pattern {
+            height: 18px;
+            background-color: #f4ead9;
+            background-image: var(--folk-border);
+            background-repeat: repeat-x;
+            background-position: center;
+            background-size: 48px 18px;
+        }
+
+        .ru-hero>.ru-pattern {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .ru-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 0 18px;
+            color: var(--red);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .ru-eyebrow::before {
+            content: "✦";
+            font-size: 14px;
+            line-height: 1;
+        }
+
+        .ru-hero h1 {
+            margin: 0 0 24px;
+            font-size: clamp(40px, 4.8vw, 60px);
+            font-weight: 900;
+            line-height: 1.04;
+            letter-spacing: -.055em;
+        }
+
+        .ru-hero h1 span {
+            color: var(--red);
+        }
+
+        .ru-hero-description {
+            max-width: 435px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .ru-hero-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 27px;
+        }
+
+        .ru-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            min-height: 49px;
+            padding: 14px 21px;
+            border: 0;
+            border-radius: 10px;
+            background: var(--red);
+            color: #fff;
+            font: inherit;
+            font-size: 12px;
+            font-weight: 750;
+            text-decoration: none;
+            cursor: pointer;
+            transition:
+                background .2s,
+                transform .2s,
+                box-shadow .2s;
+        }
+
+        .ru-button:hover {
+            background: #852923;
+            transform: translateY(-3px);
+            box-shadow: 0 9px 20px #a3342e20;
+        }
+
+        .ru-button:focus-visible,
+        .ru-back:focus-visible {
+            outline: 3px solid #9eb1c4;
+            outline-offset: 4px;
+        }
+
+        .ru-hero-note {
+            max-width: 145px;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.6;
+        }
+
+        /* FOTO, MATRIOSHKA Y SELLOS */
+
+        .ru-visual {
+            position: relative;
+            min-width: 0;
+            padding: 21px 10px 26px;
+        }
+
+        .ru-photo-frame {
+            height: 385px;
+            overflow: hidden;
+            border: 7px solid #fffdf7;
+            border-radius: 44% 44% 22px 22px;
+            box-shadow:
+                0 0 0 1px #d9c6ad,
+                0 18px 40px #593f2914;
+            transform: rotate(2deg);
+        }
+
+        .ru-photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            animation: ru-photo-enter 1.4s ease-out both;
+        }
+
+        .ru-matrioshka {
+            position: absolute;
+            top: -7px;
+            right: -8px;
+            width: 94px;
+            height: 141px;
+            overflow: visible;
+            filter: drop-shadow(0 7px 5px #593f2920);
+            transform-origin: 50% 93%;
+            animation: ru-rock 5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .ru-sticker {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            border: 3px solid #fff;
+            border-radius: 5px 13px 5px 13px;
+            box-shadow: 0 7px 20px #593f2914;
+            font-size: 11px;
+            font-weight: 800;
+            animation: ru-float 5s ease-in-out infinite;
+        }
+
+        .ru-sticker-one {
+            top: 11px;
+            left: -9px;
+            background: #e3eaf1;
+            color: var(--blue);
+            --tilt: -7deg;
+        }
+
+        .ru-sticker-two {
+            right: -8px;
+            bottom: 16px;
+            background: var(--red);
+            color: #fff8e9;
+            --tilt: 5deg;
+            animation-delay: -2.5s;
+        }
+
+        /* DATOS PRINCIPALES */
+
+        .ru-price-strip {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr 1fr;
+            align-items: center;
+            gap: 25px;
+            margin: 20px 0 57px;
+            padding: 25px 30px;
+            border: 1px solid var(--line);
+            border-radius: 15px;
+            background: #fff;
+        }
+
+        .ru-price-label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        .ru-price-value {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .ru-price-value strong {
+            font-size: 36px;
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -.05em;
+        }
+
+        .ru-price-value span {
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .ru-fact {
+            padding-left: 23px;
+            border-left: 1px solid var(--line);
+        }
+
+        .ru-fact strong {
+            display: block;
+            color: var(--blue);
+            font-size: 16px;
+            font-weight: 800;
+        }
+
+        .ru-fact span {
+            display: block;
+            margin-top: 5px;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        /* MENÚ */
+
+        .ru-section-heading {
+            max-width: 610px;
+            margin: 0 auto 29px;
+            text-align: center;
+        }
+
+        .ru-section-heading .ru-eyebrow {
+            margin-bottom: 12px;
+            font-size: 9px;
+        }
+
+        .ru-section-heading h2 {
+            margin: 0 0 13px;
+            font-size: clamp(29px, 3.2vw, 38px);
+            font-weight: 850;
+            line-height: 1.13;
+            letter-spacing: -.045em;
+        }
+
+        .ru-section-heading>p:last-child {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.85;
+        }
+
+        .ru-menu {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 17px;
+        }
+
+        .ru-course {
+            position: relative;
+            overflow: hidden;
+            padding: 29px 29px 42px;
+            border: 1px solid var(--line);
+            border-radius: 17px;
+            background: #fcfaf6;
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+        }
+
+        .ru-course:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 13px 25px #593f290b;
+        }
+
+        .ru-course::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 13px;
+            background-image: var(--folk-border);
+            background-repeat: repeat-x;
+            background-position: center;
+            background-size: 37px 14px;
+            opacity: .5;
+        }
+
+        .ru-course:nth-child(2) {
+            background: #f0f4f7;
+            border-color: #e0e7ed;
+        }
+
+        .ru-course:nth-child(3) {
+            background: #f8ede6;
+            border-color: #eeded2;
+        }
+
+        .ru-course:nth-child(4) {
+            background: #f8f2e3;
+            border-color: #ece3ce;
+        }
+
+        .ru-course-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 24px;
+        }
+
+        .ru-course-label {
+            color: var(--red);
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .ru-course-number {
+            display: grid;
+            place-items: center;
+            width: 32px;
+            height: 32px;
+            border: 1px solid currentColor;
+            border-radius: 7px;
+            background: #fff8;
+            color: var(--red);
+            font-size: 11px;
+            font-weight: 750;
+            opacity: .7;
+            transform: rotate(-6deg);
+        }
+
+        .ru-course h3 {
+            margin: 0 0 5px;
+            font-size: 24px;
+            font-weight: 850;
+            line-height: 1.15;
+            letter-spacing: -.035em;
+        }
+
+        .ru-russian {
+            display: block;
+            margin-bottom: 15px;
+            color: var(--blue);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 15px;
+            font-style: italic;
+        }
+
+        .ru-course p {
+            margin: 0;
+            color: #746c64;
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .ru-course p+p {
+            margin-top: 11px;
+        }
+
+        .ru-course p strong {
+            color: #50443b;
+            font-weight: 750;
+        }
+
+        .ru-drink {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 17px;
+            padding: 23px 28px;
+            border: 1px solid #e0e7ed;
+            border-radius: 15px;
+            background: #f0f4f7;
+        }
+
+        .ru-drink-icon {
+            display: grid;
+            flex: 0 0 49px;
+            place-items: center;
+            width: 49px;
+            height: 49px;
+            border-radius: 50%;
+            background: #e0e8ef;
+            color: var(--blue);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .ru-drink h3 {
+            margin: 0 0 4px;
+            color: var(--blue);
+            font-size: 16px;
+            font-weight: 800;
+        }
+
+        .ru-drink p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* HISTORIA FAMILIAR */
+
+        .ru-family-note {
+            max-width: 720px;
+            margin: 35px auto 53px;
+            padding: 0 27px;
+            text-align: center;
+        }
+
+        .ru-family-note::before {
+            content: "✦";
+            display: block;
+            margin-bottom: 13px;
+            color: var(--red);
+            font-size: 23px;
+        }
+
+        .ru-family-note p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .ru-family-note strong {
+            color: var(--red);
+        }
+
+        /* CONSULTA */
+
+        .ru-plan {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 55px;
+            overflow: hidden;
+            padding: 40px 40px 49px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: var(--cream);
+            scroll-margin-top: 110px;
+        }
+
+        .ru-plan::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 12px;
+            background-image: var(--folk-border);
+            background-repeat: repeat-x;
+            background-position: center;
+            background-size: 36px 14px;
+            opacity: .65;
+        }
+
+        .ru-plan-copy .ru-eyebrow {
+            margin-bottom: 14px;
+            font-size: 9px;
+        }
+
+        .ru-plan-copy h2 {
+            margin: 0 0 18px;
+            font-size: 37px;
+            font-weight: 850;
+            line-height: 1.1;
+            letter-spacing: -.045em;
+        }
+
+        .ru-plan-copy>p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .ru-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 22px 0 14px;
+        }
+
+        .ru-pills span {
+            padding: 8px 11px;
+            border-radius: 7px;
+            background: #efe2d9;
+            color: #833b31;
+            font-size: 10px;
+            font-weight: 750;
+        }
+
+        .ru-plan-copy .ru-small {
+            font-size: 11px;
+        }
+
+        .ru-form {
+            min-width: 0;
+            padding: 26px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: #fff;
+            box-shadow: 0 10px 30px #593f2906;
+        }
+
+        .ru-form h3 {
+            margin: 0 0 8px;
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: -.035em;
+        }
+
+        .ru-form-intro {
+            margin: 0 0 21px;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .ru-field {
+            margin-bottom: 19px;
+        }
+
+        .ru-field label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 11px;
+            font-weight: 750;
+        }
+
+        .ru-field input {
+            width: 100%;
+            min-width: 0;
+            min-height: 47px;
+            padding: 11px 12px;
+            border: 1px solid #dedbd4;
+            border-radius: 8px;
+            background: #fff;
+            color: var(--ink);
+            font: inherit;
+            font-size: 13px;
+        }
+
+        .ru-field input:focus-visible {
+            outline: 2px solid #9eb1c4;
+            outline-offset: 2px;
+        }
+
+        .ru-counter {
+            display: flex;
+            min-height: 47px;
+            overflow: hidden;
+            border: 1px solid #dedbd4;
+            border-radius: 8px;
+        }
+
+        .ru-counter button {
+            flex: 0 0 47px;
+            width: 47px;
+            border: 0;
+            background: #faf5ef;
+            color: var(--red);
+            font: inherit;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background .2s;
+        }
+
+        .ru-counter button:hover {
+            background: #f1e5da;
+        }
+
+        .ru-counter button:disabled {
+            opacity: .35;
+            cursor: default;
+        }
+
+        .ru-counter button:focus-visible {
+            outline: 2px solid var(--red);
+            outline-offset: -3px;
+        }
+
+        .ru-counter input {
+            flex: 1;
+            border: 0;
+            border-radius: 0;
+            text-align: center;
+            appearance: textfield;
+            -moz-appearance: textfield;
+        }
+
+        .ru-counter input::-webkit-inner-spin-button,
+        .ru-counter input::-webkit-outer-spin-button {
+            margin: 0;
+            -webkit-appearance: none;
+        }
+
+        .ru-help {
+            margin: 7px 0 0;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        .ru-help-highlight {
+            color: var(--red);
+        }
+
+        .ru-form .ru-button {
+            width: 100%;
+        }
+
+        .ru-disclaimer {
+            margin: 12px 0 0;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .ru-error {
+            margin: 0 0 14px;
+            padding: 10px 12px;
+            border-radius: 7px;
+            background: #fff0e8;
+            color: #9b3316;
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        .ru-help[hidden],
+        .ru-error[hidden] {
+            display: none;
+        }
+
+        .ru-bottom-note {
+            max-width: 720px;
+            margin: 23px auto 0;
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.9;
+            text-align: center;
+        }
+
+        /* ANIMACIONES */
+
+        @keyframes ru-float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(var(--tilt));
+            }
+
+            50% {
+                transform: translateY(-8px) rotate(var(--tilt));
+            }
+        }
+
+        @keyframes ru-rock {
+
+            0%,
+            100% {
+                transform: rotate(5deg);
+            }
+
+            50% {
+                transform: rotate(-5deg);
+            }
+        }
+
+        @keyframes ru-photo-enter {
+            from {
+                transform: scale(1.07);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        /* TABLETS */
+
+        @media (max-width: 950px) {
+            .ru-hero {
+                gap: 24px;
+                padding: 35px 35px 43px;
+            }
+
+            .ru-hero h1 {
+                font-size: 44px;
+            }
+
+            .ru-photo-frame {
+                height: 350px;
+            }
+
+            .ru-plan {
+                gap: 30px;
+                padding: 30px 30px 43px;
+            }
+
+            .ru-plan-copy h2 {
+                font-size: 32px;
+            }
+        }
+
+        /* CELULARES */
+
+        @media (max-width: 760px) {
+            .ru-page {
+                width: calc(100% - 32px);
+                padding: 108px 0 35px;
+            }
+
+            .ru-back {
+                margin-bottom: 16px;
+                font-size: 10px;
+            }
+
+            .ru-hero {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 24px;
+                padding: 29px 23px 39px;
+                border-radius: 18px;
+            }
+
+            .ru-eyebrow {
+                margin-bottom: 17px;
+                font-size: 8px;
+                letter-spacing: .1em;
+            }
+
+            .ru-hero h1 {
+                margin-bottom: 21px;
+                font-size: clamp(38px, 10vw, 49px);
+            }
+
+            .ru-hero-description {
+                font-size: 12px;
+            }
+
+            .ru-hero-actions {
+                gap: 14px;
+                margin-top: 23px;
+            }
+
+            .ru-button {
+                min-height: 48px;
+                padding: 13px 17px;
+                font-size: 11px;
+            }
+
+            .ru-hero-note {
+                max-width: 125px;
+                font-size: 9px;
+            }
+
+            .ru-visual {
+                width: 100%;
+                max-width: 430px;
+                margin: 0 auto;
+                padding: 17px 8px 23px;
+            }
+
+            .ru-photo-frame {
+                height: 275px;
+                border-width: 5px;
+            }
+
+            .ru-matrioshka {
+                top: -3px;
+                right: -5px;
+                width: 76px;
+                height: 114px;
+            }
+
+            .ru-sticker {
+                padding: 10px 12px;
+                font-size: 10px;
+            }
+
+            .ru-sticker-one {
+                left: -5px;
+            }
+
+            .ru-sticker-two {
+                right: -5px;
+            }
+
+            .ru-price-strip {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px 15px;
+                margin: 16px 0 42px;
+                padding: 23px;
+            }
+
+            .ru-price-strip>div:first-child {
+                grid-column: 1 / -1;
+            }
+
+            .ru-price-value strong {
+                font-size: 35px;
+            }
+
+            .ru-fact {
+                padding-left: 12px;
+            }
+
+            .ru-fact strong {
+                font-size: 14px;
+            }
+
+            .ru-fact span {
+                font-size: 9px;
+            }
+
+            .ru-section-heading {
+                margin-bottom: 24px;
+            }
+
+            .ru-section-heading h2 {
+                font-size: 30px;
+            }
+
+            .ru-section-heading>p:last-child {
+                font-size: 12px;
+            }
+
+            .ru-menu {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 13px;
+            }
+
+            .ru-course {
+                padding: 24px 24px 36px;
+                border-radius: 14px;
+            }
+
+            .ru-course-top {
+                margin-bottom: 18px;
+            }
+
+            .ru-course h3 {
+                font-size: 23px;
+            }
+
+            .ru-drink {
+                align-items: flex-start;
+                gap: 14px;
+                padding: 21px;
+            }
+
+            .ru-drink-icon {
+                flex-basis: 42px;
+                width: 42px;
+                height: 42px;
+                font-size: 20px;
+            }
+
+            .ru-drink h3 {
+                font-size: 15px;
+                line-height: 1.5;
+            }
+
+            .ru-drink p {
+                font-size: 11px;
+            }
+
+            .ru-family-note {
+                margin: 29px auto 38px;
+                padding: 0 8px;
+            }
+
+            .ru-family-note p {
+                font-size: 12px;
+            }
+
+            .ru-plan {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 25px;
+                padding: 25px 20px 36px;
+                border-radius: 17px;
+            }
+
+            .ru-plan-copy h2 {
+                font-size: 32px;
+            }
+
+            .ru-plan-copy>p {
+                font-size: 12px;
+            }
+
+            .ru-form {
+                padding: 23px 18px;
+            }
+
+            .ru-field input {
+                min-height: 49px;
+                font-size: 16px;
+            }
+
+            .ru-counter {
+                min-height: 49px;
+            }
+
+            .ru-counter button {
+                flex-basis: 49px;
+                width: 49px;
+            }
+
+            .ru-form .ru-button {
+                min-height: 50px;
+                font-size: 12px;
+            }
+
+            .ru-bottom-note {
+                padding: 0 5px;
+                font-size: 10px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .ru-page *,
+            .ru-page *::before,
+            .ru-page *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+
+            .ru-matrioshka {
+                transform: rotate(4deg);
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-gray-50 font-sans text-gray-800">
+<body class="font-sans bg-white">
 
-    <!-- NAVBAR -->
+    <!-- BARRA DE MENÚ COMPARTIDA -->
     <header class="fixed top-0 w-full bg-white shadow z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
             <a href="../index.html" class="flex items-center gap-3">
                 <img src="../IMG/logo.png" alt="Logo San Javier" class="w-12 h-12 object-contain">
                 <div class="leading-tight">
-                    <span class="block text-2xl md:text-3xl font-bold">San Javier</span>
-                    <span class="block text-sm md:text-base text-[#af350f]">Cultura y Naturaleza</span>
+                    <span class="block text-2xl md:text-3xl font-bold">
+                        San Javier
+                    </span>
+                    <span class="block text-sm md:text-base text-[#af350f]">
+                        Cultura y Naturaleza
+                    </span>
                 </div>
             </a>
 
-            <button id="menu-btn" class="md:hidden text-gray-700 text-3xl focus:outline-none">☰</button>
+            <button id="menu-btn" type="button" class="md:hidden text-gray-700 text-3xl focus:outline-none"
+                aria-label="Abrir o cerrar menú" aria-expanded="false" aria-controls="menu">☰</button>
 
-            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white md:static md:block md:w-auto z-40">
+            <nav id="menu" class="hidden absolute top-full left-0 w-full bg-white md:static md:block md:w-auto">
                 <ul class="flex flex-col md:flex-row gap-4 md:gap-6 text-gray-700 font-medium p-4 md:p-0">
-                    <li><a href="../index.html" class="hover:text-[#af350f]">Inicio</a></li>
-                    <li><a href="tours.html" class="hover:text-[#af350f]">Tours</a></li>
-                    <li><a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
-                            class="hover:text-[#af350f]">Hospedaje</a></li>
+                    <li>
+                        <a href="nosotros.html" class="hover:text-[#af350f]">
+                            Nosotros
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html" class="hover:text-[#af350f]">
+                            Inicio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.airbnb.com.ar/rooms/1353875028897794866"
+                            class="hover:text-[#af350f]">Hospedaje</a>
+                    </li>
                 </ul>
             </nav>
+
+            <a href="https://wa.link/2yu17o"
+                class="hidden md:inline-block ml-6 bg-[#af350f] text-white px-4 py-2 rounded-lg hover:bg-[#922f08] transition">Reservar</a>
+
         </div>
     </header>
 
-    <script>
-        const btn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
+    <main class="ru-page">
 
-<!-- HERO DE LA ACTIVIDAD CON IMAGEN -->
-<section class="h-[60vh] md:h-[80vh] relative flex items-center justify-center overflow-hidden bg-cover bg-center"
-    style="background-image: url('../IMG/sanjavier.jpg');">
+        <!-- MATRIOSHKA DECORATIVA -->
+        <svg class="ru-symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <defs>
+                <symbol id="ru-matrioshka" viewBox="0 0 100 150">
 
-    <!-- Overlay oscuro -->
-    <div class="bg-black/50 absolute inset-0"></div>
+                    <!-- Silueta -->
+                    <path d="M50 5
+               C30 5 19 20 21 39
+               C22 50 27 57 24 63
+               C16 77 7 98 7 119
+               C7 137 23 145 50 145
+               C77 145 93 137 93 119
+               C93 98 84 77 76 63
+               C73 57 78 50 79 39
+               C81 20 70 5 50 5Z" fill="#a3342e" stroke="#faf5eb" stroke-width="4" />
 
-    <!-- Contenido sobre la imagen -->
-    <div class="relative z-10 text-center px-6">
-        <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Raíces Rusas en San Javier</h1>
-        <p class="text-white text-base md:text-lg max-w-2xl mx-auto">
-            Dos días para explorar, saborear y conectar. Ecoturismo, vida rural y tradición rusa se fusionan en una experiencia que
-            incluye actividades en la naturaleza, cocina típica y hospedaje en el corazón de San Javier.
-        </p>
-    </div>
-</section>
+                    <!-- Pañuelo -->
+                    <path d="M50 9
+               C32 9 22 23 25 41
+               C27 54 37 64 50 69
+               C63 64 73 54 75 41
+               C78 23 68 9 50 9Z" fill="#36516f" />
 
+                    <!-- Cara -->
+                    <ellipse cx="50" cy="35" rx="18" ry="21" fill="#f6dfc4" />
 
-<section class="py-16 bg-gray-100 text-center">
-    <h2 class="text-3xl font-bold mb-6">Vive la experiencia en video</h2>
-    <div class="max-w-4xl mx-auto">
-        <div class="relative" style="padding-top: 56.25%;"> <!-- 16:9 ratio -->
-            <iframe class="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
-                src="https://www.youtube.com/embed/3rnNYymQELY?autoplay=1&mute=1&loop=1&playlist=3rnNYymQELY"
-                title="Raíces Rusas en San Javier" frameborder="0" allow="autoplay; encrypted-media; fullscreen"
-                allowfullscreen>
-            </iframe>
-        </div>
-    </div>
-</section>
+                    <!-- Cabello -->
+                    <path d="M33 29
+               C34 16 45 12 51 15
+               C61 13 68 22 67 30
+               C59 27 54 23 51 20
+               C46 25 39 28 33 29Z" fill="#815333" />
 
-    <!-- DESCRIPCIÓN -->
-    <section class="container mx-auto px-6 py-12">
-        <h2 class="text-2xl md:text-3xl font-bold mb-6">Detalles de la experiencia</h2>
-        <p class="text-gray-700 mb-4">Descubrí los encantos de nuestro pueblo, su cultura, su gastronomía y la
-            naturaleza que nos rodea, diferente para salir de la rutina. Una cena de confraternidad para compartir
-            sabores, costumbres, historia, anécdotas y música de nuestros abuelos emigrantes.</p>
+                    <!-- Rasgos -->
+                    <path d="M39 34 Q42 31 45 34
+               M55 34 Q58 31 61 34" fill="none" stroke="#604332" stroke-width="1.8" stroke-linecap="round" />
 
-        <ul class="text-gray-700 mb-6 space-y-2">
-            <li>⏱ Duración: 2 días</li>
-            <li>📍 Ubicación: San Javier y Estero de Farrapos</li>
-        </ul>
+                    <ellipse cx="42" cy="38" rx="1.4" ry="2" fill="#302b28" />
+                    <ellipse cx="58" cy="38" rx="1.4" ry="2" fill="#302b28" />
 
-        <h3 class="text-xl font-semibold mb-4">Itinerario</h3>
+                    <ellipse cx="37" cy="44" rx="4" ry="2.5" fill="#de8e7e" />
+                    <ellipse cx="63" cy="44" rx="4" ry="2.5" fill="#de8e7e" />
 
-        <div class="bg-white rounded-2xl shadow-md p-6 mb-8">
-            <h4 class="font-bold mb-2">Día 1 – Cultura y Navegación</h4>
-            <ul class="list-disc list-inside space-y-1 text-gray-700">
-                <li>08:30 – Bienvenida y encuentro en el punto de partida.</li>
-                <li>09:00 – Recorrido histórico y cultural con guía local.</li>
-                <li>11:30 – Almuerzo. Degustación de comidas locales.</li>
-                <li>14:00 – Paseo náutico en lancha o kayak por el Estero de Farrapos.</li>
-                <li>17:00 – Regreso al hospedaje y paseo por la feria de artesanías.</li>
-                <li>20:00 – Cena de confraternidad con comidas típicas rusas y música local en vivo.</li>
-            </ul>
+                    <path d="M46 48 Q50 52 54 48" fill="none" stroke="#a3342e" stroke-width="1.8"
+                        stroke-linecap="round" />
 
-            <h4 class="font-bold mt-4 mb-2">Día 2 – Naturaleza y Senderismo</h4>
-            <ul class="list-disc list-inside space-y-1 text-gray-700">
-                <li>08:00 – Desayuno en el hospedaje.</li>
-                <li>09:00 – Recorrido por predios rurales. Explora ambientes naturales
-                    diversos: blanqueales, humedales y monte ribereño.</li>
-                <li>12:00 – Almuerzo al aire libre o en el campo, disfrutando de productos locales.</li>
-                <li>13:30 – Fin de la experiencia y regreso a San Javier.</li>
-            </ul>
-        </div>
+                    <!-- Nudo -->
+                    <path d="M50 61 L39 74 L50 70 L61 74Z" fill="#36516f" stroke="#faf5eb" stroke-width="1.5" />
 
-        <h3 class="text-xl font-semibold mb-4">Incluye</h3>
-        <ul class="list-disc list-inside text-gray-700 space-y-1 mb-6">
-            <li>Guía local experto</li>
-            <li>Paseo náutico en lancha o kayak</li>
-            <li>Almuerzos y cena típica rusa</li>
-            <li>Degustación y contacto con la cultura local</li>
-            <li>Senderismo guiado en ambientes naturales</li>
-        </ul>
-    </section>
+                    <!-- Delantal -->
+                    <path d="M50 75
+               C34 75 22 96 22 118
+               C22 131 34 135 50 135
+               C66 135 78 131 78 118
+               C78 96 66 75 50 75Z" fill="#faf0db" />
 
-    <!-- CTA FINAL -->
-    <section class="py-12 text-center">
-        <a href="https://wa.link/ngaba9"
-            class="inline-block bg-green-600 text-white px-12 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-green-700 transition-transform transform hover:scale-105">
-            Reservá tu experiencia
+                    <!-- Tallo y hojas -->
+                    <path d="M50 123 V99" fill="none" stroke="#526847" stroke-width="2.5" stroke-linecap="round" />
+
+                    <path d="M49 116 C35 118 32 109 33 105
+               C42 104 48 108 49 116Z
+               M51 120 C65 122 69 113 67 109
+               C58 108 52 112 51 120Z" fill="#526847" />
+
+                    <!-- Flor del delantal -->
+                    <g fill="#a3342e">
+                        <ellipse cx="50" cy="88" rx="4.5" ry="8" />
+                        <ellipse cx="50" cy="88" rx="4.5" ry="8" transform="rotate(60 50 98)" />
+                        <ellipse cx="50" cy="88" rx="4.5" ry="8" transform="rotate(120 50 98)" />
+                        <ellipse cx="50" cy="88" rx="4.5" ry="8" transform="rotate(180 50 98)" />
+                        <ellipse cx="50" cy="88" rx="4.5" ry="8" transform="rotate(240 50 98)" />
+                        <ellipse cx="50" cy="88" rx="4.5" ry="8" transform="rotate(300 50 98)" />
+                    </g>
+
+                    <circle cx="50" cy="98" r="5" fill="#d7ae55" />
+
+                    <!-- Detalles del vestido -->
+                    <g fill="#f1d59d">
+                        <circle cx="17" cy="116" r="2" />
+                        <circle cx="83" cy="116" r="2" />
+                        <circle cx="21" cy="100" r="2" />
+                        <circle cx="79" cy="100" r="2" />
+                        <path d="M30 136 L34 132 L38 136 L34 140Z" />
+                        <path d="M62 136 L66 132 L70 136 L66 140Z" />
+                    </g>
+
+                </symbol>
+            </defs>
+        </svg>
+
+        <a class="ru-back" href="tours.html">
+            ← Todas las experiencias
         </a>
-    </section>
+
+        <!-- PORTADA -->
+        <section class="ru-hero" aria-labelledby="ru-title">
+
+            <div>
+                <p class="ru-eyebrow">Cena tradicional rusa · San Javier</p>
+
+                <h1 id="ru-title">
+                    Nuestra historia<br>
+                    <span>se sirve a la mesa.</span>
+                </h1>
+
+                <p class="ru-hero-description">
+                    Hay recetas que cuentan de dónde venimos.
+                    Te invitamos a descubrir las nuestras en una cena
+                    en varios pasos, con gastronomía en vivo y sabores
+                    que forman parte de nuestra familia.
+                    Una noche para probar, conversar y conocer
+                    el lado ruso de San Javier.
+                </p>
+
+                <div class="ru-hero-actions">
+                    <a class="ru-button" href="#coordinar">
+                        Quiero sentarme a esa mesa ↗
+                    </a>
+
+                    <span class="ru-hero-note">
+                        Sabores de familia.<br>
+                        Una experiencia para compartir.
+                    </span>
+                </div>
+            </div>
+
+            <div class="ru-visual">
+
+                <div class="ru-photo-frame">
+                    <img src="../IMG/rusa.png" alt="Shashlik preparado a las brasas para nuestra cena tradicional rusa"
+                        fetchpriority="high" decoding="async">
+                </div>
+
+                <svg class="ru-matrioshka" aria-hidden="true" focusable="false">
+                    <use href="#ru-matrioshka"></use>
+                </svg>
+
+                <div class="ru-sticker ru-sticker-one">
+                    ✦ Gastronomía en vivo
+                </div>
+
+                <div class="ru-sticker ru-sticker-two">
+                    De nuestra familia a tu mesa
+                </div>
+
+            </div>
+
+            <div class="ru-pattern" aria-hidden="true"></div>
+        </section>
+
+        <!-- DATOS PRINCIPALES -->
+        <section class="ru-price-strip" aria-label="Datos de la cena">
+
+            <div>
+                <span class="ru-price-label">Menú en varios pasos</span>
+
+                <div class="ru-price-value">
+                    <strong>$1.000</strong>
+                    <span>por persona</span>
+                </div>
+            </div>
+
+            <div class="ru-fact">
+                <strong>20:00 hs</strong>
+                <span>Con reserva previa</span>
+            </div>
+
+            <div class="ru-fact">
+                <strong>De 4 a 20 personas</strong>
+                <span>Para menos personas, consultanos</span>
+            </div>
+
+        </section>
+
+        <!-- MENÚ -->
+        <section aria-labelledby="ru-menu-title">
+
+            <div class="ru-section-heading">
+                <p class="ru-eyebrow">Un viaje en cada paso</p>
+
+                <h2 id="ru-menu-title">
+                    Vení con curiosidad.<br>
+                    Y con ganas de probar.
+                </h2>
+
+                <p>
+                    Te presentamos los platos que compartimos en nuestra mesa,
+                    con sus nombres y una pequeña introducción para
+                    empezar a disfrutarlos.
+                </p>
+            </div>
+
+            <div class="ru-menu">
+
+                <article class="ru-course">
+                    <div class="ru-course-top">
+                        <span class="ru-course-label">Para empezar</span>
+                        <span class="ru-course-number" aria-hidden="true">01</span>
+                    </div>
+
+                    <h3>Ogurets y pirozhki</h3>
+
+                    <span class="ru-russian" lang="ru">
+                        Солёные огурцы · Пирожки
+                    </span>
+
+                    <p>
+                        Abrimos la mesa con <strong>pepinillos salados</strong>
+                        y pirozhki: pequeñas empanaditas rellenas,
+                        una de las especialidades de nuestra cocina.
+                    </p>
+
+                    <p>
+                        Los servimos en tres sabores:
+                        <strong>papa, boniato y repollo</strong>.
+                    </p>
+                </article>
+
+                <article class="ru-course">
+                    <div class="ru-course-top">
+                        <span class="ru-course-label">El siguiente paso</span>
+                        <span class="ru-course-number" aria-hidden="true">02</span>
+                    </div>
+
+                    <h3>Vareniki</h3>
+
+                    <span class="ru-russian" lang="ru">Вареники</span>
+
+                    <p>
+                        Pasta rellena de <strong>ricota casera</strong>,
+                        acompañada con crema.
+                    </p>
+
+                    <p>
+                        Una preparación suave y reconfortante,
+                        de esas que invitan a disfrutar cada bocado
+                        sin apuro.
+                    </p>
+                </article>
+
+                <article class="ru-course">
+                    <div class="ru-course-top">
+                        <span class="ru-course-label">El plato principal</span>
+                        <span class="ru-course-number" aria-hidden="true">03</span>
+                    </div>
+
+                    <h3>Shashlik</h3>
+
+                    <span class="ru-russian" lang="ru">Шашлык</span>
+
+                    <p>
+                        Carne de cordero con 24hs de maceración, posteriormente cocinada
+                        <strong>a las brasas</strong> en "espadas" shampur (шампур), acompañadas
+                        de ensaladas.
+                    </p>
+
+                    <p>
+                        El aroma del fuego y la preparación en vivo
+                        también forman parte de la experiencia.
+                    </p>
+                </article>
+
+                <article class="ru-course">
+                    <div class="ru-course-top">
+                        <span class="ru-course-label">Un final dulce</span>
+                        <span class="ru-course-number" aria-hidden="true">04</span>
+                    </div>
+
+                    <h3>Piroj e infusiones</h3>
+
+                    <span class="ru-russian" lang="ru">Пирог</span>
+
+                    <p>
+                        Nuestra preparación dulce. Tartas de <strong>dulce casero de
+                        zapallo</strong> y/o <strong>ricota con pasas</strong>, acompañada
+                        de infusiones.
+                    </p>
+
+                    <p>
+                        El último paso de la cena y una buena excusa
+                        para seguir un ratito más de sobremesa.
+                    </p>
+                </article>
+
+            </div>
+
+            <div class="ru-drink">
+                <span class="ru-drink-icon" aria-hidden="true">К</span>
+
+                <div>
+                    <h3>Kvas · <span lang="ru">Квас</span> · Canilla libre</h3>
+
+                    <p>
+                        La bebida tradicional de nuestra mesa acompaña
+                        la cena y también tiene su lugar en este
+                        recorrido de sabores.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- HISTORIA FAMILIAR -->
+        <div class="ru-family-note">
+            <p>
+                <strong>No hace falta conocer los platos para disfrutar la cena.</strong>
+                Parte de la experiencia es descubrirlos con quienes
+                los preparan y compartir una tradición que sigue
+                viva en nuestra familia.
+            </p>
+        </div>
+
+        <!-- CONSULTA -->
+        <section class="ru-plan" id="coordinar" aria-labelledby="ru-plan-title">
+
+            <div class="ru-plan-copy">
+                <p class="ru-eyebrow">Nos encontramos a la mesa</p>
+
+                <h2 id="ru-plan-title">
+                    Una noche distinta empieza con una invitación.
+                </h2>
+
+                <p>
+                    Reuní a tu familia o a tus amigos y vení a descubrir
+                    estos sabores con nosotros. Contanos qué fecha
+                    tienen en mente y coordinamos la cena.
+                </p>
+
+                <div class="ru-pills">
+                    <span>20:00 hs</span>
+                    <span>Reserva previa</span>
+                    <span>Hasta 20 personas</span>
+                </div>
+
+                <p class="ru-small">
+                    Sábados y domingos, sujetos a disponibilidad.
+                    Para días de semana o grupos de menos de 4 personas,
+                    consultanos.
+                </p>
+            </div>
+
+            <form class="ru-form" id="ru-form" action="https://wa.me/59891009934" method="get" target="_blank"
+                rel="noopener">
+                <input type="hidden" name="text" id="ru-message">
+
+                <h3>¿Les guardamos un lugar?</h3>
+
+                <p class="ru-form-intro">
+                    $1.000 por persona. Consultá disponibilidad
+                    y coordinamos los detalles por WhatsApp.
+                </p>
+
+                <div class="ru-field">
+                    <label for="ru-people">¿Cuántas personas vienen?</label>
+
+                    <div class="ru-counter">
+                        <button type="button" id="ru-minus" aria-label="Quitar una persona">−</button>
+
+                        <input type="number" id="ru-people" min="1" max="20" step="1" value="4" inputmode="numeric"
+                            required>
+
+                        <button type="button" id="ru-plus" aria-label="Agregar una persona">+</button>
+                    </div>
+
+                    <p class="ru-help">
+                        La propuesta tiene un mínimo de 4 personas.
+                    </p>
+
+                    <p class="ru-help ru-help-highlight" id="ru-small-group" aria-live="polite" hidden>
+                        ¿Son menos de 4? Podés consultar y vemos
+                        la posibilidad de organizar la cena.
+                    </p>
+                </div>
+
+                <div class="ru-field">
+                    <label for="ru-date">Fecha tentativa · opcional</label>
+
+                    <input type="date" id="ru-date">
+
+                    <p class="ru-help" id="ru-date-note" hidden>
+                        Los días de semana se coordinan según disponibilidad.
+                    </p>
+                </div>
+
+                <p class="ru-error" id="ru-error" role="alert" hidden></p>
+
+                <button class="ru-button" type="submit">
+                    Consultar por la cena ↗
+                </button>
+
+                <p class="ru-disclaimer">
+                    La cena comienza a las 20:00 hs.<br>
+                    Confirmamos la reserva y disponibilidad por WhatsApp.
+                </p>
+
+                <noscript>
+                    <p class="ru-help">
+                        <a href="https://wa.me/59891009934">
+                            Consultanos directamente por WhatsApp.
+                        </a>
+                    </p>
+                </noscript>
+
+            </form>
+        </section>
+
+        <p class="ru-bottom-note">
+            Si alguien tiene alergias, restricciones alimentarias
+            o alguna consulta sobre los ingredientes, contanos
+            antes de reservar para que podamos asesorarlos.
+        </p>
+
+    </main>
+
+    <script>
+        (() => {
+            "use strict";
+
+            // Menú compartido
+            const menuButton = document.getElementById("menu-btn");
+            const menu = document.getElementById("menu");
+
+            menuButton.addEventListener("click", () => {
+                const isOpen =
+                    menuButton.getAttribute("aria-expanded") === "true";
+
+                menu.classList.toggle("hidden", isOpen);
+                menuButton.setAttribute("aria-expanded", String(!isOpen));
+            });
+
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    menu.classList.add("hidden");
+                    menuButton.setAttribute("aria-expanded", "false");
+                }
+            });
+
+            // Consulta de cena
+            const form = document.getElementById("ru-form");
+            const people = document.getElementById("ru-people");
+            const minus = document.getElementById("ru-minus");
+            const plus = document.getElementById("ru-plus");
+            const smallGroup = document.getElementById("ru-small-group");
+            const date = document.getElementById("ru-date");
+            const dateNote = document.getElementById("ru-date-note");
+            const error = document.getElementById("ru-error");
+            const message = document.getElementById("ru-message");
+
+            function uruguayNow() {
+                const parts = new Intl.DateTimeFormat("en-CA", {
+                    timeZone: "America/Montevideo",
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hourCycle: "h23"
+                }).formatToParts(new Date());
+
+                const values = {};
+
+                parts.forEach((part) => {
+                    if (part.type !== "literal") {
+                        values[part.type] = part.value;
+                    }
+                });
+
+                return {
+                    date: `${values.year}-${values.month}-${values.day}`,
+                    time: `${values.hour}:${values.minute}`
+                };
+            }
+
+            function updatePeople() {
+                const count = Number(people.value);
+                const valid = Number.isInteger(count);
+
+                minus.disabled = !valid || count <= 1;
+                plus.disabled = !valid || count >= 20;
+                smallGroup.hidden = !(valid && count >= 1 && count < 4);
+                error.hidden = true;
+            }
+
+            minus.addEventListener("click", () => {
+                const count = Number(people.value) || 1;
+                people.value = Math.max(1, Math.min(20, count - 1));
+                updatePeople();
+            });
+
+            plus.addEventListener("click", () => {
+                const count = Number(people.value) || 1;
+                people.value = Math.max(1, Math.min(20, count + 1));
+                updatePeople();
+            });
+
+            people.addEventListener("input", updatePeople);
+
+            date.min = uruguayNow().date;
+
+            date.addEventListener("change", () => {
+                error.hidden = true;
+
+                if (!date.value) {
+                    dateNote.hidden = true;
+                    return;
+                }
+
+                const day = new Date(`${date.value}T12:00:00Z`).getUTCDay();
+                dateNote.hidden = day === 0 || day === 6;
+            });
+
+            function showError(text, field) {
+                error.textContent = text;
+                error.hidden = false;
+                field.focus();
+            }
+
+            form.addEventListener("submit", (event) => {
+                const count = Number(people.value);
+
+                if (!Number.isInteger(count) || count < 1 || count > 20) {
+                    event.preventDefault();
+
+                    showError(
+                        "Indicá una cantidad de entre 1 y 20 personas.",
+                        people
+                    );
+                    return;
+                }
+
+                const now = uruguayNow();
+                date.min = now.date;
+
+                if (date.value && date.value < now.date) {
+                    event.preventDefault();
+
+                    showError(
+                        "Elegí una fecha futura o dejala vacía para coordinar.",
+                        date
+                    );
+                    return;
+                }
+
+                if (date.value === now.date && now.time >= "20:00") {
+                    event.preventDefault();
+
+                    showError(
+                        "El horario de la cena de hoy ya pasó. Elegí otra fecha.",
+                        date
+                    );
+                    return;
+                }
+
+                const formattedDate = date.value
+                    ? new Date(`${date.value}T12:00:00Z`).toLocaleDateString(
+                        "es-UY",
+                        {
+                            timeZone: "UTC",
+                            weekday: "long",
+                            day: "numeric",
+                            month: "long",
+                            year: "numeric"
+                        }
+                    )
+                    : "A coordinar";
+
+                const lines = [
+                    "¡Hola, San Javier Experiencias!",
+                    "Nos interesa la cena tradicional rusa.",
+                    "",
+                    `Cantidad de personas: ${count}`,
+                    `Fecha tentativa: ${formattedDate}`,
+                    "Horario: 20:00 hs"
+                ];
+
+                if (count < 4) {
+                    lines.push(
+                        "",
+                        "Somos menos de 4 personas. ¿Es posible coordinar la cena y qué condiciones tendría?"
+                    );
+                } else {
+                    lines.push(
+                        "",
+                        "Vimos la propuesta de $1.000 por persona.",
+                        "¿Nos confirman disponibilidad para coordinar la reserva?"
+                    );
+                }
+
+                message.value = lines.join("\n");
+            });
+
+            updatePeople();
+        })();
+    </script>
 
 </body>
 
